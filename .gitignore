@@ -1,0 +1,11 @@
+.vercel
+.env*
+node_modules/
+.next/
+patch_*.js
+cloudflared
+ngrok
+ngrok.tgz
+graphify-out/
+cv_moderno.html
+tsconfig.tsbuildinfo
