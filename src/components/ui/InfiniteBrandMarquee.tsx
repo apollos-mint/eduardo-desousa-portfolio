@@ -1,0 +1,261 @@
+'use client';
+
+import React, { useState } from 'react';
+import { Locale } from '@/types';
+import BrandLogo from '@/components/ui/BrandLogos';
+import { Building2, ChevronLeft, ChevronRight, Pause, Play, Award, Cpu } from 'lucide-react';
+
+interface InfiniteBrandMarqueeProps {
+  currentLocale: Locale;
+}
+
+export default function InfiniteBrandMarquee({ currentLocale }: InfiniteBrandMarqueeProps) {
+  // Row 1 Direction & Pause states
+  const [dirRow1, setDirRow1] = useState<'left' | 'right'>('left');
+  const [isPausedRow1, setIsPausedRow1] = useState(false);
+
+  // Row 2 Direction & Pause states
+  const [dirRow2, setDirRow2] = useState<'left' | 'right'>('right');
+  const [isPausedRow2, setIsPausedRow2] = useState(false);
+
+  const titles = {
+    es: {
+      companies: 'EMPRESAS Y SOCIOS ESTRATÉGICOS:',
+      techs: 'TECNOLOGÍAS, ESTÁNDARES Y CERTIFICACIONES:',
+    },
+    en: {
+      companies: 'CLIENT COMPANIES & TIER-1 ECOSYSTEMS:',
+      techs: 'TECHNOLOGIES, STANDARDS & CERTIFICATIONS:',
+    },
+    pt: {
+      companies: 'EMPRESAS E PARCEIROS ESTRATÉGICOS:',
+      techs: 'TECNOLOGIAS, PADRÕES E CERTIFICAÇÕES:',
+    },
+    nl: {
+      companies: 'BEDRIJVEN EN ECOSYSTEMEN:',
+      techs: 'TECHNOLOGIEËN, NORMEN EN CERTIFICERINGEN:',
+    },
+    de: {
+      companies: 'UNTERNEHMEN UND ÖKOSYSTEME:',
+      techs: 'TECHNOLOGIEN, NORMEN UND ZERTIFIZIERUNGEN:',
+    },
+    fr: {
+      companies: 'ENTREPRISES ET ÉCOSYSTÈMES CLIENTS:',
+      techs: 'TECHNOLOGIES, NORMES ET CERTIFICATIONS:',
+    },
+  };
+
+  const t = titles[currentLocale] || titles.en;
+
+  // Row 1: Companies & Global Maritime / Tier-1 Partners
+  const companyList = [
+    { name: 'HQ PACK', category: 'Cleanroom Packaging' },
+    { name: 'ASML', category: 'Semiconductor Lithography' },
+    { name: 'BMW', category: 'Automotive OEM' },
+    { name: 'MINI', category: 'Automotive OEM' },
+    { name: 'BOSCH', category: 'Tier-1 Electronics' },
+    { name: 'ZEISS', category: 'High-NA Optics' },
+    { name: 'HAPAG-LLOYD', category: 'Global Maritime Shipping' },
+    { name: 'MAERSK', category: 'Integrated Freight' },
+    { name: 'MSC', category: 'Container Logistics' },
+    { name: 'BOEING', category: 'Aerospace Packaging' },
+    { name: 'AIRBUS', category: 'Avionic Cleanroom' },
+    { name: 'SAMSUNG', category: '3nm Foundry Transport' },
+    { name: 'ZF', category: 'Powertrain & Torque' },
+    { name: 'BROSE', category: 'Mechatronic Systems' },
+    { name: 'VDL', category: 'High-Tech Frame Systems' },
+    { name: 'NEWAYS', category: 'Cleanroom PCBA' },
+    { name: 'FRENCKEN', category: 'Precision Mechanics' },
+  ];
+
+  // Row 2: Technologies, Systems & Accredited Standards
+  const techList = [
+    { name: 'ISO 9001', category: 'Quality Lead Auditor' },
+    { name: 'TÜV', category: 'TÜV Rheinland Certified' },
+    { name: 'GOOGLE', category: 'Data Analytics Professional' },
+    { name: 'Lean Six Sigma', category: 'Black Belt DMAIC' },
+    { name: 'ERP ISAH', category: 'Work Order & Supply Chain' },
+    { name: 'Cleanroom Class 5', category: 'ISO 14644-1 Packaging' },
+    { name: '8D RCA', category: 'Root Cause Problem Solving' },
+    { name: 'Gage R&R', category: 'Measurement System Analysis' },
+    { name: 'SPC Metrology', category: 'Statistical Process Control' },
+    { name: 'VCA VOL', category: 'Safety Leadership & Compliance' },
+  ];
+
+  const duplicatedCompanies = [...companyList, ...companyList];
+  const duplicatedTechs = [...techList, ...techList];
+
+  return (
+    <div className="w-full space-y-4 pt-2">
+      {/* =========================================================================
+         LINE 1: CLIENT COMPANIES & MARITIME/OEM ECOSYSTEMS
+         ========================================================================= */}
+      <div className="space-y-2">
+        {/* Row Header + Controls */}
+        <div className="flex items-center justify-between text-xs font-mono px-1">
+          <div className="flex items-center space-x-2 text-cyan-400 dark:text-cyan-400 light:text-cyan-700 font-bold tracking-wider">
+            <Building2 className="w-3.5 h-3.5" />
+            <span>{t.companies}</span>
+          </div>
+
+          {/* Direction & Pause Controls for Line 1 */}
+          <div className="flex items-center space-x-1.5 bg-slate-900/90 dark:bg-slate-900/90 light:bg-slate-100 p-1 rounded-xl border border-slate-800 dark:border-slate-800 light:border-slate-300">
+            <button
+              onClick={() => setDirRow1('left')}
+              title="Scroll Left"
+              className={`p-1 rounded-lg transition-colors ${
+                dirRow1 === 'left'
+                  ? 'bg-cyan-500 text-slate-950 font-bold'
+                  : 'text-slate-400 hover:text-white'
+              }`}
+            >
+              <ChevronLeft className="w-3.5 h-3.5" />
+            </button>
+            <button
+              onClick={() => setIsPausedRow1(!isPausedRow1)}
+              title={isPausedRow1 ? 'Play' : 'Pause'}
+              className={`p-1 rounded-lg transition-colors ${
+                isPausedRow1
+                  ? 'bg-emerald-500 text-slate-950 font-bold'
+                  : 'text-slate-400 hover:text-white'
+              }`}
+            >
+              {isPausedRow1 ? <Play className="w-3.5 h-3.5 fill-current" /> : <Pause className="w-3.5 h-3.5 fill-current" />}
+            </button>
+            <button
+              onClick={() => setDirRow1('right')}
+              title="Scroll Right"
+              className={`p-1 rounded-lg transition-colors ${
+                dirRow1 === 'right'
+                  ? 'bg-cyan-500 text-slate-950 font-bold'
+                  : 'text-slate-400 hover:text-white'
+              }`}
+            >
+              <ChevronRight className="w-3.5 h-3.5" />
+            </button>
+          </div>
+        </div>
+
+        {/* Marquee Row 1 */}
+        <div className="glass-panel p-3 sm:p-3.5 rounded-2xl border border-cyan-500/30 dark:border-cyan-500/30 light:border-slate-200 relative overflow-hidden shadow-xl group">
+          {/* Edge Gradient Fades */}
+          <div className="absolute left-0 top-0 bottom-0 w-12 bg-gradient-to-r from-slate-950 dark:from-slate-950 light:from-white to-transparent z-10 pointer-events-none" />
+          <div className="absolute right-0 top-0 bottom-0 w-12 bg-gradient-to-l from-slate-950 dark:from-slate-950 light:from-white to-transparent z-10 pointer-events-none" />
+
+          <div
+            className={`flex items-center space-x-5 ${
+              dirRow1 === 'left' ? 'animate-marquee-left' : 'animate-marquee-right'
+            }`}
+            style={{
+              animationPlayState: isPausedRow1 ? 'paused' : undefined,
+            }}
+          >
+            {duplicatedCompanies.map((brand, idx) => (
+              <div
+                key={`comp-${brand.name}-${idx}`}
+                className="flex items-center space-x-3 px-3.5 py-1.5 rounded-xl bg-slate-900/80 dark:bg-slate-900/80 light:bg-slate-100 border border-slate-800 dark:border-slate-800 light:border-slate-200 shrink-0 hover:border-cyan-500/50 transition-colors"
+              >
+                <div className="h-5 flex items-center shrink-0">
+                  <BrandLogo name={brand.name} className="h-4.5 w-auto max-w-[75px]" />
+                </div>
+                <div className="border-l border-slate-800 dark:border-slate-800 light:border-slate-300 pl-2.5">
+                  <div className="text-[11px] font-bold text-slate-900 dark:text-white whitespace-nowrap">
+                    {brand.name}
+                  </div>
+                  <div className="text-[9px] font-mono text-cyan-400 dark:text-cyan-400 light:text-cyan-700 whitespace-nowrap">
+                    {brand.category}
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+
+      {/* =========================================================================
+         LINE 2: TECHNOLOGIES, SYSTEMS & ACCREDITED CERTIFICATIONS
+         ========================================================================= */}
+      <div className="space-y-2">
+        {/* Row Header + Controls */}
+        <div className="flex items-center justify-between text-xs font-mono px-1">
+          <div className="flex items-center space-x-2 text-emerald-400 dark:text-emerald-400 light:text-emerald-700 font-bold tracking-wider">
+            <Cpu className="w-3.5 h-3.5" />
+            <span>{t.techs}</span>
+          </div>
+
+          {/* Direction & Pause Controls for Line 2 */}
+          <div className="flex items-center space-x-1.5 bg-slate-900/90 dark:bg-slate-900/90 light:bg-slate-100 p-1 rounded-xl border border-slate-800 dark:border-slate-800 light:border-slate-300">
+            <button
+              onClick={() => setDirRow2('left')}
+              title="Scroll Left"
+              className={`p-1 rounded-lg transition-colors ${
+                dirRow2 === 'left'
+                  ? 'bg-emerald-500 text-slate-950 font-bold'
+                  : 'text-slate-400 hover:text-white'
+              }`}
+            >
+              <ChevronLeft className="w-3.5 h-3.5" />
+            </button>
+            <button
+              onClick={() => setIsPausedRow2(!isPausedRow2)}
+              title={isPausedRow2 ? 'Play' : 'Pause'}
+              className={`p-1 rounded-lg transition-colors ${
+                isPausedRow2
+                  ? 'bg-cyan-500 text-slate-950 font-bold'
+                  : 'text-slate-400 hover:text-white'
+              }`}
+            >
+              {isPausedRow2 ? <Play className="w-3.5 h-3.5 fill-current" /> : <Pause className="w-3.5 h-3.5 fill-current" />}
+            </button>
+            <button
+              onClick={() => setDirRow2('right')}
+              title="Scroll Right"
+              className={`p-1 rounded-lg transition-colors ${
+                dirRow2 === 'right'
+                  ? 'bg-emerald-500 text-slate-950 font-bold'
+                  : 'text-slate-400 hover:text-white'
+              }`}
+            >
+              <ChevronRight className="w-3.5 h-3.5" />
+            </button>
+          </div>
+        </div>
+
+        {/* Marquee Row 2 */}
+        <div className="glass-panel p-3 sm:p-3.5 rounded-2xl border border-emerald-500/30 dark:border-emerald-500/30 light:border-slate-200 relative overflow-hidden shadow-xl group">
+          {/* Edge Gradient Fades */}
+          <div className="absolute left-0 top-0 bottom-0 w-12 bg-gradient-to-r from-slate-950 dark:from-slate-950 light:from-white to-transparent z-10 pointer-events-none" />
+          <div className="absolute right-0 top-0 bottom-0 w-12 bg-gradient-to-l from-slate-950 dark:from-slate-950 light:from-white to-transparent z-10 pointer-events-none" />
+
+          <div
+            className={`flex items-center space-x-5 ${
+              dirRow2 === 'left' ? 'animate-marquee-left' : 'animate-marquee-right'
+            }`}
+            style={{
+              animationPlayState: isPausedRow2 ? 'paused' : undefined,
+            }}
+          >
+            {duplicatedTechs.map((tech, idx) => (
+              <div
+                key={`tech-${tech.name}-${idx}`}
+                className="flex items-center space-x-3 px-3.5 py-1.5 rounded-xl bg-slate-900/80 dark:bg-slate-900/80 light:bg-slate-100 border border-slate-800 dark:border-slate-800 light:border-slate-200 shrink-0 hover:border-emerald-500/50 transition-colors"
+              >
+                <div className="h-5 flex items-center shrink-0">
+                  <BrandLogo name={tech.name} className="h-4.5 w-auto max-w-[75px]" />
+                </div>
+                <div className="border-l border-slate-800 dark:border-slate-800 light:border-slate-300 pl-2.5">
+                  <div className="text-[11px] font-bold text-slate-900 dark:text-white whitespace-nowrap">
+                    {tech.name}
+                  </div>
+                  <div className="text-[9px] font-mono text-emerald-400 dark:text-emerald-400 light:text-emerald-700 whitespace-nowrap">
+                    {tech.category}
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
