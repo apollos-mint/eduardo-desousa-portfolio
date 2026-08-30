@@ -6,6 +6,8 @@ import { getCVData } from '@/data/cv-data';
 import Header from '@/components/navigation/Header';
 import Footer from '@/components/navigation/Footer';
 import InteractiveBackground from '@/components/ui/InteractiveBackground';
+import { Analytics } from '@vercel/analytics/react';
+import { SpeedInsights } from '@vercel/speed-insights/next';
 
 export function generateStaticParams() {
   return getAllStaticLocaleParams();
@@ -33,6 +35,8 @@ export default async function LocalizedLayout({
       <Header currentLocale={lang as Locale} cvData={cvData} />
       <main className="flex-grow">{children}</main>
       <Footer currentLocale={lang as Locale} cvData={cvData} />
+      <Analytics />
+      <SpeedInsights />
     </div>
   );
 }
