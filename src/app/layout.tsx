@@ -1,5 +1,7 @@
 import type { Metadata, Viewport } from 'next';
 import './globals.css';
+import { Analytics } from '@vercel/analytics/next';
+import { SpeedInsights } from '@vercel/speed-insights/next';
 
 export const metadata: Metadata = {
   title: 'Eduardo de Sousa | Staff Operations, Quality & High-Tech Process Leader',
@@ -56,6 +58,8 @@ export default function RootLayout({
       </head>
       <body className="bg-[#07090e] text-slate-100 antialiased min-h-screen selection:bg-cyan-500 selection:text-slate-950 font-sans">
         {children}
+        <Analytics />
+        <SpeedInsights />
       </body>
     </html>
   );
