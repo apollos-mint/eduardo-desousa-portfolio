@@ -23,10 +23,19 @@ export default function SpecialFeatureSection({
 }: SpecialFeatureSectionProps) {
   const pillarDetails = [
     {
-      id: 'hqpack',
-      icon: Cpu,
+      id: 'sourcing',
+      icon: Globe2,
       title: cvData.highlights.pillars[0].title,
       description: cvData.highlights.pillars[0].description,
+      companies: ['HAPAG-LLOYD', 'MAERSK', 'MSC', 'ISO 9001', 'MAKE', 'ZAPIER'],
+      achievement: cvData.common.achievement3,
+      href: `/${currentLocale}/experience/independent-consultant`,
+    },
+    {
+      id: 'hqpack',
+      icon: Cpu,
+      title: cvData.highlights.pillars[1].title,
+      description: cvData.highlights.pillars[1].description,
       companies: ['HQPACK', 'ASML', 'ZEISS', 'BOEING', 'AIRBUS', 'SAMSUNG', 'FRENCKEN', 'NEWAYS'],
       achievement: cvData.common.achievement1,
       href: `/${currentLocale}/experience/hq-pack`,
@@ -34,20 +43,11 @@ export default function SpecialFeatureSection({
     {
       id: 'vdl',
       icon: ShieldCheck,
-      title: cvData.highlights.pillars[1].title,
-      description: cvData.highlights.pillars[1].description,
+      title: cvData.highlights.pillars[2].title,
+      description: cvData.highlights.pillars[2].description,
       companies: ['BMW', 'MINI', 'BOSCH', 'ZF', 'BROSE', 'VDL'],
       achievement: cvData.common.achievement2,
       href: `/${currentLocale}/experience/vdl-nedcar`,
-    },
-    {
-      id: 'sourcing',
-      icon: Globe2,
-      title: cvData.highlights.pillars[2].title,
-      description: cvData.highlights.pillars[2].description,
-      companies: ['HAPAG-LLOYD', 'MAERSK', 'MSC', 'VDL', 'ASML', 'ISO 9001'],
-      achievement: cvData.common.achievement3,
-      href: `/${currentLocale}/experience/independent-consultant`,
     },
   ];
 

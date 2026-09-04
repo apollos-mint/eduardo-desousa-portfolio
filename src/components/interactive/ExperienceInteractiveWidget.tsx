@@ -3,6 +3,7 @@
 import React, { useState } from 'react';
 import { Locale } from '@/types';
 import BrandLogo from '@/components/ui/BrandLogos';
+import SourcingCommandCenterWidget from './SourcingCommandCenterWidget';
 import {
   Cpu,
   ShieldCheck,
@@ -526,38 +527,10 @@ export default function ExperienceInteractiveWidget({
   }
 
   // =========================================================================
-  // 3. INDEPENDENT CONSULTANT: Global Sourcing Map
+  // 3. INDEPENDENT CONSULTANT: Global Sourcing & CMMS Command Center
   // =========================================================================
   if (experienceId === 'independent-consultant') {
-    const hubs = t.hubs;
-
-    return (
-      <div className="p-4 sm:p-6 rounded-2xl bg-slate-950/90 dark:bg-slate-950/90 light:bg-white border border-cyan-500/40 dark:border-cyan-500/40 light:border-cyan-400 space-y-4 shadow-lg">
-        <div className="flex items-center justify-between border-b border-slate-800 dark:border-slate-800 light:border-slate-200 pb-3">
-          <div className="flex items-center space-x-2">
-            <Globe2 className="w-4 h-4 text-cyan-400" />
-            <span className="text-xs font-mono font-bold text-cyan-400 dark:text-cyan-300 light:text-cyan-700">
-              {t.sourcingHeader}
-            </span>
-          </div>
-          <span className="text-xs font-mono text-emerald-500 dark:text-emerald-400 font-bold">{t.riskMitigation}</span>
-        </div>
-
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-          {hubs.map((hub, idx) => (
-            <div key={idx} className="p-3 rounded-xl bg-slate-900/80 dark:bg-slate-900/80 light:bg-slate-50 border border-slate-800 dark:border-slate-800 light:border-slate-200 space-y-1">
-              <div className="flex items-center justify-between">
-                <span className="text-xs font-bold text-slate-900 dark:text-white">{hub.country}</span>
-                <span className="text-[10px] font-mono text-emerald-500 dark:text-emerald-400 bg-emerald-950/80 dark:bg-emerald-950/80 light:bg-emerald-100 px-2 py-0.5 rounded font-bold">
-                  {hub.score} {t.auditScore}
-                </span>
-              </div>
-              <div className="text-[11px] text-slate-600 dark:text-slate-400">{hub.role}</div>
-            </div>
-          ))}
-        </div>
-      </div>
-    );
+    return <SourcingCommandCenterWidget currentLocale={currentLocale} />;
   }
 
   // =========================================================================

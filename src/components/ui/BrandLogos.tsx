@@ -266,6 +266,42 @@ export default function BrandLogo({ name, className = 'w-6 h-6' }: BrandLogoProp
     );
   }
 
+  // NEXT.JS
+  if (norm.includes('NEXT')) {
+    return (
+      <svg viewBox="0 0 120 40" className={className}>
+        <rect width="120" height="40" rx="8" fill="#000000" stroke="#334155" strokeWidth="1" />
+        <text x="60" y="26" fontSize="16" fontWeight="900" fontFamily="sans-serif" textAnchor="middle" fill="#ffffff">
+          Next.js
+        </text>
+      </svg>
+    );
+  }
+
+  // MAKE
+  if (norm.includes('MAKE')) {
+    return (
+      <svg viewBox="0 0 120 40" className={className}>
+        <rect width="120" height="40" rx="8" fill="#6c47ff" />
+        <text x="60" y="26" fontSize="17" fontWeight="900" fontFamily="sans-serif" textAnchor="middle" fill="#ffffff">
+          make
+        </text>
+      </svg>
+    );
+  }
+
+  // ZAPIER
+  if (norm.includes('ZAPIER')) {
+    return (
+      <svg viewBox="0 0 120 40" className={className}>
+        <rect width="120" height="40" rx="8" fill="#ff4a00" />
+        <text x="60" y="26" fontSize="16" fontWeight="900" fontFamily="sans-serif" textAnchor="middle" fill="#ffffff">
+          _zapier
+        </text>
+      </svg>
+    );
+  }
+
   // Fallback badge
   return (
     <div className={`px-2.5 py-1 rounded-lg bg-slate-900 border border-slate-700 font-mono font-bold text-xs text-cyan-300 flex items-center justify-center ${className}`}>

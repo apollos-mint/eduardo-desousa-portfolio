@@ -74,8 +74,8 @@ export default function ExperienceSection({
                 key={exp.id}
                 className={`glass-panel rounded-2xl sm:rounded-3xl border-2 transition-all duration-300 relative overflow-hidden ${
                   isExpanded
-                    ? 'border-cyan-500/60 shadow-2xl shadow-cyan-500/15 bg-slate-950/95 dark:bg-slate-950/95 light:bg-white'
-                    : 'border-slate-800 dark:border-slate-800 light:border-slate-200 hover:border-cyan-500/40 bg-slate-950/70 dark:bg-slate-950/70 light:bg-white/90'
+                    ? 'border-cyan-500/60 shadow-2xl shadow-cyan-500/20 bg-slate-900/95 dark:bg-slate-900/95 light:bg-white ring-1 ring-cyan-500/30'
+                    : 'border-slate-800/80 dark:border-slate-800/80 light:border-slate-200 hover:border-cyan-500/40 bg-slate-900/60 dark:bg-slate-900/60 light:bg-white/90'
                 }`}
               >
                 {/* Top Distinct Accent Line */}
@@ -174,16 +174,37 @@ export default function ExperienceSection({
                       <div className="text-xs font-mono uppercase tracking-wider text-slate-300 font-bold">
                         {cvData.common.detailedResponsibilities || "DETAILED OPERATIONAL RESPONSIBILITIES:"}
                       </div>
-                      <div className="grid grid-cols-1 md:grid-cols-2 gap-2.5">
-                        {exp.responsibilities.map((resp, rIdx) => (
-                          <div
-                            key={rIdx}
-                            className="flex items-start space-x-2.5 text-xs text-slate-200"
-                          >
-                            <CheckCircle2 className="w-3.5 h-3.5 text-emerald-400 shrink-0 mt-0.5" />
-                            <span className="leading-snug">{resp}</span>
-                          </div>
-                        ))}
+                      <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+                        {exp.responsibilities.map((resp, rIdx) => {
+                          const colonIdx = resp.indexOf(':');
+                          if (colonIdx > 0 && colonIdx < 60) {
+                            const title = resp.substring(0, colonIdx);
+                            const rest = resp.substring(colonIdx + 1);
+                            return (
+                              <div
+                                key={rIdx}
+                                className="p-3.5 rounded-xl bg-slate-900/60 dark:bg-slate-900/60 light:bg-slate-50 border border-slate-800 dark:border-slate-800 light:border-slate-200 flex items-start space-x-2.5 text-xs text-slate-200 leading-relaxed shadow-sm hover:border-cyan-500/30 transition-colors"
+                              >
+                                <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0 mt-0.5" />
+                                <div>
+                                  <strong className="font-mono text-cyan-300 dark:text-cyan-300 light:text-cyan-700 font-bold block sm:inline">
+                                    {title}:
+                                  </strong>{' '}
+                                  <span className="text-slate-200 dark:text-slate-200 light:text-slate-700">{rest}</span>
+                                </div>
+                              </div>
+                            );
+                          }
+                          return (
+                            <div
+                              key={rIdx}
+                              className="p-3.5 rounded-xl bg-slate-900/60 dark:bg-slate-900/60 light:bg-slate-50 border border-slate-800 dark:border-slate-800 light:border-slate-200 flex items-start space-x-2.5 text-xs text-slate-200 leading-relaxed shadow-sm hover:border-cyan-500/30 transition-colors"
+                            >
+                              <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0 mt-0.5" />
+                              <span className="text-slate-200 dark:text-slate-200 light:text-slate-700">{resp}</span>
+                            </div>
+                          );
+                        })}
                       </div>
                     </div>
 
