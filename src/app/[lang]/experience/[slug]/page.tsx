@@ -8,6 +8,7 @@ import TopicVisualizer from '@/components/3d/TopicVisualizer';
 import HQPackWidget from '@/components/3d/HQPackWidget';
 import VDLWidget from '@/components/3d/VDLWidget';
 import ConsultantWidget from '@/components/3d/ConsultantWidget';
+import ExperienceInteractiveWidget from '@/components/interactive/ExperienceInteractiveWidget';
 import {
   ArrowLeft,
   ArrowRight,
@@ -152,6 +153,15 @@ export default async function ExperienceDetailPage({
               )}
             </div>
           ))}
+        </div>
+
+        {/* Specialized Interactive Command Center & Blueprint Hub */}
+        <div className="pt-2 pb-2">
+          <ExperienceInteractiveWidget
+            experienceId={experience.id}
+            company={experience.company}
+            currentLocale={lang as Locale}
+          />
         </div>
 
         {/* Operational Challenge, Solution & Impact Triad */}

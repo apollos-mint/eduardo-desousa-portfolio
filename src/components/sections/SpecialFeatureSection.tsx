@@ -61,11 +61,11 @@ export default function SpecialFeatureSection({
   ];
 
   return (
-    <section id="specialization" className="pt-10 sm:pt-14 pb-4 sm:pb-6 relative overflow-hidden">
+    <section id="specialization" className="pt-8 sm:pt-10 pb-6 sm:pb-8 relative overflow-hidden">
       {/* High-Tech Blueprint Matrix & Telemetry Background */}
-      <CyberTechBackground />
+      <CyberTechBackground currentLocale={currentLocale} />
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 space-y-8 sm:space-y-10">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 space-y-6 sm:space-y-8">
         {/* =========================================================================
            EXECUTIVE LEADERSHIP SUMMARY BANNER (HIGH-CONTRAST COMMAND MODULE)
            ========================================================================= */}
@@ -98,7 +98,7 @@ export default function SpecialFeatureSection({
         </div>
 
         {/* Section Title Header */}
-        <div className="max-w-3xl mx-auto text-center space-y-2 pt-1">
+        <div className="max-w-3xl mx-auto text-center space-y-2 pt-2 sm:pt-4">
           <div className="inline-flex items-center space-x-2 px-3.5 py-1 rounded-full bg-cyan-50 dark:bg-cyan-950/70 border border-cyan-500/30 text-xs font-mono font-bold text-cyan-800 dark:text-cyan-400">
             <span className="uppercase tracking-wider">{cvData.highlights.badge}</span>
           </div>
@@ -124,8 +124,11 @@ export default function SpecialFeatureSection({
             <div className="relative z-10 space-y-5">
               {/* Top Header Row: Icon + Title + 3 Key Metric Buttons */}
               <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-4">
-                <div className="flex items-start sm:items-center space-x-3.5">
-                  <div className="w-12 h-12 rounded-2xl bg-cyan-50 dark:bg-cyan-950/80 border border-cyan-500/30 flex items-center justify-center text-cyan-600 dark:text-cyan-400 shrink-0 group-hover:scale-110 transition-all duration-300 shadow-md shadow-cyan-500/10">
+                <Link
+                  href={sourcingPillar.href}
+                  className="flex items-start sm:items-center space-x-3.5 group/link"
+                >
+                  <div className="w-12 h-12 rounded-2xl bg-cyan-50 dark:bg-cyan-950/80 border border-cyan-500/30 flex items-center justify-center text-cyan-600 dark:text-cyan-400 shrink-0 group-hover/link:scale-110 group-hover:scale-110 transition-all duration-300 shadow-md shadow-cyan-500/10">
                     <Globe2 className="w-6 h-6" />
                   </div>
                   <div>
@@ -134,23 +137,32 @@ export default function SpecialFeatureSection({
                         Pilar Principal
                       </span>
                     </div>
-                    <h3 className="text-xl sm:text-2xl font-extrabold text-slate-900 dark:text-white group-hover:text-cyan-600 dark:group-hover:text-cyan-400 transition-colors leading-snug mt-0.5">
+                    <h3 className="text-xl sm:text-2xl font-extrabold text-slate-900 dark:text-white group-hover/link:text-cyan-600 dark:group-hover/link:text-cyan-400 group-hover:text-cyan-600 dark:group-hover:text-cyan-400 transition-colors leading-snug mt-0.5">
                       {sourcingPillar.title}
                     </h3>
                   </div>
-                </div>
+                </Link>
 
-                {/* 3 COMPLETE UNTRUNCATED KEY BUTTONS */}
+                {/* 3 COMPLETE UNTRUNCATED KEY BUTTONS WITH CONSISTENT HOVER & NAVIGATION */}
                 <div className="flex flex-wrap items-center gap-2">
-                  <span className="px-3 py-1.5 rounded-xl bg-emerald-50 dark:bg-emerald-950/80 border border-emerald-500/40 font-mono text-xs font-bold text-emerald-800 dark:text-emerald-300 shadow-sm whitespace-nowrap">
+                  <Link
+                    href={sourcingPillar.href}
+                    className="px-3.5 py-1.5 rounded-xl bg-emerald-50 dark:bg-emerald-950/80 border border-emerald-500/40 hover:border-emerald-400 font-mono text-xs font-bold text-emerald-800 dark:text-emerald-300 shadow-sm whitespace-nowrap transition-all duration-200 hover:scale-105 hover:bg-emerald-100 dark:hover:bg-emerald-900/90 cursor-pointer"
+                  >
                     ✓ {sourcingPillar.keyPoints[0]}
-                  </span>
-                  <span className="px-3 py-1.5 rounded-xl bg-cyan-50 dark:bg-cyan-950/80 border border-cyan-500/40 font-mono text-xs font-bold text-cyan-800 dark:text-cyan-300 shadow-sm whitespace-nowrap">
+                  </Link>
+                  <Link
+                    href={sourcingPillar.href}
+                    className="px-3.5 py-1.5 rounded-xl bg-cyan-50 dark:bg-cyan-950/80 border border-cyan-500/40 hover:border-cyan-400 font-mono text-xs font-bold text-cyan-800 dark:text-cyan-300 shadow-sm whitespace-nowrap transition-all duration-200 hover:scale-105 hover:bg-cyan-100 dark:hover:bg-cyan-900/90 cursor-pointer"
+                  >
                     ✓ {sourcingPillar.keyPoints[1]}
-                  </span>
-                  <span className="px-3 py-1.5 rounded-xl bg-indigo-50 dark:bg-indigo-950/80 border border-indigo-500/40 font-mono text-xs font-bold text-indigo-800 dark:text-indigo-300 shadow-sm whitespace-nowrap">
+                  </Link>
+                  <Link
+                    href={sourcingPillar.href}
+                    className="px-3.5 py-1.5 rounded-xl bg-indigo-50 dark:bg-indigo-950/80 border border-indigo-500/40 hover:border-indigo-400 font-mono text-xs font-bold text-indigo-800 dark:text-indigo-300 shadow-sm whitespace-nowrap transition-all duration-200 hover:scale-105 hover:bg-indigo-100 dark:hover:bg-indigo-900/90 cursor-pointer"
+                  >
                     ✓ {sourcingPillar.keyPoints[2]}
-                  </span>
+                  </Link>
                 </div>
               </div>
 
@@ -188,7 +200,7 @@ export default function SpecialFeatureSection({
                 </span>
                 <Link
                   href={sourcingPillar.href}
-                  className="inline-flex items-center space-x-1.5 text-xs font-bold text-cyan-700 dark:text-cyan-400 hover:text-cyan-600 dark:hover:text-cyan-300 transition-colors"
+                  className="inline-flex items-center space-x-1.5 px-4 py-2 rounded-xl bg-cyan-50 dark:bg-cyan-950/80 border border-cyan-500/40 hover:border-cyan-400 text-xs font-bold text-cyan-700 dark:text-cyan-300 hover:text-cyan-600 dark:hover:text-cyan-200 transition-all hover:scale-105 shadow-sm"
                 >
                   <span>{cvData.navigation.viewDeepDive}</span>
                   <ArrowRight className="w-3.5 h-3.5" />
@@ -208,20 +220,28 @@ export default function SpecialFeatureSection({
                 >
                   <div className="space-y-4">
                     <div className="flex flex-wrap items-center justify-between gap-2">
-                      <div className="w-11 h-11 rounded-2xl bg-cyan-50 dark:bg-cyan-950/80 border border-cyan-500/30 flex items-center justify-center text-cyan-600 dark:text-cyan-400 shrink-0 group-hover:scale-110 transition-all duration-300 shadow-md shadow-cyan-500/10">
+                      <Link
+                        href={pillar.href}
+                        className="w-11 h-11 rounded-2xl bg-cyan-50 dark:bg-cyan-950/80 border border-cyan-500/30 flex items-center justify-center text-cyan-600 dark:text-cyan-400 shrink-0 group-hover:scale-110 transition-all duration-300 shadow-md shadow-cyan-500/10 cursor-pointer"
+                      >
                         <Icon className="w-5 h-5" />
-                      </div>
+                      </Link>
 
-                      {/* UNTRUNCATED ACHIEVEMENT BADGE */}
-                      <span className="px-3 py-1 rounded-full bg-emerald-50 dark:bg-emerald-950/80 border border-emerald-500/40 font-mono text-[11px] font-bold text-emerald-800 dark:text-emerald-300 shadow-sm whitespace-nowrap">
+                      {/* UNTRUNCATED ACHIEVEMENT BADGE WITH CONSISTENT HOVER */}
+                      <Link
+                        href={pillar.href}
+                        className="px-3 py-1 rounded-full bg-emerald-50 dark:bg-emerald-950/80 border border-emerald-500/40 hover:border-emerald-400 font-mono text-[11px] font-bold text-emerald-800 dark:text-emerald-300 shadow-sm whitespace-nowrap transition-all duration-200 hover:scale-105 hover:bg-emerald-100 dark:hover:bg-emerald-900/90 cursor-pointer"
+                      >
                         ✓ {pillar.achievement}
-                      </span>
+                      </Link>
                     </div>
 
                     <div className="space-y-2">
-                      <h3 className="text-base sm:text-lg font-extrabold text-slate-900 dark:text-white group-hover:text-cyan-600 dark:group-hover:text-cyan-400 transition-colors leading-snug">
-                        {pillar.title}
-                      </h3>
+                      <Link href={pillar.href} className="block group/title cursor-pointer">
+                        <h3 className="text-base sm:text-lg font-extrabold text-slate-900 dark:text-white group-hover/title:text-cyan-600 dark:group-hover/title:text-cyan-400 group-hover:text-cyan-600 dark:group-hover:text-cyan-400 transition-colors leading-snug">
+                          {pillar.title}
+                        </h3>
+                      </Link>
                       <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed font-normal">
                         {renderFormattedText(pillar.description)}
                       </p>
@@ -256,7 +276,7 @@ export default function SpecialFeatureSection({
                     </span>
                     <Link
                       href={pillar.href}
-                      className="inline-flex items-center space-x-1 text-xs font-bold text-cyan-700 dark:text-cyan-400 hover:text-cyan-600 dark:hover:text-cyan-300 transition-colors"
+                      className="inline-flex items-center space-x-1.5 px-3.5 py-1.5 rounded-xl bg-cyan-50 dark:bg-cyan-950/80 border border-cyan-500/40 hover:border-cyan-400 text-xs font-bold text-cyan-700 dark:text-cyan-300 hover:text-cyan-600 dark:hover:text-cyan-200 transition-all hover:scale-105 shadow-sm"
                     >
                       <span>{cvData.navigation.viewDeepDive}</span>
                       <ArrowRight className="w-3.5 h-3.5" />
