@@ -21,7 +21,7 @@ export const esData: CVContent = {
   },
   hero: {
     badge: 'DISPONIBLE PARA PROYECTOS & LIDERAZGO TÉCNICO',
-    developedBySelfBadge: '⚡ Diseñado & Desarrollado por Eduardo de Sousa (Staff Engineer & Creative Technologist)',
+    developedBySelfBadge: '⚡ Diseñado & Desarrollado por Eduardo de Sousa (Ingeniero Staff & Tecnólogo Creativo)',
     titleLine1: 'Operaciones Globales,',
     titleLine2: 'Automatización & Alta Tecnología',
     subtitle: 'Liderando la convergencia estratégica entre aprovisionamiento internacional ($800K USD/año en Asia/LatAm), arquitectura de software operativo & automatización (CMMS, iPaaS) e ingeniería de precisión en alta tecnología (ASML, BMW OEM).',

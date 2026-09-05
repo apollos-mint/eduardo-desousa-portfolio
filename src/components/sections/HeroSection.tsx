@@ -156,15 +156,15 @@ export default function HeroSection({ currentLocale, cvData }: HeroSectionProps)
                   <div className="absolute bottom-3 right-3 w-4 h-4 border-b-2 border-r-2 border-cyan-400" />
 
                   {/* Live Status Tag */}
-                  <div className="absolute bottom-3 left-3 right-3 p-2.5 rounded-xl bg-slate-950/90 backdrop-blur-md border border-cyan-500/30 space-y-1">
-                    <div className="flex items-center justify-between">
-                      <span className="font-bold text-white text-xs sm:text-sm">Eduardo de Sousa</span>
-                      <span className="flex items-center space-x-1 text-[10px] font-mono text-emerald-400 bg-emerald-950/80 px-2 py-0.5 rounded-full border border-emerald-500/40">
-                        <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-ping" />
+                  <div className="absolute bottom-2.5 sm:bottom-3 left-2.5 sm:left-3 right-2.5 sm:right-3 p-2 sm:p-2.5 rounded-xl bg-white/95 dark:bg-slate-950/90 backdrop-blur-md border border-cyan-500/40 shadow-lg space-y-1">
+                    <div className="flex items-center justify-between gap-2">
+                      <span className="font-bold text-slate-950 dark:text-white text-xs sm:text-sm whitespace-nowrap">Eduardo de Sousa</span>
+                      <span className="flex items-center space-x-1 text-[9px] sm:text-[10px] font-mono text-emerald-700 dark:text-emerald-400 bg-emerald-50 dark:bg-emerald-950/80 px-2 py-0.5 rounded-full border border-emerald-500/40 shrink-0">
+                        <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-ping" />
                         <span>{cvData.common.verifiedLead}</span>
                       </span>
                     </div>
-                    <div className="text-[10px] sm:text-[11px] font-mono text-cyan-300 truncate">
+                    <div className="text-[10px] sm:text-[11px] font-mono font-medium text-cyan-800 dark:text-cyan-300 leading-snug">
                       {cvData.common.portraitSubtitle}
                     </div>
                   </div>

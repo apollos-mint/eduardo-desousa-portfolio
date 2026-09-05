@@ -147,6 +147,7 @@ export default function InfiniteBrandMarquee({ currentLocale }: InfiniteBrandMar
               dirRow1 === 'left' ? 'animate-marquee-left' : 'animate-marquee-right'
             }`}
             style={{
+              animationDuration: '62s',
               animationPlayState: isPausedRow1 ? 'paused' : undefined,
             }}
           >
@@ -155,8 +156,8 @@ export default function InfiniteBrandMarquee({ currentLocale }: InfiniteBrandMar
                 key={`comp-${brand.name}-${idx}`}
                 className="flex items-center space-x-2.5 px-3 py-1 rounded-lg bg-slate-50 dark:bg-slate-900/80 border border-slate-200 dark:border-slate-800 shrink-0 hover:border-cyan-500/50 transition-colors"
               >
-                <div className="h-4.5 flex items-center shrink-0">
-                  <BrandLogo name={brand.name} className="h-4 w-auto max-w-[70px]" />
+                <div className="h-5 flex items-center justify-center shrink-0">
+                  <BrandLogo name={brand.name} className="h-4.5 w-auto max-w-[80px]" />
                 </div>
                 <div className="border-l border-slate-200 dark:border-slate-800 pl-2">
                   <div className="text-[10px] font-bold text-slate-900 dark:text-white whitespace-nowrap">
@@ -232,6 +233,7 @@ export default function InfiniteBrandMarquee({ currentLocale }: InfiniteBrandMar
               dirRow2 === 'left' ? 'animate-marquee-left' : 'animate-marquee-right'
             }`}
             style={{
+              animationDuration: '36s',
               animationPlayState: isPausedRow2 ? 'paused' : undefined,
             }}
           >
@@ -240,8 +242,8 @@ export default function InfiniteBrandMarquee({ currentLocale }: InfiniteBrandMar
                 key={`tech-${tech.name}-${idx}`}
                 className="flex items-center space-x-2.5 px-3 py-1 rounded-lg bg-slate-50 dark:bg-slate-900/80 border border-slate-200 dark:border-slate-800 shrink-0 hover:border-emerald-500/50 transition-colors"
               >
-                <div className="h-4.5 flex items-center shrink-0">
-                  <BrandLogo name={tech.name} className="h-4 w-auto max-w-[70px]" />
+                <div className="h-5 flex items-center justify-center shrink-0">
+                  <BrandLogo name={tech.name} className="h-4.5 w-auto max-w-[80px]" />
                 </div>
                 <div className="border-l border-slate-200 dark:border-slate-800 pl-2">
                   <div className="text-[10px] font-bold text-slate-900 dark:text-white whitespace-nowrap">

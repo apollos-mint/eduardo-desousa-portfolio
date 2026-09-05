@@ -302,9 +302,112 @@ export default function BrandLogo({ name, className = 'w-6 h-6' }: BrandLogoProp
     );
   }
 
-  // Fallback badge
+  // LEAN SIX SIGMA
+  if (norm.includes('LEAN') || norm.includes('SIGMA')) {
+    return (
+      <svg viewBox="0 0 130 40" className={className}>
+        <rect width="130" height="40" rx="8" fill="#0f172a" stroke="#06b6d4" strokeWidth="1.5" />
+        <rect x="6" y="6" width="30" height="28" rx="4" fill="#0891b2" />
+        <text x="21" y="25" fontSize="16" fontWeight="900" fontFamily="sans-serif" textAnchor="middle" fill="#ffffff">
+          6σ
+        </text>
+        <text x="80" y="25" fontSize="13" fontWeight="900" fontFamily="sans-serif" textAnchor="middle" fill="#38bdf8">
+          Six Sigma
+        </text>
+      </svg>
+    );
+  }
+
+  // ERP ISAH
+  if (norm.includes('ISAH')) {
+    return (
+      <svg viewBox="0 0 120 40" className={className}>
+        <rect width="120" height="40" rx="8" fill="#1e293b" stroke="#38bdf8" strokeWidth="1.5" />
+        <rect x="6" y="6" width="28" height="28" rx="4" fill="#0284c7" />
+        <path d="M12,20 L28,20 M20,12 L20,28" stroke="#ffffff" strokeWidth="2" strokeLinecap="round" />
+        <text x="75" y="25" fontSize="14" fontWeight="900" fontFamily="sans-serif" textAnchor="middle" fill="#ffffff">
+          ERP ISAH
+        </text>
+      </svg>
+    );
+  }
+
+  // CLEANROOM CLASS 5 / ISO 14644
+  if (norm.includes('CLEANROOM') || norm.includes('CLASS 5') || norm.includes('14644')) {
+    return (
+      <svg viewBox="0 0 130 40" className={className}>
+        <rect width="130" height="40" rx="8" fill="#0f172a" stroke="#10b981" strokeWidth="1.5" />
+        <circle cx="20" cy="20" r="10" fill="#065f46" stroke="#34d399" strokeWidth="1.5" />
+        <circle cx="20" cy="20" r="4" fill="#6ee7b7" />
+        <text x="78" y="25" fontSize="12" fontWeight="900" fontFamily="sans-serif" textAnchor="middle" fill="#a7f3d0">
+          ISO Class 5
+        </text>
+      </svg>
+    );
+  }
+
+  // 8D RCA
+  if (norm.includes('8D') || norm.includes('RCA')) {
+    return (
+      <svg viewBox="0 0 120 40" className={className}>
+        <rect width="120" height="40" rx="8" fill="#1e1b4b" stroke="#818cf8" strokeWidth="1.5" />
+        <circle cx="20" cy="20" r="12" fill="#4338ca" />
+        <text x="20" y="25" fontSize="13" fontWeight="900" fontFamily="sans-serif" textAnchor="middle" fill="#ffffff">
+          8D
+        </text>
+        <text x="70" y="25" fontSize="14" fontWeight="900" fontFamily="sans-serif" textAnchor="middle" fill="#c7d2fe">
+          RCA Hub
+        </text>
+      </svg>
+    );
+  }
+
+  // GAGE R&R
+  if (norm.includes('GAGE') || norm.includes('R&R')) {
+    return (
+      <svg viewBox="0 0 120 40" className={className}>
+        <rect width="120" height="40" rx="8" fill="#042f2e" stroke="#14b8a6" strokeWidth="1.5" />
+        <path d="M12,24 L16,14 L24,14 L28,24 Z" fill="none" stroke="#2dd4bf" strokeWidth="2" />
+        <circle cx="20" cy="18" r="2" fill="#ffffff" />
+        <text x="72" y="25" fontSize="13" fontWeight="900" fontFamily="sans-serif" textAnchor="middle" fill="#ffffff">
+          Gage R&R
+        </text>
+      </svg>
+    );
+  }
+
+  // SPC METROLOGY
+  if (norm.includes('SPC') || norm.includes('METROLOGY')) {
+    return (
+      <svg viewBox="0 0 120 40" className={className}>
+        <rect width="120" height="40" rx="8" fill="#0f172a" stroke="#0ea5e9" strokeWidth="1.5" />
+        <path d="M10,26 Q18,26 20,14 Q22,26 30,26" fill="none" stroke="#38bdf8" strokeWidth="2" />
+        <text x="72" y="25" fontSize="13" fontWeight="900" fontFamily="sans-serif" textAnchor="middle" fill="#e0f2fe">
+          SPC Control
+        </text>
+      </svg>
+    );
+  }
+
+  // VCA VOL
+  if (norm.includes('VCA') || norm.includes('VOL')) {
+    return (
+      <svg viewBox="0 0 120 40" className={className}>
+        <rect width="120" height="40" rx="8" fill="#14532d" stroke="#22c55e" strokeWidth="1.5" />
+        <polygon points="20,10 28,15 28,25 20,30 12,25 12,15" fill="#16a34a" stroke="#86efac" strokeWidth="1" />
+        <text x="20" y="23" fontSize="9" fontWeight="900" fontFamily="sans-serif" textAnchor="middle" fill="#ffffff">
+          ✓
+        </text>
+        <text x="72" y="25" fontSize="13" fontWeight="900" fontFamily="sans-serif" textAnchor="middle" fill="#f0fdf4">
+          VCA VOL
+        </text>
+      </svg>
+    );
+  }
+
+  // Fallback badge with safe sizing
   return (
-    <div className={`px-2.5 py-1 rounded-lg bg-slate-900 border border-slate-700 font-mono font-bold text-xs text-cyan-300 flex items-center justify-center ${className}`}>
+    <div className={`px-2.5 py-1 rounded-lg bg-slate-900 border border-cyan-500/40 font-mono font-bold text-[10px] text-cyan-300 flex items-center justify-center whitespace-nowrap ${className}`}>
       {name}
     </div>
   );

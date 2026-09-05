@@ -21,7 +21,7 @@ export const nlData: CVContent = {
   },
   hero: {
     badge: 'BESCHIKBAAR VOOR TECHNISCH LEIDERSCHAP & HIGH-TECH ROLLEN',
-    developedBySelfBadge: '⚡ Ontworpen & Ontwikkeld door Eduardo de Sousa (Staff Engineer & Creative Technologist)',
+    developedBySelfBadge: '⚡ Ontworpen & Ontwikkeld door Eduardo de Sousa (Staff Engineer & Creatieve Technoloog)',
     titleLine1: 'Globale Operaties,',
     titleLine2: 'Procesautomatisering & High-Tech',
     subtitle: 'Leidinggevend op het snijvlak van internationale toeleveringsketens ($800K USD/jaar in Azië/LatAm), operationele software-architectuur (CMMS, iPaaS) en kritische high-tech precisieproductie (ASML, BMW OEM).',

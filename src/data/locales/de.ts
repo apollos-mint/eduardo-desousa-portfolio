@@ -21,7 +21,7 @@ export const deData: CVContent = {
   },
   hero: {
     badge: 'VERFÜGBAR FÜR TECHNISCHE FÜHRUNGSAUFGABEN & PROJEKTE',
-    developedBySelfBadge: '⚡ Konzipiert & Entwickelt von Eduardo de Sousa (Staff Engineer & Creative Technologist)',
+    developedBySelfBadge: '⚡ Konzipiert & Entwickelt von Eduardo de Sousa (Staff Engineer & Kreativer Technologe)',
     titleLine1: 'Globale Operative Systeme,',
     titleLine2: 'Prozessautomatisierung & High-Tech',
     subtitle: 'Führend an der strategischen Schnittstelle zwischen internationalen Lieferketten ($800K USD/Jahr in Asien/LatAm), betrieblicher Softwarearchitektur (CMMS, iPaaS) und kritischer High-Tech-Präzisionsfertigung (ASML, BMW OEM).',

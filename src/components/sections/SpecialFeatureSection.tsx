@@ -4,6 +4,7 @@ import React from 'react';
 import Link from 'next/link';
 import { Locale, CVContent } from '@/types';
 import BrandLogo from '@/components/ui/BrandLogos';
+import CyberTechBackground from '@/components/ui/CyberTechBackground';
 import { renderFormattedText } from '@/lib/formatter';
 import {
   Cpu,
@@ -61,25 +62,34 @@ export default function SpecialFeatureSection({
 
   return (
     <section id="specialization" className="pt-10 sm:pt-14 pb-4 sm:pb-6 relative overflow-hidden">
+      {/* High-Tech Blueprint Matrix & Telemetry Background */}
+      <CyberTechBackground />
+
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 space-y-8 sm:space-y-10">
         {/* =========================================================================
-           EXECUTIVE LEADERSHIP SUMMARY BANNER (CRISP CONTRAST IN LIGHT & DARK)
+           EXECUTIVE LEADERSHIP SUMMARY BANNER (HIGH-CONTRAST COMMAND MODULE)
            ========================================================================= */}
-        <div className="p-6 sm:p-8 rounded-3xl executive-summary-banner bg-white dark:bg-gradient-to-r dark:from-slate-900/95 dark:via-slate-900/80 dark:to-slate-950 border-2 border-cyan-500/40 flex flex-col md:flex-row items-center justify-between gap-6 shadow-xl dark:shadow-2xl">
-          <div className="space-y-3 max-w-3xl">
-            <div className="inline-flex items-center space-x-2 px-3.5 py-1 rounded-full bg-cyan-50 dark:bg-cyan-950/80 border border-cyan-500/30 text-xs font-mono font-bold text-cyan-800 dark:text-cyan-400">
+        <div className="p-6 sm:p-8 rounded-3xl executive-summary-banner bg-white/95 dark:bg-gradient-to-r dark:from-slate-900/95 dark:via-slate-900/80 dark:to-slate-950 border-2 border-cyan-500/50 flex flex-col md:flex-row items-center justify-between gap-6 shadow-xl shadow-cyan-500/5 dark:shadow-2xl relative overflow-hidden backdrop-blur-sm">
+          {/* High-tech corner accents */}
+          <div className="absolute top-0 left-0 w-6 h-6 border-t-2 border-l-2 border-cyan-500" />
+          <div className="absolute top-0 right-0 w-6 h-6 border-t-2 border-r-2 border-cyan-500" />
+          <div className="absolute bottom-0 left-0 w-6 h-6 border-b-2 border-l-2 border-cyan-500" />
+          <div className="absolute bottom-0 right-0 w-6 h-6 border-b-2 border-r-2 border-cyan-500" />
+
+          <div className="space-y-3 max-w-3xl relative z-10">
+            <div className="inline-flex items-center space-x-2 px-3.5 py-1 rounded-full bg-cyan-50 dark:bg-cyan-950/80 border border-cyan-500/40 text-xs font-mono font-bold text-cyan-900 dark:text-cyan-300 shadow-sm">
               <Award className="w-3.5 h-3.5 text-cyan-600 dark:text-cyan-400" />
               <span className="uppercase tracking-wider">{cvData.personal.roleTitle}</span>
             </div>
-            <p className="text-sm sm:text-base text-slate-700 dark:text-slate-200 leading-relaxed font-normal">
+            <p className="text-sm sm:text-base text-slate-900 dark:text-slate-100 leading-relaxed font-normal">
               {renderFormattedText(cvData.personal.summary)}
             </p>
           </div>
 
-          <div className="shrink-0 w-full md:w-auto">
+          <div className="shrink-0 w-full md:w-auto relative z-10">
             <Link
               href={`/${currentLocale}/contact`}
-              className="w-full md:w-auto inline-flex items-center justify-center space-x-2 px-6 py-3.5 sm:py-4 rounded-2xl bg-gradient-to-r from-cyan-600 via-emerald-600 to-cyan-600 dark:from-cyan-500 dark:via-emerald-500 dark:to-cyan-500 hover:from-cyan-500 hover:to-emerald-500 text-white dark:text-slate-950 font-extrabold text-xs sm:text-sm uppercase tracking-wider transition-all duration-200 shadow-xl shadow-cyan-500/20 whitespace-nowrap hover:scale-[1.02]"
+              className="w-full md:w-auto inline-flex items-center justify-center space-x-2 px-6 py-3.5 sm:py-4 rounded-2xl bg-gradient-to-r from-cyan-600 via-emerald-600 to-cyan-600 dark:from-cyan-500 dark:via-emerald-500 dark:to-cyan-500 hover:from-cyan-500 hover:to-emerald-500 text-white dark:text-slate-950 font-extrabold text-xs sm:text-sm uppercase tracking-wider transition-all duration-200 shadow-xl shadow-cyan-500/25 whitespace-nowrap hover:scale-[1.02]"
             >
               <span>{cvData.common.contactTitle}</span>
               <ArrowRight className="w-4 h-4 text-white dark:text-slate-950" />

@@ -1,0 +1,8 @@
+.git
+node_modules
+.next
+*.mp4
+*.mkv
+*.mp3
+*.png
+frames*

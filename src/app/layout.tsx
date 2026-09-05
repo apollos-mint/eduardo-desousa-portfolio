@@ -46,7 +46,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className="light scroll-smooth" suppressHydrationWarning>
+    <html lang="en" className="light scroll-smooth" suppressHydrationWarning style={{ backgroundColor: '#f8fafc', colorScheme: 'light' }}>
       <head>
         <meta name="color-scheme" content="light dark" />
         <script
@@ -58,12 +58,15 @@ export default function RootLayout({
                   if (stored === 'dark') {
                     document.documentElement.classList.add('dark');
                     document.documentElement.classList.remove('light');
+                    document.documentElement.style.backgroundColor = '#07090e';
                   } else {
                     document.documentElement.classList.add('light');
                     document.documentElement.classList.remove('dark');
+                    document.documentElement.style.backgroundColor = '#f8fafc';
                   }
                 } catch (e) {
                   document.documentElement.classList.add('light');
+                  document.documentElement.style.backgroundColor = '#f8fafc';
                 }
               })();
             `,
@@ -76,7 +79,7 @@ export default function RootLayout({
           rel="stylesheet"
         />
       </head>
-      <body className="bg-slate-50 dark:bg-[#07090e] text-slate-900 dark:text-slate-100 antialiased min-h-screen selection:bg-cyan-500 selection:text-slate-950 font-sans">
+      <body className="bg-slate-50 dark:bg-[#07090e] text-slate-900 dark:text-slate-100 antialiased min-h-screen selection:bg-cyan-500 selection:text-slate-950 font-sans" style={{ backgroundColor: '#f8fafc' }}>
         {children}
         <Analytics />
         <SpeedInsights />
