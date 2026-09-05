@@ -62,7 +62,7 @@ export default function ContactSection({ currentLocale, cvData }: ContactSection
   };
 
   return (
-    <section id="contact" className="pt-2 sm:pt-4 pb-20 sm:pb-24 relative overflow-hidden bg-gradient-to-b from-transparent via-slate-900/50 to-slate-950/80">
+    <section id="contact" className="pt-2 sm:pt-4 pb-20 sm:pb-24 relative overflow-hidden bg-gradient-to-b from-transparent via-slate-100/40 to-slate-200/40 dark:via-slate-900/50 dark:to-slate-950/80">
       {/* Truly Dynamic WebGL Background */}
       <div className="absolute inset-0 opacity-50">
         <HeroScene />
@@ -72,16 +72,16 @@ export default function ContactSection({ currentLocale, cvData }: ContactSection
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Section Header */}
         <div className="max-w-3xl mx-auto text-center space-y-4 mb-16">
-          <div className="inline-flex items-center space-x-2 px-3.5 py-1 rounded-full bg-emerald-950/70 dark:bg-emerald-950/70 light:bg-emerald-100 border border-emerald-500/30 text-xs font-mono text-emerald-400 dark:text-emerald-400 light:text-emerald-700">
+          <div className="inline-flex items-center space-x-2 px-3.5 py-1 rounded-full bg-emerald-50 dark:bg-emerald-950/70 border border-emerald-500/30 text-xs font-mono font-bold text-emerald-800 dark:text-emerald-400">
             <MessageSquare className="w-3.5 h-3.5" />
             <span className="uppercase tracking-wider">
               {cvData.navigation.contact} // Direct Line
             </span>
           </div>
-          <h2 className="text-3xl sm:text-5xl font-extrabold text-white tracking-tight">
+          <h2 className="text-3xl sm:text-5xl font-extrabold text-slate-900 dark:text-white tracking-tight">
             {cvData.common.contactTitle}
           </h2>
-          <p className="text-sm sm:text-base text-slate-200">
+          <p className="text-sm sm:text-base text-slate-600 dark:text-slate-200">
             {cvData.common.contactSubtitle}
           </p>
         </div>
@@ -102,7 +102,7 @@ export default function ContactSection({ currentLocale, cvData }: ContactSection
                   />
                 </div>
                 <div>
-                  <h3 className="text-lg font-bold text-white leading-tight">
+                  <h3 className="text-lg font-bold text-slate-900 dark:text-white leading-tight">
                     Eduardo de Sousa
                   </h3>
                   <div className="text-xs text-cyan-400 font-mono mt-0.5">
@@ -210,13 +210,13 @@ export default function ContactSection({ currentLocale, cvData }: ContactSection
                 </div>
               ) : (
                 <form onSubmit={handleSubmit} className="space-y-5">
-                  <h3 className="text-xl sm:text-2xl font-bold text-white">
+                  <h3 className="text-xl sm:text-2xl font-bold text-slate-900 dark:text-white">
                     {cvData.common.sendMessage}
                   </h3>
 
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     <div className="space-y-1.5">
-                      <label className="block text-xs font-mono text-slate-300">
+                      <label className="block text-xs font-mono text-slate-700 dark:text-slate-300">
                         {cvData.contact.fullName}
                       </label>
                       <input
@@ -225,12 +225,12 @@ export default function ContactSection({ currentLocale, cvData }: ContactSection
                         value={formData.name}
                         onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                         placeholder={cvData.contact.fullNamePlaceholder}
-                        className="w-full px-4 py-3 rounded-xl bg-slate-950/80 dark:bg-slate-950/80 light:bg-slate-100 border border-slate-800 dark:border-slate-800 light:border-slate-300 focus:border-cyan-500 focus:outline-none text-slate-100 text-xs sm:text-sm"
+                        className="w-full px-4 py-3 rounded-xl bg-white dark:bg-slate-950/80 border border-slate-300 dark:border-slate-800 focus:border-cyan-500 focus:outline-none text-slate-900 dark:text-slate-100 text-xs sm:text-sm shadow-sm"
                       />
                     </div>
 
                     <div className="space-y-1.5">
-                      <label className="block text-xs font-mono text-slate-300">
+                      <label className="block text-xs font-mono text-slate-700 dark:text-slate-300">
                         {cvData.contact.email}
                       </label>
                       <input
@@ -239,14 +239,14 @@ export default function ContactSection({ currentLocale, cvData }: ContactSection
                         value={formData.email}
                         onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                         placeholder={cvData.contact.emailPlaceholder}
-                        className="w-full px-4 py-3 rounded-xl bg-slate-950/80 dark:bg-slate-950/80 light:bg-slate-100 border border-slate-800 dark:border-slate-800 light:border-slate-300 focus:border-cyan-500 focus:outline-none text-slate-100 text-xs sm:text-sm"
+                        className="w-full px-4 py-3 rounded-xl bg-white dark:bg-slate-950/80 border border-slate-300 dark:border-slate-800 focus:border-cyan-500 focus:outline-none text-slate-900 dark:text-slate-100 text-xs sm:text-sm shadow-sm"
                       />
                     </div>
                   </div>
 
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     <div className="space-y-1.5">
-                      <label className="block text-xs font-mono text-slate-300">
+                      <label className="block text-xs font-mono text-slate-700 dark:text-slate-300">
                         {cvData.contact.company}
                       </label>
                       <input
@@ -254,18 +254,18 @@ export default function ContactSection({ currentLocale, cvData }: ContactSection
                         value={formData.company}
                         onChange={(e) => setFormData({ ...formData, company: e.target.value })}
                         placeholder={cvData.contact.companyPlaceholder}
-                        className="w-full px-4 py-3 rounded-xl bg-slate-950/80 dark:bg-slate-950/80 light:bg-slate-100 border border-slate-800 dark:border-slate-800 light:border-slate-300 focus:border-cyan-500 focus:outline-none text-slate-100 text-xs sm:text-sm"
+                        className="w-full px-4 py-3 rounded-xl bg-white dark:bg-slate-950/80 border border-slate-300 dark:border-slate-800 focus:border-cyan-500 focus:outline-none text-slate-900 dark:text-slate-100 text-xs sm:text-sm shadow-sm"
                       />
                     </div>
 
                     <div className="space-y-1.5">
-                      <label className="block text-xs font-mono text-slate-300">
+                      <label className="block text-xs font-mono text-slate-700 dark:text-slate-300">
                         {cvData.contact.topic}
                       </label>
                       <select
                         value={formData.subject}
                         onChange={(e) => setFormData({ ...formData, subject: e.target.value })}
-                        className="w-full px-4 py-3 rounded-xl bg-slate-950/80 dark:bg-slate-950/80 light:bg-slate-100 border border-slate-800 dark:border-slate-800 light:border-slate-300 focus:border-cyan-500 focus:outline-none text-slate-100 text-xs sm:text-sm"
+                        className="w-full px-4 py-3 rounded-xl bg-white dark:bg-slate-950/80 border border-slate-300 dark:border-slate-800 focus:border-cyan-500 focus:outline-none text-slate-900 dark:text-slate-100 text-xs sm:text-sm shadow-sm"
                       >
                         <option>{cvData.contact.topicOption1}</option>
                         <option>{cvData.contact.topicOption2}</option>
@@ -277,7 +277,7 @@ export default function ContactSection({ currentLocale, cvData }: ContactSection
                   </div>
 
                   <div className="space-y-1.5">
-                    <label className="block text-xs font-mono text-slate-300">
+                    <label className="block text-xs font-mono text-slate-700 dark:text-slate-300">
                       {cvData.contact.messageScope}
                     </label>
                     <textarea
@@ -286,7 +286,7 @@ export default function ContactSection({ currentLocale, cvData }: ContactSection
                       value={formData.message}
                       onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                       placeholder={cvData.contact.messagePlaceholder}
-                      className="w-full px-4 py-3 rounded-xl bg-slate-950/80 dark:bg-slate-950/80 light:bg-slate-100 border border-slate-800 dark:border-slate-800 light:border-slate-300 focus:border-cyan-500 focus:outline-none text-slate-100 text-xs sm:text-sm resize-none"
+                      className="w-full px-4 py-3 rounded-xl bg-white dark:bg-slate-950/80 border border-slate-300 dark:border-slate-800 focus:border-cyan-500 focus:outline-none text-slate-900 dark:text-slate-100 text-xs sm:text-sm resize-none shadow-sm"
                     />
                   </div>
 

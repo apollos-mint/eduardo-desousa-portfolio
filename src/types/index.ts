@@ -184,6 +184,8 @@ export interface CVContent {
     achievement1: string;
     achievement2: string;
     achievement3: string;
+    sourcingPill2: string;
+    sourcingPill3: string;
     ecosystemLabel: string;
     availabilityStatus: string;
   };

@@ -4,7 +4,7 @@ import React, { useEffect, useState } from 'react';
 import { Sun, Moon } from 'lucide-react';
 
 export default function ThemeToggle() {
-  const [theme, setTheme] = useState<'dark' | 'light'>('dark');
+  const [theme, setTheme] = useState<'dark' | 'light'>('light');
   const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
@@ -14,10 +14,8 @@ export default function ThemeToggle() {
       setTheme(stored);
       applyTheme(stored);
     } else {
-      const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-      const initial = prefersDark ? 'dark' : 'dark'; // default to high-tech dark luxury
-      setTheme(initial);
-      applyTheme(initial);
+      setTheme('light');
+      applyTheme('light');
     }
   }, []);
 
@@ -41,7 +39,7 @@ export default function ThemeToggle() {
 
   if (!mounted) {
     return (
-      <div className="w-8 h-8 rounded-lg bg-slate-900/50 border border-slate-800 animate-pulse" />
+      <div className="w-8 h-8 rounded-lg bg-slate-200 dark:bg-slate-900/50 border border-slate-300 dark:border-slate-800 animate-pulse" />
     );
   }
 
@@ -49,12 +47,12 @@ export default function ThemeToggle() {
     <button
       onClick={toggleTheme}
       aria-label="Toggle Theme"
-      className="relative p-2 rounded-xl bg-slate-900/80 hover:bg-slate-800 border border-slate-800 text-slate-300 hover:text-cyan-400 transition-all duration-200 shadow-md group flex items-center justify-center"
+      className="relative p-2 rounded-xl bg-white dark:bg-slate-900/80 hover:bg-slate-100 dark:hover:bg-slate-800 border border-slate-200 dark:border-slate-800 text-slate-700 dark:text-slate-300 hover:text-cyan-600 dark:hover:text-cyan-400 transition-all duration-200 shadow-sm group flex items-center justify-center"
     >
       {theme === 'dark' ? (
         <Sun className="w-4 h-4 text-amber-400 group-hover:rotate-45 transition-transform duration-300" />
       ) : (
-        <Moon className="w-4 h-4 text-indigo-500 group-hover:-rotate-12 transition-transform duration-300" />
+        <Moon className="w-4 h-4 text-indigo-600 group-hover:-rotate-12 transition-transform duration-300" />
       )}
     </button>
   );

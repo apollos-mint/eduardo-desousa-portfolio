@@ -86,64 +86,64 @@ export default function InfiniteBrandMarquee({ currentLocale }: InfiniteBrandMar
   const duplicatedTechs = [...techList, ...techList];
 
   return (
-    <div className="w-full space-y-4 pt-2">
+    <div className="w-full space-y-2.5 pt-1">
       {/* =========================================================================
          LINE 1: CLIENT COMPANIES & MARITIME/OEM ECOSYSTEMS
          ========================================================================= */}
-      <div className="space-y-2">
+      <div className="space-y-1.5">
         {/* Row Header + Controls */}
         <div className="flex items-center justify-between text-xs font-mono px-1">
-          <div className="flex items-center space-x-2 text-cyan-400 dark:text-cyan-400 light:text-cyan-700 font-bold tracking-wider">
+          <div className="flex items-center space-x-2 text-cyan-800 dark:text-cyan-400 font-bold tracking-wider text-[11px] sm:text-xs">
             <Building2 className="w-3.5 h-3.5" />
             <span>{t.companies}</span>
           </div>
 
           {/* Direction & Pause Controls for Line 1 */}
-          <div className="flex items-center space-x-1.5 bg-slate-900/90 dark:bg-slate-900/90 light:bg-slate-100 p-1 rounded-xl border border-slate-800 dark:border-slate-800 light:border-slate-300">
+          <div className="flex items-center space-x-1 bg-white dark:bg-slate-900/90 p-0.5 rounded-lg border border-slate-200 dark:border-slate-800 shadow-sm">
             <button
               onClick={() => setDirRow1('left')}
               title="Scroll Left"
-              className={`p-1 rounded-lg transition-colors ${
+              className={`p-1 rounded transition-colors ${
                 dirRow1 === 'left'
                   ? 'bg-cyan-500 text-slate-950 font-bold'
-                  : 'text-slate-400 hover:text-white'
+                  : 'text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white'
               }`}
             >
-              <ChevronLeft className="w-3.5 h-3.5" />
+              <ChevronLeft className="w-3 h-3" />
             </button>
             <button
               onClick={() => setIsPausedRow1(!isPausedRow1)}
               title={isPausedRow1 ? 'Play' : 'Pause'}
-              className={`p-1 rounded-lg transition-colors ${
+              className={`p-1 rounded transition-colors ${
                 isPausedRow1
                   ? 'bg-emerald-500 text-slate-950 font-bold'
-                  : 'text-slate-400 hover:text-white'
+                  : 'text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white'
               }`}
             >
-              {isPausedRow1 ? <Play className="w-3.5 h-3.5 fill-current" /> : <Pause className="w-3.5 h-3.5 fill-current" />}
+              {isPausedRow1 ? <Play className="w-3 h-3 fill-current" /> : <Pause className="w-3 h-3 fill-current" />}
             </button>
             <button
               onClick={() => setDirRow1('right')}
               title="Scroll Right"
-              className={`p-1 rounded-lg transition-colors ${
+              className={`p-1 rounded transition-colors ${
                 dirRow1 === 'right'
                   ? 'bg-cyan-500 text-slate-950 font-bold'
-                  : 'text-slate-400 hover:text-white'
+                  : 'text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white'
               }`}
             >
-              <ChevronRight className="w-3.5 h-3.5" />
+              <ChevronRight className="w-3 h-3" />
             </button>
           </div>
         </div>
 
         {/* Marquee Row 1 */}
-        <div className="glass-panel p-3 sm:p-3.5 rounded-2xl border border-cyan-500/30 dark:border-cyan-500/30 light:border-slate-200 relative overflow-hidden shadow-xl group">
+        <div className="glass-panel p-2 sm:p-2.5 rounded-xl border border-cyan-500/30 dark:border-cyan-500/30 relative overflow-hidden shadow-sm group bg-white/90 dark:bg-slate-900/60">
           {/* Edge Gradient Fades */}
-          <div className="absolute left-0 top-0 bottom-0 w-12 bg-gradient-to-r from-slate-950 dark:from-slate-950 light:from-white to-transparent z-10 pointer-events-none" />
-          <div className="absolute right-0 top-0 bottom-0 w-12 bg-gradient-to-l from-slate-950 dark:from-slate-950 light:from-white to-transparent z-10 pointer-events-none" />
+          <div className="absolute left-0 top-0 bottom-0 w-12 bg-gradient-to-r from-slate-50 dark:from-slate-950 to-transparent z-10 pointer-events-none" />
+          <div className="absolute right-0 top-0 bottom-0 w-12 bg-gradient-to-l from-slate-50 dark:from-slate-950 to-transparent z-10 pointer-events-none" />
 
           <div
-            className={`flex items-center space-x-5 ${
+            className={`flex items-center space-x-4 ${
               dirRow1 === 'left' ? 'animate-marquee-left' : 'animate-marquee-right'
             }`}
             style={{
@@ -153,16 +153,16 @@ export default function InfiniteBrandMarquee({ currentLocale }: InfiniteBrandMar
             {duplicatedCompanies.map((brand, idx) => (
               <div
                 key={`comp-${brand.name}-${idx}`}
-                className="flex items-center space-x-3 px-3.5 py-1.5 rounded-xl bg-slate-900/80 dark:bg-slate-900/80 light:bg-slate-100 border border-slate-800 dark:border-slate-800 light:border-slate-200 shrink-0 hover:border-cyan-500/50 transition-colors"
+                className="flex items-center space-x-2.5 px-3 py-1 rounded-lg bg-slate-50 dark:bg-slate-900/80 border border-slate-200 dark:border-slate-800 shrink-0 hover:border-cyan-500/50 transition-colors"
               >
-                <div className="h-5 flex items-center shrink-0">
-                  <BrandLogo name={brand.name} className="h-4.5 w-auto max-w-[75px]" />
+                <div className="h-4.5 flex items-center shrink-0">
+                  <BrandLogo name={brand.name} className="h-4 w-auto max-w-[70px]" />
                 </div>
-                <div className="border-l border-slate-800 dark:border-slate-800 light:border-slate-300 pl-2.5">
-                  <div className="text-[11px] font-bold text-slate-900 dark:text-white whitespace-nowrap">
+                <div className="border-l border-slate-200 dark:border-slate-800 pl-2">
+                  <div className="text-[10px] font-bold text-slate-900 dark:text-white whitespace-nowrap">
                     {brand.name}
                   </div>
-                  <div className="text-[9px] font-mono text-cyan-400 dark:text-cyan-400 light:text-cyan-700 whitespace-nowrap">
+                  <div className="text-[9px] font-mono text-cyan-700 dark:text-cyan-400 whitespace-nowrap">
                     {brand.category}
                   </div>
                 </div>
@@ -175,60 +175,60 @@ export default function InfiniteBrandMarquee({ currentLocale }: InfiniteBrandMar
       {/* =========================================================================
          LINE 2: TECHNOLOGIES, SYSTEMS & ACCREDITED CERTIFICATIONS
          ========================================================================= */}
-      <div className="space-y-2">
+      <div className="space-y-1.5">
         {/* Row Header + Controls */}
         <div className="flex items-center justify-between text-xs font-mono px-1">
-          <div className="flex items-center space-x-2 text-emerald-400 dark:text-emerald-400 light:text-emerald-700 font-bold tracking-wider">
+          <div className="flex items-center space-x-2 text-emerald-800 dark:text-emerald-400 font-bold tracking-wider text-[11px] sm:text-xs">
             <Cpu className="w-3.5 h-3.5" />
             <span>{t.techs}</span>
           </div>
 
           {/* Direction & Pause Controls for Line 2 */}
-          <div className="flex items-center space-x-1.5 bg-slate-900/90 dark:bg-slate-900/90 light:bg-slate-100 p-1 rounded-xl border border-slate-800 dark:border-slate-800 light:border-slate-300">
+          <div className="flex items-center space-x-1 bg-white dark:bg-slate-900/90 p-0.5 rounded-lg border border-slate-200 dark:border-slate-800 shadow-sm">
             <button
               onClick={() => setDirRow2('left')}
               title="Scroll Left"
-              className={`p-1 rounded-lg transition-colors ${
+              className={`p-1 rounded transition-colors ${
                 dirRow2 === 'left'
                   ? 'bg-emerald-500 text-slate-950 font-bold'
-                  : 'text-slate-400 hover:text-white'
+                  : 'text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white'
               }`}
             >
-              <ChevronLeft className="w-3.5 h-3.5" />
+              <ChevronLeft className="w-3 h-3" />
             </button>
             <button
               onClick={() => setIsPausedRow2(!isPausedRow2)}
               title={isPausedRow2 ? 'Play' : 'Pause'}
-              className={`p-1 rounded-lg transition-colors ${
+              className={`p-1 rounded transition-colors ${
                 isPausedRow2
                   ? 'bg-cyan-500 text-slate-950 font-bold'
-                  : 'text-slate-400 hover:text-white'
+                  : 'text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white'
               }`}
             >
-              {isPausedRow2 ? <Play className="w-3.5 h-3.5 fill-current" /> : <Pause className="w-3.5 h-3.5 fill-current" />}
+              {isPausedRow2 ? <Play className="w-3 h-3 fill-current" /> : <Pause className="w-3 h-3 fill-current" />}
             </button>
             <button
               onClick={() => setDirRow2('right')}
               title="Scroll Right"
-              className={`p-1 rounded-lg transition-colors ${
+              className={`p-1 rounded transition-colors ${
                 dirRow2 === 'right'
                   ? 'bg-emerald-500 text-slate-950 font-bold'
-                  : 'text-slate-400 hover:text-white'
+                  : 'text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white'
               }`}
             >
-              <ChevronRight className="w-3.5 h-3.5" />
+              <ChevronRight className="w-3 h-3" />
             </button>
           </div>
         </div>
 
         {/* Marquee Row 2 */}
-        <div className="glass-panel p-3 sm:p-3.5 rounded-2xl border border-emerald-500/30 dark:border-emerald-500/30 light:border-slate-200 relative overflow-hidden shadow-xl group">
+        <div className="glass-panel p-2 sm:p-2.5 rounded-xl border border-emerald-500/30 dark:border-emerald-500/30 relative overflow-hidden shadow-sm group bg-white/90 dark:bg-slate-900/60">
           {/* Edge Gradient Fades */}
-          <div className="absolute left-0 top-0 bottom-0 w-12 bg-gradient-to-r from-slate-950 dark:from-slate-950 light:from-white to-transparent z-10 pointer-events-none" />
-          <div className="absolute right-0 top-0 bottom-0 w-12 bg-gradient-to-l from-slate-950 dark:from-slate-950 light:from-white to-transparent z-10 pointer-events-none" />
+          <div className="absolute left-0 top-0 bottom-0 w-12 bg-gradient-to-r from-slate-50 dark:from-slate-950 to-transparent z-10 pointer-events-none" />
+          <div className="absolute right-0 top-0 bottom-0 w-12 bg-gradient-to-l from-slate-50 dark:from-slate-950 to-transparent z-10 pointer-events-none" />
 
           <div
-            className={`flex items-center space-x-5 ${
+            className={`flex items-center space-x-4 ${
               dirRow2 === 'left' ? 'animate-marquee-left' : 'animate-marquee-right'
             }`}
             style={{
@@ -238,16 +238,16 @@ export default function InfiniteBrandMarquee({ currentLocale }: InfiniteBrandMar
             {duplicatedTechs.map((tech, idx) => (
               <div
                 key={`tech-${tech.name}-${idx}`}
-                className="flex items-center space-x-3 px-3.5 py-1.5 rounded-xl bg-slate-900/80 dark:bg-slate-900/80 light:bg-slate-100 border border-slate-800 dark:border-slate-800 light:border-slate-200 shrink-0 hover:border-emerald-500/50 transition-colors"
+                className="flex items-center space-x-2.5 px-3 py-1 rounded-lg bg-slate-50 dark:bg-slate-900/80 border border-slate-200 dark:border-slate-800 shrink-0 hover:border-emerald-500/50 transition-colors"
               >
-                <div className="h-5 flex items-center shrink-0">
-                  <BrandLogo name={tech.name} className="h-4.5 w-auto max-w-[75px]" />
+                <div className="h-4.5 flex items-center shrink-0">
+                  <BrandLogo name={tech.name} className="h-4 w-auto max-w-[70px]" />
                 </div>
-                <div className="border-l border-slate-800 dark:border-slate-800 light:border-slate-300 pl-2.5">
-                  <div className="text-[11px] font-bold text-slate-900 dark:text-white whitespace-nowrap">
+                <div className="border-l border-slate-200 dark:border-slate-800 pl-2">
+                  <div className="text-[10px] font-bold text-slate-900 dark:text-white whitespace-nowrap">
                     {tech.name}
                   </div>
-                  <div className="text-[9px] font-mono text-emerald-400 dark:text-emerald-400 light:text-emerald-700 whitespace-nowrap">
+                  <div className="text-[9px] font-mono text-emerald-700 dark:text-emerald-400 whitespace-nowrap">
                     {tech.category}
                   </div>
                 </div>

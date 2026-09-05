@@ -9,3 +9,5 @@ ngrok.tgz
 graphify-out/
 cv_moderno.html
 tsconfig.tsbuildinfo
+feedback.*
+frames/

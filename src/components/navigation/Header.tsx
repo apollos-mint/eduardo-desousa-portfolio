@@ -54,8 +54,8 @@ export default function Header({ currentLocale, cvData }: HeaderProps) {
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         isScrolled
-          ? 'bg-slate-950/85 dark:bg-slate-950/85 light:bg-white/90 backdrop-blur-md border-b border-slate-800/80 shadow-2xl py-3'
-          : 'bg-transparent py-5'
+          ? 'bg-white/90 dark:bg-slate-950/85 backdrop-blur-md border-b border-slate-200 dark:border-slate-800/80 shadow-md dark:shadow-2xl py-2.5'
+          : 'bg-transparent py-4'
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
@@ -76,22 +76,22 @@ export default function Header({ currentLocale, cvData }: HeaderProps) {
             </div>
           </div>
           <div>
-            <span className="block font-bold text-slate-100 dark:text-slate-100 light:text-slate-900 tracking-tight leading-none group-hover:text-cyan-400 transition-colors">
+            <span className="block font-bold text-slate-900 dark:text-slate-100 tracking-tight leading-none group-hover:text-cyan-600 dark:group-hover:text-cyan-400 transition-colors">
               Eduardo de Sousa
             </span>
-            <span className="block text-[10px] font-mono text-slate-400 dark:text-slate-400 light:text-slate-500 tracking-wider uppercase mt-1">
+            <span className="block text-[10px] font-mono text-slate-500 dark:text-slate-400 tracking-wider uppercase mt-1">
               {cvData.common.portraitSubtitle.split('//')[0].trim()}
             </span>
           </div>
         </Link>
 
         {/* Desktop Navigation */}
-        <nav className="hidden md:flex items-center space-x-1 lg:space-x-2 bg-slate-900/60 dark:bg-slate-900/60 light:bg-slate-100/90 p-1.5 rounded-full border border-slate-800/80 dark:border-slate-800/80 light:border-slate-300/80 backdrop-blur-md">
+        <nav className="hidden md:flex items-center space-x-1 lg:space-x-2 bg-slate-100/90 dark:bg-slate-900/60 p-1.5 rounded-full border border-slate-200 dark:border-slate-800/80 backdrop-blur-md shadow-sm">
           {navLinks.map((link) => (
             <Link
               key={link.href}
               href={link.href}
-              className="px-3.5 py-1.5 rounded-full text-xs font-medium text-slate-300 dark:text-slate-300 light:text-slate-700 hover:text-white dark:hover:text-white light:hover:text-cyan-600 hover:bg-slate-800/80 dark:hover:bg-slate-800/80 light:hover:bg-white transition-all duration-200"
+              className="px-3.5 py-1.5 rounded-full text-xs font-medium text-slate-700 dark:text-slate-300 hover:text-cyan-700 dark:hover:text-white hover:bg-white dark:hover:bg-slate-800/80 transition-all duration-200"
             >
               {link.label}
             </Link>
@@ -107,10 +107,10 @@ export default function Header({ currentLocale, cvData }: HeaderProps) {
           <div className="relative">
             <button
               onClick={() => setLangDropdownOpen(!langDropdownOpen)}
-              className="flex items-center space-x-2 px-3 py-1.5 rounded-lg bg-slate-900/80 dark:bg-slate-900/80 light:bg-slate-100 hover:bg-slate-800 dark:hover:bg-slate-800 light:hover:bg-slate-200 border border-slate-800 dark:border-slate-800 light:border-slate-300 text-xs font-medium text-slate-200 dark:text-slate-200 light:text-slate-800 transition-colors"
+              className="flex items-center space-x-2 px-3 py-1.5 rounded-lg bg-white dark:bg-slate-900/80 hover:bg-slate-100 dark:hover:bg-slate-800 border border-slate-200 dark:border-slate-800 text-xs font-medium text-slate-700 dark:text-slate-200 transition-colors shadow-sm"
               aria-label="Switch Language"
             >
-              <Globe className="w-3.5 h-3.5 text-cyan-400" />
+              <Globe className="w-3.5 h-3.5 text-cyan-600 dark:text-cyan-400" />
               <span className="hidden sm:inline">{activeLang.flag}</span>
               <span className="font-mono">{activeLang.code.toUpperCase()}</span>
               <ChevronDown className="w-3 h-3 text-slate-400" />
