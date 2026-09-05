@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import * as THREE from 'three';
 
 interface TopicVisualizerProps {
@@ -10,10 +10,23 @@ interface TopicVisualizerProps {
 
 export default function TopicVisualizer({ type, title }: TopicVisualizerProps) {
   const mountRef = useRef<HTMLDivElement>(null);
+  const [hasWebGL, setHasWebGL] = useState(true);
 
   useEffect(() => {
     const mount = mountRef.current;
     if (!mount) return;
+
+    try {
+      const canvas = document.createElement('canvas');
+      const gl = canvas.getContext('webgl') || canvas.getContext('experimental-webgl');
+      if (!gl) {
+        setHasWebGL(false);
+        return;
+      }
+    } catch {
+      setHasWebGL(false);
+      return;
+    }
 
     const width = mount.clientWidth || 300;
     const height = mount.clientHeight || 300;
@@ -22,10 +35,17 @@ export default function TopicVisualizer({ type, title }: TopicVisualizerProps) {
     const camera = new THREE.PerspectiveCamera(50, width / height, 0.1, 1000);
     camera.position.z = 45;
 
-    const renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true });
-    renderer.setSize(width, height);
-    renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
-    mount.appendChild(renderer.domElement);
+    let renderer: THREE.WebGLRenderer;
+    try {
+      renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true });
+      renderer.setSize(width, height);
+      renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+      mount.appendChild(renderer.domElement);
+    } catch (e) {
+      console.warn('WebGLRenderer failed in TopicVisualizer:', e);
+      setHasWebGL(false);
+      return;
+    }
 
     const group = new THREE.Group();
     scene.add(group);
@@ -211,6 +231,22 @@ export default function TopicVisualizer({ type, title }: TopicVisualizerProps) {
       renderer.dispose();
     };
   }, [type]);
+
+  if (!hasWebGL) {
+    return (
+      <div className="relative w-full h-72 md:h-96 rounded-2xl overflow-hidden glass-panel border border-cyan-500/30 flex flex-col items-center justify-center bg-slate-950/60 p-6 text-center space-y-3">
+        <div className="flex items-center space-x-2 bg-slate-900/90 px-3.5 py-1.5 rounded-full border border-cyan-500/40 text-xs font-mono text-cyan-300 shadow-md">
+          <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
+          <span>3D TELEMETRY MATRIX // {type.toUpperCase()}</span>
+        </div>
+        {title && (
+          <span className="text-xs font-mono text-cyan-400 bg-slate-900/80 px-3 py-1 rounded-md border border-cyan-500/20">
+            {title}
+          </span>
+        )}
+      </div>
+    );
+  }
 
   return (
     <div className="relative w-full h-72 md:h-96 rounded-2xl overflow-hidden glass-panel border border-cyan-500/20 flex items-center justify-center">

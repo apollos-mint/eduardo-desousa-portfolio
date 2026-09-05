@@ -14,26 +14,37 @@ export default function VDLWidget({ title }: { title?: string }) {
     try {
       const canvas = document.createElement('canvas');
       const gl = canvas.getContext('webgl') || canvas.getContext('experimental-webgl');
-      if (!gl) setHasWebGL(false);
+      if (!gl) {
+        setHasWebGL(false);
+        return;
+      }
     } catch {
       setHasWebGL(false);
       return;
     }
 
-    const width = mount.clientWidth;
-    const height = mount.clientHeight;
+    const width = mount.clientWidth || 400;
+    const height = mount.clientHeight || 300;
 
+    let renderer: THREE.WebGLRenderer;
+    try {
+      renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true });
+      renderer.setSize(width, height);
+      renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+      renderer.toneMapping = THREE.ACESFilmicToneMapping;
+      renderer.toneMappingExposure = 1.2;
+      mount.appendChild(renderer.domElement);
+    } catch (e) {
+      console.warn('WebGLRenderer creation failed in VDLWidget:', e);
+      setHasWebGL(false);
+      return;
+    }
+
+    // Scene & Camera
     const scene = new THREE.Scene();
     const camera = new THREE.PerspectiveCamera(45, width / height, 0.1, 1000);
     camera.position.set(0, 12, 38);
     camera.lookAt(0, 2, 0);
-
-    const renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true });
-    renderer.setSize(width, height);
-    renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
-    renderer.toneMapping = THREE.ACESFilmicToneMapping;
-    renderer.toneMappingExposure = 1.2;
-    mount.appendChild(renderer.domElement);
 
     // Studio Lighting
     const ambientLight = new THREE.AmbientLight(0xffffff, 0.9);
@@ -500,7 +511,24 @@ export default function VDLWidget({ title }: { title?: string }) {
     };
   }, []);
 
-  if (!hasWebGL) return <div className="h-72 w-full bg-slate-900/50 rounded-2xl" />;
+  if (!hasWebGL) {
+    return (
+      <div className="relative w-full h-72 md:h-96 rounded-2xl overflow-hidden glass-panel border border-cyan-500/30 flex flex-col items-center justify-center bg-slate-950/60 p-6 text-center space-y-3">
+        <div className="flex items-center space-x-2 bg-slate-900/90 px-3.5 py-1.5 rounded-full border border-cyan-500/40 text-xs font-mono text-cyan-300 shadow-md">
+          <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
+          <span>OEM QA // MULTI-PLATFORM CHASSIS (MINI JCW / CABRIO)</span>
+        </div>
+        <p className="text-xs sm:text-sm text-slate-300 max-w-lg font-mono">
+          3D Telemetry active: 110-120 vehicles/shift · 8D RCA Zero Defects · ±0.05 mm Laser Gap & Flush
+        </p>
+        {title && (
+          <span className="text-xs font-mono text-cyan-400 bg-slate-900/80 px-3 py-1 rounded-md border border-cyan-500/20">
+            {title}
+          </span>
+        )}
+      </div>
+    );
+  }
 
   return (
     <div className="relative w-full h-72 md:h-96 rounded-2xl overflow-hidden glass-panel border border-cyan-500/20 flex items-center justify-center bg-slate-950/40 group">
