@@ -39,7 +39,7 @@ export const enData: CVContent = {
     pillars: [
       {
         title: 'Digital Operations & Global Sourcing ($800K)',
-        description: 'Strategic procurement direction ($800K USD/yr, 20 containers/qtr, up to -75% cost in Asia), proprietary CMMS software, and iPaaS automation.',
+        description: 'Strategic procurement direction ($800K USD/yr, 20 containers/qtr, up to -75% cost in Asia), recruitment and deployment of on-site engineering and quality inspection teams in China & India, proprietary CMMS, and iPaaS automation.',
         icon: 'globe',
       },
       {
@@ -73,10 +73,11 @@ export const enData: CVContent = {
       period: '11/24 - Present',
       location: 'Remote (Asia, Europe, LatAm)',
       industry: 'Global Supply Chain, Automation & Software Engineering',
-      summary: 'End-to-end strategic direction of international procurement ($800K USD/yr, 20 containers/qtr) with up to 75% cost reductions in Asia, coupled with operational software architecture (asset CMMS with KPI scoring and B2B platforms).',
+      summary: 'Comprehensive direction of international procurement ($800K USD/yr, 20 containers/quarter, -75% savings in Asia), recruitment and leadership of specialized on-site engineering inspection teams across global factories, and operational software architecture (custom CMMS with KPIs and B2B platforms).',
       responsibilities: [
         'Global Sourcing Leadership ($800K USD/yr): End-to-end management of overseas procurement across construction and architectural materials, steering a recurring volume of 20 shipping containers per quarter ($200,000 USD/quarter).',
         'Strategic Supply Chain Disintermediation (-75% Cost): Re-engineered client supply chains by eliminating local distributors and establishing direct factory-gate agreements with Tier-1 manufacturers in China, capturing a net 75% savings in material acquisition.',
+        'On-Site Engineering & Quality Inspection Team Recruitment (China, India & Worldwide): Sourcing, technical vetting, and deployment of local quality engineers, factory auditors, and specialized on-site inspectors to supervise production lines, perform stress testing, execute Pre-Shipment Inspections (PSI), and enforce compliance across manufacturing hubs.',
         'India Manufacturer Benchmarking (15%–30% Margin Gains): Qualified and audited manufacturing plants through RFQ comparative modeling and on-site pre-shipment inspections (PSI), capturing 15% to 30% price improvements.',
         'International Financial & Risk Structuring: Designed structured commercial sales contracts with milestone-gated payment releases (30% proforma advance / 70% against PSI quality sign-off and Bill of Lading release), completely mitigating capital exposure.',
         'Proprietary Asset Management CMMS: Architected and built internal software for machinery lifecycle tracking, maintenance cost curves, and an employee KPI performance scoring module.',
@@ -89,8 +90,8 @@ export const enData: CVContent = {
         { value: '15-30%', label: 'Margin Improvement', subtext: 'India factory benchmarking' },
         { value: 'CMMS', label: 'Proprietary Software', subtext: 'Asset & KPI tracking app' },
       ],
-      technologies: ['Global Sourcing (China/India)', 'Container Logistics (FCL/LCL)', 'Custom CMMS Development', 'Next.js / TypeScript', 'Make & Zapier Automation', 'Asana / Jira Workflows', 'Proforma Payment Structuring (30/70)'],
-      partners: ['Tier-1 Chinese Manufacturers', 'Indian Industrial Plants', 'Corporate Clients LatAm & Europe', 'Remote Quality Teams'],
+      technologies: ['Global Sourcing (China/India)', 'On-Site Technical Teams & PSI Audits', 'Container Logistics (FCL/LCL)', 'Custom CMMS Development', 'Next.js / TypeScript', 'Make & Zapier Automation', 'Asana / Jira Workflows', 'Proforma Payment Structuring (30/70)'],
+      partners: ['Tier-1 Chinese Manufacturers', 'Indian Industrial Plants', 'On-Site QA & Inspection Teams (Asia)', 'Corporate Clients LatAm & Europe'],
       challenge: 'Overcoming information asymmetry and steep traditional distributor markups in cross-border volume imports from Asian factories.',
       solution: 'Deployed direct manufacturer contracts, on-ground technical audits with remote teams, secure financial structures, and proprietary operational tracking software.',
       impact: '75% net cost savings for key corporate account, zero commercial disputes, and total operational workflow digitization.',

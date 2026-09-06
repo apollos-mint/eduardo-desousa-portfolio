@@ -39,7 +39,7 @@ export const frData: CVContent = {
     pillars: [
       {
         title: 'Opérations Digitales & Sourcing Global ($800K)',
-        description: 'Direction stratégique des achats ($800K USD/an, 20 conteneurs/trimestre, -75% coûts en Asie), logiciel CMMS propriétaire et automatisation iPaaS.',
+        description: 'Direction stratégique des achats ($800K USD/an, 20 conteneurs/trimestre, -75% coûts en Asie), recrutement et direction d’équipes d’ingénierie et d’inspection sur site en Chine et en Inde, logiciel CMMS propriétaire et automatisation iPaaS.',
         icon: 'globe',
       },
       {
@@ -73,10 +73,11 @@ export const frData: CVContent = {
       period: '11/24 - Présent',
       location: 'Télétravail (Asie, Europe, LatAm)',
       industry: 'Supply Chain Globale, Automatisation & Ingénierie Logicielle',
-      summary: 'Direction stratégique des approvisionnements internationaux ($800K USD/an, 20 conteneurs/trimestre) avec -75% de coûts en Asie, couplée à l’architecture de logiciels d’entreprise (CMMS avec scoring d’opérateurs et portails B2B).',
+      summary: 'Direction stratégique des approvisionnements internationaux ($800K USD/an, 20 conteneurs/trimestre, -75% en Asie), recrutement et encadrement d’équipes d’ingénierie et d’inspection technique sur site en usine (Chine, Inde), couplée à l’architecture de logiciels d’entreprise (CMMS avec KPIs et portails B2B).',
       responsibilities: [
         'Direction du Sourcing Global ($800K USD/an) : Gestion intégrale des achats internationaux pour projets de construction, administrant un flux récurrent de 20 conteneurs par trimestre ($200 000 USD/trimestre).',
         'Désintermédiation Commerciale Stratégique (-75% de Coûts) : Réorganisation complète de la chaîne d’approvisionnement en éliminant les grossistes locaux au profit de contrats directs usine en Chine.',
+        'Recrutement & Direction d’Équipes Techniques et d’Inspection Sur Site (Chine, Inde & International) : Recherche, évaluation technique et déploiement d’ingénieurs qualité et d’inspecteurs spécialisés sur le terrain pour superviser directement les lignes de fabrication, exécuter les inspections avant expédition (PSI), réaliser les tests de mise en conteneur et garantir la conformité usine avant le départ maritime.',
         'Benchmarking et Homologation en Inde (15% à 30% de Marge) : Qualification technique d’usines par modélisation d’appels d’offres et audits pré-expédition (PSI) sur place.',
         'Sécurisation Financière Internationale : Structuration de contrats commerciaux avec jalons de paiement (30% acompte proforma / 70% contre inspection et Bill of Lading), éliminant tout risque de perte en capital.',
         'Logiciel Propriétaire de Gestion d’Actifs (CMMS) : Architecture et développement d’une plateforme web de suivi du cycle de vie des machines et module de scoring de performance des opérateurs.',
@@ -89,8 +90,8 @@ export const frData: CVContent = {
         { value: '15-30%', label: 'Gain de Marge', subtext: 'Benchmarking en Inde' },
         { value: 'CMMS', label: 'Logiciel Propriétaire', subtext: 'Gestion d’actifs & KPIs' },
       ],
-      technologies: ['Global Sourcing (China/India)', 'Container Logistics (FCL/LCL)', 'Custom CMMS Development', 'Next.js / TypeScript', 'Make & Zapier Automation', 'Asana / Jira Workflows', 'Proforma Payment Structuring (30/70)'],
-      partners: ['Usines Tier-1 Chine', 'Sites Industriels Inde', 'Groupes Entreprises LatAm & Europe', 'Équipes d’Audit Distantes'],
+      technologies: ['Global Sourcing (China/India)', 'On-Site Technical Teams & PSI Audits', 'Container Logistics (FCL/LCL)', 'Custom CMMS Development', 'Next.js / TypeScript', 'Make & Zapier Automation', 'Asana / Jira Workflows', 'Proforma Payment Structuring (30/70)'],
+      partners: ['Usines Tier-1 Chine', 'Sites Industriels Inde', 'Équipes d’Inspection et d’Ingénierie Sur Site (Asie)', 'Groupes Entreprises LatAm & Europe'],
       challenge: 'Surmonter l’asymétrie d’information et les marges excessives des intermédiaires traditionnels lors d’achats industriels massifs en Asie.',
       solution: 'Mise en place d’accords directs usines, audits techniques sur le terrain, structures financières sécurisées et logiciel d’exploitation propriétaire.',
       impact: '75% d’économies nettes pour le compte client clé, zéro litige commercial et digitalisation complète des opérations.',

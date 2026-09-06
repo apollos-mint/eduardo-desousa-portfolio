@@ -39,7 +39,7 @@ export const ptData: CVContent = {
     pillars: [
       {
         title: 'Operações Digitais & Sourcing Global ($800K)',
-        description: 'Direção estratégica de compras ($800K USD/ano, 20 contentores/trimestre, -75% custo na Ásia), arquitetura de software operacional (CMMS) e automação iPaaS.',
+        description: 'Direção estratégica de compras ($800K USD/ano, 20 contentores/trimestre, -75% custos na Ásia), recrutamento e gestão de equipas técnicas de inspeção on-site na China e Índia, arquitetura de software operacional (CMMS) e automação iPaaS.',
         icon: 'globe',
       },
       {
@@ -73,10 +73,11 @@ export const ptData: CVContent = {
       period: '11/24 - Presente',
       location: 'Remoto (Ásia, Europa, LatAm)',
       industry: 'Cadeia de Abastecimento Global, Automação & Engenharia de Software',
-      summary: 'Direção integral do aprovisionamento internacional ($800K USD/ano, 20 contentores trimestrais) com poupanças de 75% na Ásia, combinada com a arquitetura de software operacional (CMMS de ativos e portais B2B).',
+      summary: 'Direção integral do aprovisionamento internacional ($800K USD/ano, 20 contentores trimestrais, -75% na Ásia), recrutamento e gestão de equipas de engenharia e inspeção técnica on-site em fábricas da China e Índia, e arquitetura de software operacional (CMMS com KPIs e portais B2B).',
       responsibilities: [
         'Direção de Sourcing Global ($800K USD/ano): Gestão integral de compras internacionais em construção, administrando um fluxo contínuo de 20 contentores marítimos por trimestre ($200,000 USD/trimestre).',
         'Desintermediação Comercial Estratégica (-75% em Custos): Reestruturação da cadeia de abastecimento, eliminando intermediários locais e fechando acordos diretos com fábricas na China com 75% de poupança.',
+        'Recrutamento e Gestão de Equipas de Inspeção e Engenharia On-Site (China, Índia e Global): Procura, avaliação técnica de competências e contratação de engenheiros de qualidade locais, inspetores no terreno e auditores fabris para supervisão direta de linhas de produção, testes de carga, ensaios técnicos e inspeções pré-embarque (PSI) antes da expedição marítima.',
         'Benchmarking e Homologação na Índia (15%–30% Margem): Qualificação técnica de fornecedores mediante RFQs e inspeções pré-embarque (PSI) in situ, otimizando margens entre 15% e 30%.',
         'Engenharia Financeira Internacional: Estruturação de contratos com pagamentos escalonados (30% adiantamento proforma / 70% contra inspeção e BL), blindando o capital e evitando perdas comerciais.',
         'Sistemas Proprietários de Gestão de Ativos (CMMS): Arquitetura e desenvolvimento de software para controlo do ciclo de vida de maquinaria e módulo de scoring de produtividade de operadores.',
@@ -89,8 +90,8 @@ export const ptData: CVContent = {
         { value: '15-30%', label: 'Melhoria de Margem', subtext: 'Benchmarking na Índia' },
         { value: 'CMMS', label: 'Software Proprietário', subtext: 'Gestão de ativos & KPIs' },
       ],
-      technologies: ['Global Sourcing (China/India)', 'Container Logistics (FCL/LCL)', 'Custom CMMS Development', 'Next.js / TypeScript', 'Make & Zapier Automation', 'Asana / Jira Workflows', 'Proforma Payment Structuring (30/70)'],
-      partners: ['Fabricantes Tier-1 China', 'Plantas Industriais Índia', 'Grupos Corporativos LatAm & Europa', 'Equipas de Auditoria Remota'],
+      technologies: ['Global Sourcing (China/India)', 'On-Site Technical Teams & PSI Audits', 'Container Logistics (FCL/LCL)', 'Custom CMMS Development', 'Next.js / TypeScript', 'Make & Zapier Automation', 'Asana / Jira Workflows', 'Proforma Payment Structuring (30/70)'],
+      partners: ['Fabricantes Tier-1 China', 'Plantas Industriais Índia', 'Equipas Técnicas de Inspeção On-Site (Ásia)', 'Grupos Corporativos LatAm & Europa'],
       challenge: 'Superar a assimetria de informação e as elevadas margens de intermediários tradicionais em compras de grande escala na Ásia.',
       solution: 'Implementação de contratos diretos com fabricantes, auditorias técnicas no terreno, estruturas financeiras seguras e software próprio de controlo.',
       impact: 'Poupança de 75% em custos de aquisição, zero litígios comerciais e digitalização operacional completa.',

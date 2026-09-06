@@ -39,7 +39,7 @@ export const nlData: CVContent = {
     pillars: [
       {
         title: 'Digitale Operaties & Global Sourcing ($800K)',
-        description: 'Strategisch inkoopbeheer ($800K USD/jaar, 20 containers/kwartaal, -75% kosten in Azië), eigen CMMS-software en iPaaS-automatisering.',
+        description: 'Strategische inkoopaansturing ($800K USD/jaar, 20 containers/kwartaal, -75% kosten in Azië), werving en beheer van gespecialiseerde on-site inspectieteams in China en India, eigen CMMS-software en iPaaS-automatisering.',
         icon: 'globe',
       },
       {
@@ -73,10 +73,11 @@ export const nlData: CVContent = {
       period: '11/24 - Heden',
       location: 'Remote (Azië, Europa, LatAm)',
       industry: 'Global Supply Chain, Automatisering & Software-engineering',
-      summary: 'Strategische leiding over internationale inkoop ($800K USD/jaar, 20 containers/kwartaal) met 75% kostenreductie in Azië, gecombineerd met software-architectuur (CMMS met KPI-scoring en B2B-portalen).',
+      summary: 'Strategische leiding over internationale inkoop ($800K USD/jaar, 20 containers/kwartaal, -75% in Azië), werving en aansturing van gespecialiseerde on-site ingenieurs- en inspectieteams in Aziatische fabrieken, en operationele software-architectuur (CMMS met KPIs en B2B-portalen).',
       responsibilities: [
         'Leiding Global Sourcing ($800K USD/jaar): Volledig beheer van internationale inkoop van bouw- en renovatiematerialen, met een volume van 20 zeecontainers per kwartaal ($200.000 USD/kwartaal).',
         'Strategische Disintermediatie (-75% Kosten): Herstructurering van toeleveringsketens door het uitschakelen van lokale tussenpersonen en directe contracten met fabrieken in China.',
+        'Werving & Aansturing van Technische On-Site Inspectieteams (China, India & Wereldwijd): Zoeken, technisch valideren en contracteren van lokale kwaliteitsingenieurs, inspecteurs en fabrieksauditors voor directe supervisie op productielijnen, stresstesten, Pre-Shipment Inspecties (PSI) en conformiteitsaudiits voorafgaand aan zeetransport.',
         'Fabrieksbenchmarking in India (15%–30% Margeverbetering): Technische leverancierskwalificatie via RFQ-analyse en on-site pre-shipment inspecties (PSI).',
         'Financiële Risicobescherming: Structurering van koopovereenkomsten met gestaffelde betalingen (30% proforma aanbetaling / 70% tegen inspectie en Bill of Lading).',
         'Eigen CMMS Machinebeheersysteem: Architectuur en ontwikkeling van software voor levenscyclusbeheer van apparatuur en medewerker-productiviteitsscoring.',
@@ -89,8 +90,8 @@ export const nlData: CVContent = {
         { value: '15-30%', label: 'Margeverbetering', subtext: 'Benchmarking in India' },
         { value: 'CMMS', label: 'Eigen Software', subtext: 'Apparatuurbeheer & KPIs' },
       ],
-      technologies: ['Global Sourcing (China/India)', 'Container Logistics (FCL/LCL)', 'Custom CMMS Development', 'Next.js / TypeScript', 'Make & Zapier Automation', 'Asana / Jira Workflows', 'Proforma Payment Structuring (30/70)'],
-      partners: ['Tier-1 Fabrieken China', 'Industriële Bedrijven India', 'Bedrijfsgroepen LatAm & Europa', 'Remote Auditing Teams'],
+      technologies: ['Global Sourcing (China/India)', 'On-Site Technical Teams & PSI Audits', 'Container Logistics (FCL/LCL)', 'Custom CMMS Development', 'Next.js / TypeScript', 'Make & Zapier Automation', 'Asana / Jira Workflows', 'Proforma Payment Structuring (30/70)'],
+      partners: ['Tier-1 Fabrieken China', 'Industriële Bedrijven India', 'On-Site Inspectie- en Kwaliteitsteams (Azië)', 'Bedrijfsgroepen LatAm & Europa'],
       challenge: 'Overbruggen van informatie-asymmetrie en hoge marges van traditionele tussenpersonen bij grootschalige inkoop in Azië.',
       solution: 'Directe contracten met fabrikanten, on-site inspecties met remote teams, veilige betalingsstructuren en eigen operationele software.',
       impact: '75% netto kostenbesparing voor key corporate account, nul commerciële geschillen en volledige workflow-digitalisering.',

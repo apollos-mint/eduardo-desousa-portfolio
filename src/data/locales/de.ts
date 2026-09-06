@@ -39,7 +39,7 @@ export const deData: CVContent = {
     pillars: [
       {
         title: 'Digitale Operative & Global Sourcing ($800K)',
-        description: 'Strategische Beschaffungsleitung ($800K USD/Jahr, 20 Container/Quartal, -75% Kosten in Asien), eigenes CMMS-System und iPaaS-Automatisierung.',
+        description: 'Strategische Beschaffungsleitung ($800K USD/Jahr, 20 Container/Quartal, -75% Kosten in Asien), Rekrutierung technischer Vor-Ort-Inspektions- und Qualitätsteams in China und Indien, CMMS-Betriebssoftware und iPaaS-Automatisierung.',
         icon: 'globe',
       },
       {
@@ -73,10 +73,11 @@ export const deData: CVContent = {
       period: '11/24 - Heute',
       location: 'Remote (Asien, Europa, LatAm)',
       industry: 'Globale Supply Chain, Automatisierung & Software-Engineering',
-      summary: 'Strategische Leitung der internationalen Beschaffung ($800K USD/Jahr, 20 Container/Quartal) mit bis zu 75% Kosteneinsparungen in Asien, gekoppelt mit betrieblicher Softwarearchitektur (CMMS mit Mitarbeiter-KPI-Scoring und B2B-Plattformen).',
+      summary: 'Strategische Leitung der internationalen Beschaffung ($800K USD/Jahr, 20 Container/Quartal, bis zu -75% in Asien), Rekrutierung und Steuerung spezialisierter On-Site-Ingenieur- und Inspektionsteams in asiatischen Werken sowie Softwarearchitektur (CMMS mit KPIs und B2B-Plattformen).',
       responsibilities: [
         'Leitung Global Sourcing ($800K USD/Jahr): Vollständige Steuerung internationaler Beschaffung für Bau- und Sanierungsprojekte mit 20 Seecontainern pro Quartal ($200.000 USD/Quartal).',
         'Strategische Disintermediation (-75% Kosten): Neuausrichtung der Beschaffungskette durch Umgehung lokaler Großhändler und Direktverträge mit Werken in China.',
+        'Rekrutierung & Leitung technischer On-Site-Teams (China, Indien & Global): Identifikation, fachliche Bewertung und Beauftragung spezialisierter Ingenieur-, Qualitäts- und Inspektionsteams vor Ort zur Überwachung von Produktionslinien, Durchführung von Pre-Shipment Inspections (PSI), Containerbeladungstests und Werkskonformitätsaudits vor dem Seetransport.',
         'Fabrik-Benchmarking in Indien (15%–30% Margenverbesserung): Technische Lieferantenqualifizierung durch RFQ-Analysen und Vor-Ort-Pre-Shipment-Inspektionen (PSI).',
         'Finanzielle Risikoabsicherung: Strukturierung von Kaufverträgen mit Meilensteinzahlungen (30% Proforma-Anzahlung / 70% gegen Inspektion und Bill of Lading).',
         'Proprietäres CMMS-Anlagenverwaltungssystem: Konzeption und Entwicklung von Software zur Erfassung von Maschinenlebenszyklen und Mitarbeiterproduktivitätsmetriken.',
@@ -89,8 +90,8 @@ export const deData: CVContent = {
         { value: '15-30%', label: 'Margenverbesserung', subtext: 'Benchmarking in Indien' },
         { value: 'CMMS', label: 'Eigene Software', subtext: 'Anlagenverwaltung & KPIs' },
       ],
-      technologies: ['Global Sourcing (China/India)', 'Container Logistics (FCL/LCL)', 'Custom CMMS Development', 'Next.js / TypeScript', 'Make & Zapier Automation', 'Asana / Jira Workflows', 'Proforma Payment Structuring (30/70)'],
-      partners: ['Tier-1 Werke China', 'Industriebetriebe Indien', 'Unternehmensgruppen LatAm & Europa', 'Remote-Audit-Teams'],
+      technologies: ['Global Sourcing (China/India)', 'On-Site Technical Teams & PSI Audits', 'Container Logistics (FCL/LCL)', 'Custom CMMS Development', 'Next.js / TypeScript', 'Make & Zapier Automation', 'Asana / Jira Workflows', 'Proforma Payment Structuring (30/70)'],
+      partners: ['Tier-1 Werke China', 'Industriebetriebe Indien', 'On-Site Inspektions- & Qualitätsteams (Asien)', 'Unternehmensgruppen LatAm & Europa'],
       challenge: 'Überwindung von Informationsasymmetrien und hohen Margen traditioneller Zwischenhändler bei großvolumiger Beschaffung in Asien.',
       solution: 'Direktverträge mit Herstellern, Vor-Ort-Audits durch Remote-Teams, gesicherte Finanzierungsstrukturen und proprietäre Betriebssoftware.',
       impact: '75% Nettoeinsparung für Kernkunden, null Handelsstreitigkeiten und lückenlose operative Digitalisierung.',

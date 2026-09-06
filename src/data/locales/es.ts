@@ -39,7 +39,7 @@ export const esData: CVContent = {
     pillars: [
       {
         title: 'Operaciones Digitales & Sourcing Global ($800K)',
-        description: 'Dirección estratégica de compras ($800K USD/año, 20 contenedores/trimestre, -75% coste en Asia), arquitectura de software operativo (CMMS) y automatización iPaaS.',
+        description: 'Dirección estratégica de compras ($800K USD/año, 20 contenedores/trimestre, -75% coste en Asia), reclutamiento y gestión de equipos técnicos de inspección on-site en China e India, arquitectura de software operativo (CMMS) y automatización iPaaS.',
         icon: 'globe',
       },
       {
@@ -73,10 +73,11 @@ export const esData: CVContent = {
       period: '11/24 - Presente',
       location: 'Remoto (Asia, Europa, LatAm)',
       industry: 'Cadena de Suministro Global, Automatización & Desarrollo de Software',
-      summary: 'Dirección integral del aprovisionamiento internacional ($800K USD/año, 20 contenedores trimestrales) con ahorros del 75% en Asia, combinada con la arquitectura de software operativo (CMMS de activos con KPIs y portales B2B).',
+      summary: 'Dirección integral del aprovisionamiento internacional ($800K USD/año, 20 contenedores trimestrales, -75% en Asia), reclutamiento y gestión de equipos de ingeniería e inspección técnica on-site en fábricas de China e India, y arquitectura de software operativo (CMMS con KPIs y portales B2B).',
       responsibilities: [
         'Dirección de Sourcing Global ($800K USD/año): Gestión integral de compras internacionales en construcción y remodelación, administrando un flujo continuo de 20 contenedores marítimos por trimestre ($200,000 USD/trimestre).',
         'Desintermediación Comercial Estratégica (-75% en Costes): Reestructuración integral de la cadena de suministro del cliente, eliminando intermediarios mayoristas locales y cerrando contratos directos con plantas en China con un ahorro neto del 75%.',
+        'Reclutamiento & Gestión de Equipos de Inspección e Ingeniería On-Site (China, India y Global): Búsqueda, evaluación técnica de competencias y contratación de ingenieros locales de calidad, inspectores in situ y auditores fabriles para supervisión directa de líneas de producción, pruebas de carga (CLI), auditorías de conformidad y ensayos técnicos bajo estándares internacionales antes de la salida marítima.',
         'Benchmarking y Negociación en India (15%–30% Mejora): Homologación técnica de plantas mediante análisis de RFQs y auditorías previas al embarque (PSI) con inspectores in situ, optimizando márgenes entre un 15% y un 30%.',
         'Ingeniería Financiera Internacional: Estructuración de contratos de compraventa con pagos escalonados (30% anticipo proforma / 70% contra inspección satisfactoria y BL), blindando el capital y evitando pérdidas comerciales.',
         'Sistemas Propietarios de Gestión de Activos (CMMS): Arquitectura y desarrollo de software para el control del ciclo de vida de maquinaria, trazabilidad de mantenimiento y módulo de seguimiento de KPIs con scoring de empleados.',
@@ -89,8 +90,8 @@ export const esData: CVContent = {
         { value: '15-30%', label: 'Mejora de Margen', subtext: 'Benchmarking en India' },
         { value: 'CMMS', label: 'Software Propietario', subtext: 'Gestión de activos & KPIs' },
       ],
-      technologies: ['Global Sourcing (China/India)', 'Container Logistics (FCL/LCL)', 'Custom CMMS Development', 'Next.js / TypeScript', 'Make & Zapier Automation', 'Asana / Jira Workflows', 'Proforma Payment Structuring (30/70)'],
-      partners: ['Fabricantes Tier-1 China', 'Plantas Industriales India', 'Grupos Corporativos LatAm & Europa', 'Equipos de Auditoría Remota'],
+      technologies: ['Global Sourcing (China/India)', 'On-Site Technical Teams & PSI Audits', 'Container Logistics (FCL/LCL)', 'Custom CMMS Development', 'Next.js / TypeScript', 'Make & Zapier Automation', 'Asana / Jira Workflows', 'Proforma Payment Structuring (30/70)'],
+      partners: ['Fabricantes Tier-1 China', 'Plantas Industriales India', 'Equipos Técnicos de Inspección On-Site (Asia)', 'Grupos Corporativos LatAm & Europa'],
       challenge: 'Superar la asimetría de información y los altos costes de intermediación tradicional en compras masivas de materiales e insumos desde Asia.',
       solution: 'Despliegue de acuerdos directos con fabricantes, auditorías técnicas in situ con equipos remotos, estructuración financiera segura y desarrollo de software propio de control de operaciones.',
       impact: 'Ahorro del 75% en costes de compra para cuenta corporativa clave, cero disputas comerciales y total digitalización operativa.',
