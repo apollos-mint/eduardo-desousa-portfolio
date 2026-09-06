@@ -39,7 +39,7 @@ export default function VDLWidget({ title }: { title?: string }) {
       renderer.setSize(width, height);
       renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
       renderer.toneMapping = THREE.ACESFilmicToneMapping;
-      renderer.toneMappingExposure = 1.3;
+      renderer.toneMappingExposure = 1.35;
       mount.appendChild(renderer.domElement);
     } catch (e) {
       console.warn('WebGLRenderer creation failed in VDLWidget:', e);
@@ -50,35 +50,35 @@ export default function VDLWidget({ title }: { title?: string }) {
 
     // 3. Scene & Camera Setup
     const scene = new THREE.Scene();
-    const camera = new THREE.PerspectiveCamera(40, width / height, 0.1, 1000);
-    camera.position.set(18, 11, 24);
+    const camera = new THREE.PerspectiveCamera(38, width / height, 0.1, 1000);
+    camera.position.set(20, 13, 26);
 
     // 4. Interactive OrbitControls
     const controls = new OrbitControls(camera, renderer.domElement);
     controls.enableDamping = true;
     controls.dampingFactor = 0.06;
     controls.autoRotate = true;
-    controls.autoRotateSpeed = 0.9;
-    controls.maxPolarAngle = Math.PI / 2 - 0.03; // Keep above turntable
-    controls.minDistance = 14;
-    controls.maxDistance = 45;
+    controls.autoRotateSpeed = 0.8;
+    controls.maxPolarAngle = Math.PI / 2 - 0.04; // Keep above turntable
+    controls.minDistance = 15;
+    controls.maxDistance = 42;
     controls.enablePan = false;
-    controls.target.set(0, 3.2, 0);
+    controls.target.set(0, 2.8, 0);
     controls.update();
 
     // 5. Automotive Showroom Lighting
-    const ambientLight = new THREE.AmbientLight(0xffffff, 1.2);
+    const ambientLight = new THREE.AmbientLight(0xffffff, 1.3);
     scene.add(ambientLight);
 
-    const overheadLight = new THREE.DirectionalLight(0xffffff, 2.2);
-    overheadLight.position.set(0, 30, 0);
+    const overheadLight = new THREE.DirectionalLight(0xffffff, 2.4);
+    overheadLight.position.set(0, 32, 0);
     scene.add(overheadLight);
 
-    const keyLight = new THREE.DirectionalLight(0x38bdf8, 2.5); // Cool Cyan Key
-    keyLight.position.set(22, 24, 20);
+    const keyLight = new THREE.DirectionalLight(0x38bdf8, 2.6); // Cool Cyan Key
+    keyLight.position.set(24, 24, 22);
     scene.add(keyLight);
 
-    const fillLight = new THREE.DirectionalLight(0x10b981, 1.6); // Emerald Fill
+    const fillLight = new THREE.DirectionalLight(0x10b981, 1.7); // Emerald Fill
     fillLight.position.set(-24, 18, -18);
     scene.add(fillLight);
 
@@ -87,8 +87,8 @@ export default function VDLWidget({ title }: { title?: string }) {
     scene.add(rimLight);
 
     // Chassis Neon Underglow
-    const underglow = new THREE.PointLight(0x38bdf8, 3.5, 24);
-    underglow.position.set(0, 0.6, 0);
+    const underglow = new THREE.PointLight(0x38bdf8, 3.8, 22);
+    underglow.position.set(0, 0.5, 0);
     scene.add(underglow);
 
     const rootGroup = new THREE.Group();
@@ -96,13 +96,13 @@ export default function VDLWidget({ title }: { title?: string }) {
 
     // 6. Theme Colors & Materials
     const isLight = document.documentElement.classList.contains('light');
-    const colorBody = isLight ? 0x0f766e : 0x0284c7; // Deep Metallic Teal (Light) / Cyber Metallic Cyan (Dark)
+    const colorBody = isLight ? 0x004d40 : 0x0284c7; // British Racing Green Metallic (Light) / Cyber Cyan Metallic (Dark)
     const colorGlow = isLight ? 0x0284c7 : 0x38bdf8;
 
     // 7. Turntable & Metrology Measurement Platform
-    const turntableGeo = new THREE.CylinderGeometry(15.5, 15.5, 0.35, 64);
+    const turntableGeo = new THREE.CylinderGeometry(13.5, 13.5, 0.35, 64);
     const turntableMat = new THREE.MeshStandardMaterial({
-      color: 0x070b14,
+      color: 0x060a12,
       metalness: 0.85,
       roughness: 0.25,
     });
@@ -111,7 +111,7 @@ export default function VDLWidget({ title }: { title?: string }) {
     rootGroup.add(turntable);
 
     // Outer Blueprint Cyan Ring
-    const ringGeo1 = new THREE.RingGeometry(14.8, 15.2, 64);
+    const ringGeo1 = new THREE.RingGeometry(12.8, 13.2, 64);
     ringGeo1.rotateX(-Math.PI / 2);
     const ringMat1 = new THREE.MeshBasicMaterial({
       color: colorGlow,
@@ -124,7 +124,7 @@ export default function VDLWidget({ title }: { title?: string }) {
     rootGroup.add(ring1);
 
     // Inner Emerald Precision Ring
-    const ringGeo2 = new THREE.RingGeometry(12.2, 12.5, 48);
+    const ringGeo2 = new THREE.RingGeometry(10.2, 10.5, 48);
     ringGeo2.rotateX(-Math.PI / 2);
     const ringMat2 = new THREE.MeshBasicMaterial({
       color: 0x10b981,
@@ -137,7 +137,7 @@ export default function VDLWidget({ title }: { title?: string }) {
     rootGroup.add(ring2);
 
     // Laser Crosshairs on Turntable
-    const crosshairGeo = new THREE.PlaneGeometry(29, 0.08);
+    const crosshairGeo = new THREE.PlaneGeometry(25, 0.08);
     crosshairGeo.rotateX(-Math.PI / 2);
     const crosshairMat = new THREE.MeshBasicMaterial({
       color: colorGlow,
@@ -153,7 +153,7 @@ export default function VDLWidget({ title }: { title?: string }) {
     rootGroup.add(crossZ);
 
     // 8. Animated Metrology Laser Scan Line
-    const laserBeamGeo = new THREE.BoxGeometry(11.0, 0.06, 0.06);
+    const laserBeamGeo = new THREE.BoxGeometry(9.6, 0.06, 0.06);
     const laserBeamMat = new THREE.MeshBasicMaterial({
       color: 0x38bdf8,
       transparent: true,
@@ -163,7 +163,7 @@ export default function VDLWidget({ title }: { title?: string }) {
     laserBeam.position.set(0, 3.2, 0);
     rootGroup.add(laserBeam);
 
-    const laserSheetGeo = new THREE.PlaneGeometry(11.0, 6.5);
+    const laserSheetGeo = new THREE.PlaneGeometry(9.6, 6.5);
     laserSheetGeo.rotateX(-Math.PI / 2);
     const laserSheetMat = new THREE.MeshBasicMaterial({
       color: 0x0284c7,
@@ -184,7 +184,7 @@ export default function VDLWidget({ title }: { title?: string }) {
       (gltf) => {
         carModel = gltf.scene;
 
-        // Apply realistic automotive materials
+        // Apply realistic automotive PBR materials
         carModel.traverse((child) => {
           if ((child as THREE.Mesh).isMesh) {
             const mesh = child as THREE.Mesh;
@@ -292,8 +292,8 @@ export default function VDLWidget({ title }: { title?: string }) {
         carModel.position.y = Math.sin(time * 2.5) * 0.03;
       }
 
-      // Sweep Metrology Laser Line smoothly along car length (Z axis -8.5 to +8.5)
-      const laserZ = Math.sin(time * 1.6) * 8.5;
+      // Sweep Metrology Laser Line smoothly along car length (Z axis -8.2 to +8.2)
+      const laserZ = Math.sin(time * 1.6) * 8.2;
       laserBeam.position.z = laserZ;
       laserSheet.position.z = laserZ;
 
@@ -330,7 +330,7 @@ export default function VDLWidget({ title }: { title?: string }) {
 
   if (!hasWebGL) {
     return (
-      <div className="relative w-full h-80 md:h-[420px] rounded-2xl overflow-hidden glass-panel border border-cyan-500/30 flex flex-col items-center justify-center bg-slate-950/60 p-6 text-center space-y-3">
+      <div className="relative w-full h-80 md:h-[450px] rounded-2xl overflow-hidden glass-panel border border-cyan-500/30 flex flex-col items-center justify-center bg-slate-950/60 p-6 text-center space-y-3">
         <div className="flex items-center space-x-2 bg-slate-900/90 px-3.5 py-1.5 rounded-full border border-cyan-500/40 text-xs font-mono text-cyan-300 shadow-md">
           <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
           <span>OEM QA // BMW GROUP · MINI COOPER CABRIO (VDL NEDCAR)</span>
@@ -348,7 +348,7 @@ export default function VDLWidget({ title }: { title?: string }) {
   }
 
   return (
-    <div className="relative w-full h-80 md:h-[420px] rounded-2xl overflow-hidden glass-panel border border-cyan-500/20 flex items-center justify-center bg-slate-950/50 group select-none">
+    <div className="relative w-full h-80 md:h-[450px] rounded-2xl overflow-hidden glass-panel border border-cyan-500/20 flex items-center justify-center bg-slate-950/50 group select-none">
       {/* 3D Canvas Mount */}
       <div ref={mountRef} className="absolute inset-0 w-full h-full cursor-grab active:cursor-grabbing z-0" />
 
