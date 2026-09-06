@@ -2,6 +2,7 @@
 
 import React from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { Locale, CVContent } from '@/types';
 import { locales } from '@/data/cv-data';
 import { getLocalizedPath } from '@/lib/i18n';
@@ -51,9 +52,15 @@ export default function Footer({ currentLocale, cvData }: FooterProps) {
           {/* Col 1: Executive Profile */}
           <div className="space-y-4">
             <div className="flex items-center space-x-3">
-              <div className="w-9 h-9 rounded-lg bg-gradient-to-br from-cyan-500 to-emerald-500 p-[1px]">
-                <div className="w-full h-full bg-slate-950 dark:bg-slate-950 light:bg-slate-900 rounded-[7px] flex items-center justify-center font-mono font-bold text-cyan-400 text-sm">
-                  EdS
+              <div className="relative w-10 h-10 rounded-xl bg-gradient-to-br from-cyan-500 to-emerald-500 p-[1.5px] shadow-lg shadow-cyan-500/20 shrink-0">
+                <div className="w-full h-full rounded-[10px] overflow-hidden relative bg-slate-900">
+                  <Image
+                    src="/images/eduardo-desousa.jpg"
+                    alt="Eduardo de Sousa"
+                    fill
+                    sizes="40px"
+                    className="object-cover object-top"
+                  />
                 </div>
               </div>
               <span className="font-bold text-white text-lg">Eduardo de Sousa</span>
