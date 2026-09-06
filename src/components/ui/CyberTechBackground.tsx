@@ -53,12 +53,11 @@ const telemetryTranslations: Record<
   },
 };
 
+export { telemetryTranslations };
+
 export default function CyberTechBackground({
   currentLocale = 'es',
 }: CyberTechBackgroundProps) {
-  const telemetry =
-    telemetryTranslations[currentLocale] || telemetryTranslations.es;
-
   return (
     <div className="absolute inset-0 pointer-events-none overflow-hidden select-none z-0" aria-hidden="true">
       {/* 1. Subtle SVG Technical Matrix Grid */}
@@ -102,18 +101,7 @@ export default function CyberTechBackground({
       <div className="absolute top-10 right-10 w-96 h-96 bg-cyan-500/10 dark:bg-cyan-500/15 rounded-full blur-3xl pointer-events-none" />
       <div className="absolute bottom-10 left-10 w-96 h-96 bg-emerald-500/10 dark:bg-emerald-500/15 rounded-full blur-3xl pointer-events-none" />
 
-      {/* 3. Floating Engineering Telemetry Annotations (Micro-Labels) */}
-      <div className="hidden lg:block absolute top-6 left-8 font-mono text-[9px] text-cyan-800/80 dark:text-cyan-400/60 tracking-wider space-y-1 z-10">
-        <div>{telemetry.node}</div>
-        <div>{telemetry.metrics}</div>
-      </div>
-
-      <div className="hidden lg:block absolute top-6 right-8 font-mono text-[9px] text-emerald-800/80 dark:text-emerald-400/60 text-right tracking-wider space-y-1 z-10">
-        <div>{telemetry.spec}</div>
-        <div>{telemetry.cadence}</div>
-      </div>
-
-      {/* 4. Scanning Telemetry Pulse Lines */}
+      {/* 3. Scanning Telemetry Pulse Lines */}
       <div className="absolute top-1/3 left-0 right-0 h-px bg-gradient-to-r from-transparent via-cyan-500/30 dark:via-cyan-400/30 to-transparent" />
       <div className="absolute top-2/3 left-0 right-0 h-px bg-gradient-to-r from-transparent via-emerald-500/30 dark:via-emerald-400/30 to-transparent" />
     </div>

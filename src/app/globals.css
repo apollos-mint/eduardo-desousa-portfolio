@@ -212,7 +212,6 @@ html.light section {
 
 /* Solid Crisp White for Cards in Light Theme */
 html.light .glass-panel,
-html.light .executive-summary-banner,
 html.light .bg-slate-950,
 html.light .bg-slate-950\/95,
 html.light .bg-slate-950\/90,
@@ -230,6 +229,28 @@ html.light .bg-slate-900\/60 {
   color: #0f172a !important;
   border-color: #cbd5e1 !important;
   box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.05);
+}
+
+/* Executive Summary Banner: Cyber Command Module (Preserves Dark Tones, Glow & Glassmorphism in both themes) */
+.executive-summary-banner,
+html.light .executive-summary-banner,
+html.dark .executive-summary-banner {
+  background: rgba(13, 19, 32, 0.85) !important;
+  backdrop-filter: blur(16px) !important;
+  -webkit-backdrop-filter: blur(16px) !important;
+  border: 2px solid rgba(6, 182, 212, 0.5) !important;
+  color: #f8fafc !important;
+  box-shadow: 0 20px 50px -10px rgba(6, 182, 212, 0.15), 0 10px 20px -5px rgba(0, 0, 0, 0.4) !important;
+}
+
+.executive-summary-banner p,
+html.light .executive-summary-banner p {
+  color: #e2e8f0 !important;
+}
+
+.executive-summary-banner strong,
+html.light .executive-summary-banner strong {
+  color: #ffffff !important;
 }
 
 /* Crisp Headings */

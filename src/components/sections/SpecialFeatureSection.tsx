@@ -4,7 +4,7 @@ import React from 'react';
 import Link from 'next/link';
 import { Locale, CVContent } from '@/types';
 import BrandLogo from '@/components/ui/BrandLogos';
-import CyberTechBackground from '@/components/ui/CyberTechBackground';
+import CyberTechBackground, { telemetryTranslations } from '@/components/ui/CyberTechBackground';
 import { renderFormattedText } from '@/lib/formatter';
 import {
   Cpu,
@@ -25,6 +25,9 @@ export default function SpecialFeatureSection({
   currentLocale,
   cvData,
 }: SpecialFeatureSectionProps) {
+  const telemetry =
+    telemetryTranslations[currentLocale] || telemetryTranslations.es;
+
   const sourcingPillar = {
     id: 'sourcing',
     icon: Globe2,
@@ -61,27 +64,57 @@ export default function SpecialFeatureSection({
   ];
 
   return (
-    <section id="specialization" className="pt-8 sm:pt-10 pb-6 sm:pb-8 relative overflow-hidden">
-      {/* High-Tech Blueprint Matrix & Telemetry Background */}
+    <section id="specialization" className="pt-6 sm:pt-8 pb-6 sm:pb-8 relative overflow-hidden">
+      {/* High-Tech Blueprint Matrix Background */}
       <CyberTechBackground currentLocale={currentLocale} />
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 space-y-6 sm:space-y-8">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 space-y-4 sm:space-y-6">
+        {/* =========================================================================
+           TOP ENGINEERING TELEMETRY HUD BAR (CLEAN DEDICATED POSITION ABOVE BANNER)
+           ========================================================================= */}
+        <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-2 font-mono text-[10px] tracking-wider px-2">
+          {/* Left Telemetry (Node & Sourcing Metrics) */}
+          <div className="flex items-center space-x-2 text-cyan-700 dark:text-cyan-400">
+            <span className="w-2 h-2 rounded-full bg-cyan-500 animate-pulse shadow-sm shadow-cyan-500/50 shrink-0" />
+            <div className="flex flex-col sm:flex-row sm:items-center sm:gap-2">
+              <span className="font-bold text-cyan-800 dark:text-cyan-300">{telemetry.node}</span>
+              <span className="hidden sm:inline text-slate-400 dark:text-slate-600">·</span>
+              <span className="text-[9px] text-slate-600 dark:text-slate-400">{telemetry.metrics}</span>
+            </div>
+          </div>
+
+          {/* Right Telemetry (Cleanroom & Automotive OEM Specs) */}
+          <div className="flex items-center space-x-2 sm:text-right sm:ml-auto text-emerald-700 dark:text-emerald-400">
+            <div className="flex flex-col sm:flex-row sm:items-center sm:gap-2">
+              <span className="font-bold text-emerald-800 dark:text-emerald-300">{telemetry.spec}</span>
+              <span className="hidden sm:inline text-slate-400 dark:text-slate-600">·</span>
+              <span className="text-[9px] text-slate-600 dark:text-slate-400">{telemetry.cadence}</span>
+            </div>
+            <span className="w-2 h-2 rounded-full bg-emerald-500 shadow-sm shadow-emerald-500/50 shrink-0 hidden sm:inline-block" />
+          </div>
+        </div>
+
         {/* =========================================================================
            EXECUTIVE LEADERSHIP SUMMARY BANNER (HIGH-CONTRAST COMMAND MODULE)
            ========================================================================= */}
-        <div className="p-6 sm:p-8 rounded-3xl executive-summary-banner bg-white/95 dark:bg-gradient-to-r dark:from-slate-900/95 dark:via-slate-900/80 dark:to-slate-950 border-2 border-cyan-500/50 flex flex-col md:flex-row items-center justify-between gap-6 shadow-xl shadow-cyan-500/5 dark:shadow-2xl relative overflow-hidden backdrop-blur-sm">
+        <div className="glass-panel p-6 sm:p-8 rounded-3xl executive-summary-banner border-2 border-cyan-500/40 flex flex-col md:flex-row items-center justify-between gap-6 shadow-2xl relative overflow-hidden group">
           {/* High-tech corner accents */}
-          <div className="absolute top-0 left-0 w-6 h-6 border-t-2 border-l-2 border-cyan-500" />
-          <div className="absolute top-0 right-0 w-6 h-6 border-t-2 border-r-2 border-cyan-500" />
-          <div className="absolute bottom-0 left-0 w-6 h-6 border-b-2 border-l-2 border-cyan-500" />
-          <div className="absolute bottom-0 right-0 w-6 h-6 border-b-2 border-r-2 border-cyan-500" />
+          <div className="absolute top-0 left-0 w-6 h-6 border-t-2 border-l-2 border-cyan-400 pointer-events-none" />
+          <div className="absolute top-0 right-0 w-6 h-6 border-t-2 border-r-2 border-cyan-400 pointer-events-none" />
+          <div className="absolute bottom-0 left-0 w-6 h-6 border-b-2 border-l-2 border-cyan-400 pointer-events-none" />
+          <div className="absolute bottom-0 right-0 w-6 h-6 border-b-2 border-r-2 border-cyan-400 pointer-events-none" />
+
+          {/* Glowing blue light in the corner ("una luz azul en la esquina") */}
+          <div className="absolute top-0 right-0 w-80 h-80 bg-cyan-500/25 dark:bg-cyan-500/30 rounded-full blur-3xl pointer-events-none -mr-20 -mt-20 group-hover:bg-cyan-500/40 transition-all duration-500" />
+          {/* Secondary ambient highlight */}
+          <div className="absolute -bottom-10 -left-10 w-64 h-64 bg-cyan-500/10 dark:bg-cyan-500/15 rounded-full blur-3xl pointer-events-none" />
 
           <div className="space-y-3 max-w-3xl relative z-10">
-            <div className="inline-flex items-center space-x-2 px-3.5 py-1 rounded-full bg-cyan-50 dark:bg-cyan-950/80 border border-cyan-500/40 text-xs font-mono font-bold text-cyan-900 dark:text-cyan-300 shadow-sm">
-              <Award className="w-3.5 h-3.5 text-cyan-600 dark:text-cyan-400" />
+            <div className="inline-flex items-center space-x-2 px-3.5 py-1 rounded-full bg-cyan-950/80 border border-cyan-500/50 text-xs font-mono font-bold text-cyan-300 shadow-sm">
+              <Award className="w-3.5 h-3.5 text-cyan-400" />
               <span className="uppercase tracking-wider">{cvData.personal.roleTitle}</span>
             </div>
-            <p className="text-sm sm:text-base text-slate-900 dark:text-slate-100 leading-relaxed font-normal">
+            <p className="text-sm sm:text-base text-slate-100 leading-relaxed font-normal">
               {renderFormattedText(cvData.personal.summary)}
             </p>
           </div>
@@ -89,10 +122,10 @@ export default function SpecialFeatureSection({
           <div className="shrink-0 w-full md:w-auto relative z-10">
             <Link
               href={`/${currentLocale}/contact`}
-              className="w-full md:w-auto inline-flex items-center justify-center space-x-2 px-6 py-3.5 sm:py-4 rounded-2xl bg-gradient-to-r from-cyan-600 via-emerald-600 to-cyan-600 dark:from-cyan-500 dark:via-emerald-500 dark:to-cyan-500 hover:from-cyan-500 hover:to-emerald-500 text-white dark:text-slate-950 font-extrabold text-xs sm:text-sm uppercase tracking-wider transition-all duration-200 shadow-xl shadow-cyan-500/25 whitespace-nowrap hover:scale-[1.02]"
+              className="w-full md:w-auto inline-flex items-center justify-center space-x-2 px-6 py-3.5 sm:py-4 rounded-2xl bg-gradient-to-r from-cyan-500 via-emerald-500 to-cyan-500 hover:from-cyan-400 hover:to-emerald-400 text-slate-950 font-extrabold text-xs sm:text-sm uppercase tracking-wider transition-all duration-200 shadow-xl shadow-cyan-500/25 whitespace-nowrap hover:scale-[1.02]"
             >
               <span>{cvData.common.contactTitle}</span>
-              <ArrowRight className="w-4 h-4 text-white dark:text-slate-950" />
+              <ArrowRight className="w-4 h-4 text-slate-950" />
             </Link>
           </div>
         </div>
