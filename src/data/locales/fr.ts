@@ -17,7 +17,8 @@ export const frData: CVContent = {
     drivingLicenses: 'Permis A et B, Véhicule Personnel',
     roleTitle: 'Responsable des Opérations Digitales, de l’Automatisation & de la Supply Chain Globale',
     headline: 'Lean Six Sigma Black Belt | Sourcing Global ($800K/an · 20 Cont/Trimestre) | Automatisation iPaaS & Logiciels B2B | Ex-ASML & BMW OEM',
-    summary: 'Leader des Opérations, de la Digitalisation et des Processus certifié Lean Six Sigma Black Belt, avec plus d’une décennie d’expérience internationale à la croisée des chaînes d’approvisionnement mondiales, de la fabrication haute technologie et de l’ingénierie logicielle opérationnelle. Spécialisé dans la direction stratégique des achats internationaux ($800 000 USD/an, 20 conteneurs maritimes par trimestre, jusqu’à -75% d’économies directes en Chine et en Inde), combinée à l’architecture et au développement d’applications web d’entreprise (CMMS de gestion d’actifs avec scoring de performance des opérateurs et portails B2B) et à l’automatisation des flux (iPaaS).',
+    summary:
+      'Leader des Opérations, de la Digitalisation et des Processus certifié Lean Six Sigma Black Belt, avec plus d’une décennie d’expérience internationale à la croisée des chaînes d’approvisionnement mondiales, de la fabrication haute technologie et de l’ingénierie logicielle opérationnelle.\n\nSpécialisé dans la direction stratégique des achats internationaux ($800 000 USD/an, 20 conteneurs maritimes par trimestre, jusqu’à -75% d’économies directes en Chine et en Inde), combinée à l’architecture et au développement d’applications web d’entreprise (CMMS de gestion d’actifs avec scoring de performance des opérateurs et portails B2B) et à l’automatisation des flux (iPaaS).\n\nTrilingue : Espagnol (Natif), Anglais (C1 - Professionnel) et Portugais (C1 - Professionnel).',
   },
   hero: {
     badge: 'DISPONIBLE POUR LEADERSHIP TECHNIQUE & PROJETS STRATÉGIQUES',
@@ -25,7 +26,7 @@ export const frData: CVContent = {
     titleLine1: 'Opérations Globales,',
     titleLine2: 'Automatisation & Haute Technologie',
     subtitle: 'À la convergence stratégique des chaînes d’approvisionnement internationales ($800K USD/an en Asie/LatAm), de l’architecture logicielle d’entreprise (CMMS, iPaaS) et de la fabrication haute précision (ASML, BMW OEM).',
-    downloadCvBtn: 'Télécharger le CV Officiel',
+    downloadCvBtn: 'Télécharger le CV',
     contactBtn: 'Prendre Contact',
     exploreBtn: 'Découvrir le Parcours',
     availableForWork: 'Actif & Disponible pour de Nouveaux Défis',

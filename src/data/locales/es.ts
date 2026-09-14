@@ -17,7 +17,8 @@ export const esData: CVContent = {
     drivingLicenses: 'A y B, Coche Propio',
     roleTitle: 'Líder de Operaciones Digitales, Automatización & Cadena de Suministro Global',
     headline: 'Lean Six Sigma Black Belt | Sourcing Global ($800K/año · 20 Cont/Trimestre) | Automatización iPaaS & Software B2B | Ex-ASML & BMW OEM',
-    summary: 'Líder de Operaciones, Digitalización y Procesos con certificación Lean Six Sigma Black Belt y más de una década de experiencia combinando gestión de cadenas de suministro internacionales, manufactura de alta tecnología y desarrollo de software operativo. Especializado en la dirección estratégica de compras globales para cuentas corporativas en construcción ($800,000 USD/año, 20 contenedores trimestrales, hasta -75% de ahorro en China/India), con enfoque simultáneo en la arquitectura y desarrollo de aplicaciones web empresariales (CMMS de activos con scoring de KPIs de empleados, portales B2B y marketplaces transaccionales) mediante IA agentística y automatización.',
+    summary:
+      'Líder de Operaciones, Digitalización y Procesos con certificación Lean Six Sigma Black Belt y más de una década de experiencia combinando gestión de cadenas de suministro internacionales, manufactura de alta tecnología y desarrollo de software operativo.\n\nEspecializado en la dirección estratégica de compras globales para cuentas corporativas en construcción ($800,000 USD/año, 20 contenedores trimestrales, hasta -75% de ahorro en China/India), con enfoque simultáneo en la arquitectura y desarrollo de aplicaciones web empresariales (CMMS de activos con scoring de KPIs de empleados, portales B2B y marketplaces transaccionales) mediante IA agentística y automatización.\n\nTrilingüe: Español (Nativo), Inglés (C1 - Profesional) y Portugués (C1 - Profesional).',
   },
   hero: {
     badge: 'DISPONIBLE PARA PROYECTOS & LIDERAZGO TÉCNICO',
@@ -25,7 +26,7 @@ export const esData: CVContent = {
     titleLine1: 'Operaciones Globales,',
     titleLine2: 'Automatización & Alta Tecnología',
     subtitle: 'Liderando la convergencia estratégica entre aprovisionamiento internacional ($800K USD/año en Asia/LatAm), arquitectura de software operativo & automatización (CMMS, iPaaS) e ingeniería de precisión en alta tecnología (ASML, BMW OEM).',
-    downloadCvBtn: 'Descargar CV Oficial',
+    downloadCvBtn: 'Descargar CV',
     contactBtn: 'Contactar Directamente',
     exploreBtn: 'Explorar Trayectoria',
     availableForWork: 'En activo & disponible para nuevos retos',

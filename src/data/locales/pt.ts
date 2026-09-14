@@ -17,7 +17,8 @@ export const ptData: CVContent = {
     drivingLicenses: 'A e B, Viatura Própria',
     roleTitle: 'Líder de Operações Digitais, Automação & Cadeia de Abastecimento Global',
     headline: 'Lean Six Sigma Black Belt | Sourcing Global ($800K/ano · 20 Cont/Trimestre) | Automação iPaaS & Software B2B | Ex-ASML & BMW OEM',
-    summary: 'Líder de Operações, Digitalização e Processos com certificação Lean Six Sigma Black Belt e mais de uma década de experiência combinando gestão de cadeias de abastecimento internacionais, manufatura de alta tecnologia e desenvolvimento de software operacional. Especializado na direção estratégica de compras globais ($800.000 USD/ano, 20 contentores trimestrais, até -75% de poupança na Ásia), com foco simultâneo na arquitetura e desenvolvimento de aplicações web empresariais (CMMS de ativos com scoring de KPIs, portais B2B e marketplaces) e automação de processos (iPaaS).',
+    summary:
+      'Líder de Operações, Digitalização e Processos com certificação Lean Six Sigma Black Belt e mais de uma década de experiência combinando gestão de cadeias de abastecimento internacionais, manufatura de alta tecnologia e desenvolvimento de software operacional.\n\nEspecializado na direção estratégica de compras globais ($800.000 USD/ano, 20 contentores trimestrais, até -75% de poupança na Ásia), com foco simultâneo na arquitetura e desenvolvimento de aplicações web empresariais (CMMS de ativos com scoring de KPIs, portais B2B e marketplaces) e automação de processos (iPaaS).\n\nTrilingue: Espanhol (Nativo), Inglês (C1 - Profissional) e Português (C1 - Profissional).',
   },
   hero: {
     badge: 'DISPONÍVEL PARA LIDERANÇA TÉCNICA & PROJETOS CRÍTICOS',
@@ -25,7 +26,7 @@ export const ptData: CVContent = {
     titleLine1: 'Operações Globais,',
     titleLine2: 'Automação & Alta Tecnologia',
     subtitle: 'Liderando a convergência estratégica entre aprovisionamento internacional ($800K USD/ano na Ásia/LatAm), arquitetura de software operacional (CMMS, iPaaS) e engenharia de precisão em alta tecnologia (ASML, BMW OEM).',
-    downloadCvBtn: 'Descarregar CV Oficial',
+    downloadCvBtn: 'Descarregar CV',
     contactBtn: 'Entrar em Contacto',
     exploreBtn: 'Explorar Percurso',
     availableForWork: 'Ativo & Disponível para Novos Desafios',

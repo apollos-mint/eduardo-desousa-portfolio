@@ -24,7 +24,7 @@ export async function generateMetadata({
   const cvData = getCVData(lang as Locale);
   return {
     title: `${cvData.personal.fullName} | ${cvData.personal.roleTitle}`,
-    description: cvData.personal.summary,
+    description: cvData.personal.summary.replace(/\n+/g, ' '),
   };
 }
 

@@ -109,14 +109,18 @@ export default function SpecialFeatureSection({
           {/* Secondary ambient highlight */}
           <div className="absolute -bottom-10 -left-10 w-64 h-64 bg-cyan-500/10 dark:bg-cyan-500/15 rounded-full blur-3xl pointer-events-none" />
 
-          <div className="space-y-3 max-w-3xl relative z-10">
+          <div className="space-y-4 max-w-3xl relative z-10">
             <div className="inline-flex items-center space-x-2 px-3.5 py-1 rounded-full bg-cyan-950/80 border border-cyan-500/50 text-xs font-mono font-bold text-cyan-300 shadow-sm">
               <Award className="w-3.5 h-3.5 text-cyan-400" />
               <span className="uppercase tracking-wider">{cvData.personal.roleTitle}</span>
             </div>
-            <p className="text-sm sm:text-base text-slate-100 leading-relaxed font-normal">
-              {renderFormattedText(cvData.personal.summary)}
-            </p>
+            <div className="space-y-3.5 text-sm sm:text-base text-slate-100 font-normal">
+              {cvData.personal.summary.split(/\n\s*\n/).filter(Boolean).map((paragraph, idx) => (
+                <p key={idx} className="text-justify leading-relaxed sm:leading-7">
+                  {renderFormattedText(paragraph)}
+                </p>
+              ))}
+            </div>
           </div>
 
           <div className="shrink-0 w-full md:w-auto relative z-10">

@@ -17,7 +17,8 @@ export const enData: CVContent = {
     drivingLicenses: 'A & B, Own Vehicle',
     roleTitle: 'Digital Operations, Process Automation & Global Supply Chain Lead',
     headline: 'Lean Six Sigma Black Belt | Global Sourcing ($800K/yr · 20 Cont/Qtr) | iPaaS Automation & B2B Software | Ex-ASML & BMW OEM',
-    summary: 'Digital Operations, Automation, and Process Leader with Lean Six Sigma Black Belt certification and over a decade of cross-functional experience across global supply chains, high-tech cleanroom manufacturing, and operational software development. Specializing in international strategic procurement for enterprise construction and renovation accounts ($800,000 USD/year portfolio, 20 containers/quarter, achieving up to 75% cost reduction in China and India), while concurrently architecting enterprise web applications (CMMS asset management platforms with employee KPI scoring, B2B service portals, and transactional marketplaces) powered by agentic AI and modern web architectures. Trilingual: Spanish (Native), English (C1 - Professional), and Portuguese (C1 - Professional).',
+    summary:
+      'Digital Operations, Automation, and Process Leader with Lean Six Sigma Black Belt certification and over a decade of cross-functional experience across global supply chains, high-tech cleanroom manufacturing, and operational software development.\n\nSpecializing in international strategic procurement for enterprise construction and renovation accounts ($800,000 USD/year portfolio, 20 containers/quarter, achieving up to 75% cost reduction in China and India), while concurrently architecting enterprise web applications (CMMS asset management platforms with employee KPI scoring, B2B service portals, and transactional marketplaces) powered by agentic AI and modern web architectures.\n\nTrilingual: Spanish (Native), English (C1 - Professional), and Portuguese (C1 - Professional).',
   },
   hero: {
     badge: 'AVAILABLE FOR TECHNICAL LEADERSHIP & HIGH-IMPACT ROLES',
@@ -25,7 +26,7 @@ export const enData: CVContent = {
     titleLine1: 'Global Operations,',
     titleLine2: 'Process Automation & High-Tech',
     subtitle: 'Steering the strategic convergence between cross-border procurement ($800K USD/yr in Asia/LatAm), operational software architecture (asset CMMS, iPaaS), and critical precision manufacturing (ASML, BMW OEM).',
-    downloadCvBtn: 'Download Official CV',
+    downloadCvBtn: 'Download CV',
     contactBtn: 'Get in Touch',
     exploreBtn: 'Explore Track Record',
     availableForWork: 'Active & Open to Global Opportunities',

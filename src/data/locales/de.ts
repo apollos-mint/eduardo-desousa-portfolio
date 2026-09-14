@@ -17,7 +17,8 @@ export const deData: CVContent = {
     drivingLicenses: 'A und B, eigener PKW',
     roleTitle: 'Leiter Digitale Operative, Prozessautomatisierung & Globale Supply Chain',
     headline: 'Lean Six Sigma Black Belt | Global Sourcing ($800K/Jahr · 20 Cont/Quartal) | iPaaS-Automatisierung & B2B-Software | Ex-ASML & BMW OEM',
-    summary: 'Führungskraft für Digitale Operative, Prozessautomatisierung und Qualitätsmanagement mit Lean Six Sigma Black Belt-Zertifizierung und über einem Jahrzehnt internationaler Erfahrung in globalen Lieferketten, High-Tech-Reinraumfertigung und betrieblicher Softwarearchitektur. Spezialisiert auf die strategische internationale Beschaffung für gewerbliche Bau- und Sanierungsprojekte ($800.000 USD/Jahr, 20 Container pro Quartal, bis zu 75% Kostensenkung in China und Indien), kombiniert mit der Konzeption und Entwicklung unternehmenskritischer Webapplikationen (CMMS für Anlagenlebenszyklus mit KPI-Scoring und B2B-Portale) sowie Prozessautomatisierung (iPaaS).',
+    summary:
+      'Führungskraft für Digitale Operative, Prozessautomatisierung und Qualitätsmanagement mit Lean Six Sigma Black Belt-Zertifizierung und über einem Jahrzehnt internationaler Erfahrung in globalen Lieferketten, High-Tech-Reinraumfertigung und betrieblicher Softwarearchitektur.\n\nSpezialisiert auf die strategische internationale Beschaffung für gewerbliche Bau- und Sanierungsprojekte ($800.000 USD/Jahr, 20 Container pro Quartal, bis zu 75% Kostensenkung in China und Indien), kombiniert mit der Konzeption und Entwicklung unternehmenskritischer Webapplikationen (CMMS für Anlagenlebenszyklus mit KPI-Scoring und B2B-Portale) sowie Prozessautomatisierung (iPaaS).\n\nDreisprachig: Spanisch (Muttersprache), Englisch (C1 - Verhandlungssicher) und Portugiesisch (C1 - Verhandlungssicher).',
   },
   hero: {
     badge: 'VERFÜGBAR FÜR TECHNISCHE FÜHRUNGSAUFGABEN & PROJEKTE',
@@ -25,7 +26,7 @@ export const deData: CVContent = {
     titleLine1: 'Globale Operative Systeme,',
     titleLine2: 'Prozessautomatisierung & High-Tech',
     subtitle: 'Führend an der strategischen Schnittstelle zwischen internationalen Lieferketten ($800K USD/Jahr in Asien/LatAm), betrieblicher Softwarearchitektur (CMMS, iPaaS) und kritischer High-Tech-Präzisionsfertigung (ASML, BMW OEM).',
-    downloadCvBtn: 'Offiziellen Lebenslauf herunterladen',
+    downloadCvBtn: 'Lebenslauf herunterladen',
     contactBtn: 'Direkt kontaktieren',
     exploreBtn: 'Werdegang entdecken',
     availableForWork: 'Aktiv & Offen für neue Herausforderungen',

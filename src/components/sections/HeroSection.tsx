@@ -104,7 +104,7 @@ export default function HeroSection({ currentLocale, cvData }: HeroSectionProps)
                 className="w-full sm:w-auto inline-flex items-center justify-center space-x-2 px-5 py-2.5 sm:py-3 rounded-xl bg-gradient-to-r from-cyan-500 to-emerald-500 hover:from-cyan-400 hover:to-emerald-400 text-slate-950 font-bold text-xs sm:text-sm shadow-lg shadow-cyan-500/20 hover:shadow-cyan-500/30 hover:scale-[1.02] transition-all duration-200"
               >
                 <FileDown className="w-4 h-4 text-slate-950" />
-                <span>{cvData.hero.downloadCvBtn || 'Download Official CV (PDF)'}</span>
+                <span>{cvData.hero.downloadCvBtn || 'Download CV'}</span>
               </a>
 
               <a

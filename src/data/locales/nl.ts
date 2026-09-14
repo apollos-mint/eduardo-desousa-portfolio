@@ -17,7 +17,8 @@ export const nlData: CVContent = {
     drivingLicenses: 'A en B, Eigen Vervoer',
     roleTitle: 'Leider Digitale Operaties, Procesautomatisering & Globale Supply Chain',
     headline: 'Lean Six Sigma Black Belt | Global Sourcing ($800K/jaar · 20 Cont/Kwartaal) | iPaaS Automatisering & B2B Software | Ex-ASML & BMW OEM',
-    summary: 'Leider in Digitale Operaties, Procesoptimalisatie en Kwaliteitsborging met Lean Six Sigma Black Belt-certificering en ruim tien jaar internationale ervaring in wereldwijde toeleveringsketens, high-tech cleanroom manufacturing en operationele softwareontwikkeling. Gespecialiseerd in strategische internationale inkoop voor zakelijke bouw- en renovatieprojecten ($800.000 USD/jaar, 20 containers per kwartaal, tot 75% kostenbesparing in China en India), gecombineerd met de architectuur van bedrijfskritische webapplicaties (CMMS voor machinebeheer met KPI-scoring van medewerkers en B2B-portalen) en workflow-automatisering (iPaaS).',
+    summary:
+      'Leider in Digitale Operaties, Procesoptimalisatie en Kwaliteitsborging met Lean Six Sigma Black Belt-certificering en ruim tien jaar internationale ervaring in wereldwijde toeleveringsketens, high-tech cleanroom manufacturing en operationele softwareontwikkeling.\n\nGespecialiseerd in strategische internationale inkoop voor zakelijke bouw- en renovatieprojecten ($800.000 USD/jaar, 20 containers per kwartaal, tot 75% kostenbesparing in China en India), gecombineerd met de architectuur van bedrijfskritische webapplicaties (CMMS voor machinebeheer met KPI-scoring van medewerkers en B2B-portalen) en workflow-automatisering (iPaaS).\n\nDrietalig: Spaans (Moedertaal), Engels (C1 - Professioneel) en Portugees (C1 - Professioneel).',
   },
   hero: {
     badge: 'BESCHIKBAAR VOOR TECHNISCH LEIDERSCHAP & HIGH-TECH ROLLEN',
@@ -25,7 +26,7 @@ export const nlData: CVContent = {
     titleLine1: 'Globale Operaties,',
     titleLine2: 'Procesautomatisering & High-Tech',
     subtitle: 'Leidinggevend op het snijvlak van internationale toeleveringsketens ($800K USD/jaar in Azië/LatAm), operationele software-architectuur (CMMS, iPaaS) en kritische high-tech precisieproductie (ASML, BMW OEM).',
-    downloadCvBtn: 'Download Officieel CV',
+    downloadCvBtn: 'Download CV',
     contactBtn: 'Direct Contact Opnemen',
     exploreBtn: 'Bekijk Ervaring',
     availableForWork: 'Actief & Beschikbaar voor Nieuwe Uitdagingen',
