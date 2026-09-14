@@ -18,6 +18,7 @@ EMAIL;TYPE=PREF,INTERNET:desousaej@gmail.com
 ADR;TYPE=WORK:;;Enguera;Comunidad Valenciana;;46810;Spain
 NOTE:${note || 'Lean Six Sigma Black Belt (DMAIC) | ISO 9001:2015 Lead Auditor | CMMS Software Architect | Global Sourcing ($800K/yr) | Ex-ASML Supply Chain'}
 URL:https://eduardodesousa.vercel.app
+X-SOCIALPROFILE;type=linkedin:https://www.linkedin.com/in/eduardo-desousa/
 END:VCARD`;
 
   const blob = new Blob([vcard], { type: "text/vcard;charset=utf-8" });
