@@ -131,101 +131,53 @@ export default function EducationCertificatesSection({
                 {/* Subtle Radial Holographic Hover Glow */}
                 <div className="absolute top-0 right-0 w-64 h-64 bg-cyan-500/10 dark:bg-cyan-500/15 rounded-full blur-3xl pointer-events-none -mr-16 -mt-16 group-hover:bg-cyan-500/25 transition-all duration-500" />
 
-                {item.verificationUrl ? (
-                  <a
-                    href={item.verificationUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="w-full text-left p-5 sm:p-7 flex flex-col lg:flex-row lg:items-center justify-between gap-4 cursor-pointer relative z-10 group/card block"
-                  >
-                    <div className="space-y-2.5 lg:max-w-2xl">
-                      {/* Telemetry Header */}
-                      <div className="flex items-center space-x-2 text-[10px] font-mono text-cyan-400">
-                        <span className="w-1.5 h-1.5 rounded-full bg-cyan-400 animate-pulse shadow-sm shadow-cyan-400" />
-                        <span className="font-bold tracking-widest text-cyan-400">[DOSSIER // REF-{item.id.toUpperCase()}]</span>
-                        <span className="text-slate-500">·</span>
-                        <span className="text-emerald-400 flex items-center space-x-1 font-bold">
-                          <ShieldCheck className="w-3.5 h-3.5 text-emerald-400" />
-                          <span>OFFICIAL VIRTUALBADGE VALIDATED</span>
-                        </span>
-                      </div>
-
-                      <div className="flex flex-wrap items-center gap-2">
-                        <span className="text-[10px] font-mono font-bold tracking-wider px-3 py-1 rounded-full bg-cyan-950/80 border border-cyan-500/40 text-cyan-300 shadow-sm">
-                          {item.credentialBadge}
-                        </span>
-                        <span className="text-xs font-mono text-cyan-300 font-semibold px-2.5 py-0.5 rounded-md bg-slate-900/80 border border-slate-700/80">
-                          {item.institution}
-                        </span>
-                      </div>
-
-                      <h3 className="text-xl sm:text-2xl font-extrabold text-white flex items-center space-x-2 group-hover/card:text-cyan-300 transition-colors tracking-tight">
-                        <span>{item.title}</span>
-                        <ExternalLink className="w-4 h-4 text-cyan-400 group-hover/card:translate-x-0.5 group-hover/card:-translate-y-0.5 transition-transform" />
-                      </h3>
-
-                      <p className="text-xs sm:text-sm text-slate-300 line-clamp-2 leading-relaxed font-normal text-justify">
-                        {item.description}
-                      </p>
+                <button
+                  onClick={() => toggleExpand(item.id)}
+                  aria-expanded={isExpanded}
+                  className="w-full text-left p-5 sm:p-7 flex flex-col lg:flex-row lg:items-center justify-between gap-4 cursor-pointer focus:outline-none relative z-10 group/header"
+                >
+                  <div className="space-y-2.5 lg:max-w-2xl">
+                    {/* Telemetry Header */}
+                    <div className="flex items-center space-x-2 text-[10px] font-mono text-cyan-400">
+                      <span className="w-1.5 h-1.5 rounded-full bg-cyan-400 animate-pulse shadow-sm shadow-cyan-400" />
+                      <span className="font-bold tracking-widest text-cyan-400">[DOSSIER // REF-{item.id.toUpperCase()}]</span>
+                      <span className="text-slate-500">·</span>
+                      <span className="text-emerald-400 flex items-center space-x-1 font-bold">
+                        <ShieldCheck className="w-3.5 h-3.5 text-emerald-400" />
+                        <span>{item.verificationUrl ? 'OFFICIAL VIRTUALBADGE VALIDATED' : 'AUDIT VERIFIED'}</span>
+                      </span>
                     </div>
 
-                    {/* Official Validation Button with text placed cleanly inside */}
-                    <div className="flex items-center justify-between lg:justify-end shrink-0 pt-2 lg:pt-0">
-                      <div className="inline-flex items-center justify-center space-x-2 px-6 py-3.5 rounded-xl bg-gradient-to-r from-cyan-500 via-emerald-500 to-cyan-500 hover:from-cyan-400 hover:to-emerald-400 text-slate-950 font-extrabold text-xs sm:text-sm uppercase tracking-wider shadow-xl shadow-cyan-500/25 group-hover/card:scale-105 transition-all">
-                        <span>{t.validateCredential}: {item.title.toUpperCase()}</span>
-                        <ExternalLink className="w-4 h-4 text-slate-950 shrink-0" />
-                      </div>
-                    </div>
-                  </a>
-                ) : (
-                  <button
-                    onClick={() => toggleExpand(item.id)}
-                    aria-expanded={isExpanded}
-                    className="w-full text-left p-5 sm:p-7 flex flex-col lg:flex-row lg:items-center justify-between gap-4 cursor-pointer focus:outline-none relative z-10"
-                  >
-                    <div className="space-y-2.5 lg:max-w-2xl">
-                      {/* Telemetry Header */}
-                      <div className="flex items-center space-x-2 text-[10px] font-mono text-cyan-400">
-                        <span className="w-1.5 h-1.5 rounded-full bg-cyan-400 animate-pulse shadow-sm shadow-cyan-400" />
-                        <span className="font-bold tracking-widest text-cyan-400">[DOSSIER // REF-{item.id.toUpperCase()}]</span>
-                        <span className="text-slate-500">·</span>
-                        <span className="text-emerald-400 flex items-center space-x-1 font-bold">
-                          <ShieldCheck className="w-3 h-3 text-emerald-400" />
-                          <span>AUDIT VERIFIED</span>
-                        </span>
-                      </div>
-
-                      <div className="flex flex-wrap items-center gap-2">
-                        <span className="text-[10px] font-mono font-bold tracking-wider px-3 py-1 rounded-full bg-cyan-950/80 border border-cyan-500/40 text-cyan-300 shadow-sm">
-                          {item.credentialBadge}
-                        </span>
-                        <span className="text-xs font-mono text-cyan-300 font-semibold px-2.5 py-0.5 rounded-md bg-slate-900/80 border border-slate-700/80">
-                          {item.institution}
-                        </span>
-                      </div>
-
-                      <h3 className="text-xl sm:text-2xl font-extrabold text-white flex items-center space-x-2 group-hover:text-cyan-300 transition-colors tracking-tight">
-                        <span>{item.title}</span>
-                      </h3>
-
-                      <p className="text-xs sm:text-sm text-slate-300 line-clamp-2 leading-relaxed font-normal text-justify">
-                        {item.description}
-                      </p>
+                    <div className="flex flex-wrap items-center gap-2">
+                      <span className="text-[10px] font-mono font-bold tracking-wider px-3 py-1 rounded-full bg-cyan-950/80 border border-cyan-500/40 text-cyan-300 shadow-sm">
+                        {item.credentialBadge}
+                      </span>
+                      <span className="text-xs font-mono text-cyan-300 font-semibold px-2.5 py-0.5 rounded-md bg-slate-900/80 border border-slate-700/80">
+                        {item.institution}
+                      </span>
                     </div>
 
-                    {/* Expand Prompt Button with Cursor Reactive Glow */}
-                    <div className="flex items-center justify-between lg:justify-end space-x-3 shrink-0 pt-2 lg:pt-0">
-                      <div className={`flex items-center space-x-2 px-5 py-2.5 rounded-xl transition-all duration-200 cursor-pointer shadow-md text-xs font-bold uppercase tracking-wider ${
-                        isExpanded
-                          ? 'bg-cyan-950/90 border-2 border-cyan-400 text-cyan-200 shadow-cyan-500/25'
-                          : 'bg-slate-900/90 hover:bg-cyan-950/80 border border-cyan-500/40 hover:border-cyan-400 text-cyan-300 hover:text-cyan-100'
-                      }`}>
-                        <span>{isExpanded ? cvData.navigation.clickToCollapse : cvData.navigation.clickToExpand}</span>
-                        {isExpanded ? <ChevronUp className="w-4 h-4 text-cyan-300" /> : <ChevronDown className="w-4 h-4 text-cyan-400" />}
-                      </div>
+                    <h3 className="text-xl sm:text-2xl font-extrabold text-white flex items-center space-x-2 group-hover/header:text-cyan-300 transition-colors tracking-tight">
+                      <span>{item.title}</span>
+                    </h3>
+
+                    <p className="text-xs sm:text-sm text-slate-300 line-clamp-2 leading-relaxed font-normal text-justify">
+                      {item.description}
+                    </p>
+                  </div>
+
+                  {/* Expand Prompt Button with Cursor Reactive Glow */}
+                  <div className="flex items-center justify-between lg:justify-end space-x-3 shrink-0 pt-2 lg:pt-0">
+                    <div className={`flex items-center space-x-2 px-5 py-2.5 rounded-xl transition-all duration-200 cursor-pointer shadow-md text-xs font-bold uppercase tracking-wider ${
+                      isExpanded
+                        ? 'bg-cyan-950/90 border-2 border-cyan-400 text-cyan-200 shadow-cyan-500/25'
+                        : 'bg-slate-900/90 hover:bg-cyan-950/80 border border-cyan-500/40 hover:border-cyan-400 text-cyan-300 hover:text-cyan-100'
+                    }`}>
+                      <span>{isExpanded ? cvData.navigation.clickToCollapse : cvData.navigation.clickToExpand}</span>
+                      {isExpanded ? <ChevronUp className="w-4 h-4 text-cyan-300" /> : <ChevronDown className="w-4 h-4 text-cyan-400" />}
                     </div>
-                  </button>
-                )}
+                  </div>
+                </button>
 
                 {/* Expanded State (Unfolds on 1st click) */}
                 {isExpanded && (
@@ -266,13 +218,27 @@ export default function EducationCertificatesSection({
                         ))}
                       </div>
 
-                      <Link
-                        href={`/${currentLocale}/education/${item.id}`}
-                        className="w-full sm:w-auto inline-flex items-center justify-center space-x-2 px-6 py-3 rounded-xl bg-gradient-to-r from-cyan-500 to-emerald-500 hover:from-cyan-400 hover:to-emerald-400 text-slate-950 font-bold text-xs uppercase tracking-wider transition-all duration-200 shadow-lg shadow-cyan-500/25 hover:scale-105 shrink-0"
-                      >
-                        <span>{cvData.navigation.openDedicatedPage}</span>
-                        <ArrowUpRight className="w-4 h-4" />
-                      </Link>
+                      <div className="flex flex-wrap items-center gap-3 w-full sm:w-auto">
+                        {item.verificationUrl && (
+                          <a
+                            href={item.verificationUrl}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="w-full sm:w-auto inline-flex items-center justify-center space-x-2 px-5 py-3 rounded-xl bg-gradient-to-r from-cyan-500 via-emerald-500 to-cyan-500 hover:from-cyan-400 hover:to-emerald-400 text-slate-950 font-extrabold text-xs uppercase tracking-wider shadow-lg shadow-cyan-500/20 hover:scale-105 transition-all shrink-0"
+                          >
+                            <span>{t.validateCredential}: VirtualBadge</span>
+                            <ExternalLink className="w-4 h-4 text-slate-950 shrink-0" />
+                          </a>
+                        )}
+
+                        <Link
+                          href={`/${currentLocale}/education/${item.id}`}
+                          className="w-full sm:w-auto inline-flex items-center justify-center space-x-2 px-6 py-3 rounded-xl bg-gradient-to-r from-cyan-500 to-emerald-500 hover:from-cyan-400 hover:to-emerald-400 text-slate-950 font-bold text-xs uppercase tracking-wider transition-all duration-200 shadow-lg shadow-cyan-500/25 hover:scale-105 shrink-0"
+                        >
+                          <span>{cvData.navigation.openDedicatedPage}</span>
+                          <ArrowUpRight className="w-4 h-4" />
+                        </Link>
+                      </div>
                     </div>
                   </div>
                 )}

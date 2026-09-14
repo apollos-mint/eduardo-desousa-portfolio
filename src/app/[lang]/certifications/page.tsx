@@ -9,7 +9,6 @@ import EducationCertificatesSection from '@/components/sections/EducationCertifi
 import { GraduationCap, ArrowLeft } from 'lucide-react';
 
 const CertificationsScene = dynamic(() => import('@/components/3d/CertificationsScene'));
-const DMAICGanttWidget = dynamic(() => import('@/components/interactive/DMAICGanttWidget'));
 
 export function generateStaticParams() {
   return getAllStaticLocaleParams();
@@ -78,16 +77,8 @@ export default async function CertificationsHubPage({
           </p>
         </div>
 
-        {/* Featured DMAIC Gantt Interactive Matrix */}
-        <div className="space-y-3">
-          <div className="text-xs font-mono uppercase tracking-wider text-slate-700 dark:text-slate-300 font-bold">
-            {cvData.common.dmaicGanttTitle}
-          </div>
-          <DMAICGanttWidget currentLocale={lang as Locale} />
-        </div>
-
         {/* Full Certifications & Degrees Accordion Section */}
-        <div className="pt-6">
+        <div className="pt-2">
           <EducationCertificatesSection currentLocale={lang as Locale} cvData={cvData} hideHeader={true} />
         </div>
       </div>
