@@ -279,3 +279,63 @@
   transform: translateY(-1px) scale(1.02);
 }
 
+/* =========================================================================
+   GPU-ACCELERATED CYBERNETIC GLOBE & ORBITAL TELEMETRY RINGS
+   ========================================================================= */
+@keyframes spin-slow {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes spin-reverse-slow {
+  from {
+    transform: rotate(360deg);
+  }
+  to {
+    transform: rotate(0deg);
+  }
+}
+
+@keyframes spin-tilted-x {
+  from {
+    transform: rotateX(65deg) rotateZ(0deg);
+  }
+  to {
+    transform: rotateX(65deg) rotateZ(360deg);
+  }
+}
+
+@keyframes spin-tilted-y {
+  from {
+    transform: rotateY(65deg) rotateZ(360deg);
+  }
+  to {
+    transform: rotateY(65deg) rotateZ(0deg);
+  }
+}
+
+.animate-orbital-outer {
+  animation: spin-slow 24s linear infinite;
+  will-change: transform;
+}
+
+.animate-orbital-dashed {
+  animation: spin-reverse-slow 32s linear infinite;
+  will-change: transform;
+}
+
+.animate-orbital-lat {
+  animation: spin-tilted-x 18s linear infinite;
+  will-change: transform;
+}
+
+.animate-orbital-lon {
+  animation: spin-tilted-y 26s linear infinite;
+  will-change: transform;
+}
+
+
