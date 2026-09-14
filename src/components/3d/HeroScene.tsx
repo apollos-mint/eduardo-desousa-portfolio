@@ -306,28 +306,6 @@ export default function HeroScene({ scale = 1.0, isContact = false }: HeroSceneP
       className="absolute inset-0 pointer-events-none overflow-hidden z-0"
       aria-hidden="true"
     >
-      {/* Dynamic Cybernetic Globe & Orbital Geo Aura */}
-      <div className="absolute top-1/2 right-[2%] sm:right-[6%] lg:right-[12%] -translate-y-1/2 w-[340px] h-[340px] sm:w-[440px] sm:h-[440px] lg:w-[540px] lg:h-[540px] pointer-events-none select-none">
-        {/* Soft Ambient Radial Nebula Aura */}
-        <div className="absolute inset-0 rounded-full bg-cyan-500/15 dark:bg-cyan-500/20 blur-3xl animate-pulse-subtle" />
-        <div className="absolute inset-8 rounded-full bg-emerald-500/10 dark:bg-emerald-500/15 blur-2xl animate-pulse-subtle" />
-
-        {/* Outer Orbital Geo Rings */}
-        <div className="absolute inset-0 rounded-full border border-cyan-400/35 dark:border-cyan-400/40 shadow-[0_0_20px_rgba(56,189,248,0.2)] animate-orbital-outer" />
-        <div className="absolute inset-4 rounded-full border border-dashed border-cyan-400/25 dark:border-cyan-400/30 animate-orbital-dashed" />
-        <div className="absolute inset-10 rounded-full border border-emerald-400/30 dark:border-emerald-400/35 animate-orbital-lat" />
-        <div className="absolute inset-16 rounded-full border border-indigo-400/30 dark:border-indigo-400/35 animate-orbital-lon" />
-
-        {/* Central Geometric Core */}
-        <div className="absolute inset-[32%] rounded-full border-2 border-cyan-300/45 dark:border-cyan-300/60 bg-cyan-500/10 shadow-[0_0_25px_rgba(56,189,248,0.35)] animate-pulse" />
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-3 h-3 rounded-full bg-cyan-400 shadow-[0_0_12px_#38bdf8] animate-ping" />
-
-        {/* Constellation Nodes */}
-        <div className="absolute top-1/4 left-1/4 w-2 h-2 rounded-full bg-emerald-400 shadow-[0_0_8px_#10b981]" />
-        <div className="absolute bottom-1/4 right-1/4 w-2 h-2 rounded-full bg-cyan-400 shadow-[0_0_8px_#38bdf8]" />
-        <div className="absolute top-1/3 right-1/4 w-1.5 h-1.5 rounded-full bg-indigo-400 shadow-[0_0_6px_#818cf8]" />
-      </div>
-
       {!hasWebGL && (
         <div className="absolute inset-0 bg-radial-gradient from-cyan-950/20 via-slate-950/80 to-transparent" />
       )}
