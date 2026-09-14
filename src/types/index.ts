@@ -54,6 +54,7 @@ export interface EducationItem {
   keyTakeaways: string[];
   skillsAcquired: string[];
   verificationNote: string;
+  verificationUrl?: string;
 }
 
 export interface SkillCategory {
@@ -117,6 +118,9 @@ export interface CVContent {
     switchLanguage: string;
     toggleTheme: string;
     backToHome: string;
+    backToExperience?: string;
+    backToSkills?: string;
+    backToCertifications?: string;
     viewDeepDive: string;
     clickToExpand: string;
     clickToCollapse: string;
@@ -188,6 +192,9 @@ export interface CVContent {
     sourcingPill3: string;
     ecosystemLabel: string;
     availabilityStatus: string;
+    primaryPillarBadge: string;
+    primaryPillarLabel: string;
+    dossierLabel: string;
   };
   contact: {
     inquiryReceived: string;

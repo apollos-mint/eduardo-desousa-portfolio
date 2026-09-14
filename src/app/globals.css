@@ -3,29 +3,14 @@
 @custom-variant dark (&:where(.dark, .dark *));
 @custom-variant light (&:where(.light, .light *));
 
+/* Map next/font self-hosted variables to Tailwind font utilities */
+@theme {
+  --font-sans: var(--font-plus-jakarta), ui-sans-serif, system-ui, sans-serif;
+  --font-mono: var(--font-jetbrains-mono), ui-monospace, 'Cascadia Code', monospace;
+}
+
 @layer base {
   :root,
-  html.light {
-    color-scheme: light;
-    --bg-primary: #f8fafc;
-    --bg-secondary: #f1f5f9;
-    --bg-card: #ffffff;
-    --bg-card-hover: #f8fafc;
-    --border-subtle: #cbd5e1;
-    --border-hover: #0284c7;
-    --text-primary: #0f172a;
-    --text-secondary: #1e293b;
-    --text-muted: #475569;
-    --header-bg: rgba(255, 255, 255, 0.95);
-    --footer-bg: #f1f5f9;
-    --input-bg: #ffffff;
-    --badge-bg: #e2e8f0;
-    --accent-cyan: #0284c7;
-    --accent-emerald: #059669;
-    --accent-indigo: #4f46e5;
-    --accent-amber: #d97706;
-  }
-
   html.dark {
     color-scheme: dark;
     --bg-primary: #07090e;
@@ -60,16 +45,16 @@
     transition: background-color 0.25s ease, color 0.25s ease;
   }
 
-  html.dark h1,
-  html.dark h2,
-  html.dark h3,
-  html.dark h4,
-  html.dark h5,
-  html.dark h6 {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
     color: #ffffff;
   }
 
-  html.dark p {
+  p {
     color: #cbd5e1;
   }
 
@@ -112,32 +97,14 @@
   -webkit-text-fill-color: transparent;
 }
 
-html.light .gradient-text-cyan {
-  background: linear-gradient(135deg, #0f172a 0%, #0284c7 50%, #0369a1 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-
 .gradient-text-emerald {
   background: linear-gradient(135deg, var(--text-primary) 0%, #34d399 60%, #059669 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
-html.light .gradient-text-emerald {
-  background: linear-gradient(135deg, #0f172a 0%, #059669 50%, #047857 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-
 .gradient-text-indigo {
   background: linear-gradient(135deg, var(--text-primary) 0%, #818cf8 60%, #4f46e5 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-
-html.light .gradient-text-indigo {
-  background: linear-gradient(135deg, #0f172a 0%, #4f46e5 50%, #3730a3 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
@@ -194,47 +161,8 @@ html.light .gradient-text-indigo {
   animation-play-state: paused;
 }
 
-/* =========================================================================
-   COMPREHENSIVE LIGHT THEME INVERSION & CONTRAST
-   ========================================================================= */
-
-html.light {
-  background-color: #f8fafc !important;
-  color: #0f172a !important;
-}
-
-html.light body,
-html.light main,
-html.light section {
-  background-color: #f8fafc !important;
-  color: #0f172a !important;
-}
-
-/* Solid Crisp White for Cards in Light Theme */
-html.light .glass-panel,
-html.light .bg-slate-950,
-html.light .bg-slate-950\/95,
-html.light .bg-slate-950\/90,
-html.light .bg-slate-950\/85,
-html.light .bg-slate-950\/80,
-html.light .bg-slate-950\/60,
-html.light .bg-slate-900,
-html.light .bg-slate-900\/95,
-html.light .bg-slate-900\/90,
-html.light .bg-slate-900\/80,
-html.light .bg-slate-900\/70,
-html.light .bg-slate-900\/60 {
-  background-color: #ffffff !important;
-  background-image: none !important;
-  color: #0f172a !important;
-  border-color: #cbd5e1 !important;
-  box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.05);
-}
-
-/* Executive Summary Banner: Cyber Command Module (Preserves Dark Tones, Glow & Glassmorphism in both themes) */
-.executive-summary-banner,
-html.light .executive-summary-banner,
-html.dark .executive-summary-banner {
+/* Executive Summary Banner: Cyber Command Module */
+.executive-summary-banner {
   background: rgba(13, 19, 32, 0.85) !important;
   backdrop-filter: blur(16px) !important;
   -webkit-backdrop-filter: blur(16px) !important;
@@ -243,104 +171,12 @@ html.dark .executive-summary-banner {
   box-shadow: 0 20px 50px -10px rgba(6, 182, 212, 0.15), 0 10px 20px -5px rgba(0, 0, 0, 0.4) !important;
 }
 
-.executive-summary-banner p,
-html.light .executive-summary-banner p {
+.executive-summary-banner p {
   color: #e2e8f0 !important;
 }
 
-.executive-summary-banner strong,
-html.light .executive-summary-banner strong {
+.executive-summary-banner strong {
   color: #ffffff !important;
-}
-
-/* Crisp Headings */
-html.light h1,
-html.light h2,
-html.light h3,
-html.light h4,
-html.light h5,
-html.light h6 {
-  color: #0f172a !important;
-}
-
-/* High-Contrast Body Text */
-html.light p {
-  color: #1e293b !important;
-}
-
-html.light .text-slate-100,
-html.light .text-slate-200 {
-  color: #0f172a !important;
-}
-
-html.light .text-slate-300,
-html.light .text-slate-400 {
-  color: #334155 !important;
-}
-
-html.light .text-slate-500 {
-  color: #64748b !important;
-}
-
-/* Light Theme Navigation & Header */
-html.light header {
-  background-color: rgba(255, 255, 255, 0.95) !important;
-  border-bottom: 1px solid #cbd5e1 !important;
-  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.04);
-}
-
-html.light footer {
-  background-color: #f1f5f9 !important;
-  border-top: 1px solid #cbd5e1 !important;
-  color: #0f172a !important;
-}
-
-/* Light Theme Badges & Pills */
-html.light .bg-cyan-950,
-html.light .bg-cyan-950\/80,
-html.light .bg-cyan-950\/70,
-html.light .bg-cyan-950\/60,
-html.light .bg-cyan-950\/40,
-html.light .bg-cyan-950\/30 {
-  background-color: #e0f2fe !important;
-  border-color: #7dd3fc !important;
-  color: #0369a1 !important;
-}
-
-html.light .text-cyan-300,
-html.light .text-cyan-400 {
-  color: #0284c7 !important;
-}
-
-html.light .bg-emerald-950,
-html.light .bg-emerald-950\/80,
-html.light .bg-emerald-950\/50,
-html.light .bg-emerald-950\/40,
-html.light .bg-emerald-950\/20 {
-  background-color: #dcfce7 !important;
-  border-color: #86efac !important;
-  color: #15803d !important;
-}
-
-html.light .text-emerald-300,
-html.light .text-emerald-400 {
-  color: #059669 !important;
-}
-
-/* Input Fields & Textareas */
-html.light input,
-html.light select,
-html.light textarea {
-  background-color: #ffffff !important;
-  border-color: #cbd5e1 !important;
-  color: #0f172a !important;
-}
-
-html.light input:focus,
-html.light select:focus,
-html.light textarea:focus {
-  border-color: #0284c7 !important;
-  box-shadow: 0 0 0 2px rgba(2, 132, 199, 0.2) !important;
 }
 
 /* Touch & Mobile Optimizations */
@@ -350,3 +186,96 @@ html.light textarea:focus {
     -webkit-backdrop-filter: blur(12px);
   }
 }
+
+/* Cybernetic HUD Utilities */
+.cyber-card {
+  position: relative;
+  background: rgba(13, 19, 32, 0.65);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(56, 189, 248, 0.25);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.cyber-card:hover {
+  background: rgba(15, 23, 42, 0.85);
+  border-color: rgba(56, 189, 248, 0.55);
+  box-shadow: 0 16px 36px -10px rgba(56, 189, 248, 0.2), 0 0 20px -5px rgba(6, 182, 212, 0.15);
+  transform: translateY(-2px);
+}
+
+.cyber-corner-tl {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 10px;
+  height: 10px;
+  border-top: 2px solid #38bdf8;
+  border-left: 2px solid #38bdf8;
+  pointer-events: none;
+  transition: all 0.3s ease;
+}
+
+.cyber-corner-tr {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 10px;
+  height: 10px;
+  border-top: 2px solid #38bdf8;
+  border-right: 2px solid #38bdf8;
+  pointer-events: none;
+  transition: all 0.3s ease;
+}
+
+.cyber-corner-bl {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 10px;
+  height: 10px;
+  border-bottom: 2px solid #38bdf8;
+  border-left: 2px solid #38bdf8;
+  pointer-events: none;
+  transition: all 0.3s ease;
+}
+
+.cyber-corner-br {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 10px;
+  height: 10px;
+  border-bottom: 2px solid #38bdf8;
+  border-right: 2px solid #38bdf8;
+  pointer-events: none;
+  transition: all 0.3s ease;
+}
+
+.cyber-card:hover .cyber-corner-tl,
+.cyber-card:hover .cyber-corner-tr,
+.cyber-card:hover .cyber-corner-bl,
+.cyber-card:hover .cyber-corner-br {
+  width: 16px;
+  height: 16px;
+  border-color: #22d3ee;
+  filter: drop-shadow(0 0 4px #06b6d4);
+}
+
+/* Semi-transparent cursor-glow button style requested by user */
+.cyber-button-glass {
+  background: rgba(15, 23, 42, 0.72);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(56, 189, 248, 0.35);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25), inset 0 1px 0 rgba(255, 255, 255, 0.08);
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.cyber-button-glass:hover {
+  background: rgba(8, 47, 73, 0.85);
+  border-color: rgba(56, 189, 248, 0.75);
+  box-shadow: 0 8px 24px -4px rgba(56, 189, 248, 0.35), inset 0 1px 1px rgba(255, 255, 255, 0.15);
+  transform: translateY(-1px) scale(1.02);
+}
+

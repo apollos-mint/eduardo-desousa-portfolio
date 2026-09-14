@@ -1,7 +1,23 @@
 import type { Metadata, Viewport } from 'next';
+import { Plus_Jakarta_Sans, JetBrains_Mono } from 'next/font/google';
 import './globals.css';
 import { Analytics } from '@vercel/analytics/next';
 import { SpeedInsights } from '@vercel/speed-insights/next';
+
+// Self-hosted via next/font — eliminates external CDN dependency with optimal variable woff2
+const plusJakartaSans = Plus_Jakarta_Sans({
+  subsets: ['latin'],
+  variable: '--font-plus-jakarta',
+  display: 'swap',
+  preload: true,
+});
+
+const jetBrainsMono = JetBrains_Mono({
+  subsets: ['latin'],
+  variable: '--font-jetbrains-mono',
+  display: 'swap',
+  preload: false,
+});
 
 export const metadata: Metadata = {
   title: 'Eduardo de Sousa | Staff Operations, Quality & High-Tech Process Leader',
@@ -33,8 +49,8 @@ export const metadata: Metadata = {
 };
 
 export const viewport: Viewport = {
-  themeColor: '#f8fafc',
-  colorScheme: 'light dark',
+  themeColor: '#07090e',
+  colorScheme: 'dark',
   width: 'device-width',
   initialScale: 1,
   maximumScale: 5,
@@ -46,40 +62,34 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className="light scroll-smooth" suppressHydrationWarning style={{ backgroundColor: '#f8fafc', colorScheme: 'light' }}>
+    <html
+      lang="en"
+      className={`dark scroll-smooth ${plusJakartaSans.variable} ${jetBrainsMono.variable}`}
+      suppressHydrationWarning
+      style={{ backgroundColor: '#07090e', colorScheme: 'dark' }}
+    >
       <head>
-        <meta name="color-scheme" content="light dark" />
+        <meta name="color-scheme" content="dark" />
         <script
           dangerouslySetInnerHTML={{
             __html: `
               (function() {
                 try {
-                  var stored = localStorage.getItem('portfolio-theme');
-                  if (stored === 'dark') {
-                    document.documentElement.classList.add('dark');
-                    document.documentElement.classList.remove('light');
-                    document.documentElement.style.backgroundColor = '#07090e';
-                  } else {
-                    document.documentElement.classList.add('light');
-                    document.documentElement.classList.remove('dark');
-                    document.documentElement.style.backgroundColor = '#f8fafc';
-                  }
-                } catch (e) {
-                  document.documentElement.classList.add('light');
-                  document.documentElement.style.backgroundColor = '#f8fafc';
-                }
+                  document.documentElement.classList.add('dark');
+                  document.documentElement.classList.remove('light');
+                  document.documentElement.style.backgroundColor = '#07090e';
+                  document.documentElement.style.colorScheme = 'dark';
+                  localStorage.setItem('portfolio-theme', 'dark');
+                } catch (e) {}
               })();
             `,
           }}
         />
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        <link
-          href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap"
-          rel="stylesheet"
-        />
       </head>
-      <body className="bg-slate-50 dark:bg-[#07090e] text-slate-900 dark:text-slate-100 antialiased min-h-screen selection:bg-cyan-500 selection:text-slate-950 font-sans" style={{ backgroundColor: '#f8fafc' }}>
+      <body
+        className="bg-[#07090e] text-slate-100 antialiased min-h-screen selection:bg-cyan-500 selection:text-slate-950 font-sans"
+        style={{ backgroundColor: '#07090e' }}
+      >
         {children}
         <Analytics />
         <SpeedInsights />

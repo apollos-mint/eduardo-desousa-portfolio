@@ -2,10 +2,14 @@
 
 import React, { useState } from 'react';
 import Image from 'next/image';
+import dynamic from 'next/dynamic';
 import { Locale, CVContent } from '@/types';
 import { generateVCard } from '@/lib/utils';
 import confetti from 'canvas-confetti';
-import HeroScene from '@/components/3d/HeroScene';
+
+const HeroScene = dynamic(() => import('@/components/3d/HeroScene'), {
+  ssr: false,
+});
 import {
   MessageSquare,
   Phone,
@@ -65,7 +69,7 @@ export default function ContactSection({ currentLocale, cvData }: ContactSection
     <section id="contact" className="pt-2 sm:pt-4 pb-20 sm:pb-24 relative overflow-hidden bg-gradient-to-b from-transparent via-slate-100/40 to-slate-200/40 dark:via-slate-900/50 dark:to-slate-950/80">
       {/* Truly Dynamic WebGL Background */}
       <div className="absolute inset-0 opacity-50">
-        <HeroScene />
+        <HeroScene isContact scale={0.7} />
       </div>
       <div className="absolute inset-0 bg-subtle-grid-bg opacity-30 pointer-events-none" />
 
@@ -178,10 +182,22 @@ export default function ContactSection({ currentLocale, cvData }: ContactSection
                 </div>
               </div>
 
+              {/* Executive PDF Resume Download */}
+              <a
+                href="/Eduardo_de_Sousa_Resume.pdf"
+                download="Eduardo_de_Sousa_Resume.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-full flex items-center justify-center space-x-2 py-3.5 rounded-xl bg-gradient-to-r from-cyan-500 to-emerald-500 hover:from-cyan-400 hover:to-emerald-400 text-slate-950 font-extrabold text-xs uppercase tracking-wider transition-all duration-200 shadow-lg shadow-cyan-500/25 hover:scale-[1.02] cursor-pointer"
+              >
+                <Download className="w-4 h-4 text-slate-950" />
+                <span>{cvData.navigation.downloadPdf || 'Download Executive Resume (PDF)'}</span>
+              </a>
+
               {/* vCard Trigger */}
               <button
                 onClick={generateVCard}
-                className="w-full flex items-center justify-center space-x-2 py-3.5 rounded-xl bg-slate-900 dark:bg-slate-900 light:bg-slate-100 hover:bg-slate-800 border border-cyan-500/30 hover:border-cyan-500/60 text-cyan-300 dark:text-cyan-300 light:text-cyan-700 font-semibold text-xs transition-all duration-200 shadow-lg"
+                className="w-full flex items-center justify-center space-x-2 py-3.5 rounded-xl bg-slate-900 dark:bg-slate-900 light:bg-slate-100 hover:bg-slate-800 border border-cyan-500/30 hover:border-cyan-500/60 text-cyan-300 dark:text-cyan-300 light:text-cyan-700 font-semibold text-xs transition-all duration-200 shadow-lg cursor-pointer"
               >
                 <Download className="w-4 h-4" />
                 <span>{cvData.navigation.downloadVCard}</span>

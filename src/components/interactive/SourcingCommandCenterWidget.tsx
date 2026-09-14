@@ -374,44 +374,44 @@ export default function SourcingCommandCenterWidget({
   const t = translations[currentLocale] || translations.es;
 
   return (
-    <div className="rounded-2xl sm:rounded-3xl bg-slate-950/90 dark:bg-slate-950/90 light:bg-white border-2 border-cyan-500/40 dark:border-cyan-500/40 light:border-cyan-400 p-4 sm:p-6 space-y-6 shadow-2xl relative overflow-hidden backdrop-blur-xl">
+    <div className="rounded-2xl sm:rounded-3xl bg-white dark:bg-slate-950 border-2 border-cyan-500/40 p-3.5 sm:p-5 space-y-5 shadow-2xl relative overflow-hidden">
       {/* Top Telemetry Header Bar */}
-      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-slate-800 pb-4">
-        <div className="flex items-center space-x-2.5">
-          <span className="w-2.5 h-2.5 rounded-full bg-cyan-400 animate-ping" />
-          <span className="text-xs font-mono font-extrabold text-cyan-400 dark:text-cyan-300 light:text-cyan-700 tracking-wider">
+      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2.5 border-b border-slate-200 dark:border-slate-800 pb-3">
+        <div className="flex items-center space-x-2">
+          <span className="w-2 h-2 rounded-full bg-cyan-500 animate-ping" />
+          <span className="text-[11px] sm:text-xs font-mono font-extrabold text-cyan-900 dark:text-cyan-300 tracking-wider">
             {t.headerTitle}
           </span>
         </div>
-        <div className="inline-flex items-center space-x-2 font-mono text-[11px] text-emerald-400 bg-emerald-950/60 border border-emerald-500/40 px-3 py-1 rounded-full">
-          <DollarSign className="w-3.5 h-3.5" />
+        <div className="inline-flex items-center space-x-1.5 font-mono text-[10px] sm:text-[11px] text-emerald-900 dark:text-emerald-300 bg-emerald-100 dark:bg-emerald-950 border border-emerald-400 dark:border-emerald-500/50 px-2.5 py-0.5 rounded-full font-bold">
+          <DollarSign className="w-3 h-3" />
           <span>{t.headerTelemetry}</span>
         </div>
       </div>
 
-      {/* Mode Switcher Tabs */}
-      <div className="grid grid-cols-2 gap-2 p-1.5 rounded-2xl bg-slate-900/80 border border-slate-800">
+      {/* Mode Switcher Tabs - Solid Opaque & Proportional */}
+      <div className="grid grid-cols-2 gap-1.5 p-1 rounded-xl bg-slate-100 dark:bg-slate-900 border border-slate-200 dark:border-slate-800">
         <button
           onClick={() => setActiveTab('sourcing')}
-          className={`py-2.5 px-3 rounded-xl font-mono text-xs font-bold transition-all duration-200 flex items-center justify-center space-x-2 ${
+          className={`py-2 px-2.5 rounded-lg font-mono text-[11px] font-bold transition-all duration-200 flex items-center justify-center space-x-1.5 ${
             activeTab === 'sourcing'
-              ? 'bg-gradient-to-r from-cyan-500 to-emerald-500 text-slate-950 shadow-md'
-              : 'text-slate-300 hover:text-white hover:bg-slate-800/60'
+              ? 'bg-cyan-500 text-slate-950 shadow-md font-black'
+              : 'text-slate-700 dark:text-slate-300 hover:text-slate-950 dark:hover:text-white bg-white dark:bg-slate-950 border border-slate-200 dark:border-slate-800'
           }`}
         >
-          <Container className="w-4 h-4" />
+          <Container className="w-3.5 h-3.5" />
           <span className="truncate">{t.tabSourcing}</span>
         </button>
 
         <button
           onClick={() => setActiveTab('cmms')}
-          className={`py-2.5 px-3 rounded-xl font-mono text-xs font-bold transition-all duration-200 flex items-center justify-center space-x-2 ${
+          className={`py-2 px-2.5 rounded-lg font-mono text-[11px] font-bold transition-all duration-200 flex items-center justify-center space-x-1.5 ${
             activeTab === 'cmms'
-              ? 'bg-gradient-to-r from-cyan-500 to-emerald-500 text-slate-950 shadow-md'
-              : 'text-slate-300 hover:text-white hover:bg-slate-800/60'
+              ? 'bg-cyan-500 text-slate-950 shadow-md font-black'
+              : 'text-slate-700 dark:text-slate-300 hover:text-slate-950 dark:hover:text-white bg-white dark:bg-slate-950 border border-slate-200 dark:border-slate-800'
           }`}
         >
-          <Activity className="w-4 h-4" />
+          <Activity className="w-3.5 h-3.5" />
           <span className="truncate">{t.tabCmms}</span>
         </button>
       </div>
@@ -420,70 +420,74 @@ export default function SourcingCommandCenterWidget({
          TAB 1: SOURCING & CONTAINER LOGISTICS SIMULATOR
          ========================================================================= */}
       {activeTab === 'sourcing' && (
-        <div className="space-y-6 animate-in fade-in duration-300">
+        <div className="space-y-5 animate-in fade-in duration-300">
           {/* Container Type Selector & Real-Time Logistics Math */}
-          <div className="space-y-3">
-            <div className="text-xs font-mono text-slate-300 font-bold uppercase tracking-wider flex items-center space-x-2">
-              <Package className="w-3.5 h-3.5 text-cyan-400" />
+          <div className="space-y-2.5">
+            <div className="text-[11px] font-mono text-slate-800 dark:text-slate-300 font-bold uppercase tracking-wider flex items-center space-x-1.5">
+              <Package className="w-3 h-3 text-cyan-600 dark:text-cyan-400" />
               <span>{t.containerSelectorTitle}</span>
             </div>
 
-            <div className="grid grid-cols-2 gap-3">
+            <div className="grid grid-cols-2 gap-2.5">
               <button
                 onClick={() => setSelectedContainer('40hq')}
-                className={`p-3 rounded-xl border text-left transition-all ${
+                className={`p-2.5 rounded-xl border-2 text-left transition-all ${
                   selectedContainer === '40hq'
-                    ? 'bg-cyan-950/70 border-cyan-400 shadow-md shadow-cyan-500/15'
-                    : 'bg-slate-900/60 border-slate-800 hover:border-slate-700'
+                    ? 'bg-slate-900 text-white border-cyan-400 shadow-md ring-1 ring-cyan-400/50'
+                    : 'bg-white dark:bg-slate-900 border-slate-200 dark:border-slate-800 hover:border-cyan-400'
                 }`}
               >
-                <div className="text-xs font-bold font-mono text-cyan-300">{t.container40}</div>
-                <div className="text-[11px] text-slate-300 font-mono mt-1">
+                <div className={`text-[11px] font-black font-mono ${selectedContainer === '40hq' ? 'text-cyan-300' : 'text-slate-900 dark:text-cyan-300'}`}>
+                  {t.container40}
+                </div>
+                <div className="text-[10px] text-slate-500 dark:text-slate-400 font-mono mt-0.5 font-medium">
                   68.0 m³ · 26,000 kg Payload
                 </div>
               </button>
 
               <button
                 onClick={() => setSelectedContainer('20std')}
-                className={`p-3 rounded-xl border text-left transition-all ${
+                className={`p-2.5 rounded-xl border-2 text-left transition-all ${
                   selectedContainer === '20std'
-                    ? 'bg-cyan-950/70 border-cyan-400 shadow-md shadow-cyan-500/15'
-                    : 'bg-slate-900/60 border-slate-800 hover:border-slate-700'
+                    ? 'bg-slate-900 text-white border-cyan-400 shadow-md ring-1 ring-cyan-400/50'
+                    : 'bg-white dark:bg-slate-900 border-slate-200 dark:border-slate-800 hover:border-cyan-400'
                 }`}
               >
-                <div className="text-xs font-bold font-mono text-cyan-300">{t.container20}</div>
-                <div className="text-[11px] text-slate-300 font-mono mt-1">
+                <div className={`text-[11px] font-black font-mono ${selectedContainer === '20std' ? 'text-cyan-300' : 'text-slate-900 dark:text-cyan-300'}`}>
+                  {t.container20}
+                </div>
+                <div className="text-[10px] text-slate-500 dark:text-slate-400 font-mono mt-0.5 font-medium">
                   33.2 m³ · 21,500 kg Payload
                 </div>
               </button>
             </div>
 
             {/* Container Telemetry Cards */}
-            <div className="grid grid-cols-2 sm:grid-cols-4 gap-2.5 pt-1">
-              <div className="p-3 rounded-xl bg-slate-900/90 border border-slate-800 text-center font-mono">
-                <div className="text-[10px] text-slate-400">{t.volumeLabel}</div>
-                <div className="text-sm sm:text-base font-extrabold text-cyan-400">
+            <div className="grid grid-cols-2 sm:grid-cols-4 gap-2 pt-0.5">
+              <div className="p-2.5 rounded-xl bg-slate-100 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 text-center font-mono shadow-sm">
+                <div className="text-[9px] text-slate-500 dark:text-slate-400 font-semibold">{t.volumeLabel}</div>
+                <div className="text-xs sm:text-sm font-black text-cyan-800 dark:text-cyan-400">
                   {selectedContainer === '40hq' ? '68.0 CBM' : '33.2 CBM'}
                 </div>
               </div>
 
-              <div className="p-3 rounded-xl bg-slate-900/90 border border-slate-800 text-center font-mono">
-                <div className="text-[10px] text-slate-400">{t.maxPayloadLabel}</div>
-                <div className="text-sm sm:text-base font-extrabold text-cyan-400">
+              <div className="p-2.5 rounded-xl bg-slate-100 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 text-center font-mono shadow-sm">
+                <div className="text-[9px] text-slate-500 dark:text-slate-400 font-semibold">{t.maxPayloadLabel}</div>
+                <div className="text-xs sm:text-sm font-black text-cyan-800 dark:text-cyan-400">
                   {selectedContainer === '40hq' ? '26,000 kg' : '21,500 kg'}
                 </div>
               </div>
 
-              <div className="p-3 rounded-xl bg-slate-900/90 border border-slate-800 text-center font-mono">
-                <div className="text-[10px] text-slate-400">{t.turnaroundLabel}</div>
-                <div className="text-sm sm:text-base font-extrabold text-emerald-400">
+              <div className="p-2.5 rounded-xl bg-slate-100 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 text-center font-mono shadow-sm">
+                <div className="text-[9px] text-slate-500 dark:text-slate-400 font-semibold">{t.turnaroundLabel}</div>
+                <div className="text-xs sm:text-sm font-black text-emerald-800 dark:text-emerald-400">
                   1.67 Cont / Sem
                 </div>
               </div>
 
-              <div className="p-3 rounded-xl bg-slate-900/90 border border-slate-800 text-center font-mono">
-                <div className="text-[10px] text-slate-400">{t.savingsLabel}</div>
-                <div className="text-sm sm:text-base font-extrabold text-emerald-400">
+              <div className="p-2.5 rounded-xl bg-slate-100 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 text-center font-mono shadow-sm">
+                <div className="text-[9px] text-slate-500 dark:text-slate-400 font-semibold">{t.savingsLabel}</div>
+                <div className="text-xs sm:text-sm font-black text-emerald-800 dark:text-emerald-400">
                   -75% Neto
                 </div>
               </div>
@@ -491,31 +495,31 @@ export default function SourcingCommandCenterWidget({
           </div>
 
           {/* Interactive Industrial Sourcing Corridors */}
-          <div className="space-y-3 pt-2">
-            <div className="text-xs font-mono text-slate-300 font-bold uppercase tracking-wider flex items-center space-x-2">
-              <Globe2 className="w-3.5 h-3.5 text-cyan-400" />
+          <div className="space-y-2.5 pt-1">
+            <div className="text-[11px] font-mono text-slate-800 dark:text-slate-300 font-bold uppercase tracking-wider flex items-center space-x-1.5">
+              <Globe2 className="w-3 h-3 text-cyan-600 dark:text-cyan-400" />
               <span>{t.corridorsTitle}</span>
             </div>
 
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-2.5">
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-2">
               {t.hubs.map((hub, idx) => (
                 <button
                   key={idx}
                   onClick={() => setSelectedHub(idx)}
-                  className={`p-3.5 rounded-xl border text-left transition-all ${
+                  className={`p-2.5 rounded-xl border-2 text-left transition-all ${
                     selectedHub === idx
-                      ? 'bg-cyan-950/80 border-cyan-400 shadow-md shadow-cyan-500/20 ring-1 ring-cyan-400'
-                      : 'bg-slate-900/70 border-slate-800 hover:border-slate-700'
+                      ? 'bg-slate-900 text-white border-cyan-400 shadow-md ring-1 ring-cyan-400/50'
+                      : 'bg-white dark:bg-slate-900 border-slate-200 dark:border-slate-800 hover:border-cyan-400'
                   }`}
                 >
                   <div className="flex items-center justify-between">
-                    <span className="text-xs font-bold text-white font-mono">{hub.name}</span>
-                    <span className="text-[10px] font-mono text-emerald-400 bg-emerald-950 px-2 py-0.5 rounded border border-emerald-500/30">
+                    <span className={`text-[11px] font-bold font-mono ${selectedHub === idx ? 'text-white' : 'text-slate-900 dark:text-white'}`}>{hub.name}</span>
+                    <span className="text-[9px] font-mono font-bold text-emerald-800 dark:text-emerald-300 bg-emerald-100 dark:bg-emerald-950 px-1.5 py-0.5 rounded border border-emerald-400 dark:border-emerald-500/50">
                       {hub.auditScore}
                     </span>
                   </div>
-                  <div className="text-[11px] text-cyan-300 font-medium mt-1">{hub.specialty}</div>
-                  <div className="text-[10px] font-mono text-emerald-400 font-bold mt-1">
+                  <div className="text-[10px] text-cyan-800 dark:text-cyan-300 font-semibold mt-0.5">{hub.specialty}</div>
+                  <div className="text-[9px] font-mono text-emerald-700 dark:text-emerald-400 font-black mt-0.5">
                     {hub.saving}
                   </div>
                 </button>
@@ -523,44 +527,52 @@ export default function SourcingCommandCenterWidget({
             </div>
 
             {/* Selected Hub Details */}
-            <div className="p-3.5 rounded-xl bg-slate-900/90 border border-slate-800 text-xs text-slate-200 leading-relaxed font-mono flex items-start space-x-2">
-              <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0 mt-0.5" />
+            <div className="p-2.5 rounded-xl bg-slate-100 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 text-[11px] text-slate-700 dark:text-slate-200 leading-relaxed font-mono flex items-start space-x-2 shadow-sm">
+              <CheckCircle2 className="w-3.5 h-3.5 text-emerald-600 dark:text-emerald-400 shrink-0 mt-0.5" />
               <span>{t.hubs[selectedHub].details}</span>
             </div>
           </div>
 
           {/* 4-Gate Capital Escrow & Risk Mitigation Protocol */}
-          <div className="space-y-3 pt-2">
-            <div className="text-xs font-mono text-slate-300 font-bold uppercase tracking-wider flex items-center space-x-2">
-              <ShieldCheck className="w-3.5 h-3.5 text-emerald-400" />
+          <div className="space-y-2.5 pt-1">
+            <div className="text-[11px] font-mono text-slate-800 dark:text-slate-300 font-bold uppercase tracking-wider flex items-center space-x-1.5">
+              <ShieldCheck className="w-3 h-3 text-emerald-600 dark:text-emerald-400" />
               <span>{t.riskProtocolTitle}</span>
             </div>
 
-            <div className="grid grid-cols-2 sm:grid-cols-4 gap-2.5">
+            <div className="grid grid-cols-2 sm:grid-cols-4 gap-2">
               {t.gates.map((gate, gIdx) => (
                 <button
                   key={gate.id}
                   onClick={() => setActiveGate(gIdx)}
-                  className={`p-3 rounded-xl border text-left transition-all ${
+                  className={`p-2.5 rounded-xl border-2 text-left transition-all ${
                     activeGate === gIdx
-                      ? 'bg-emerald-950/70 border-emerald-400 ring-1 ring-emerald-400 shadow-md shadow-emerald-500/20'
-                      : 'bg-slate-900/70 border-slate-800 hover:border-slate-700'
+                      ? 'bg-slate-900 text-white border-emerald-400 shadow-md ring-1 ring-emerald-400/50'
+                      : 'bg-white dark:bg-slate-900 border-slate-200 dark:border-slate-800 hover:border-emerald-400'
                   }`}
                 >
                   <div className="flex items-center justify-between font-mono">
-                    <span className="text-[10px] text-slate-400">GATE {gate.id}</span>
-                    <span className="text-[10px] font-bold text-emerald-400">✓ VERIFICADO</span>
+                    <span className={`text-[9px] font-bold ${activeGate === gIdx ? 'text-emerald-300' : 'text-slate-500 dark:text-slate-400'}`}>
+                      GATE {gate.id}
+                    </span>
+                    <span className={`text-[8px] font-mono font-black px-1.5 py-0.5 rounded ${
+                      activeGate === gIdx
+                        ? 'bg-emerald-500 text-slate-950 font-black'
+                        : 'border border-slate-300 dark:border-slate-700 text-slate-500 dark:text-slate-400'
+                    }`}>
+                      {activeGate === gIdx ? '✓ ACTIVO' : 'PENDIENTE'}
+                    </span>
                   </div>
-                  <div className="text-xs font-bold text-white mt-1 leading-snug">{gate.title}</div>
+                  <div className={`text-[11px] font-black mt-1 leading-snug ${activeGate === gIdx ? 'text-white' : 'text-slate-900 dark:text-white'}`}>{gate.title}</div>
                 </button>
               ))}
             </div>
 
-            <div className="p-3.5 rounded-xl bg-emerald-950/30 border border-emerald-500/40 text-xs text-slate-200 font-mono flex items-center space-x-2">
-              <span className="font-bold text-emerald-400 shrink-0">
+            <div className="p-2.5 rounded-xl bg-emerald-950 dark:bg-slate-900 border border-emerald-500/50 text-[11px] text-slate-200 font-mono flex items-center space-x-2 shadow-sm">
+              <span className="font-black text-emerald-400 shrink-0">
                 GATE {t.gates[activeGate].id} //
               </span>
-              <span>{t.gates[activeGate].desc}</span>
+              <span className="font-medium text-slate-300">{t.gates[activeGate].desc}</span>
             </div>
           </div>
         </div>
@@ -570,63 +582,63 @@ export default function SourcingCommandCenterWidget({
          TAB 2: ENTERPRISE CMMS & KPI SCORING DASHBOARD MOCKUP
          ========================================================================= */}
       {activeTab === 'cmms' && (
-        <div className="space-y-6 animate-in fade-in duration-300">
-          <div className="space-y-1">
-            <h4 className="text-sm font-bold text-white font-mono flex items-center space-x-2">
-              <Activity className="w-4 h-4 text-cyan-400" />
+        <div className="space-y-5 animate-in fade-in duration-300">
+          <div className="space-y-0.5">
+            <h4 className="text-xs font-bold text-white font-mono flex items-center space-x-2">
+              <Activity className="w-3.5 h-3.5 text-cyan-400" />
               <span>{t.cmmsHeaderTitle}</span>
             </h4>
-            <p className="text-xs text-slate-300">{t.cmmsSubtitle}</p>
+            <p className="text-[11px] text-slate-300">{t.cmmsSubtitle}</p>
           </div>
 
           {/* Machine Health & OEE Telemetry Grid */}
-          <div className="grid grid-cols-2 sm:grid-cols-4 gap-2.5">
-            <div className="p-3.5 rounded-xl bg-slate-900/90 border border-slate-800 text-center font-mono">
-              <div className="text-[10px] text-slate-400">{t.fleetStatus}</div>
-              <div className="text-base font-extrabold text-white">24 Equipos Activos</div>
-              <div className="text-[10px] text-emerald-400 font-bold mt-0.5">100% Monitoreados</div>
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-2">
+            <div className="p-2.5 rounded-xl bg-slate-900 border border-slate-800 text-center font-mono">
+              <div className="text-[9px] text-slate-400">{t.fleetStatus}</div>
+              <div className="text-sm sm:text-base font-extrabold text-white">24 Equipos Activos</div>
+              <div className="text-[9px] text-emerald-400 font-bold mt-0.5">100% Monitoreados</div>
             </div>
 
-            <div className="p-3.5 rounded-xl bg-slate-900/90 border border-slate-800 text-center font-mono">
-              <div className="text-[10px] text-slate-400">{t.availability}</div>
-              <div className="text-base font-extrabold text-cyan-400">98.4%</div>
-              <div className="text-[10px] text-cyan-300 mt-0.5">MTTR: 1.2 hrs</div>
+            <div className="p-2.5 rounded-xl bg-slate-900 border border-slate-800 text-center font-mono">
+              <div className="text-[9px] text-slate-400">{t.availability}</div>
+              <div className="text-sm sm:text-base font-extrabold text-cyan-400">98.4%</div>
+              <div className="text-[9px] text-cyan-300 mt-0.5">MTTR: 1.2 hrs</div>
             </div>
 
-            <div className="p-3.5 rounded-xl bg-slate-900/90 border border-slate-800 text-center font-mono">
-              <div className="text-[10px] text-slate-400">{t.oeeScore}</div>
-              <div className="text-base font-extrabold text-emerald-400">94.8%</div>
-              <div className="text-[10px] text-emerald-300 mt-0.5">World-Class OEE</div>
+            <div className="p-2.5 rounded-xl bg-slate-900 border border-slate-800 text-center font-mono">
+              <div className="text-[9px] text-slate-400">{t.oeeScore}</div>
+              <div className="text-sm sm:text-base font-extrabold text-emerald-400">94.8%</div>
+              <div className="text-[9px] text-emerald-300 mt-0.5">World-Class OEE</div>
             </div>
 
-            <div className="p-3.5 rounded-xl bg-slate-900/90 border border-slate-800 text-center font-mono">
-              <div className="text-[10px] text-slate-400">{t.preventiveRate}</div>
-              <div className="text-base font-extrabold text-indigo-400">100%</div>
-              <div className="text-[10px] text-indigo-300 mt-0.5">Cero Vencidos</div>
+            <div className="p-2.5 rounded-xl bg-slate-900 border border-slate-800 text-center font-mono">
+              <div className="text-[9px] text-slate-400">{t.preventiveRate}</div>
+              <div className="text-sm sm:text-base font-extrabold text-indigo-400">100%</div>
+              <div className="text-[9px] text-indigo-300 mt-0.5">Cero Vencidos</div>
             </div>
           </div>
 
           {/* Employee KPI Scoring Matrix */}
-          <div className="space-y-3">
-            <div className="text-xs font-mono text-slate-300 font-bold uppercase tracking-wider flex items-center space-x-2">
-              <BarChart3 className="w-3.5 h-3.5 text-cyan-400" />
+          <div className="space-y-2.5">
+            <div className="text-[11px] font-mono text-slate-300 font-bold uppercase tracking-wider flex items-center space-x-1.5">
+              <BarChart3 className="w-3 h-3 text-cyan-400" />
               <span>{t.kpiSectionTitle}</span>
             </div>
 
-            <div className="space-y-2">
+            <div className="space-y-1.5">
               {t.employees.map((emp, eIdx) => (
                 <div
                   key={eIdx}
-                  className="p-3 rounded-xl bg-slate-900/80 border border-slate-800 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-2 text-xs font-mono"
+                  className="p-2.5 rounded-xl bg-slate-900 border border-slate-800 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-2 text-[11px] font-mono"
                 >
-                  <div className="flex items-center space-x-2.5">
-                    <span className="w-2 h-2 rounded-full bg-emerald-400" />
+                  <div className="flex items-center space-x-2">
+                    <span className="w-1.5 h-1.5 rounded-full bg-emerald-400" />
                     <span className="font-bold text-white">{emp.name}</span>
-                    <span className="text-slate-400 text-[11px]">{emp.metric}</span>
+                    <span className="text-slate-400 text-[10px]">{emp.metric}</span>
                   </div>
-                  <div className="flex items-center space-x-2 self-end sm:self-auto">
-                    <span className="text-[11px] text-slate-400">Score:</span>
-                    <span className="px-2.5 py-0.5 rounded bg-emerald-950 border border-emerald-500/40 text-emerald-400 font-bold">
+                  <div className="flex items-center space-x-1.5 self-end sm:self-auto">
+                    <span className="text-[10px] text-slate-400">Score:</span>
+                    <span className="px-2 py-0.5 rounded bg-emerald-950 border border-emerald-500/40 text-emerald-400 font-bold text-[10px]">
                       {emp.score}/100
                     </span>
                   </div>
@@ -636,17 +648,17 @@ export default function SourcingCommandCenterWidget({
           </div>
 
           {/* Real-Time iPaaS Automation Webhooks Strip */}
-          <div className="p-4 rounded-xl bg-slate-900/90 border border-cyan-500/30 space-y-2">
+          <div className="p-3 rounded-xl bg-slate-900 border border-cyan-500/30 space-y-1.5">
             <div className="flex items-center justify-between">
-              <div className="flex items-center space-x-2 text-xs font-mono font-bold text-cyan-400">
-                <Zap className="w-4 h-4 text-cyan-400" />
+              <div className="flex items-center space-x-1.5 text-[11px] font-mono font-bold text-cyan-400">
+                <Zap className="w-3.5 h-3.5 text-cyan-400" />
                 <span>{t.automationTitle}</span>
               </div>
-              <span className="text-[10px] font-mono text-emerald-400 bg-emerald-950 px-2 py-0.5 rounded border border-emerald-500/40">
+              <span className="text-[9px] font-mono text-emerald-400 bg-emerald-950 px-2 py-0.5 rounded border border-emerald-500/40">
                 {t.syncActive}
               </span>
             </div>
-            <div className="text-[11px] font-mono text-slate-300">
+            <div className="text-[10px] font-mono text-slate-300">
               {t.webhookStatus}
             </div>
           </div>

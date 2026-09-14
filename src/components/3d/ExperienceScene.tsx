@@ -2,6 +2,7 @@
 
 import React, { useEffect, useRef, useState } from 'react';
 import * as THREE from 'three';
+import { getClampedPixelRatio, createFpsThrottler, setupVisibilityAndIntersection, disposeThreeScene } from '@/lib/three-perf';
 
 export default function ExperienceScene() {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -37,16 +38,16 @@ export default function ExperienceScene() {
       0.1,
       1000
     );
-    camera.position.z = 120;
+    camera.position.z = 135;
 
     const renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true, powerPreference: 'high-performance' });
     renderer.setSize(container.clientWidth, container.clientHeight);
-    renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+    renderer.setPixelRatio(getClampedPixelRatio());
     renderer.setClearColor(0x000000, 0); // 100% transparent canvas
     container.appendChild(renderer.domElement);
 
     // Dynamic Nodes Constellation
-    const particleCount = 1500;
+    const particleCount = 1200;
     const geometry = new THREE.BufferGeometry();
     const positions = new Float32Array(particleCount * 3);
     const colors = new Float32Array(particleCount * 3);
@@ -57,9 +58,9 @@ export default function ExperienceScene() {
 
     for (let i = 0; i < particleCount; i++) {
       const i3 = i * 3;
-      positions[i3] = (Math.random() - 0.5) * 1200; // X spread (full width)
-      positions[i3 + 1] = (Math.random() - 0.5) * 800; // Y spread
-      positions[i3 + 2] = (Math.random() - 0.5) * 400; // Z spread
+      positions[i3] = (Math.random() - 0.5) * 1000; // X spread
+      positions[i3 + 1] = (Math.random() - 0.5) * 700; // Y spread
+      positions[i3 + 2] = (Math.random() - 0.5) * 350; // Z spread
 
       const mixedColor = i % 3 === 0 ? color1 : i % 3 === 1 ? color2 : color3;
       colors[i3] = mixedColor.r;
@@ -81,27 +82,27 @@ export default function ExperienceScene() {
     const particles = new THREE.Points(geometry, particleMaterial);
     scene.add(particles);
 
-    // TorusKnot Data Core
-    const torusGeo = new THREE.TorusKnotGeometry(40, 5, 120, 20);
-    const torusMat = new THREE.MeshBasicMaterial({
-      color: isLight ? 0x059669 : 0x10b981, // Emerald
+    // Global Wireframe Network Sphere (Globe) - Scaled 15% smaller for complete lateral clearance
+    const globeGeo = new THREE.SphereGeometry(38, 32, 24);
+    const globeMat = new THREE.MeshBasicMaterial({
+      color: isLight ? 0x0284c7 : 0x38bdf8, // Sky / Cyan
       wireframe: true,
       transparent: true,
-      opacity: isLight ? 0.5 : 0.4,
+      opacity: isLight ? 0.55 : 0.45,
     });
-    const torusKnot = new THREE.Mesh(torusGeo, torusMat);
-    scene.add(torusKnot);
+    const globe = new THREE.Mesh(globeGeo, globeMat);
+    scene.add(globe);
 
-    // Inner Core
-    const innerSphere = new THREE.SphereGeometry(25, 16, 16);
+    // Inner Geometric Core - Scaled proportionally
+    const innerSphereGeo = new THREE.IcosahedronGeometry(19.5, 2);
     const innerSphereMat = new THREE.MeshBasicMaterial({
       color: isLight ? 0x4f46e5 : 0x6366f1, // Indigo
       wireframe: true,
       transparent: true,
-      opacity: isLight ? 0.4 : 0.3,
+      opacity: isLight ? 0.40 : 0.35,
     });
-    const sphere = new THREE.Mesh(innerSphere, innerSphereMat);
-    scene.add(sphere);
+    const innerSphere = new THREE.Mesh(innerSphereGeo, innerSphereMat);
+    scene.add(innerSphere);
 
     // Ambient Lighting
     const ambientLight = new THREE.AmbientLight(0xffffff, 1);
@@ -114,18 +115,13 @@ export default function ExperienceScene() {
     let targetY = 0;
 
     const handleMouseMove = (event: MouseEvent) => {
-      // Relative to the container
-      const rect = container.getBoundingClientRect();
-      const x = event.clientX - rect.left;
-      const y = event.clientY - rect.top;
-      
-      const windowHalfX = rect.width / 2;
-      const windowHalfY = rect.height / 2;
-      mouseX = (x - windowHalfX) * 0.05;
-      mouseY = (y - windowHalfY) * 0.05;
+      const windowHalfX = window.innerWidth / 2;
+      const windowHalfY = window.innerHeight / 2;
+      mouseX = (event.clientX - windowHalfX) * 0.05;
+      mouseY = (event.clientY - windowHalfY) * 0.05;
     };
 
-    container.addEventListener('mousemove', handleMouseMove, { passive: true });
+    window.addEventListener('mousemove', handleMouseMove, { passive: true });
 
     // Resize handler
     const handleResize = () => {
@@ -141,19 +137,19 @@ export default function ExperienceScene() {
       const currentIsLight = document.documentElement.classList.contains('light');
       if (currentIsLight) {
         scene.fog = null;
-        torusMat.color.setHex(0x059669);
-        torusMat.opacity = 0.5;
+        globeMat.color.setHex(0x0284c7);
+        globeMat.opacity = 0.55;
         innerSphereMat.color.setHex(0x4f46e5);
-        innerSphereMat.opacity = 0.4;
+        innerSphereMat.opacity = 0.40;
         particleMaterial.blending = THREE.NormalBlending;
         particleMaterial.opacity = 0.8;
         renderer.setClearColor(0xffffff, 0);
       } else {
         scene.fog = new THREE.FogExp2(0x07090e, 0.002);
-        torusMat.color.setHex(0x10b981);
-        torusMat.opacity = 0.4;
+        globeMat.color.setHex(0x38bdf8);
+        globeMat.opacity = 0.45;
         innerSphereMat.color.setHex(0x6366f1);
-        innerSphereMat.opacity = 0.3;
+        innerSphereMat.opacity = 0.35;
         particleMaterial.blending = THREE.AdditiveBlending;
         particleMaterial.opacity = 0.8;
         renderer.setClearColor(0x000000, 0);
@@ -165,12 +161,23 @@ export default function ExperienceScene() {
       attributeFilter: ['class'],
     });
 
-    // Animation Loop
+    // Animation Loop & Visibility Handling
     let animationFrameId: number;
     let time = 0;
+    let isVisibleInView = true;
+
+    const cleanupVisibility = setupVisibilityAndIntersection(container, (vis) => {
+      isVisibleInView = vis;
+    });
+
+    const throttler = createFpsThrottler(45);
 
     const animate = () => {
       animationFrameId = requestAnimationFrame(animate);
+      if (!isVisibleInView) return;
+      const now = performance.now();
+      if (!throttler(now)) return;
+
       time += 0.005;
 
       // Mouse interaction damping
@@ -180,12 +187,11 @@ export default function ExperienceScene() {
       particles.rotation.x += 0.001;
       particles.rotation.y += 0.002;
       
-      torusKnot.rotation.x += 0.003;
-      torusKnot.rotation.y += 0.004;
-      torusKnot.rotation.z += 0.001;
+      globe.rotation.x += 0.001;
+      globe.rotation.y += 0.002;
       
-      sphere.rotation.x -= 0.002;
-      sphere.rotation.y -= 0.003;
+      innerSphere.rotation.x -= 0.0015;
+      innerSphere.rotation.y -= 0.0025;
 
       // Float effect based on time
       camera.position.y += (targetY - camera.position.y) * 0.05 + Math.sin(time) * 0.05;
@@ -199,21 +205,14 @@ export default function ExperienceScene() {
 
     return () => {
       window.removeEventListener('resize', handleResize);
-      if (container) {
-        container.removeEventListener('mousemove', handleMouseMove);
-      }
+      window.removeEventListener('mousemove', handleMouseMove);
       observer.disconnect();
+      cleanupVisibility();
       cancelAnimationFrame(animationFrameId);
-      if (container && renderer.domElement) {
+      disposeThreeScene(scene, renderer);
+      if (container && renderer.domElement && container.contains(renderer.domElement)) {
         container.removeChild(renderer.domElement);
       }
-      geometry.dispose();
-      particleMaterial.dispose();
-      torusGeo.dispose();
-      torusMat.dispose();
-      innerSphere.dispose();
-      innerSphereMat.dispose();
-      renderer.dispose();
     };
   }, []);
 

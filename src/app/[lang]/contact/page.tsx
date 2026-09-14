@@ -46,7 +46,7 @@ export default async function ContactPage({
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-4">
         <Link
           href={`/${lang}`}
-          className="inline-flex items-center space-x-2 text-xs font-mono uppercase tracking-wider text-slate-400 hover:text-cyan-300 transition-colors"
+          className="inline-flex items-center space-x-2 text-xs font-mono uppercase tracking-wider text-cyan-700 dark:text-cyan-400 hover:text-cyan-600 dark:hover:text-cyan-300 transition-colors"
         >
           <ArrowLeft className="w-4 h-4" />
           <span>{cvData.navigation.backToHome}</span>

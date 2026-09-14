@@ -6,6 +6,7 @@ import { getCVData } from '@/data/cv-data';
 import HeroSection from '@/components/sections/HeroSection';
 import SpecialFeatureSection from '@/components/sections/SpecialFeatureSection';
 import ContactSection from '@/components/sections/ContactSection';
+import LogisticsIntroSequence from '@/components/intro/LogisticsIntroSequence';
 
 export function generateStaticParams() {
   return getAllStaticLocaleParams();
@@ -42,15 +43,20 @@ export default async function LocalizedHomePage({
   const cvData = getCVData(lang as Locale);
 
   return (
-    <div className="space-y-6 sm:space-y-10">
+    <div className="flex flex-col">
+      {/* 0. Dedicated Fullscreen 3D Logistics Intro (Only plays on website entry / reload) */}
+      <LogisticsIntroSequence />
+
       {/* 1. Concise High-Impact Hero with Portrait & Infinite Brand Marquee */}
       <HeroSection currentLocale={lang as Locale} cvData={cvData} />
 
-      {/* 2. Core Competencies & Tier-1 Company Ranges */}
+      {/* 2. Core Competencies & Tier-1 Company Ranges (Directly under marquee, 0 gap) */}
       <SpecialFeatureSection currentLocale={lang as Locale} cvData={cvData} />
 
       {/* 3. Executive Direct Contact & vCard Hub */}
-      <ContactSection currentLocale={lang as Locale} cvData={cvData} />
+      <div className="mt-8 sm:mt-12">
+        <ContactSection currentLocale={lang as Locale} cvData={cvData} />
+      </div>
     </div>
   );
 }

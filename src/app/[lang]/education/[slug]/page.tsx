@@ -4,7 +4,7 @@ import Link from 'next/link';
 import { Locale } from '@/types';
 import { isValidLocale, getAllEducationStaticParams } from '@/lib/i18n';
 import { getCVData } from '@/data/cv-data';
-import TopicVisualizer from '@/components/3d/TopicVisualizer';
+import TopicVisualizerHost from '@/components/3d/TopicVisualizerHost';
 import {
   ArrowLeft,
   ArrowRight,
@@ -15,7 +15,9 @@ import {
   BookOpen,
   Building,
   MessageSquare,
+  ExternalLink,
 } from 'lucide-react';
+import LightweightAnimatedBackground from '@/components/ui/LightweightAnimatedBackground';
 
 export function generateStaticParams() {
   return getAllEducationStaticParams();
@@ -68,16 +70,17 @@ export default async function EducationDetailPage({
       : null;
 
   return (
-    <div className="pt-28 pb-20">
-      <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
+    <div className="pt-28 pb-20 relative min-h-screen">
+      <LightweightAnimatedBackground />
+      <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12 relative z-10">
         {/* Navigation Breadcrumb */}
         <div className="flex items-center justify-between">
           <Link
-            href={`/${lang}#certifications`}
-            className="inline-flex items-center space-x-2 text-xs font-mono uppercase tracking-wider text-slate-400 hover:text-cyan-300 transition-colors"
+            href={`/${lang}/certifications`}
+            className="inline-flex items-center space-x-2 text-xs font-mono uppercase tracking-wider text-slate-500 dark:text-slate-400 hover:text-cyan-600 dark:hover:text-cyan-300 transition-colors"
           >
             <ArrowLeft className="w-4 h-4" />
-            <span>{cvData.navigation.backToHome}</span>
+            <span>{cvData.navigation.backToCertifications || cvData.navigation.allCertificates}</span>
           </Link>
           <span className="text-xs font-mono text-cyan-400">
             CREDENTIAL {itemIndex + 1} / {cvData.educationAndCertifications.length}
@@ -87,43 +90,72 @@ export default async function EducationDetailPage({
         {/* Header */}
         <div className="space-y-6">
           <div className="flex flex-wrap items-center gap-2">
-            <span className="px-3.5 py-1 rounded-md bg-cyan-950/90 border border-cyan-500/40 text-xs font-mono font-bold text-cyan-300">
+            <span className="px-3.5 py-1 rounded-md bg-cyan-100 dark:bg-cyan-950/90 border border-cyan-500/40 text-xs font-mono font-bold text-cyan-900 dark:text-cyan-300 shadow-sm">
               {item.credentialBadge}
             </span>
-            <span className="px-3 py-1 rounded-md bg-slate-900 border border-slate-800 text-xs font-mono text-slate-400">
+            <span className="px-3 py-1 rounded-md bg-slate-100 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 text-xs font-mono text-slate-700 dark:text-slate-400 shadow-sm">
               {item.institution}
             </span>
           </div>
 
-          <h1 className="text-3xl sm:text-5xl font-extrabold text-white tracking-tight">
+          <h1 className="text-3xl sm:text-5xl font-extrabold text-slate-900 dark:text-white tracking-tight">
             {item.title}
           </h1>
 
-          <p className="text-base sm:text-lg text-slate-300 leading-relaxed max-w-4xl">
+          <p className="text-base sm:text-lg text-slate-700 dark:text-slate-300 leading-relaxed max-w-4xl">
             {item.description}
           </p>
         </div>
 
         {/* 3D Visualizer */}
         <div>
-          <TopicVisualizer
+          <TopicVisualizerHost
             type={item.type === 'degree' ? 'commercial' : 'cleanroom'}
             title={`${item.title} // ${item.institution}`}
           />
         </div>
 
         {/* Official Verification Box */}
-        <div className="p-6 rounded-2xl bg-emerald-950/30 border border-emerald-500/30 flex items-center space-x-4">
-          <div className="w-12 h-12 rounded-xl bg-emerald-950 border border-emerald-500/50 flex items-center justify-center text-emerald-400 shrink-0">
-            <ShieldCheck className="w-6 h-6" />
-          </div>
-          <div>
-            <div className="text-xs font-mono uppercase text-emerald-400 font-bold">
-              Official Credential Verification
+        {item.verificationUrl ? (
+          <a
+            href={item.verificationUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="p-6 rounded-2xl bg-emerald-950/40 hover:bg-emerald-950/60 border-2 border-emerald-500/50 hover:border-emerald-400 flex flex-col sm:flex-row sm:items-center justify-between gap-4 transition-all duration-300 shadow-xl shadow-emerald-950/40 group cursor-pointer"
+          >
+            <div className="flex items-center space-x-4">
+              <div className="w-12 h-12 rounded-xl bg-emerald-950 border border-emerald-500/50 flex items-center justify-center text-emerald-400 shrink-0 group-hover:scale-110 transition-transform">
+                <ShieldCheck className="w-6 h-6" />
+              </div>
+              <div>
+                <div className="text-xs font-mono uppercase text-emerald-400 font-bold flex items-center space-x-1.5">
+                  <span>Official Credential Verification</span>
+                  <ExternalLink className="w-3.5 h-3.5" />
+                </div>
+                <div className="text-sm text-slate-200 mt-0.5 font-medium">{item.verificationNote}</div>
+              </div>
             </div>
-            <div className="text-sm text-slate-200 mt-0.5">{item.verificationNote}</div>
+
+            <div className="shrink-0">
+              <div className="inline-flex items-center space-x-2 px-5 py-3 rounded-xl bg-gradient-to-r from-emerald-500 to-cyan-500 text-slate-950 font-extrabold text-xs uppercase tracking-wider shadow-lg shadow-emerald-500/25 group-hover:scale-105 transition-all">
+                <span>Validate on VirtualBadge.io</span>
+                <ExternalLink className="w-4 h-4" />
+              </div>
+            </div>
+          </a>
+        ) : (
+          <div className="p-6 rounded-2xl bg-emerald-950/30 border border-emerald-500/30 flex items-center space-x-4">
+            <div className="w-12 h-12 rounded-xl bg-emerald-950 border border-emerald-500/50 flex items-center justify-center text-emerald-400 shrink-0">
+              <ShieldCheck className="w-6 h-6" />
+            </div>
+            <div>
+              <div className="text-xs font-mono uppercase text-emerald-400 font-bold">
+                Official Credential Verification
+              </div>
+              <div className="text-sm text-slate-200 mt-0.5">{item.verificationNote}</div>
+            </div>
           </div>
-        </div>
+        )}
 
         {/* Key Takeaways & Competencies Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">

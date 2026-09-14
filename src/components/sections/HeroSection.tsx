@@ -34,7 +34,7 @@ interface HeroSectionProps {
 
 export default function HeroSection({ currentLocale, cvData }: HeroSectionProps) {
   return (
-    <section className="relative flex items-center justify-center pt-14 pb-3 sm:pt-16 sm:pb-4 overflow-hidden">
+    <section className="relative flex items-center justify-center pt-24 pb-7 sm:pt-28 sm:pb-8 md:pt-32 overflow-hidden">
       {/* 3D Scene Layer */}
       <HeroScene />
 
@@ -138,7 +138,7 @@ export default function HeroSection({ currentLocale, cvData }: HeroSectionProps)
                 {/* Portrait Image */}
                 <div className="relative w-full aspect-[4/5] rounded-2xl overflow-hidden bg-slate-900">
                   <Image
-                    src="/images/eduardo-desousa.jpg"
+                    src="/images/eduardo-hero.jpg"
                     alt="Eduardo de Sousa - Operations & Quality Leader"
                     fill
                     priority
@@ -190,11 +190,6 @@ export default function HeroSection({ currentLocale, cvData }: HeroSectionProps)
         <div className="mt-5 sm:mt-6 max-w-6xl mx-auto">
           <InfiniteBrandMarquee currentLocale={currentLocale} />
         </div>
-      </div>
-
-      {/* Down Scroll Indicator */}
-      <div className="hidden xl:flex absolute bottom-1 left-1/2 -translate-x-1/2 pointer-events-none text-slate-400 flex-col items-center">
-        <ChevronDown className="w-4 h-4 animate-bounce text-cyan-500 dark:text-cyan-400" />
       </div>
     </section>
   );

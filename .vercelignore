@@ -2,7 +2,14 @@
 node_modules
 .next
 *.mp4
+!public/videos/*.mp4
 *.mkv
 *.mp3
-*.png
 frames*
+feedback*
+cloudflared
+ngrok*
+graphify-out/
+patch_*.js
+cv_*.html
+*.tgz

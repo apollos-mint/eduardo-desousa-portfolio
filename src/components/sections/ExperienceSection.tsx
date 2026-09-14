@@ -2,14 +2,19 @@
 
 import React from 'react';
 import Link from 'next/link';
+import dynamic from 'next/dynamic';
 import { Locale, CVContent } from '@/types';
-import ExperienceScene from '@/components/3d/ExperienceScene';
+import BrandLogo from '@/components/ui/BrandLogos';
+
+const ExperienceScene = dynamic(() => import('@/components/3d/ExperienceScene'), {
+  ssr: false,
+});
 import {
   Briefcase,
   MapPin,
   Calendar,
   Building,
-  ArrowUpRight,
+  ArrowRight,
   TrendingUp,
   ShieldCheck,
   Cpu,
@@ -23,11 +28,13 @@ import {
 interface ExperienceSectionProps {
   currentLocale: Locale;
   cvData: CVContent;
+  showHeader?: boolean;
 }
 
 export default function ExperienceSection({
   currentLocale,
   cvData,
+  showHeader = false,
 }: ExperienceSectionProps) {
   const experiences = cvData.experiences;
   const primaryExp = experiences[0]; // Sourcing & Digital Operations (Full Width)
@@ -37,7 +44,7 @@ export default function ExperienceSection({
   return (
     <section
       id="experience"
-      className="pt-16 pb-20 sm:pb-24 relative overflow-hidden bg-gradient-to-b from-transparent via-slate-900/50 to-slate-950/80"
+      className="pt-6 pb-20 sm:pb-24 relative overflow-hidden bg-gradient-to-b from-transparent via-slate-900/50 to-slate-950/80"
     >
       {/* Dynamic WebGL Background for Experience */}
       <div className="absolute inset-0 opacity-100">
@@ -45,22 +52,24 @@ export default function ExperienceSection({
       </div>
       <div className="absolute inset-0 bg-subtle-grid-bg opacity-30 pointer-events-none" />
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 space-y-10">
-        {/* Section Header */}
-        <div className="max-w-3xl mx-auto text-center space-y-3">
-          <div className="inline-flex items-center space-x-2 px-3.5 py-1 rounded-full bg-cyan-950/70 dark:bg-cyan-950/70 light:bg-cyan-100 border border-cyan-500/30 text-xs font-mono text-cyan-400 dark:text-cyan-400 light:text-cyan-700">
-            <Briefcase className="w-3.5 h-3.5" />
-            <span className="uppercase tracking-wider">
-              {cvData.navigation.experience} // Dossier Profesional
-            </span>
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 space-y-8">
+        {/* Section Header (Optional) */}
+        {showHeader && (
+          <div className="max-w-3xl mx-auto text-center space-y-3">
+            <div className="inline-flex items-center space-x-2 px-3.5 py-1 rounded-full bg-cyan-950/70 dark:bg-cyan-950/70 light:bg-cyan-100 border border-cyan-500/30 text-xs font-mono text-cyan-400 dark:text-cyan-400 light:text-cyan-700">
+              <Briefcase className="w-3.5 h-3.5" />
+              <span className="uppercase tracking-wider">
+                {cvData.navigation.experience} // Dossier Profesional
+              </span>
+            </div>
+            <h2 className="text-3xl sm:text-5xl font-extrabold text-white tracking-tight">
+              {cvData.common.keyAchievements}
+            </h2>
+            <p className="text-sm sm:text-base text-slate-200 leading-relaxed">
+              {cvData.common.careerExperiencesSubtitle}
+            </p>
           </div>
-          <h2 className="text-3xl sm:text-5xl font-extrabold text-white tracking-tight">
-            {cvData.common.keyAchievements}
-          </h2>
-          <p className="text-sm sm:text-base text-slate-200 leading-relaxed">
-            {cvData.common.careerExperiencesSubtitle}
-          </p>
-        </div>
+        )}
 
         {/* =========================================================================
            HIERARCHICAL 1 + 2 + 3 EXPERIENCE ARCHITECTURE
@@ -73,89 +82,104 @@ export default function ExperienceSection({
               ROW 1: PRIMARY FEATURED EXPERIENCE (FULL WIDTH)
              ------------------------------------------------------------- */}
           {primaryExp && (
-            <div className="glass-panel p-6 sm:p-8 rounded-3xl border-2 border-cyan-500/50 bg-white/95 dark:bg-slate-900/85 shadow-2xl relative group overflow-hidden hover:border-cyan-400 transition-all duration-300">
-              {/* Top Accent Gradient Bar */}
-              <div className="absolute top-0 left-0 right-0 h-1.5 bg-gradient-to-r from-cyan-500 via-emerald-500 to-indigo-500" />
+            <div className="glass-panel p-6 sm:p-8 rounded-3xl border-2 border-cyan-500/40 bg-white dark:bg-slate-900/80 shadow-xl hover:shadow-2xl transition-all duration-300 relative group overflow-hidden">
+              {/* Subtle high-tech highlight glow matching Home */}
+              <div className="absolute top-0 right-0 w-80 h-80 bg-cyan-500/10 dark:bg-cyan-500/15 rounded-full blur-3xl pointer-events-none -mr-20 -mt-20 group-hover:bg-cyan-500/20 transition-all duration-500" />
 
-              <div className="space-y-6">
-                {/* Header Meta Row */}
+              <div className="relative z-10 space-y-5">
+                {/* Top Header Row: Icon + Title + 3 Key Metric Buttons */}
                 <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-4">
-                  <div className="space-y-2">
-                    <div className="flex flex-wrap items-center gap-2">
-                      <span className="px-2.5 py-0.5 rounded-md bg-cyan-100 dark:bg-cyan-950 border border-cyan-500/40 font-mono text-xs font-black text-cyan-800 dark:text-cyan-400">
-                        01 // PILAR PRINCIPAL
-                      </span>
-                      <span className="px-3 py-0.5 rounded-md bg-slate-100 dark:bg-slate-800/80 border border-slate-200 dark:border-slate-700 font-mono text-xs text-slate-700 dark:text-cyan-300 whitespace-nowrap">
-                        {primaryExp.period}
-                      </span>
-                      <span className="px-2.5 py-0.5 rounded-md bg-slate-100 dark:bg-slate-800/60 border border-slate-200 dark:border-slate-700 text-xs text-slate-700 dark:text-slate-300 flex items-center space-x-1 whitespace-nowrap">
-                        <MapPin className="w-3 h-3 text-cyan-600 dark:text-cyan-400 shrink-0" />
-                        <span>{primaryExp.location}</span>
-                      </span>
-                      <span className="px-2.5 py-0.5 rounded-md bg-cyan-50 dark:bg-cyan-950/40 border border-cyan-500/30 text-xs font-mono text-cyan-800 dark:text-cyan-300">
-                        {primaryExp.industry}
-                      </span>
+                  <Link
+                    href={`/${currentLocale}/experience/${primaryExp.id}`}
+                    className="flex items-start sm:items-center space-x-3.5 group/link"
+                  >
+                    <div className="w-12 h-12 rounded-2xl bg-cyan-50 dark:bg-cyan-950/80 border border-cyan-500/30 flex items-center justify-center text-cyan-600 dark:text-cyan-400 shrink-0 group-hover/link:scale-110 group-hover:scale-110 transition-all duration-300 shadow-md shadow-cyan-500/10">
+                      <Globe2 className="w-6 h-6" />
                     </div>
-
-                    <Link
-                      href={`/${currentLocale}/experience/${primaryExp.id}`}
-                      className="block group/title"
-                    >
-                      <h3 className="text-2xl sm:text-3xl font-extrabold text-slate-900 dark:text-white group-hover/title:text-cyan-600 dark:group-hover/title:text-cyan-400 transition-colors leading-tight">
+                    <div>
+                      <div className="flex items-center space-x-2">
+                        <span className="px-2 py-0.5 rounded-md bg-cyan-100 dark:bg-cyan-950/80 border border-cyan-500/30 text-[10px] font-mono font-bold uppercase text-cyan-800 dark:text-cyan-400">
+                          01 // Pilar Principal
+                        </span>
+                        <span className="px-2.5 py-0.5 rounded-md bg-slate-100 dark:bg-slate-800/80 border border-slate-200 dark:border-slate-700 font-mono text-[10px] text-slate-700 dark:text-cyan-300 whitespace-nowrap">
+                          {primaryExp.period}
+                        </span>
+                        <span className="hidden sm:inline-flex items-center space-x-1 px-2 py-0.5 rounded-md bg-slate-100 dark:bg-slate-800/60 border border-slate-200 dark:border-slate-700 text-[10px] text-slate-700 dark:text-slate-300">
+                          <MapPin className="w-3 h-3 text-cyan-600 dark:text-cyan-400 shrink-0" />
+                          <span>{primaryExp.location}</span>
+                        </span>
+                      </div>
+                      <h3 className="text-xl sm:text-2xl font-extrabold text-slate-900 dark:text-white group-hover/link:text-cyan-600 dark:group-hover/link:text-cyan-400 group-hover:text-cyan-600 dark:group-hover:text-cyan-400 transition-colors leading-snug mt-0.5">
                         {primaryExp.role}
-                        <span className="text-cyan-600 dark:text-cyan-400 font-normal text-xl sm:text-2xl ml-2">
+                        <span className="text-cyan-600 dark:text-cyan-400 font-normal text-lg sm:text-xl ml-2">
                           &bull; {primaryExp.company}
                         </span>
                       </h3>
+                    </div>
+                  </Link>
+
+                  {/* 3 Key Achievement Badges matching Home */}
+                  <div className="flex flex-wrap items-center gap-2">
+                    <Link
+                      href={`/${currentLocale}/experience/${primaryExp.id}`}
+                      className="px-3.5 py-1.5 rounded-xl bg-emerald-50 dark:bg-emerald-950/80 border border-emerald-500/40 hover:border-emerald-400 font-mono text-xs font-bold text-emerald-800 dark:text-emerald-300 shadow-sm whitespace-nowrap transition-all duration-200 hover:scale-105 hover:bg-emerald-100 dark:hover:bg-emerald-900/90 cursor-pointer"
+                    >
+                      ✓ {cvData.common.achievement3 || '$800K/yr · 20 Cont/Quarter'}
+                    </Link>
+                    <Link
+                      href={`/${currentLocale}/experience/${primaryExp.id}`}
+                      className="px-3.5 py-1.5 rounded-xl bg-cyan-50 dark:bg-cyan-950/80 border border-cyan-500/40 hover:border-cyan-400 font-mono text-xs font-bold text-cyan-800 dark:text-cyan-300 shadow-sm whitespace-nowrap transition-all duration-200 hover:scale-105 hover:bg-cyan-100 dark:hover:bg-cyan-900/90 cursor-pointer"
+                    >
+                      ✓ {cvData.common.sourcingPill2 || '-75% Costs · China Factory Direct'}
+                    </Link>
+                    <Link
+                      href={`/${currentLocale}/experience/${primaryExp.id}`}
+                      className="px-3.5 py-1.5 rounded-xl bg-indigo-50 dark:bg-indigo-950/80 border border-indigo-500/40 hover:border-indigo-400 font-mono text-xs font-bold text-indigo-800 dark:text-indigo-300 shadow-sm whitespace-nowrap transition-all duration-200 hover:scale-105 hover:bg-indigo-100 dark:hover:bg-indigo-900/90 cursor-pointer"
+                    >
+                      ✓ {cvData.common.sourcingPill3 || 'Proprietary CMMS & iPaaS'}
                     </Link>
                   </div>
-
-                  <Link
-                    href={`/${currentLocale}/experience/${primaryExp.id}`}
-                    className="inline-flex items-center justify-center space-x-2 px-6 py-3.5 rounded-2xl bg-gradient-to-r from-cyan-600 via-emerald-600 to-cyan-600 dark:from-cyan-500 dark:via-emerald-500 dark:to-cyan-500 hover:from-cyan-500 hover:to-emerald-500 text-white dark:text-slate-950 font-extrabold text-xs uppercase tracking-wider transition-all duration-200 shadow-xl shadow-cyan-500/25 shrink-0 hover:scale-105"
-                  >
-                    <span>{cvData.navigation.openDedicatedPage}</span>
-                    <ArrowUpRight className="w-4 h-4 text-white dark:text-slate-950" />
-                  </Link>
                 </div>
 
-                {/* Summary Text */}
-                <p className="text-sm sm:text-base text-slate-700 dark:text-slate-200 leading-relaxed font-normal max-w-5xl">
+                {/* Description */}
+                <p className="text-sm sm:text-base text-slate-700 dark:text-slate-300 leading-relaxed font-normal max-w-5xl">
                   {primaryExp.summary}
                 </p>
 
-                {/* 4 Numerical Metrics Grid */}
-                <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 pt-1">
-                  {primaryExp.metrics.map((metric, mIdx) => (
-                    <div
-                      key={mIdx}
-                      className="p-4 rounded-2xl bg-slate-50 dark:bg-slate-950/70 border border-slate-200 dark:border-slate-800/90 text-center space-y-1 hover:border-cyan-500/40 transition-colors shadow-sm"
-                    >
-                      <div className="font-mono text-xl sm:text-2xl font-black text-cyan-600 dark:text-transparent dark:bg-clip-text dark:bg-gradient-to-r dark:from-white dark:via-cyan-200 dark:to-cyan-400">
-                        {metric.value}
-                      </div>
-                      <div className="text-xs font-bold text-slate-800 dark:text-slate-200">
-                        {metric.label}
-                      </div>
-                      {metric.subtext && (
-                        <div className="text-[11px] font-mono text-slate-500 dark:text-slate-400">
-                          {metric.subtext}
+                {/* Ecosystem Company Logotypes matching Home */}
+                <div className="pt-1">
+                  <div className="text-[11px] font-mono uppercase text-slate-500 dark:text-slate-400 font-bold mb-2">
+                    {cvData.common.ecosystemLabel}
+                  </div>
+                  <div className="flex flex-wrap items-center gap-2">
+                    {['HAPAG-LLOYD', 'MAERSK', 'MSC', 'ISO 9001', 'MAKE', 'ZAPIER'].map((company) => (
+                      <div
+                        key={company}
+                        className="px-2.5 py-1 rounded-lg bg-slate-50 dark:bg-slate-800/90 border border-slate-200 dark:border-slate-700/80 flex items-center space-x-2 shadow-sm"
+                      >
+                        <div className="h-5 flex items-center">
+                          <BrandLogo name={company} className="h-4.5 w-auto max-w-[65px]" />
                         </div>
-                      )}
-                    </div>
-                  ))}
+                        <span className="text-[10px] font-mono font-bold text-slate-800 dark:text-slate-200">
+                          {company}
+                        </span>
+                      </div>
+                    ))}
+                  </div>
                 </div>
 
-                {/* Technologies Stack Chips */}
-                <div className="pt-2 flex flex-wrap items-center gap-1.5 border-t border-slate-200 dark:border-slate-800/80">
-                  {primaryExp.technologies.map((tech, tIdx) => (
-                    <span
-                      key={tIdx}
-                      className="px-2.5 py-1 rounded-lg bg-slate-100 dark:bg-slate-950/80 border border-slate-200 dark:border-slate-800 text-[11px] font-mono text-slate-700 dark:text-slate-300"
-                    >
-                      {tech}
-                    </span>
-                  ))}
+                {/* Card Footer Actions */}
+                <div className="pt-3.5 border-t border-slate-200 dark:border-slate-800 flex items-center justify-between">
+                  <span className="text-xs font-mono text-cyan-800 dark:text-cyan-400 font-bold uppercase">
+                    {cvData.common.coreCompetencies}: {primaryExp.industry}
+                  </span>
+                  <Link
+                    href={`/${currentLocale}/experience/${primaryExp.id}`}
+                    className="inline-flex items-center space-x-1.5 px-4 py-2 rounded-xl bg-cyan-50 dark:bg-cyan-950/80 border border-cyan-500/40 hover:border-cyan-400 text-xs font-bold text-cyan-700 dark:text-cyan-300 hover:text-cyan-600 dark:hover:text-cyan-200 transition-all hover:scale-105 shadow-sm shrink-0"
+                  >
+                    <span>{cvData.navigation.viewDeepDive}</span>
+                    <ArrowRight className="w-3.5 h-3.5" />
+                  </Link>
                 </div>
               </div>
             </div>
@@ -168,102 +192,96 @@ export default function ExperienceSection({
             {secondaryExps.map((exp, index) => {
               const cardNumber = String(index + 2).padStart(2, '0');
               const Icon = exp.id === 'hq-pack' ? Cpu : ShieldCheck;
+              const achievement = exp.id === 'hq-pack'
+                ? (cvData.common.achievement1 || 'ISO Class 5 Spec <0.1µm & 150+ ISAH Orders/mo')
+                : (cvData.common.achievement2 || 'Cadence: 110-120 Cars/Shift & -15% Defect Rate');
+              const companies = exp.id === 'hq-pack'
+                ? ['HQPACK', 'ASML', 'ZEISS', 'FRENCKEN', 'NEWAYS', 'ISO 9001', 'TÜV']
+                : ['BMW', 'MINI', 'BOSCH', 'ZF', 'BROSE', 'VDL'];
 
               return (
                 <div
                   key={exp.id}
-                  className="glass-panel p-6 sm:p-7 rounded-3xl border border-slate-200 dark:border-slate-800/90 bg-white/95 dark:bg-slate-900/80 hover:border-cyan-500/40 transition-all duration-300 relative group overflow-hidden flex flex-col justify-between shadow-xl"
+                  className="glass-panel p-6 sm:p-7 rounded-3xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900/75 relative group overflow-hidden flex flex-col justify-between shadow-lg hover:border-cyan-500/40 transition-all duration-300"
                 >
-                  <div className="space-y-4">
-                    {/* Meta Top Bar */}
-                    <div className="flex flex-wrap items-center justify-between gap-2">
-                      <div className="flex items-center space-x-2">
-                        <span className="px-2 py-0.5 rounded-md bg-slate-100 dark:bg-slate-800 border border-cyan-500/30 font-mono text-xs font-bold text-cyan-800 dark:text-cyan-400">
-                          {cardNumber}
-                        </span>
-                        <span className="px-2.5 py-0.5 rounded-md bg-cyan-50 dark:bg-cyan-950/70 border border-cyan-500/30 font-mono text-xs text-cyan-800 dark:text-cyan-300 whitespace-nowrap">
-                          {exp.period}
-                        </span>
-                      </div>
-                      <span className="px-2 py-0.5 rounded-md bg-slate-100 dark:bg-slate-800/60 border border-slate-200 dark:border-slate-700 text-[11px] text-slate-700 dark:text-slate-300 flex items-center space-x-1">
-                        <MapPin className="w-3 h-3 text-cyan-600 dark:text-cyan-400 shrink-0" />
-                        <span className="truncate max-w-[140px]">{exp.location}</span>
-                      </span>
-                    </div>
+                  {/* Subtle high-tech highlight glow in upper right corner on hover matching Home */}
+                  <div className="absolute top-0 right-0 w-80 h-80 bg-cyan-500/10 dark:bg-cyan-500/15 rounded-full blur-3xl pointer-events-none -mr-20 -mt-20 group-hover:bg-cyan-500/25 transition-all duration-500" />
 
-                    {/* Role & Company Header */}
-                    <div className="flex items-start space-x-3">
-                      <div className="w-10 h-10 rounded-xl bg-cyan-50 dark:bg-cyan-950/80 border border-cyan-500/30 flex items-center justify-center text-cyan-600 dark:text-cyan-400 shrink-0 group-hover:scale-110 transition-transform">
-                        <Icon className="w-5 h-5" />
-                      </div>
-                      <div>
+                  <div className="space-y-4 relative z-10">
+                    <div className="flex flex-wrap items-center justify-between gap-2">
+                      <div className="flex items-center space-x-3">
                         <Link
                           href={`/${currentLocale}/experience/${exp.id}`}
-                          className="block group/title"
+                          className="w-11 h-11 rounded-2xl bg-cyan-50 dark:bg-cyan-950/80 border border-cyan-500/30 flex items-center justify-center text-cyan-600 dark:text-cyan-400 shrink-0 group-hover:scale-110 transition-all duration-300 shadow-md shadow-cyan-500/10 cursor-pointer"
                         >
-                          <h3 className="text-lg sm:text-xl font-extrabold text-slate-900 dark:text-white group-hover/title:text-cyan-600 dark:group-hover/title:text-cyan-400 transition-colors leading-snug">
-                            {exp.role}
-                          </h3>
+                          <Icon className="w-5 h-5" />
                         </Link>
-                        <div className="text-sm font-bold text-cyan-600 dark:text-cyan-400 mt-0.5">
-                          {exp.company}
+                        <div className="flex items-center space-x-1.5">
+                          <span className="px-2 py-0.5 rounded-md bg-slate-100 dark:bg-slate-800 border border-cyan-500/30 font-mono text-[10px] font-bold text-cyan-800 dark:text-cyan-400">
+                            {cardNumber}
+                          </span>
+                          <span className="px-2 py-0.5 rounded-md bg-cyan-50 dark:bg-cyan-950/70 border border-cyan-500/30 font-mono text-[10px] text-cyan-800 dark:text-cyan-300">
+                            {exp.period}
+                          </span>
                         </div>
                       </div>
+
+                      {/* Achievement badge matching Home */}
+                      <Link
+                        href={`/${currentLocale}/experience/${exp.id}`}
+                        className="px-3 py-1 rounded-full bg-emerald-50 dark:bg-emerald-950/80 border border-emerald-500/40 hover:border-emerald-400 font-mono text-[11px] font-bold text-emerald-800 dark:text-emerald-300 shadow-sm whitespace-nowrap transition-all duration-200 hover:scale-105 hover:bg-emerald-100 dark:hover:bg-emerald-900/90 cursor-pointer"
+                      >
+                        ✓ {achievement}
+                      </Link>
                     </div>
 
-                    {/* Summary */}
-                    <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed line-clamp-3">
-                      {exp.summary}
-                    </p>
-
-                    {/* Metrics 4-grid */}
-                    <div className="grid grid-cols-2 sm:grid-cols-4 gap-2 pt-1">
-                      {exp.metrics.map((m, mIdx) => (
-                        <div
-                          key={mIdx}
-                          className="p-2.5 rounded-xl bg-slate-50 dark:bg-slate-950/60 border border-slate-200 dark:border-slate-800/80 text-center space-y-0.5 shadow-sm"
-                        >
-                          <div className="font-mono text-sm sm:text-base font-extrabold text-cyan-700 dark:text-cyan-400">
-                            {m.value}
-                          </div>
-                          <div className="text-[10px] text-slate-600 dark:text-slate-300 line-clamp-1">
-                            {m.label}
-                          </div>
-                        </div>
-                      ))}
+                    <div className="space-y-1.5">
+                      <Link href={`/${currentLocale}/experience/${exp.id}`} className="block group/title cursor-pointer">
+                        <h3 className="text-base sm:text-lg font-extrabold text-slate-900 dark:text-white group-hover/title:text-cyan-600 dark:group-hover/title:text-cyan-400 group-hover:text-cyan-600 dark:group-hover:text-cyan-400 transition-colors leading-snug">
+                          {exp.role}
+                        </h3>
+                      </Link>
+                      <div className="text-xs font-bold text-cyan-600 dark:text-cyan-400">
+                        {exp.company} &bull; {exp.location}
+                      </div>
+                      <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed font-normal pt-1 line-clamp-3">
+                        {exp.summary}
+                      </p>
                     </div>
 
-                    {/* Partners Chips */}
-                    {exp.partners && exp.partners.length > 0 && (
-                      <div className="pt-1">
-                        <div className="text-[10px] font-mono uppercase text-slate-500 dark:text-slate-400 font-bold mb-1.5">
-                          {cvData.common.industryPartners}:
-                        </div>
-                        <div className="flex flex-wrap gap-1.5">
-                          {exp.partners.slice(0, 4).map((p, pIdx) => (
-                            <span
-                              key={pIdx}
-                              className="px-2 py-0.5 rounded-md bg-slate-100 dark:bg-slate-950 border border-slate-200 dark:border-slate-800 text-[10px] font-mono text-slate-700 dark:text-slate-300"
-                            >
-                              {p}
+                    {/* Direct Company Range Badges matching Home */}
+                    <div className="pt-2">
+                      <div className="text-[10px] font-mono uppercase text-slate-500 dark:text-slate-400 font-bold mb-2">
+                        {cvData.common.ecosystemLabel}
+                      </div>
+                      <div className="flex flex-wrap items-center gap-1.5">
+                        {companies.map((company) => (
+                          <div
+                            key={company}
+                            className="px-2 py-0.5 rounded-lg bg-slate-50 dark:bg-slate-800/90 border border-slate-200 dark:border-slate-700/80 flex items-center space-x-1.5 shadow-sm"
+                          >
+                            <div className="h-4.5 flex items-center">
+                              <BrandLogo name={company} className="h-4 w-auto max-w-[55px]" />
+                            </div>
+                            <span className="text-[10px] font-mono font-bold text-slate-800 dark:text-slate-200">
+                              {company}
                             </span>
-                          ))}
-                        </div>
+                          </div>
+                        ))}
                       </div>
-                    )}
+                    </div>
                   </div>
 
-                  {/* Card Footer Button */}
-                  <div className="pt-4 mt-4 border-t border-slate-200 dark:border-slate-800/80 flex items-center justify-between">
-                    <span className="text-xs font-mono text-cyan-800 dark:text-cyan-400 font-semibold">
-                      {exp.industry}
+                  <div className="mt-6 pt-3.5 border-t border-slate-200 dark:border-slate-800 flex items-center justify-between relative z-10">
+                    <span className="text-[10px] font-mono text-cyan-800 dark:text-cyan-400 font-bold uppercase">
+                      {cvData.common.coreCompetencies}
                     </span>
                     <Link
                       href={`/${currentLocale}/experience/${exp.id}`}
-                      className="inline-flex items-center space-x-1.5 px-4 py-2 rounded-xl bg-cyan-50 dark:bg-cyan-950/90 hover:bg-cyan-100 dark:hover:bg-cyan-900 border border-cyan-500/40 text-xs font-bold text-cyan-800 dark:text-cyan-300 transition-all hover:scale-105"
+                      className="inline-flex items-center space-x-1.5 px-3.5 py-1.5 rounded-xl bg-cyan-50 dark:bg-cyan-950/80 border border-cyan-500/40 hover:border-cyan-400 text-xs font-bold text-cyan-700 dark:text-cyan-300 hover:text-cyan-600 dark:hover:text-cyan-200 transition-all hover:scale-105 shadow-sm shrink-0"
                     >
-                      <span>{cvData.navigation.openDedicatedPage}</span>
-                      <ArrowUpRight className="w-3.5 h-3.5" />
+                      <span>{cvData.navigation.viewDeepDive}</span>
+                      <ArrowRight className="w-3.5 h-3.5" />
                     </Link>
                   </div>
                 </div>
@@ -277,76 +295,93 @@ export default function ExperienceSection({
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {tertiaryExps.map((exp, index) => {
               const cardNumber = String(index + 4).padStart(2, '0');
+              const Icon = exp.id === 'arkcohogar' ? Package : exp.id === 'eds-paixao' ? Sparkles : Briefcase;
+              const achievement = exp.id === 'arkcohogar'
+                ? '99.5% Stock Accuracy & WMS Optimization'
+                : exp.id === 'eds-paixao'
+                ? '100% HACCP Compliance & Peak Throughput'
+                : '5 Years Technical Sales & Direct Factory RFQ';
 
               return (
                 <div
                   key={exp.id}
-                  className="glass-panel p-5 sm:p-6 rounded-3xl border border-slate-200 dark:border-slate-800/80 bg-white/95 dark:bg-slate-900/70 hover:border-cyan-500/40 transition-all duration-300 relative group overflow-hidden flex flex-col justify-between shadow-lg"
+                  className="glass-panel p-6 sm:p-7 rounded-3xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900/75 relative group overflow-hidden flex flex-col justify-between shadow-lg hover:border-cyan-500/40 transition-all duration-300"
                 >
-                  <div className="space-y-3.5">
-                    {/* Meta Top Bar */}
-                    <div className="flex items-center justify-between gap-2">
-                      <span className="px-2 py-0.5 rounded-md bg-slate-100 dark:bg-slate-800 border border-cyan-500/30 font-mono text-xs font-bold text-cyan-800 dark:text-cyan-400">
-                        {cardNumber}
-                      </span>
-                      <span className="px-2.5 py-0.5 rounded-md bg-cyan-50 dark:bg-cyan-950/60 border border-cyan-500/20 font-mono text-[11px] text-cyan-800 dark:text-cyan-300 whitespace-nowrap">
-                        {exp.period}
-                      </span>
-                    </div>
+                  {/* Subtle high-tech highlight glow in upper right corner on hover matching Home */}
+                  <div className="absolute top-0 right-0 w-80 h-80 bg-cyan-500/10 dark:bg-cyan-500/15 rounded-full blur-3xl pointer-events-none -mr-20 -mt-20 group-hover:bg-cyan-500/25 transition-all duration-500" />
 
-                    {/* Role & Company Header */}
-                    <div>
+                  <div className="space-y-4 relative z-10">
+                    <div className="flex flex-wrap items-center justify-between gap-2">
+                      <div className="flex items-center space-x-3">
+                        <Link
+                          href={`/${currentLocale}/experience/${exp.id}`}
+                          className="w-11 h-11 rounded-2xl bg-cyan-50 dark:bg-cyan-950/80 border border-cyan-500/30 flex items-center justify-center text-cyan-600 dark:text-cyan-400 shrink-0 group-hover:scale-110 transition-all duration-300 shadow-md shadow-cyan-500/10 cursor-pointer"
+                        >
+                          <Icon className="w-5 h-5" />
+                        </Link>
+                        <div className="flex items-center space-x-1.5">
+                          <span className="px-2 py-0.5 rounded-md bg-slate-100 dark:bg-slate-800 border border-cyan-500/30 font-mono text-[10px] font-bold text-cyan-800 dark:text-cyan-400">
+                            {cardNumber}
+                          </span>
+                          <span className="px-2 py-0.5 rounded-md bg-cyan-50 dark:bg-cyan-950/70 border border-cyan-500/30 font-mono text-[10px] text-cyan-800 dark:text-cyan-300">
+                            {exp.period}
+                          </span>
+                        </div>
+                      </div>
+
+                      {/* Achievement badge matching Home */}
                       <Link
                         href={`/${currentLocale}/experience/${exp.id}`}
-                        className="block group/title"
+                        className="px-3 py-1 rounded-full bg-emerald-50 dark:bg-emerald-950/80 border border-emerald-500/40 hover:border-emerald-400 font-mono text-[10px] font-bold text-emerald-800 dark:text-emerald-300 shadow-sm whitespace-nowrap transition-all duration-200 hover:scale-105 hover:bg-emerald-100 dark:hover:bg-emerald-900/90 cursor-pointer"
                       >
-                        <h3 className="text-base font-extrabold text-slate-900 dark:text-white group-hover/title:text-cyan-600 dark:group-hover/title:text-cyan-400 transition-colors leading-snug">
+                        ✓ {achievement}
+                      </Link>
+                    </div>
+
+                    <div className="space-y-1.5">
+                      <Link href={`/${currentLocale}/experience/${exp.id}`} className="block group/title cursor-pointer">
+                        <h3 className="text-base sm:text-lg font-extrabold text-slate-900 dark:text-white group-hover/title:text-cyan-600 dark:group-hover/title:text-cyan-400 group-hover:text-cyan-600 dark:group-hover:text-cyan-400 transition-colors leading-snug">
                           {exp.role}
                         </h3>
                       </Link>
-                      <div className="text-xs font-bold text-cyan-600 dark:text-cyan-400 mt-0.5">
-                        {exp.company}
+                      <div className="text-xs font-bold text-cyan-600 dark:text-cyan-400">
+                        {exp.company} &bull; {exp.location}
                       </div>
-                      <div className="text-[11px] text-slate-500 dark:text-slate-400 flex items-center space-x-1 mt-1">
-                        <MapPin className="w-3 h-3 text-cyan-600 dark:text-cyan-400 shrink-0" />
-                        <span className="truncate">{exp.location}</span>
-                      </div>
+                      <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed font-normal pt-1 line-clamp-3">
+                        {exp.summary}
+                      </p>
                     </div>
 
-                    {/* Summary */}
-                    <p className="text-xs text-slate-600 dark:text-slate-300 leading-relaxed line-clamp-3">
-                      {exp.summary}
-                    </p>
-
-                    {/* Metrics Badges */}
-                    <div className="grid grid-cols-2 gap-2 pt-1">
-                      {exp.metrics.slice(0, 2).map((m, mIdx) => (
-                        <div
-                          key={mIdx}
-                          className="p-2 rounded-xl bg-slate-50 dark:bg-slate-950/60 border border-slate-200 dark:border-slate-800/70 text-center space-y-0.5 shadow-sm"
-                        >
-                          <div className="font-mono text-xs sm:text-sm font-extrabold text-cyan-700 dark:text-cyan-400 truncate">
-                            {m.value}
+                    {/* Direct Technologies / Standards Chips matching Home */}
+                    <div className="pt-2">
+                      <div className="text-[10px] font-mono uppercase text-slate-500 dark:text-slate-400 font-bold mb-2">
+                        {cvData.common.technologiesAndFrameworks}
+                      </div>
+                      <div className="flex flex-wrap items-center gap-1.5">
+                        {exp.technologies.slice(0, 4).map((tech, tIdx) => (
+                          <div
+                            key={tIdx}
+                            className="px-2 py-0.5 rounded-lg bg-slate-50 dark:bg-slate-800/90 border border-slate-200 dark:border-slate-700/80 flex items-center space-x-1.5 shadow-sm"
+                          >
+                            <span className="text-[10px] font-mono font-bold text-slate-800 dark:text-slate-200">
+                              {tech}
+                            </span>
                           </div>
-                          <div className="text-[9px] text-slate-600 dark:text-slate-400 truncate">
-                            {m.label}
-                          </div>
-                        </div>
-                      ))}
+                        ))}
+                      </div>
                     </div>
                   </div>
 
-                  {/* Card Footer Button */}
-                  <div className="pt-3.5 mt-4 border-t border-slate-200 dark:border-slate-800/80 flex items-center justify-between">
-                    <span className="text-[10px] font-mono text-slate-500 dark:text-slate-400 truncate max-w-[120px]">
-                      {exp.industry}
+                  <div className="mt-6 pt-3.5 border-t border-slate-200 dark:border-slate-800 flex items-center justify-between relative z-10">
+                    <span className="text-[10px] font-mono text-cyan-800 dark:text-cyan-400 font-bold uppercase">
+                      {cvData.common.coreCompetencies}
                     </span>
                     <Link
                       href={`/${currentLocale}/experience/${exp.id}`}
-                      className="inline-flex items-center space-x-1 px-3 py-1.5 rounded-lg bg-cyan-50 dark:bg-cyan-950/80 hover:bg-cyan-100 dark:hover:bg-cyan-900 border border-cyan-500/30 text-xs font-bold text-cyan-800 dark:text-cyan-300 transition-all hover:scale-105"
+                      className="inline-flex items-center space-x-1.5 px-3.5 py-1.5 rounded-xl bg-cyan-50 dark:bg-cyan-950/80 border border-cyan-500/40 hover:border-cyan-400 text-xs font-bold text-cyan-700 dark:text-cyan-300 hover:text-cyan-600 dark:hover:text-cyan-200 transition-all hover:scale-105 shadow-sm shrink-0"
                     >
-                      <span>{cvData.navigation.openDedicatedPage}</span>
-                      <ArrowUpRight className="w-3 h-3" />
+                      <span>{cvData.navigation.viewDeepDive}</span>
+                      <ArrowRight className="w-3.5 h-3.5" />
                     </Link>
                   </div>
                 </div>

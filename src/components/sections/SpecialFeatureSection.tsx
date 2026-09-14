@@ -48,7 +48,7 @@ export default function SpecialFeatureSection({
       icon: Cpu,
       title: cvData.highlights.pillars[1].title,
       description: cvData.highlights.pillars[1].description,
-      companies: ['HQPACK', 'ASML', 'ZEISS', 'BOEING', 'AIRBUS', 'SAMSUNG', 'FRENCKEN', 'NEWAYS'],
+      companies: ['HQPACK', 'ASML', 'ZEISS', 'FRENCKEN', 'NEWAYS', 'ISO 9001', 'TÜV'],
       achievement: cvData.common.achievement1,
       href: `/${currentLocale}/experience/hq-pack`,
     },
@@ -64,7 +64,7 @@ export default function SpecialFeatureSection({
   ];
 
   return (
-    <section id="specialization" className="pt-6 sm:pt-8 pb-6 sm:pb-8 relative overflow-hidden">
+    <section id="specialization" className="pt-1 sm:pt-2 pb-6 sm:pb-8 relative overflow-hidden">
       {/* High-Tech Blueprint Matrix Background */}
       <CyberTechBackground currentLocale={currentLocale} />
 
@@ -251,6 +251,9 @@ export default function SpecialFeatureSection({
                   key={pillar.id}
                   className="glass-panel p-6 sm:p-7 rounded-3xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900/75 relative group overflow-hidden flex flex-col justify-between shadow-lg hover:border-cyan-500/40 transition-all duration-300"
                 >
+                  {/* Subtle high-tech highlight glow in upper right corner on hover */}
+                  <div className="absolute top-0 right-0 w-80 h-80 bg-cyan-500/10 dark:bg-cyan-500/15 rounded-full blur-3xl pointer-events-none -mr-20 -mt-20 group-hover:bg-cyan-500/25 transition-all duration-500" />
+
                   <div className="space-y-4">
                     <div className="flex flex-wrap items-center justify-between gap-2">
                       <Link

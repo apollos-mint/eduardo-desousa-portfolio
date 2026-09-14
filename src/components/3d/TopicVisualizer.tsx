@@ -2,6 +2,7 @@
 
 import React, { useEffect, useRef, useState } from 'react';
 import * as THREE from 'three';
+import { getClampedPixelRatio, createFpsThrottler, setupVisibilityAndIntersection, disposeThreeScene } from '@/lib/three-perf';
 
 interface TopicVisualizerProps {
   type: 'cleanroom' | 'automotive' | 'logistics' | 'commercial' | 'consulting';
@@ -39,7 +40,7 @@ export default function TopicVisualizer({ type, title }: TopicVisualizerProps) {
     try {
       renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true });
       renderer.setSize(width, height);
-      renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+      renderer.setPixelRatio(getClampedPixelRatio());
       mount.appendChild(renderer.domElement);
     } catch (e) {
       console.warn('WebGLRenderer failed in TopicVisualizer:', e);
@@ -198,9 +199,20 @@ export default function TopicVisualizer({ type, title }: TopicVisualizerProps) {
 
     let animationFrameId: number;
     const clock = new THREE.Clock();
+    let isVisibleInView = true;
+
+    const cleanupVisibility = setupVisibilityAndIntersection(mount, (vis) => {
+      isVisibleInView = vis;
+    });
+
+    const throttler = createFpsThrottler(45);
 
     const animate = () => {
       animationFrameId = requestAnimationFrame(animate);
+      if (!isVisibleInView) return;
+      const now = performance.now();
+      if (!throttler(now)) return;
+
       const time = clock.getElapsedTime();
 
       group.rotation.x = time * 0.15;
@@ -225,10 +237,11 @@ export default function TopicVisualizer({ type, title }: TopicVisualizerProps) {
     return () => {
       cancelAnimationFrame(animationFrameId);
       window.removeEventListener('resize', handleResize);
-      if (mount && renderer.domElement) {
+      cleanupVisibility();
+      disposeThreeScene(scene, renderer);
+      if (mount && renderer.domElement && mount.contains(renderer.domElement)) {
         mount.removeChild(renderer.domElement);
       }
-      renderer.dispose();
     };
   }, [type]);
 

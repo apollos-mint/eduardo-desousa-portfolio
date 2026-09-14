@@ -142,64 +142,67 @@ export default function CertificateInteractiveWidget({
     const current = dmaicPhases[activePhase];
 
     return (
-      <div className="p-4 sm:p-6 rounded-2xl bg-slate-950/90 dark:bg-slate-950/90 light:bg-white border border-cyan-500/40 dark:border-cyan-500/40 light:border-cyan-400 space-y-4 shadow-lg">
+      <div className="p-4 sm:p-6 rounded-2xl bg-slate-950/90 border border-cyan-500/40 space-y-4 shadow-lg relative overflow-hidden">
         {/* Header */}
-        <div className="flex flex-wrap items-center justify-between gap-2 border-b border-slate-800 dark:border-slate-800 light:border-slate-200 pb-3">
+        <div className="flex flex-wrap items-center justify-between gap-2 border-b border-slate-800 pb-3">
           <div className="flex items-center space-x-2">
-            <span className="w-2.5 h-2.5 rounded-full bg-cyan-400 animate-ping" />
-            <span className="text-xs font-mono font-bold text-cyan-400 dark:text-cyan-300 light:text-cyan-700 tracking-wider">
+            <span className="w-2 h-2 rounded-full bg-cyan-400 animate-pulse" />
+            <span className="text-xs font-mono font-bold text-cyan-300 tracking-wider">
               {t.ganttTitle}
             </span>
           </div>
-          <span className="text-xs font-mono text-emerald-500 dark:text-emerald-400 font-bold">
+          <span className="text-xs font-mono text-emerald-400 font-bold px-2.5 py-0.5 rounded-full bg-emerald-950/80 border border-emerald-500/40 shadow-sm">
             {t.ganttSubtitle}
           </span>
         </div>
 
         {/* Interactive Gantt Timeline Bars */}
         <div className="space-y-2">
-          <div className="text-[11px] font-mono text-slate-500 dark:text-slate-400 light:text-slate-600">
+          <div className="text-[11px] font-mono text-slate-400">
             {t.inspectPhase}
           </div>
           <div className="grid grid-cols-5 gap-1.5 sm:gap-2">
-            {dmaicPhases.map((p) => (
-              <button
-                key={p.id}
-                onClick={() => setActivePhase(p.id)}
-                className={`p-2 sm:p-2.5 rounded-xl border text-center transition-all ${
-                  activePhase === p.id
-                    ? 'bg-cyan-950/80 dark:bg-cyan-950/80 light:bg-cyan-50 border-cyan-400 shadow-md shadow-cyan-500/20 scale-[1.03]'
-                    : 'bg-slate-900/80 dark:bg-slate-900/80 light:bg-slate-50 border-slate-800 dark:border-slate-800 light:border-slate-200 hover:border-cyan-500/40'
-                }`}
-              >
-                <div className="font-mono font-black text-xs sm:text-sm text-slate-900 dark:text-white">
-                  {p.phase}
-                </div>
-                <div className="text-[10px] text-cyan-500 dark:text-cyan-400 font-mono hidden sm:block mt-0.5">
-                  {p.duration}
-                </div>
-                {/* Visual Gantt Bar */}
-                <div className="w-full h-1.5 bg-slate-800 dark:bg-slate-800 light:bg-slate-200 rounded-full mt-2 overflow-hidden">
-                  <div className="h-full bg-gradient-to-r from-cyan-500 to-emerald-400 w-full" />
-                </div>
-              </button>
-            ))}
+            {dmaicPhases.map((p) => {
+              const isSelected = activePhase === p.id;
+              return (
+                <button
+                  key={p.id}
+                  onClick={() => setActivePhase(p.id)}
+                  className={`p-2 sm:p-2.5 rounded-xl border text-center transition-all cursor-pointer backdrop-blur-md ${
+                    isSelected
+                      ? 'bg-cyan-950/90 border-2 border-cyan-400 text-cyan-200 shadow-lg shadow-cyan-500/25 scale-[1.03]'
+                      : 'cyber-button-glass text-slate-200 hover:text-cyan-200 hover:border-cyan-400'
+                  }`}
+                >
+                  <div className="font-mono font-black text-xs sm:text-sm">
+                    {p.phase}
+                  </div>
+                  <div className={`text-[10px] font-mono hidden sm:block mt-0.5 ${isSelected ? 'text-cyan-300 font-bold' : 'text-slate-400'}`}>
+                    {p.duration}
+                  </div>
+                  {/* Visual Gantt Bar */}
+                  <div className="w-full h-1.5 bg-slate-900 rounded-full mt-2 overflow-hidden border border-slate-700/50">
+                    <div className="h-full bg-gradient-to-r from-cyan-500 to-emerald-400 w-full" />
+                  </div>
+                </button>
+              );
+            })}
           </div>
         </div>
 
         {/* Selected Phase Detail Box */}
-        <div className="p-4 rounded-xl bg-slate-900/90 dark:bg-slate-900/90 light:bg-slate-50 border border-slate-800 dark:border-slate-800 light:border-slate-200 grid grid-cols-1 sm:grid-cols-2 gap-4 text-xs">
+        <div className="p-4 rounded-xl bg-slate-900/90 border border-cyan-500/30 grid grid-cols-1 sm:grid-cols-2 gap-4 text-xs">
           <div className="space-y-1">
-            <div className="text-[10px] font-mono uppercase text-slate-400 dark:text-slate-500">
+            <div className="text-[10px] font-mono uppercase text-cyan-400 font-bold">
               {t.phaseDeliverable} // {current.phase}
             </div>
-            <div className="font-bold text-slate-900 dark:text-slate-100">{current.deliverable}</div>
+            <div className="font-bold text-white">{current.deliverable}</div>
           </div>
           <div className="space-y-1">
-            <div className="text-[10px] font-mono uppercase text-slate-400 dark:text-slate-500">
+            <div className="text-[10px] font-mono uppercase text-slate-400 font-bold">
               {t.toolsUtilized}
             </div>
-            <div className="font-mono text-cyan-500 dark:text-cyan-300 font-semibold">{current.tools}</div>
+            <div className="font-mono text-cyan-300 font-semibold">{current.tools}</div>
           </div>
         </div>
       </div>

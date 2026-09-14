@@ -20,27 +20,27 @@ export default function InfiniteBrandMarquee({ currentLocale }: InfiniteBrandMar
 
   const titles = {
     es: {
-      companies: 'EMPRESAS Y SOCIOS ESTRATÉGICOS:',
+      companies: 'ECOSISTEMAS DE FABRICACIÓN Y LOGÍSTICA TIER-1:',
       techs: 'TECNOLOGÍAS, ESTÁNDARES Y CERTIFICACIONES:',
     },
     en: {
-      companies: 'CLIENT COMPANIES & TIER-1 ECOSYSTEMS:',
+      companies: 'TIER-1 MANUFACTURING & LOGISTICS ECOSYSTEMS:',
       techs: 'TECHNOLOGIES, STANDARDS & CERTIFICATIONS:',
     },
     pt: {
-      companies: 'EMPRESAS E PARCEIROS ESTRATÉGICOS:',
+      companies: 'ECOSSISTEMAS DE FABRICAÇÃO E LOGÍSTICA TIER-1:',
       techs: 'TECNOLOGIAS, PADRÕES E CERTIFICAÇÕES:',
     },
     nl: {
-      companies: 'BEDRIJVEN EN ECOSYSTEMEN:',
+      companies: 'TIER-1 PRODUCTIE- EN LOGISTIEKE ECOSYSTEMEN:',
       techs: 'TECHNOLOGIEËN, NORMEN EN CERTIFICERINGEN:',
     },
     de: {
-      companies: 'UNTERNEHMEN UND ÖKOSYSTEME:',
+      companies: 'TIER-1 FERTIGUNGS- UND LOGISTIK-ÖKOSYSTEME:',
       techs: 'TECHNOLOGIEN, NORMEN UND ZERTIFIZIERUNGEN:',
     },
     fr: {
-      companies: 'ENTREPRISES ET ÉCOSYSTÈMES CLIENTS:',
+      companies: 'ÉCOSYSTÈMES INDUSTRIELS ET LOGISTIQUES TIER-1:',
       techs: 'TECHNOLOGIES, NORMES ET CERTIFICATIONS:',
     },
   };
@@ -58,12 +58,9 @@ export default function InfiniteBrandMarquee({ currentLocale }: InfiniteBrandMar
     { name: 'HAPAG-LLOYD', category: 'Global Maritime Shipping' },
     { name: 'MAERSK', category: 'Integrated Freight' },
     { name: 'MSC', category: 'Container Logistics' },
-    { name: 'BOEING', category: 'Aerospace Packaging' },
-    { name: 'AIRBUS', category: 'Avionic Cleanroom' },
-    { name: 'SAMSUNG', category: '3nm Foundry Transport' },
     { name: 'ZF', category: 'Powertrain & Torque' },
     { name: 'BROSE', category: 'Mechatronic Systems' },
-    { name: 'VDL', category: 'High-Tech Frame Systems' },
+    { name: 'VDL', category: 'Contract Manufacturing OEM' },
     { name: 'NEWAYS', category: 'Cleanroom PCBA' },
     { name: 'FRENCKEN', category: 'Precision Mechanics' },
   ];

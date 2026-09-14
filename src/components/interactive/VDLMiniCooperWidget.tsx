@@ -41,7 +41,7 @@ export default function VDLMiniCooperWidget({ currentLocale }: VDLMiniCooperWidg
     {
       id: 'battery',
       name: 'High-Voltage EV Battery & Inverter',
-      partner: 'BMW / Samsung SDI',
+      partner: 'BMW Group Powertrain',
       spec: '100% High-Voltage Interlock ISO 6469',
       telemetry: 'Dielectric isolation test pass, safety breaker lock checked.',
     },
@@ -115,41 +115,78 @@ export default function VDLMiniCooperWidget({ currentLocale }: VDLMiniCooperWidg
       {/* Digitized MINI Cooper Chassis Blueprint Interactive SVG (Clean, flicker-free) */}
       <div className="p-4 sm:p-6 rounded-2xl bg-slate-900/90 dark:bg-slate-900/90 light:bg-slate-100 border border-slate-800 dark:border-slate-800 light:border-slate-200 relative overflow-hidden z-10">
         <div className="flex flex-col lg:flex-row items-center justify-between gap-6">
-          {/* Stylized Digitized Mini Car Wireframe */}
+          {/* Precision Digitized Mini Car CAD Metrology Blueprint */}
           <div className="w-full lg:w-3/5 relative flex items-center justify-center py-2">
-            <svg viewBox="0 0 500 200" className="w-full max-w-[460px] h-auto drop-shadow-xl">
-              {/* Car Body Contour */}
+            <svg viewBox="0 0 520 220" className="w-full max-w-[480px] h-auto drop-shadow-xl">
+              <defs>
+                <linearGradient id="cadGlow" x1="0" y1="0" x2="1" y2="0">
+                  <stop offset="0%" stopColor="#38bdf8" />
+                  <stop offset="50%" stopColor="#06b6d4" />
+                  <stop offset="100%" stopColor="#10b981" />
+                </linearGradient>
+                <marker id="arrow" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="4" markerHeight="4" orient="auto-start-reverse">
+                  <path d="M 0 1.5 L 10 5 L 0 8.5 z" fill="#38bdf8" />
+                </marker>
+              </defs>
+
+              {/* Background CAD Grid Sub-divisions */}
+              <line x1="30" y1="165" x2="490" y2="165" stroke="#1e293b" strokeWidth="1" />
+              <line x1="30" y1="110" x2="490" y2="110" stroke="#1e293b" strokeWidth="0.75" strokeDasharray="3 3" />
+              <line x1="30" y1="55" x2="490" y2="55" stroke="#1e293b" strokeWidth="0.75" strokeDasharray="3 3" />
+
+              {/* Continuous Polished Car Body Contour (Solid, Crisp, No Chopped Dasharray) */}
               <path
-                d="M50,140 L70,80 L160,50 L340,50 L420,95 L460,115 L460,145 L420,150 L380,150 A40,40 0 0,0 300,150 L200,150 A40,40 0 0,0 120,150 L70,150 Z"
+                d="M50,140 L68,85 L155,50 L345,50 L425,95 L465,115 L465,145 L420,150 L382,150 A40,40 0 0,0 302,150 L198,150 A40,40 0 0,0 118,150 L68,150 Z"
                 fill="none"
-                stroke="#38bdf8"
-                strokeWidth="2.5"
-                strokeDasharray="6 3"
+                stroke="url(#cadGlow)"
+                strokeWidth="2.8"
+                strokeLinecap="round"
+                strokeLinejoin="round"
               />
-              {/* Roof & Windows */}
-              <path d="M170,55 L330,55 L390,95 L150,95 Z" fill="#0284c7" fillOpacity="0.15" stroke="#38bdf8" strokeWidth="2" />
-              <line x1="250" y1="55" x2="250" y2="95" stroke="#38bdf8" strokeWidth="2" />
 
-              {/* Front Wheel */}
-              <circle cx="340" cy="150" r="32" fill="#0f172a" stroke="#10b981" strokeWidth="3" />
-              <circle cx="340" cy="150" r="16" fill="#1e293b" stroke="#38bdf8" strokeWidth="2" />
+              {/* Beltline & Door Shutlines */}
+              <path d="M72,112 L460,112" fill="none" stroke="#0284c7" strokeWidth="1.2" opacity="0.6" />
+              <line x1="225" y1="52" x2="215" y2="148" stroke="#0284c7" strokeWidth="1.4" opacity="0.75" />
+              <line x1="340" y1="52" x2="330" y2="148" stroke="#0284c7" strokeWidth="1.4" opacity="0.75" />
 
-              {/* Rear Wheel */}
-              <circle cx="160" cy="150" r="32" fill="#0f172a" stroke="#10b981" strokeWidth="3" />
-              <circle cx="160" cy="150" r="16" fill="#1e293b" stroke="#38bdf8" strokeWidth="2" />
+              {/* Aerodynamic Roof & Windshield Aperture */}
+              <path d="M165,55 L335,55 L395,95 L145,95 Z" fill="#0284c7" fillOpacity="0.18" stroke="#38bdf8" strokeWidth="2.0" strokeLinejoin="round" />
+              <line x1="250" y1="55" x2="245" y2="95" stroke="#38bdf8" strokeWidth="1.8" />
 
-              {/* Headlights & Tail Lights (Clean static glowing indicators) */}
-              <circle cx="445" cy="115" r="6" fill="#38bdf8" stroke="#0284c7" strokeWidth="1.5" />
-              <circle cx="58" cy="115" r="5" fill="#ef4444" stroke="#dc2626" strokeWidth="1.5" />
+              {/* Front Wheel Assembly */}
+              <circle cx="342" cy="150" r="32" fill="#090d16" stroke="#10b981" strokeWidth="2.5" />
+              <circle cx="342" cy="150" r="18" fill="#1e293b" stroke="#38bdf8" strokeWidth="1.8" />
+              <circle cx="342" cy="150" r="6" fill="#10b981" />
+
+              {/* Rear Wheel Assembly */}
+              <circle cx="158" cy="150" r="32" fill="#090d16" stroke="#10b981" strokeWidth="2.5" />
+              <circle cx="158" cy="150" r="18" fill="#1e293b" stroke="#38bdf8" strokeWidth="1.8" />
+              <circle cx="158" cy="150" r="6" fill="#10b981" />
+
+              {/* Laser Flush & Gap Metrology Dimension Lines (OEM Tolerance Callout) */}
+              <g opacity="0.85">
+                <line x1="145" y1="36" x2="355" y2="36" stroke="#38bdf8" strokeWidth="1.2" markerStart="url(#arrow)" markerEnd="url(#arrow)" />
+                <text x="250" y="32" fontSize="9" fill="#38bdf8" fontFamily="monospace" fontWeight="bold" textAnchor="middle">
+                  CABRIO ROOF APERTURE: ±0.05 mm GAP/FLUSH
+                </text>
+                <line x1="158" y1="192" x2="342" y2="192" stroke="#10b981" strokeWidth="1.2" markerStart="url(#arrow)" markerEnd="url(#arrow)" />
+                <text x="250" y="204" fontSize="9" fill="#10b981" fontFamily="monospace" fontWeight="bold" textAnchor="middle">
+                  UKL1 WHEELBASE: 2,495 mm OEM NOMINAL
+                </text>
+              </g>
+
+              {/* Headlights & Tail Lights */}
+              <circle cx="452" cy="115" r="6.5" fill="#38bdf8" stroke="#0284c7" strokeWidth="1.8" />
+              <circle cx="56" cy="115" r="5.5" fill="#ef4444" stroke="#dc2626" strokeWidth="1.8" />
 
               {/* Hotspot 1: Chassis Laser Alignment */}
               <g
                 className="cursor-pointer group"
                 onClick={() => setSelectedHotspot('chassis')}
               >
-                <circle cx="250" cy="120" r="16" fill={selectedHotspot === 'chassis' ? '#38bdf8' : '#0284c7'} fillOpacity={selectedHotspot === 'chassis' ? '0.6' : '0.2'} stroke="#38bdf8" strokeWidth="2" />
-                <circle cx="250" cy="120" r="6" fill="#38bdf8" />
-                <text x="250" y="112" fontSize="10" fill="#ffffff" fontWeight="bold" textAnchor="middle">01</text>
+                <circle cx="250" cy="118" r="16" fill={selectedHotspot === 'chassis' ? '#38bdf8' : '#0284c7'} fillOpacity={selectedHotspot === 'chassis' ? '0.7' : '0.25'} stroke="#38bdf8" strokeWidth="2" />
+                <circle cx="250" cy="118" r="6" fill="#38bdf8" />
+                <text x="250" y="110" fontSize="10" fill="#ffffff" fontWeight="bold" textAnchor="middle">01</text>
               </g>
 
               {/* Hotspot 2: EV Battery Pack */}
@@ -157,8 +194,8 @@ export default function VDLMiniCooperWidget({ currentLocale }: VDLMiniCooperWidg
                 className="cursor-pointer group"
                 onClick={() => setSelectedHotspot('battery')}
               >
-                <rect x="210" y="140" width="80" height="15" rx="4" fill={selectedHotspot === 'battery' ? '#10b981' : '#047857'} fillOpacity={selectedHotspot === 'battery' ? '0.9' : '0.5'} stroke="#10b981" strokeWidth="2" />
-                <text x="250" y="151" fontSize="9" fill="#ffffff" fontWeight="bold" textAnchor="middle">BATTERY</text>
+                <rect x="205" y="138" width="90" height="16" rx="4" fill={selectedHotspot === 'battery' ? '#10b981' : '#047857'} fillOpacity={selectedHotspot === 'battery' ? '0.9' : '0.55'} stroke="#10b981" strokeWidth="2" />
+                <text x="250" y="150" fontSize="9" fill="#ffffff" fontWeight="bold" textAnchor="middle">HV BATTERY</text>
               </g>
 
               {/* Hotspot 3: Bosch Sensors & ECU */}
@@ -166,9 +203,9 @@ export default function VDLMiniCooperWidget({ currentLocale }: VDLMiniCooperWidg
                 className="cursor-pointer group"
                 onClick={() => setSelectedHotspot('sensors')}
               >
-                <circle cx="390" cy="100" r="14" fill={selectedHotspot === 'sensors' ? '#e11d48' : '#991b1b'} fillOpacity={selectedHotspot === 'sensors' ? '0.6' : '0.2'} stroke="#e11d48" strokeWidth="2" />
-                <circle cx="390" cy="100" r="5" fill="#f43f5e" />
-                <text x="390" y="93" fontSize="9" fill="#ffffff" fontWeight="bold" textAnchor="middle">BOSCH</text>
+                <circle cx="395" cy="100" r="14" fill={selectedHotspot === 'sensors' ? '#e11d48' : '#991b1b'} fillOpacity={selectedHotspot === 'sensors' ? '0.7' : '0.25'} stroke="#e11d48" strokeWidth="2" />
+                <circle cx="395" cy="100" r="5" fill="#f43f5e" />
+                <text x="395" y="93" fontSize="9" fill="#ffffff" fontWeight="bold" textAnchor="middle">BOSCH</text>
               </g>
 
               {/* Hotspot 4: Dynamic Torque / Transmissions */}
@@ -176,8 +213,9 @@ export default function VDLMiniCooperWidget({ currentLocale }: VDLMiniCooperWidg
                 className="cursor-pointer group"
                 onClick={() => setSelectedHotspot('torque')}
               >
-                <circle cx="340" cy="150" r="18" fill="none" stroke="#fbbf24" strokeWidth="2" strokeDasharray="4 2" />
-                <text x="340" y="195" fontSize="10" fill="#fbbf24" fontWeight="bold" textAnchor="middle">TORQUE</text>
+                <circle cx="342" cy="150" r="22" fill="none" stroke="#fbbf24" strokeWidth="2" strokeDasharray="3 3" />
+                <circle cx="342" cy="150" r="28" fill="none" stroke="#fbbf24" strokeWidth="1" opacity="0.6" />
+                <text x="342" y="184" fontSize="9" fill="#fbbf24" fontWeight="bold" textAnchor="middle">TORQUE 120Nm</text>
               </g>
             </svg>
           </div>

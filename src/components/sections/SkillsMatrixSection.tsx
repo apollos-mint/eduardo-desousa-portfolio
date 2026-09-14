@@ -61,10 +61,10 @@ export default function SkillsMatrixSection({
             <button
               key={cat.id}
               onClick={() => setSelectedCategory(cat.id)}
-              className={`px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold transition-all duration-200 ${
+              className={`px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold transition-all duration-200 backdrop-blur-md ${
                 selectedCategory === cat.id
-                  ? 'bg-gradient-to-r from-cyan-500 to-emerald-500 text-slate-950 shadow-lg shadow-cyan-500/20'
-                  : 'bg-slate-900/80 hover:bg-slate-800 border border-slate-800 text-slate-300'
+                  ? 'bg-cyan-500/20 hover:bg-cyan-500/35 border-2 border-cyan-400/60 text-cyan-950 dark:text-cyan-200 shadow-lg shadow-cyan-500/20'
+                  : 'bg-slate-900/35 hover:bg-slate-800/50 border border-slate-700/50 text-slate-300'
               }`}
             >
               {cat.name}

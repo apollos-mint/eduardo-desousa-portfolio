@@ -405,10 +405,40 @@ export default function BrandLogo({ name, className = 'w-6 h-6' }: BrandLogoProp
     );
   }
 
-  // Fallback badge with safe sizing
+  // ASANA
+  if (norm.includes('ASANA')) {
+    return (
+      <svg viewBox="0 0 120 40" className={className}>
+        <rect width="120" height="40" rx="8" fill="#1e1e2d" stroke="#f06a6a" strokeWidth="1.5" />
+        <circle cx="20" cy="17" r="4.5" fill="#f06a6a" />
+        <circle cx="13" cy="27" r="4.5" fill="#f06a6a" />
+        <circle cx="27" cy="27" r="4.5" fill="#f06a6a" />
+        <text x="70" y="25" fontSize="14" fontWeight="800" fontFamily="sans-serif" textAnchor="middle" fill="#ffffff">
+          Asana
+        </text>
+      </svg>
+    );
+  }
+
+  // JIRA
+  if (norm.includes('JIRA')) {
+    return (
+      <svg viewBox="0 0 110 40" className={className}>
+        <rect width="110" height="40" rx="8" fill="#0747a6" stroke="#2684ff" strokeWidth="1.5" />
+        <path d="M12,20 L20,12 L20,28 Z M20,12 L28,20 L20,28 Z" fill="#ffffff" />
+        <text x="68" y="25" fontSize="14" fontWeight="800" fontFamily="sans-serif" textAnchor="middle" fill="#ffffff">
+          Jira
+        </text>
+      </svg>
+    );
+  }
+
+  // Fallback icon with safe clean SVG sizing (no text overflow)
   return (
-    <div className={`px-2.5 py-1 rounded-lg bg-slate-900 border border-cyan-500/40 font-mono font-bold text-[10px] text-cyan-300 flex items-center justify-center whitespace-nowrap ${className}`}>
-      {name}
-    </div>
+    <svg viewBox="0 0 40 40" className={className}>
+      <rect width="40" height="40" rx="8" fill="#0f172a" stroke="#38bdf8" strokeWidth="1.5" />
+      <circle cx="20" cy="20" r="5" fill="#38bdf8" />
+      <path d="M20 8v5 M20 27v5 M8 20h5 M27 20h5" stroke="#38bdf8" strokeWidth="2" strokeLinecap="round" />
+    </svg>
   );
 }

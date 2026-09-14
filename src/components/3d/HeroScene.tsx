@@ -2,10 +2,17 @@
 
 import React, { useEffect, useRef, useState } from 'react';
 import * as THREE from 'three';
+import { getClampedPixelRatio } from '@/lib/three-perf';
 
-export default function HeroScene() {
+interface HeroSceneProps {
+  scale?: number;
+  isContact?: boolean;
+}
+
+export default function HeroScene({ scale = 1.0, isContact = false }: HeroSceneProps) {
   const containerRef = useRef<HTMLDivElement>(null);
   const [hasWebGL, setHasWebGL] = useState(true);
+  const [canvasReady, setCanvasReady] = useState(false);
 
   useEffect(() => {
     const container = containerRef.current;
@@ -41,8 +48,14 @@ export default function HeroScene() {
 
     const renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true, powerPreference: 'high-performance' });
     renderer.setSize(container.clientWidth, container.clientHeight);
-    renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+    renderer.setPixelRatio(getClampedPixelRatio());
     renderer.setClearColor(0x000000, 0); // 100% transparent canvas
+    renderer.domElement.style.position = 'absolute';
+    renderer.domElement.style.inset = '0';
+    renderer.domElement.style.width = '100%';
+    renderer.domElement.style.height = '100%';
+    renderer.domElement.style.pointerEvents = 'none';
+    renderer.domElement.style.opacity = '1';
     container.appendChild(renderer.domElement);
 
     // Particles Constellation
@@ -89,7 +102,12 @@ export default function HeroScene() {
       transparent: true,
       opacity: isLight ? 0.25 : 0.15,
     });
+    const baseX = isContact ? 14 : 24;
+    const baseY = isContact ? -2 : 0;
+
     const icosahedron = new THREE.Mesh(sphereGeo, wireframeMat);
+    icosahedron.scale.setScalar(scale);
+    icosahedron.position.set(baseX, baseY, 0);
     scene.add(icosahedron);
 
     const innerGeo = new THREE.OctahedronGeometry(12, 1);
@@ -100,6 +118,8 @@ export default function HeroScene() {
       opacity: isLight ? 0.45 : 0.35,
     });
     const innerMesh = new THREE.Mesh(innerGeo, innerMat);
+    innerMesh.scale.setScalar(scale);
+    innerMesh.position.set(baseX, baseY, 0);
     scene.add(innerMesh);
 
     // Ambient Lighting
@@ -180,8 +200,8 @@ export default function HeroScene() {
 
       icosahedron.rotation.x = elapsedTime * 0.08;
       icosahedron.rotation.y = elapsedTime * 0.12;
-      icosahedron.position.x = 24 + targetX * 0.1;
-      icosahedron.position.y = -targetY * 0.1 - scrollY * 0.02;
+      icosahedron.position.x = baseX + targetX * (isContact ? 0.06 : 0.1);
+      icosahedron.position.y = baseY - targetY * (isContact ? 0.06 : 0.1) - (isContact ? 0 : scrollY * 0.02);
 
       innerMesh.rotation.x = -elapsedTime * 0.15;
       innerMesh.rotation.y = -elapsedTime * 0.1;
@@ -193,6 +213,10 @@ export default function HeroScene() {
 
       renderer.render(scene, camera);
     };
+
+    // Render immediate frame 0 synchronously so the canvas is drawn right away
+    renderer.render(scene, camera);
+    setCanvasReady(true);
 
     animate();
 
@@ -221,6 +245,32 @@ export default function HeroScene() {
       className="absolute inset-0 pointer-events-none overflow-hidden z-0"
       aria-hidden="true"
     >
+      {/* 1. Instant Static/SSR Cybernetic Globe & Constellation Aura (Zero Loading Delay - 0ms Paint) */}
+      <div
+        className={`absolute top-1/2 right-[5%] sm:right-[10%] lg:right-[16%] -translate-y-1/2 w-[280px] h-[280px] sm:w-[360px] sm:h-[360px] lg:w-[420px] lg:h-[420px] pointer-events-none select-none transition-opacity duration-200 ease-out ${
+          canvasReady ? 'opacity-0 pointer-events-none' : 'opacity-100'
+        }`}
+      >
+        {/* Soft Ambient Radial Nebula Aura */}
+        <div className="absolute inset-0 rounded-full bg-cyan-500/15 dark:bg-cyan-500/20 blur-3xl animate-pulse-subtle" />
+        <div className="absolute inset-8 rounded-full bg-emerald-500/10 dark:bg-emerald-500/15 blur-2xl animate-pulse-subtle" />
+
+        {/* Outer Orbital Geo Rings */}
+        <div className="absolute inset-0 rounded-full border border-cyan-400/35 dark:border-cyan-400/40 shadow-[0_0_15px_rgba(56,189,248,0.15)] animate-[spin_24s_linear_infinite]" />
+        <div className="absolute inset-4 rounded-full border border-dashed border-cyan-400/25 dark:border-cyan-400/30 animate-[spin_32s_linear_infinite_reverse]" />
+        <div className="absolute inset-10 rounded-full border border-emerald-400/30 dark:border-emerald-400/35 [transform:rotateX(65deg)] animate-[spin_18s_linear_infinite]" />
+        <div className="absolute inset-16 rounded-full border border-indigo-400/30 dark:border-indigo-400/35 [transform:rotateY(65deg)] animate-[spin_26s_linear_infinite_reverse]" />
+
+        {/* Central Geometric Core */}
+        <div className="absolute inset-[32%] rounded-full border-2 border-cyan-300/45 dark:border-cyan-300/60 bg-cyan-500/10 shadow-[0_0_20px_rgba(56,189,248,0.3)] animate-pulse" />
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-3 h-3 rounded-full bg-cyan-400 shadow-[0_0_12px_#38bdf8] animate-ping" />
+
+        {/* Constellation Nodes */}
+        <div className="absolute top-1/4 left-1/4 w-2 h-2 rounded-full bg-emerald-400 shadow-[0_0_8px_#10b981]" />
+        <div className="absolute bottom-1/4 right-1/4 w-2 h-2 rounded-full bg-cyan-400 shadow-[0_0_8px_#38bdf8]" />
+        <div className="absolute top-1/3 right-1/4 w-1.5 h-1.5 rounded-full bg-indigo-400 shadow-[0_0_6px_#818cf8]" />
+      </div>
+
       {!hasWebGL && (
         <div className="absolute inset-0 bg-radial-gradient from-cyan-950/20 via-slate-950/80 to-transparent" />
       )}

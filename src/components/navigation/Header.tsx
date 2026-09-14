@@ -8,7 +8,6 @@ import { Locale, CVContent } from '@/types';
 import { locales } from '@/data/cv-data';
 import { getLocalizedPath } from '@/lib/i18n';
 import { generateVCard } from '@/lib/utils';
-import ThemeToggle from '@/components/ui/ThemeToggle';
 import {
   Globe,
   ChevronDown,
@@ -62,6 +61,13 @@ export default function Header({ currentLocale, cvData }: HeaderProps) {
         {/* Brand / Logo with Avatar */}
         <Link
           href={`/${currentLocale}`}
+          prefetch={true}
+          onClick={() => {
+            try {
+              sessionStorage.setItem('eds-intro-seen', 'true');
+              sessionStorage.setItem('eds-navigated-internally', 'true');
+            } catch {}
+          }}
           className="flex items-center space-x-3 group cursor-pointer"
         >
           <div className="relative w-10 h-10 rounded-xl bg-gradient-to-br from-cyan-500 to-emerald-500 p-[1.5px] shadow-lg shadow-cyan-500/20 group-hover:scale-105 transition-transform duration-300 shrink-0">
@@ -91,6 +97,13 @@ export default function Header({ currentLocale, cvData }: HeaderProps) {
             <Link
               key={link.href}
               href={link.href}
+              prefetch={true}
+              onClick={() => {
+                try {
+                  sessionStorage.setItem('eds-intro-seen', 'true');
+                  sessionStorage.setItem('eds-navigated-internally', 'true');
+                } catch {}
+              }}
               className="px-3.5 py-1.5 rounded-full text-xs font-medium text-slate-700 dark:text-slate-300 hover:text-cyan-700 dark:hover:text-white hover:bg-white dark:hover:bg-slate-800/80 transition-all duration-200"
             >
               {link.label}
@@ -100,9 +113,6 @@ export default function Header({ currentLocale, cvData }: HeaderProps) {
 
         {/* Header Right Actions */}
         <div className="flex items-center space-x-2 sm:space-x-3">
-          {/* Light / Dark Mode Toggle */}
-          <ThemeToggle />
-
           {/* Language Switcher */}
           <div className="relative">
             <button
