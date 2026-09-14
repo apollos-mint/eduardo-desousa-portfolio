@@ -596,7 +596,7 @@ export const nlData: CVContent = {
     locationLabel: 'Huidige Woonplaats',
     allRightsReserved: 'Alle rechten voorbehouden.',
     systemStatus: 'Systeemstatus',
-    operationalReady: 'Direct Beschikbaar voor Onboarding',
+    operationalReady: 'Beschikbaar voor Professionele Communicatie, Contracten & Projecten',
     craftedBySelf: 'Volledig ontworpen & gebouwd door Eduardo de Sousa (Full Stack Operations & Creative Technologist)',
     achievement1: 'ISO Klasse 5 Spec <0.1µm & 150+ ISAH Orders/mnd',
     achievement2: 'Cadans: 110-120 Auto\'s/Dienst & -15% Defectpercentage',

@@ -14,7 +14,6 @@ import {
   Phone,
   MessageSquare,
   Globe,
-  Award,
   Cpu,
   Download,
   FileDown,
@@ -70,7 +69,7 @@ export default function Footer({ currentLocale, cvData }: FooterProps) {
               {cvData.personal.headline}
             </p>
             <div className="flex items-center space-x-2 text-xs text-emerald-400 font-mono">
-              <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
+              <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse shrink-0" />
               <span>{cvData.common.operationalReady}</span>
             </div>
           </div>
@@ -123,10 +122,6 @@ export default function Footer({ currentLocale, cvData }: FooterProps) {
               {cvData.navigation.certifications} {cvData.common.andStandards}
             </h4>
             <ul className="space-y-2 text-xs text-slate-300">
-              <li className="flex items-center space-x-2">
-                <Award className="w-3.5 h-3.5 text-cyan-400" />
-                <span>{cvData.common.leanSixSigmaBadge}</span>
-              </li>
               <li className="flex items-center space-x-2">
                 <ShieldCheck className="w-3.5 h-3.5 text-emerald-400" />
                 <span>{cvData.common.iso9001Auditor}</span>

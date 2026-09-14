@@ -592,7 +592,7 @@ export const esData: CVContent = {
     locationLabel: 'Ubicación de Residencia',
     allRightsReserved: 'Todos los derechos reservados.',
     systemStatus: 'Estado del Sistema',
-    operationalReady: 'Disponible para Integración Inmediata',
+    operationalReady: 'Disponible para Comunicación Profesional, Contratos y Proyectos',
     craftedBySelf: 'Diseñado & Desarrollado íntegramente por Eduardo de Sousa (Full Stack Operations & Creative Technologist)',
     achievement1: 'Espec. ISO Clase 5 <0.1µm y 150+ Órdenes ISAH/mes',
     achievement2: 'Cadencia: 110-120 Autos/Turno y -15% Tasa de Defectos',
