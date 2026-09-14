@@ -40,9 +40,10 @@ A high-performance, multilingual personal CV and portfolio web application built
 
 ## 🚀 Quick Start & Local Execution
 
-### 1. Navigate to the project directory:
+### 1. Clone the repository & navigate to directory:
 ```bash
-cd /home/apollos-mint/.gemini/antigravity/scratch/eduardo-desousa-portfolio
+git clone https://github.com/apollos-mint/eduardo-desousa-portfolio.git
+cd eduardo-desousa-portfolio
 ```
 
 ### 2. Install dependencies (already installed):
