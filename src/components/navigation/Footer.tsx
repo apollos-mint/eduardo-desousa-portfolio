@@ -182,8 +182,28 @@ export default function Footer({ currentLocale, cvData }: FooterProps) {
           </div>
         </div>
 
+        {/* Legal & Regulatory Compliance Disclaimer */}
+        <div className="pt-8 pb-4 border-t border-slate-800/60 text-[11px] text-slate-500 leading-relaxed text-justify space-y-2">
+          <p>
+            <strong className="text-slate-400">Legal & Fair Use Notice:</strong> Corporate trademarks and logos (including ASML, BMW, MINI, Maersk, Hapag-Lloyd, TÜV, Zeiss, Bosch, Google) are property of their respective holders and referenced under nominative fair use for historical career identification. All performance metrics, tolerances, and cost optimizations represent sanitized, illustrative approximations to strictly respect Non-Disclosure Agreements (NDAs).
+          </p>
+          <div className="flex flex-wrap items-center gap-x-4 gap-y-1 text-cyan-400/90 font-mono">
+            <Link
+              href={`/${currentLocale}/legal`}
+              className="hover:text-cyan-300 underline underline-offset-2 transition-colors font-medium"
+            >
+              {currentLocale === 'es' ? 'Aviso Legal, NDA y Privacidad' :
+               currentLocale === 'pt' ? 'Avisos Legais, NDA e Privacidade' :
+               currentLocale === 'de' ? 'Rechtliche Hinweise, NDA & Datenschutz' :
+               currentLocale === 'fr' ? 'Mentions Légales, NDA & Confidentialité' :
+               currentLocale === 'nl' ? 'Juridische Informatie, NDA & Privacy' :
+               'Legal, NDA & Privacy Disclosures'} &rarr;
+            </Link>
+          </div>
+        </div>
+
         {/* Bottom Bar */}
-        <div className="pt-8 flex flex-col sm:flex-row items-center justify-between text-xs text-slate-500 font-mono space-y-4 sm:space-y-0">
+        <div className="pt-4 flex flex-col sm:flex-row items-center justify-between text-xs text-slate-500 font-mono space-y-4 sm:space-y-0">
           <div>
             &copy; {new Date().getFullYear()} Eduardo de Sousa. {cvData.common.allRightsReserved}
           </div>

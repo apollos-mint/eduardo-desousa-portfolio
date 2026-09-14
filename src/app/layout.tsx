@@ -20,6 +20,7 @@ const jetBrainsMono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://eduardodesousa.vercel.app'),
   title: 'Eduardo de Sousa | Staff Operations, Quality & High-Tech Process Leader',
   description:
     'Executive portfolio of Eduardo de Sousa. Operations, Quality and Process Leader. Lean Six Sigma Black Belt, ASML semiconductor supply chain, automotive OEM quality inspections, and global factory auditing.',
@@ -38,13 +39,33 @@ export const metadata: Metadata = {
   ],
   authors: [{ name: 'Eduardo de Sousa', url: 'mailto:desousaej@gmail.com' }],
   creator: 'Eduardo de Sousa',
+  alternates: {
+    canonical: '/',
+    languages: {
+      en: '/en',
+      es: '/es',
+      pt: '/pt',
+      de: '/de',
+      fr: '/fr',
+      nl: '/nl',
+      'x-default': '/en',
+    },
+  },
   openGraph: {
     title: 'Eduardo de Sousa | Staff Operations & Quality Leader',
     description:
       'High-performance operations leader specializing in high-tech cleanrooms, automotive manufacturing, and global industrial auditing.',
+    url: 'https://eduardodesousa.vercel.app',
+    siteName: 'Eduardo de Sousa Portfolio',
     type: 'website',
     locale: 'es_ES',
     alternateLocale: ['en_US', 'pt_PT', 'nl_NL', 'de_DE', 'fr_FR'],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Eduardo de Sousa | Staff Operations & Quality Leader',
+    description:
+      'High-performance operations leader specializing in high-tech cleanrooms, automotive manufacturing, and global industrial auditing.',
   },
 };
 
@@ -88,11 +109,20 @@ export default function RootLayout({
         <script
           dangerouslySetInnerHTML={{
             __html: `
-              (function(c,l,a,r,i,t,y){
-                  c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
-                  t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
-                  y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
-              })(window, document, "clarity", "script", "yi78te801j");
+              window.initClarity = function() {
+                if (window._clarity_initialized) return;
+                window._clarity_initialized = true;
+                (function(c,l,a,r,i,t,y){
+                    c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+                    t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+                    y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+                })(window, document, "clarity", "script", "yi78te801j");
+              };
+              try {
+                if (localStorage.getItem('cookie-consent') === 'accepted') {
+                  window.initClarity();
+                }
+              } catch (e) {}
             `,
           }}
         />

@@ -87,7 +87,7 @@ export default function SpecialFeatureSection({
           <div className="flex items-center space-x-2 sm:text-right sm:ml-auto text-emerald-700 dark:text-emerald-400">
             <div className="flex flex-col sm:flex-row sm:items-center sm:gap-2">
               <span className="font-bold text-emerald-800 dark:text-emerald-300">{telemetry.spec}</span>
-              <span className="hidden sm:inline text-slate-400 dark:text-slate-600">·</span>
+              <span className="hidden sm:inline text-slate-400 dark:text-slate-500">·</span>
               <span className="text-[9px] text-slate-600 dark:text-slate-400">{telemetry.cadence}</span>
             </div>
             <span className="w-2 h-2 rounded-full bg-emerald-500 shadow-sm shadow-emerald-500/50 shrink-0 hidden sm:inline-block" />
@@ -333,6 +333,14 @@ export default function SpecialFeatureSection({
                 </div>
               );
             })}
+          </div>
+
+          {/* Footnote on Sanitized Illustrative Metrics */}
+          <div className="pt-2 flex flex-wrap items-center justify-center text-[11px] font-mono text-slate-500 space-x-1 text-center">
+            <span>* Performance metrics, throughput, and tolerances represent sanitized illustrative approximations under NDA covenants.</span>
+            <Link href={`/${currentLocale}/legal`} className="text-cyan-500/80 hover:text-cyan-400 underline ml-1">
+              [Legal Dossier]
+            </Link>
           </div>
         </div>
       </div>

@@ -3,8 +3,14 @@
 import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
+import dynamic from 'next/dynamic';
 import { Locale, CVContent } from '@/types';
-import HeroScene from '@/components/3d/HeroScene';
+
+const HeroScene = dynamic(() => import('@/components/3d/HeroScene'), {
+  ssr: false,
+  loading: () => <div className="absolute inset-0 bg-[#07090e] pointer-events-none" />,
+});
+
 import InfiniteBrandMarquee from '@/components/ui/InfiniteBrandMarquee';
 import { generateVCard } from '@/lib/utils';
 import { renderFormattedText } from '@/lib/formatter';

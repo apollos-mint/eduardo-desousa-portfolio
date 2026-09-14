@@ -24,6 +24,18 @@ export async function generateMetadata({
   return {
     title: `${cvData.personal.fullName} | ${cvData.personal.roleTitle}`,
     description: cvData.personal.summary.replace(/\n+/g, ' '),
+    alternates: {
+      canonical: `/${lang}`,
+      languages: {
+        en: '/en',
+        es: '/es',
+        pt: '/pt',
+        de: '/de',
+        fr: '/fr',
+        nl: '/nl',
+        'x-default': '/en',
+      },
+    },
   };
 }
 

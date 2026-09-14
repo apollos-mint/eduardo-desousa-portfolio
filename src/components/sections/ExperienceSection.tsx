@@ -392,6 +392,14 @@ export default function ExperienceSection({
               );
             })}
           </div>
+
+          {/* Footnote on Sanitized Illustrative Metrics */}
+          <div className="pt-2 flex flex-wrap items-center justify-center text-[11px] font-mono text-slate-500 space-x-1 text-center">
+            <span>* Performance metrics, throughput, and tolerances represent sanitized illustrative approximations under NDA covenants.</span>
+            <Link href={`/${currentLocale}/legal`} className="text-cyan-500/80 hover:text-cyan-400 underline ml-1">
+              [Legal Dossier]
+            </Link>
+          </div>
         </div>
       </div>
     </section>

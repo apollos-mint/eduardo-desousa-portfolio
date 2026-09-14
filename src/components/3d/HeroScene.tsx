@@ -247,14 +247,36 @@ export default function HeroScene({ scale = 1.0, isContact = false }: HeroSceneP
     };
 
     // Render initial frame 0 cleanly
-    renderer.render(scene, camera);
+    // Check for prefers-reduced-motion
+    const prefersReducedMotion =
+      typeof window !== 'undefined' &&
+      window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-    // Fade canvas in seamlessly on the next animation frame
-    requestAnimationFrame(() => {
-      if (renderer.domElement) {
-        renderer.domElement.style.opacity = '1';
-      }
-    });
+    if (prefersReducedMotion) {
+      renderer.render(scene, camera);
+      requestAnimationFrame(() => {
+        if (renderer.domElement) {
+          renderer.domElement.style.opacity = '1';
+        }
+      });
+      return () => {
+        observer.disconnect();
+        resizeObserver.disconnect();
+        window.removeEventListener('mousemove', handleMouseMove);
+        window.removeEventListener('scroll', handleScroll);
+        window.removeEventListener('resize', handleResize);
+        if (container && renderer.domElement && container.contains(renderer.domElement)) {
+          container.removeChild(renderer.domElement);
+        }
+        geometry.dispose();
+        particleMaterial.dispose();
+        sphereGeo.dispose();
+        wireframeMat.dispose();
+        innerGeo.dispose();
+        innerMat.dispose();
+        renderer.dispose();
+      };
+    }
 
     animate();
 
