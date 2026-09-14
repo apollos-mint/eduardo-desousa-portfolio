@@ -184,8 +184,8 @@ export default function ContactSection({ currentLocale, cvData }: ContactSection
 
               {/* Executive PDF Resume Download */}
               <a
-                href="/Eduardo_de_Sousa_Resume.pdf"
-                download="Eduardo_de_Sousa_Resume.pdf"
+                href={`/Eduardo_de_Sousa_Resume_${currentLocale}.pdf`}
+                download={`Eduardo_de_Sousa_Resume_${currentLocale.toUpperCase()}.pdf`}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-full flex items-center justify-center space-x-2 py-3.5 rounded-xl bg-gradient-to-r from-cyan-500 to-emerald-500 hover:from-cyan-400 hover:to-emerald-400 text-slate-950 font-extrabold text-xs uppercase tracking-wider transition-all duration-200 shadow-lg shadow-cyan-500/25 hover:scale-[1.02] cursor-pointer"
@@ -196,7 +196,7 @@ export default function ContactSection({ currentLocale, cvData }: ContactSection
 
               {/* vCard Trigger */}
               <button
-                onClick={generateVCard}
+                onClick={() => generateVCard(cvData.personal.roleTitle, cvData.personal.headline)}
                 className="w-full flex items-center justify-center space-x-2 py-3.5 rounded-xl bg-slate-900 dark:bg-slate-900 light:bg-slate-100 hover:bg-slate-800 border border-cyan-500/30 hover:border-cyan-500/60 text-cyan-300 dark:text-cyan-300 light:text-cyan-700 font-semibold text-xs transition-all duration-200 shadow-lg cursor-pointer"
               >
                 <Download className="w-4 h-4" />

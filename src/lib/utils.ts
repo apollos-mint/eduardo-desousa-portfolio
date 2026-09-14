@@ -5,19 +5,19 @@ export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs));
 }
 
-export function generateVCard() {
+export function generateVCard(roleTitle?: string, note?: string) {
   const vcard = `BEGIN:VCARD
 VERSION:3.0
 N:de Sousa;Eduardo;;;
 FN:Eduardo de Sousa
-ORG:Operations & High-Tech Process Engineering
-TITLE:Operations, Quality & Process Leader (Lean Six Sigma Black Belt)
-TEL;TYPE=CELL,VOICE:+31661440045
+ORG:Digital Operations, Global Sourcing & Software Architecture
+TITLE:${roleTitle || 'Director of Digital Operations, Quality Systems & Global Sourcing'}
+TEL;TYPE=CELL,VOICE:+34661440045
 TEL;TYPE=WHATSAPP,MSG:+34661440045
 EMAIL;TYPE=PREF,INTERNET:desousaej@gmail.com
-ADR;TYPE=HOME:;;Enguera;Comunidad Valenciana;;46810;Spain
-NOTE:Staff Operations Leader | ASML Supply Chain | ISO 9001 Lead Auditor | VCA VOL Certified
-URL:https://eduardo-desousa.com
+ADR;TYPE=WORK:;;Enguera;Comunidad Valenciana;;46810;Spain
+NOTE:${note || 'Lean Six Sigma Black Belt (DMAIC) | ISO 9001:2015 Lead Auditor | CMMS Software Architect | Global Sourcing ($800K/yr) | Ex-ASML Supply Chain'}
+URL:https://eduardodesousa.vercel.app
 END:VCARD`;
 
   const blob = new Blob([vcard], { type: "text/vcard;charset=utf-8" });

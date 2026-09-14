@@ -11,6 +11,7 @@ import { renderFormattedText } from '@/lib/formatter';
 import {
   Sparkles,
   Download,
+  FileDown,
   ArrowRight,
   MessageSquare,
   Phone,
@@ -96,22 +97,31 @@ export default function HeroSection({ currentLocale, cvData }: HeroSectionProps)
             </div>
 
             {/* Primary Action Buttons */}
-            <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-2.5 pt-2">
+            <div className="flex flex-wrap items-center justify-center lg:justify-start gap-2.5 pt-2">
+              <a
+                href={`/Eduardo_de_Sousa_Resume_${currentLocale}.pdf`}
+                download={`Eduardo_de_Sousa_Resume_${currentLocale.toUpperCase()}.pdf`}
+                className="w-full sm:w-auto inline-flex items-center justify-center space-x-2 px-5 py-2.5 sm:py-3 rounded-xl bg-gradient-to-r from-cyan-500 to-emerald-500 hover:from-cyan-400 hover:to-emerald-400 text-slate-950 font-bold text-xs sm:text-sm shadow-lg shadow-cyan-500/20 hover:shadow-cyan-500/30 hover:scale-[1.02] transition-all duration-200"
+              >
+                <FileDown className="w-4 h-4 text-slate-950" />
+                <span>{cvData.hero.downloadCvBtn || 'Download Official CV (PDF)'}</span>
+              </a>
+
               <a
                 href={`https://wa.me/${cvData.personal.phones.whatsAppRaw}?text=${encodeURIComponent(
                   'Hello Eduardo, I am reviewing your profile and would like to arrange a call.'
                 )}`}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-full sm:w-auto inline-flex items-center justify-center space-x-2 px-6 py-2.5 sm:py-3 rounded-xl bg-gradient-to-r from-cyan-500 to-emerald-500 hover:from-cyan-400 hover:to-emerald-400 text-slate-950 font-bold text-xs sm:text-sm shadow-lg shadow-cyan-500/20 hover:shadow-cyan-500/30 hover:scale-[1.02] transition-all duration-200"
+                className="w-full sm:w-auto inline-flex items-center justify-center space-x-2 px-5 py-2.5 sm:py-3 rounded-xl bg-white dark:bg-slate-900 hover:bg-slate-100 dark:hover:bg-slate-800 border border-slate-300 dark:border-slate-700 text-slate-800 dark:text-white font-semibold text-xs sm:text-sm transition-all duration-200 shadow-sm"
               >
-                <MessageSquare className="w-4 h-4 text-slate-950" />
+                <MessageSquare className="w-4 h-4 text-emerald-500" />
                 <span>{cvData.hero.contactBtn}</span>
               </a>
 
               <button
-                onClick={generateVCard}
-                className="w-full sm:w-auto inline-flex items-center justify-center space-x-2 px-5 py-2.5 sm:py-3 rounded-xl bg-white dark:bg-slate-900 hover:bg-slate-100 dark:hover:bg-slate-800 border border-slate-300 dark:border-slate-700 text-slate-800 dark:text-white font-semibold text-xs sm:text-sm transition-all duration-200 shadow-sm"
+                onClick={() => generateVCard(cvData.personal.roleTitle, cvData.personal.headline)}
+                className="w-full sm:w-auto inline-flex items-center justify-center space-x-2 px-4 py-2.5 sm:py-3 rounded-xl bg-slate-100 dark:bg-slate-900/90 hover:bg-slate-200 dark:hover:bg-slate-800 border border-slate-200 dark:border-slate-800 text-slate-700 dark:text-slate-300 font-medium text-xs sm:text-sm transition-all duration-200 shadow-sm"
               >
                 <Download className="w-4 h-4 text-cyan-600 dark:text-cyan-400" />
                 <span>{cvData.navigation.downloadVCard}</span>
@@ -119,7 +129,7 @@ export default function HeroSection({ currentLocale, cvData }: HeroSectionProps)
 
               <Link
                 href={`/${currentLocale}#specialization`}
-                className="w-full sm:w-auto inline-flex items-center justify-center space-x-2 px-5 py-2.5 sm:py-3 rounded-xl bg-white/90 dark:bg-slate-950/60 hover:bg-cyan-50 dark:hover:bg-slate-900 border border-cyan-500/30 hover:border-cyan-500 text-cyan-800 dark:text-cyan-300 font-semibold text-xs sm:text-sm transition-all duration-200 shadow-sm"
+                className="w-full sm:w-auto inline-flex items-center justify-center space-x-2 px-4 py-2.5 sm:py-3 rounded-xl bg-white/80 dark:bg-slate-950/60 hover:bg-cyan-50 dark:hover:bg-slate-900 border border-cyan-500/30 hover:border-cyan-500 text-cyan-800 dark:text-cyan-300 font-medium text-xs sm:text-sm transition-all duration-200 shadow-sm"
               >
                 <span>{cvData.hero.exploreBtn}</span>
                 <ArrowRight className="w-4 h-4" />

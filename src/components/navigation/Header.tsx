@@ -14,6 +14,7 @@ import {
   Menu,
   X,
   FileText,
+  FileDown,
   PhoneCall,
   MessageSquare,
   Sparkles,
@@ -164,6 +165,19 @@ export default function Header({ currentLocale, cvData }: HeaderProps) {
             )}
           </div>
 
+          {/* Quick Localized CV Download CTA */}
+          <a
+            href={`/Eduardo_de_Sousa_Resume_${currentLocale}.pdf`}
+            download={`Eduardo_de_Sousa_Resume_${currentLocale.toUpperCase()}.pdf`}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hidden sm:flex items-center space-x-1.5 px-3 py-1.5 rounded-lg bg-cyan-500/10 hover:bg-cyan-500/20 border border-cyan-500/30 text-cyan-300 text-xs font-semibold transition-colors"
+            title={cvData.navigation.downloadPdf || 'Download Executive CV (PDF)'}
+          >
+            <FileDown className="w-3.5 h-3.5 text-cyan-400" />
+            <span>CV</span>
+          </a>
+
           {/* Quick Contact CTA */}
           <a
             href={`https://wa.me/${cvData.personal.phones.whatsAppRaw}?text=${encodeURIComponent(
@@ -205,9 +219,21 @@ export default function Header({ currentLocale, cvData }: HeaderProps) {
           </nav>
 
           <div className="pt-3 border-t border-slate-800 dark:border-slate-800 light:border-slate-200 flex flex-col space-y-2">
+            <a
+              href={`/Eduardo_de_Sousa_Resume_${currentLocale}.pdf`}
+              download={`Eduardo_de_Sousa_Resume_${currentLocale.toUpperCase()}.pdf`}
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={() => setMobileMenuOpen(false)}
+              className="flex items-center justify-center space-x-2 w-full py-2.5 rounded-lg bg-gradient-to-r from-cyan-500/20 to-emerald-500/20 hover:from-cyan-500/30 hover:to-emerald-500/30 border border-cyan-500/40 text-cyan-300 dark:text-cyan-300 light:text-cyan-700 text-xs font-semibold"
+            >
+              <FileDown className="w-4 h-4 text-cyan-400" />
+              <span>{cvData.navigation.downloadPdf || 'Download Executive CV (PDF)'}</span>
+            </a>
+
             <button
               onClick={() => {
-                generateVCard();
+                generateVCard(cvData.personal.roleTitle, cvData.personal.headline);
                 setMobileMenuOpen(false);
               }}
               className="flex items-center justify-center space-x-2 w-full py-2.5 rounded-lg bg-slate-900 dark:bg-slate-900 light:bg-slate-100 hover:bg-slate-800 border border-slate-700 text-slate-200 dark:text-slate-200 light:text-slate-800 text-xs font-medium"
