@@ -61,13 +61,10 @@ export default function HeroScene({ scale = 1.0, isContact = false }: HeroSceneP
     renderer.domElement.style.width = '100%';
     renderer.domElement.style.height = '100%';
     renderer.domElement.style.pointerEvents = 'none';
-    // Silky smooth fade-in: start at 0 opacity and transition in
-    renderer.domElement.style.opacity = '0';
-    renderer.domElement.style.transition = 'opacity 0.75s cubic-bezier(0.16, 1, 0.3, 1)';
-    renderer.domElement.style.willChange = 'opacity';
+    renderer.domElement.style.opacity = '1';
     container.appendChild(renderer.domElement);
 
-    // Particles Constellation
+    // Particles Constellation (600 Points)
     const particleCount = 600;
     const geometry = new THREE.BufferGeometry();
     const positions = new Float32Array(particleCount * 3);
@@ -93,43 +90,67 @@ export default function HeroScene({ scale = 1.0, isContact = false }: HeroSceneP
     geometry.setAttribute('color', new THREE.BufferAttribute(colors, 3));
 
     const particleMaterial = new THREE.PointsMaterial({
-      size: isLight ? 2.2 : 1.8,
+      size: isLight ? 2.4 : 2.0,
       vertexColors: true,
       transparent: true,
-      opacity: isLight ? 0.85 : 0.75,
+      opacity: isLight ? 0.9 : 0.8,
       blending: isLight ? THREE.NormalBlending : THREE.AdditiveBlending,
     });
 
     const particles = new THREE.Points(geometry, particleMaterial);
     scene.add(particles);
 
-    // High-Tech Wireframe Node (Icosahedron & Octahedron Core)
-    const sphereGeo = new THREE.IcosahedronGeometry(22, 2);
-    const wireframeMat = new THREE.MeshBasicMaterial({
-      color: isLight ? 0x0284c7 : 0x38bdf8,
-      wireframe: true,
-      transparent: true,
-      opacity: isLight ? 0.25 : 0.15,
-    });
     const baseX = isContact ? 14 : 24;
     const baseY = isContact ? -2 : 0;
 
-    const icosahedron = new THREE.Mesh(sphereGeo, wireframeMat);
-    icosahedron.scale.setScalar(scale);
-    icosahedron.position.set(baseX, baseY, 0);
-    scene.add(icosahedron);
+    // 1. Dynamic 3D Spherical Wireframe Globe (Latitude & Longitude)
+    const globeGeo = new THREE.SphereGeometry(24, 28, 18);
+    const globeMat = new THREE.MeshBasicMaterial({
+      color: isLight ? 0x0284c7 : 0x38bdf8,
+      wireframe: true,
+      transparent: true,
+      opacity: isLight ? 0.35 : 0.28,
+    });
+    const globeMesh = new THREE.Mesh(globeGeo, globeMat);
+    globeMesh.scale.setScalar(scale);
+    globeMesh.position.set(baseX, baseY, 0);
+    scene.add(globeMesh);
 
-    const innerGeo = new THREE.OctahedronGeometry(12, 1);
+    // 2. High-Tech Geodesic Inner Core
+    const innerGeo = new THREE.IcosahedronGeometry(14, 1);
     const innerMat = new THREE.MeshBasicMaterial({
       color: isLight ? 0x059669 : 0x10b981,
       wireframe: true,
       transparent: true,
-      opacity: isLight ? 0.45 : 0.35,
+      opacity: isLight ? 0.5 : 0.4,
     });
     const innerMesh = new THREE.Mesh(innerGeo, innerMat);
     innerMesh.scale.setScalar(scale);
     innerMesh.position.set(baseX, baseY, 0);
     scene.add(innerMesh);
+
+    // 3. Orbiting 3D Torus Rings in Three.js space
+    const ringGeo1 = new THREE.TorusGeometry(33, 0.4, 16, 80);
+    const ringMat1 = new THREE.MeshBasicMaterial({
+      color: isLight ? 0x0284c7 : 0x38bdf8,
+      transparent: true,
+      opacity: isLight ? 0.55 : 0.38,
+    });
+    const orbitalRing1 = new THREE.Mesh(ringGeo1, ringMat1);
+    orbitalRing1.rotation.x = Math.PI / 2.6;
+    orbitalRing1.position.set(baseX, baseY, 0);
+    scene.add(orbitalRing1);
+
+    const ringGeo2 = new THREE.TorusGeometry(39, 0.3, 16, 80);
+    const ringMat2 = new THREE.MeshBasicMaterial({
+      color: isLight ? 0x059669 : 0x10b981,
+      transparent: true,
+      opacity: isLight ? 0.45 : 0.28,
+    });
+    const orbitalRing2 = new THREE.Mesh(ringGeo2, ringMat2);
+    orbitalRing2.rotation.y = Math.PI / 3.4;
+    orbitalRing2.position.set(baseX, baseY, 0);
+    scene.add(orbitalRing2);
 
     // Ambient Lighting
     const ambientLight = new THREE.AmbientLight(0xffffff, 1);
@@ -150,7 +171,7 @@ export default function HeroScene({ scale = 1.0, isContact = false }: HeroSceneP
 
     window.addEventListener('mousemove', handleMouseMove, { passive: true });
 
-    // Scroll reaction - initialized to current scroll position to avoid jump
+    // Scroll reaction
     let scrollY = typeof window !== 'undefined' ? window.scrollY : 0;
     const handleScroll = () => {
       scrollY = window.scrollY;
@@ -177,20 +198,28 @@ export default function HeroScene({ scale = 1.0, isContact = false }: HeroSceneP
       const currentIsLight = document.documentElement.classList.contains('light');
       if (currentIsLight) {
         scene.fog = null;
-        wireframeMat.color.setHex(0x0284c7);
-        wireframeMat.opacity = 0.25;
+        globeMat.color.setHex(0x0284c7);
+        globeMat.opacity = 0.35;
         innerMat.color.setHex(0x059669);
-        innerMat.opacity = 0.45;
+        innerMat.opacity = 0.5;
+        ringMat1.color.setHex(0x0284c7);
+        ringMat1.opacity = 0.55;
+        ringMat2.color.setHex(0x059669);
+        ringMat2.opacity = 0.45;
         particleMaterial.blending = THREE.NormalBlending;
-        particleMaterial.opacity = 0.85;
+        particleMaterial.opacity = 0.9;
       } else {
         scene.fog = new THREE.FogExp2(0x07090e, 0.0018);
-        wireframeMat.color.setHex(0x38bdf8);
-        wireframeMat.opacity = 0.15;
+        globeMat.color.setHex(0x38bdf8);
+        globeMat.opacity = 0.28;
         innerMat.color.setHex(0x10b981);
-        innerMat.opacity = 0.35;
+        innerMat.opacity = 0.4;
+        ringMat1.color.setHex(0x38bdf8);
+        ringMat1.opacity = 0.38;
+        ringMat2.color.setHex(0x10b981);
+        ringMat2.opacity = 0.28;
         particleMaterial.blending = THREE.AdditiveBlending;
-        particleMaterial.opacity = 0.75;
+        particleMaterial.opacity = 0.8;
       }
     });
 
@@ -202,81 +231,52 @@ export default function HeroScene({ scale = 1.0, isContact = false }: HeroSceneP
     let animationFrameId: number;
     const clock = new THREE.Clock();
 
-    // Accumulated rotation angles using delta-clamping to guarantee zero jump/stutter on initial load
-    let rotAngleParticlesY = 0;
-    let rotAngleParticlesX = 0;
-    let rotAngleIcosaX = 0;
-    let rotAngleIcosaY = 0;
-    let rotAngleInnerX = 0;
+    let rotAngleGlobeY = 0;
+    let rotAngleGlobeX = 0;
     let rotAngleInnerY = 0;
+    let rotAngleInnerX = 0;
+    let rotAngleRing1 = 0;
+    let rotAngleRing2 = 0;
 
     const animate = () => {
       animationFrameId = requestAnimationFrame(animate);
 
-      // Clamp delta to max 50ms so frame hitching or hydration delays never cause sudden jumps
       const delta = Math.min(clock.getDelta(), 0.05);
 
-      rotAngleParticlesY += delta * 0.04;
-      rotAngleParticlesX += delta * 0.02;
-      rotAngleIcosaX += delta * 0.08;
-      rotAngleIcosaY += delta * 0.12;
-      rotAngleInnerX -= delta * 0.15;
-      rotAngleInnerY -= delta * 0.1;
+      rotAngleGlobeY += delta * 0.12;
+      rotAngleGlobeX += delta * 0.04;
+      rotAngleInnerY -= delta * 0.15;
+      rotAngleInnerX -= delta * 0.08;
+      rotAngleRing1 += delta * 0.09;
+      rotAngleRing2 -= delta * 0.07;
 
-      // Smooth mouse follow
-      targetX += (mouseX - targetX) * 0.04;
-      targetY += (mouseY - targetY) * 0.04;
+      // Smooth mouse follow parallax
+      targetX += (mouseX - targetX) * 0.045;
+      targetY += (mouseY - targetY) * 0.045;
 
-      particles.rotation.y = rotAngleParticlesY + targetX * 0.002;
-      particles.rotation.x = rotAngleParticlesX + targetY * 0.002;
+      particles.rotation.y = rotAngleGlobeY * 0.4 + targetX * 0.0015;
+      particles.rotation.x = rotAngleGlobeX * 0.4 + targetY * 0.0015;
 
-      icosahedron.rotation.x = rotAngleIcosaX;
-      icosahedron.rotation.y = rotAngleIcosaY;
-      icosahedron.position.x = baseX + targetX * (isContact ? 0.06 : 0.1);
-      icosahedron.position.y = baseY - targetY * (isContact ? 0.06 : 0.1) - (isContact ? 0 : scrollY * 0.02);
+      globeMesh.rotation.y = rotAngleGlobeY;
+      globeMesh.rotation.x = rotAngleGlobeX;
+      globeMesh.position.x = baseX + targetX * (isContact ? 0.06 : 0.12);
+      globeMesh.position.y = baseY - targetY * (isContact ? 0.06 : 0.12) - (isContact ? 0 : scrollY * 0.02);
 
-      innerMesh.rotation.x = rotAngleInnerX;
       innerMesh.rotation.y = rotAngleInnerY;
-      innerMesh.position.x = icosahedron.position.x;
-      innerMesh.position.y = icosahedron.position.y;
+      innerMesh.rotation.x = rotAngleInnerX;
+      innerMesh.position.copy(globeMesh.position);
 
-      camera.position.x = targetX * 0.05;
-      camera.position.y = -targetY * 0.05;
+      orbitalRing1.rotation.z = rotAngleRing1;
+      orbitalRing1.position.copy(globeMesh.position);
+
+      orbitalRing2.rotation.z = rotAngleRing2;
+      orbitalRing2.position.copy(globeMesh.position);
+
+      camera.position.x = targetX * 0.06;
+      camera.position.y = -targetY * 0.06;
 
       renderer.render(scene, camera);
     };
-
-    // Render initial frame 0 cleanly
-    // Check for prefers-reduced-motion
-    const prefersReducedMotion =
-      typeof window !== 'undefined' &&
-      window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-
-    if (prefersReducedMotion) {
-      renderer.render(scene, camera);
-      requestAnimationFrame(() => {
-        if (renderer.domElement) {
-          renderer.domElement.style.opacity = '1';
-        }
-      });
-      return () => {
-        observer.disconnect();
-        resizeObserver.disconnect();
-        window.removeEventListener('mousemove', handleMouseMove);
-        window.removeEventListener('scroll', handleScroll);
-        window.removeEventListener('resize', handleResize);
-        if (container && renderer.domElement && container.contains(renderer.domElement)) {
-          container.removeChild(renderer.domElement);
-        }
-        geometry.dispose();
-        particleMaterial.dispose();
-        sphereGeo.dispose();
-        wireframeMat.dispose();
-        innerGeo.dispose();
-        innerMat.dispose();
-        renderer.dispose();
-      };
-    }
 
     animate();
 
@@ -292,10 +292,14 @@ export default function HeroScene({ scale = 1.0, isContact = false }: HeroSceneP
       }
       geometry.dispose();
       particleMaterial.dispose();
-      sphereGeo.dispose();
-      wireframeMat.dispose();
+      globeGeo.dispose();
+      globeMat.dispose();
       innerGeo.dispose();
       innerMat.dispose();
+      ringGeo1.dispose();
+      ringMat1.dispose();
+      ringGeo2.dispose();
+      ringMat2.dispose();
       renderer.dispose();
     };
   }, [scale, isContact]);
