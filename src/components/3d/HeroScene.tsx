@@ -12,7 +12,6 @@ interface HeroSceneProps {
 export default function HeroScene({ scale = 1.0, isContact = false }: HeroSceneProps) {
   const containerRef = useRef<HTMLDivElement>(null);
   const [hasWebGL, setHasWebGL] = useState(true);
-  const [canvasReady, setCanvasReady] = useState(false);
 
   useEffect(() => {
     const container = containerRef.current;
@@ -38,16 +37,23 @@ export default function HeroScene({ scale = 1.0, isContact = false }: HeroSceneP
       scene.fog = new THREE.FogExp2(0x07090e, 0.0018);
     }
 
+    const initialWidth = container.clientWidth || window.innerWidth;
+    const initialHeight = container.clientHeight || 600;
+
     const camera = new THREE.PerspectiveCamera(
       60,
-      container.clientWidth / container.clientHeight,
+      initialWidth / initialHeight,
       0.1,
       1000
     );
     camera.position.z = 80;
 
-    const renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true, powerPreference: 'high-performance' });
-    renderer.setSize(container.clientWidth, container.clientHeight);
+    const renderer = new THREE.WebGLRenderer({
+      alpha: true,
+      antialias: true,
+      powerPreference: 'high-performance',
+    });
+    renderer.setSize(initialWidth, initialHeight);
     renderer.setPixelRatio(getClampedPixelRatio());
     renderer.setClearColor(0x000000, 0); // 100% transparent canvas
     renderer.domElement.style.position = 'absolute';
@@ -55,7 +61,10 @@ export default function HeroScene({ scale = 1.0, isContact = false }: HeroSceneP
     renderer.domElement.style.width = '100%';
     renderer.domElement.style.height = '100%';
     renderer.domElement.style.pointerEvents = 'none';
-    renderer.domElement.style.opacity = '1';
+    // Silky smooth fade-in: start at 0 opacity and transition in
+    renderer.domElement.style.opacity = '0';
+    renderer.domElement.style.transition = 'opacity 0.75s cubic-bezier(0.16, 1, 0.3, 1)';
+    renderer.domElement.style.willChange = 'opacity';
     container.appendChild(renderer.domElement);
 
     // Particles Constellation
@@ -126,7 +135,7 @@ export default function HeroScene({ scale = 1.0, isContact = false }: HeroSceneP
     const ambientLight = new THREE.AmbientLight(0xffffff, 1);
     scene.add(ambientLight);
 
-    // Mouse coordinates tracking
+    // Mouse coordinates tracking with smooth damping
     let mouseX = 0;
     let mouseY = 0;
     let targetX = 0;
@@ -141,20 +150,26 @@ export default function HeroScene({ scale = 1.0, isContact = false }: HeroSceneP
 
     window.addEventListener('mousemove', handleMouseMove, { passive: true });
 
-    // Scroll reaction
-    let scrollY = 0;
+    // Scroll reaction - initialized to current scroll position to avoid jump
+    let scrollY = typeof window !== 'undefined' ? window.scrollY : 0;
     const handleScroll = () => {
       scrollY = window.scrollY;
     };
     window.addEventListener('scroll', handleScroll, { passive: true });
 
-    // Resize handler
+    // Resize handling via both ResizeObserver and window resize
     const handleResize = () => {
-      if (!container) return;
-      camera.aspect = container.clientWidth / container.clientHeight;
+      if (!container || !renderer) return;
+      const w = container.clientWidth;
+      const h = container.clientHeight;
+      if (w === 0 || h === 0) return;
+      camera.aspect = w / h;
       camera.updateProjectionMatrix();
-      renderer.setSize(container.clientWidth, container.clientHeight);
+      renderer.setSize(w, h);
     };
+
+    const resizeObserver = new ResizeObserver(handleResize);
+    resizeObserver.observe(container);
     window.addEventListener('resize', handleResize);
 
     // Theme Change Observer
@@ -187,24 +202,41 @@ export default function HeroScene({ scale = 1.0, isContact = false }: HeroSceneP
     let animationFrameId: number;
     const clock = new THREE.Clock();
 
+    // Accumulated rotation angles using delta-clamping to guarantee zero jump/stutter on initial load
+    let rotAngleParticlesY = 0;
+    let rotAngleParticlesX = 0;
+    let rotAngleIcosaX = 0;
+    let rotAngleIcosaY = 0;
+    let rotAngleInnerX = 0;
+    let rotAngleInnerY = 0;
+
     const animate = () => {
       animationFrameId = requestAnimationFrame(animate);
-      const elapsedTime = clock.getElapsedTime();
+
+      // Clamp delta to max 50ms so frame hitching or hydration delays never cause sudden jumps
+      const delta = Math.min(clock.getDelta(), 0.05);
+
+      rotAngleParticlesY += delta * 0.04;
+      rotAngleParticlesX += delta * 0.02;
+      rotAngleIcosaX += delta * 0.08;
+      rotAngleIcosaY += delta * 0.12;
+      rotAngleInnerX -= delta * 0.15;
+      rotAngleInnerY -= delta * 0.1;
 
       // Smooth mouse follow
-      targetX += (mouseX - targetX) * 0.05;
-      targetY += (mouseY - targetY) * 0.05;
+      targetX += (mouseX - targetX) * 0.04;
+      targetY += (mouseY - targetY) * 0.04;
 
-      particles.rotation.y = elapsedTime * 0.04 + targetX * 0.002;
-      particles.rotation.x = elapsedTime * 0.02 + targetY * 0.002;
+      particles.rotation.y = rotAngleParticlesY + targetX * 0.002;
+      particles.rotation.x = rotAngleParticlesX + targetY * 0.002;
 
-      icosahedron.rotation.x = elapsedTime * 0.08;
-      icosahedron.rotation.y = elapsedTime * 0.12;
+      icosahedron.rotation.x = rotAngleIcosaX;
+      icosahedron.rotation.y = rotAngleIcosaY;
       icosahedron.position.x = baseX + targetX * (isContact ? 0.06 : 0.1);
       icosahedron.position.y = baseY - targetY * (isContact ? 0.06 : 0.1) - (isContact ? 0 : scrollY * 0.02);
 
-      innerMesh.rotation.x = -elapsedTime * 0.15;
-      innerMesh.rotation.y = -elapsedTime * 0.1;
+      innerMesh.rotation.x = rotAngleInnerX;
+      innerMesh.rotation.y = rotAngleInnerY;
       innerMesh.position.x = icosahedron.position.x;
       innerMesh.position.y = icosahedron.position.y;
 
@@ -214,19 +246,26 @@ export default function HeroScene({ scale = 1.0, isContact = false }: HeroSceneP
       renderer.render(scene, camera);
     };
 
-    // Render immediate frame 0 synchronously so the canvas is drawn right away
+    // Render initial frame 0 cleanly
     renderer.render(scene, camera);
-    setCanvasReady(true);
+
+    // Fade canvas in seamlessly on the next animation frame
+    requestAnimationFrame(() => {
+      if (renderer.domElement) {
+        renderer.domElement.style.opacity = '1';
+      }
+    });
 
     animate();
 
     return () => {
       cancelAnimationFrame(animationFrameId);
       observer.disconnect();
+      resizeObserver.disconnect();
       window.removeEventListener('mousemove', handleMouseMove);
       window.removeEventListener('scroll', handleScroll);
       window.removeEventListener('resize', handleResize);
-      if (container && renderer.domElement) {
+      if (container && renderer.domElement && container.contains(renderer.domElement)) {
         container.removeChild(renderer.domElement);
       }
       geometry.dispose();
@@ -237,7 +276,7 @@ export default function HeroScene({ scale = 1.0, isContact = false }: HeroSceneP
       innerMat.dispose();
       renderer.dispose();
     };
-  }, []);
+  }, [scale, isContact]);
 
   return (
     <div
@@ -245,30 +284,10 @@ export default function HeroScene({ scale = 1.0, isContact = false }: HeroSceneP
       className="absolute inset-0 pointer-events-none overflow-hidden z-0"
       aria-hidden="true"
     >
-      {/* 1. Instant Static/SSR Cybernetic Globe & Constellation Aura (Zero Loading Delay - 0ms Paint) */}
-      <div
-        className={`absolute top-1/2 right-[5%] sm:right-[10%] lg:right-[16%] -translate-y-1/2 w-[280px] h-[280px] sm:w-[360px] sm:h-[360px] lg:w-[420px] lg:h-[420px] pointer-events-none select-none transition-opacity duration-200 ease-out ${
-          canvasReady ? 'opacity-0 pointer-events-none' : 'opacity-100'
-        }`}
-      >
-        {/* Soft Ambient Radial Nebula Aura */}
+      {/* Soft Ambient Radial Nebula Aura (Static, non-clashing, zero pop-in) */}
+      <div className="absolute top-1/2 right-[5%] sm:right-[10%] lg:right-[16%] -translate-y-1/2 w-[280px] h-[280px] sm:w-[360px] sm:h-[360px] lg:w-[420px] lg:h-[420px] pointer-events-none select-none">
         <div className="absolute inset-0 rounded-full bg-cyan-500/15 dark:bg-cyan-500/20 blur-3xl animate-pulse-subtle" />
         <div className="absolute inset-8 rounded-full bg-emerald-500/10 dark:bg-emerald-500/15 blur-2xl animate-pulse-subtle" />
-
-        {/* Outer Orbital Geo Rings */}
-        <div className="absolute inset-0 rounded-full border border-cyan-400/35 dark:border-cyan-400/40 shadow-[0_0_15px_rgba(56,189,248,0.15)] animate-[spin_24s_linear_infinite]" />
-        <div className="absolute inset-4 rounded-full border border-dashed border-cyan-400/25 dark:border-cyan-400/30 animate-[spin_32s_linear_infinite_reverse]" />
-        <div className="absolute inset-10 rounded-full border border-emerald-400/30 dark:border-emerald-400/35 [transform:rotateX(65deg)] animate-[spin_18s_linear_infinite]" />
-        <div className="absolute inset-16 rounded-full border border-indigo-400/30 dark:border-indigo-400/35 [transform:rotateY(65deg)] animate-[spin_26s_linear_infinite_reverse]" />
-
-        {/* Central Geometric Core */}
-        <div className="absolute inset-[32%] rounded-full border-2 border-cyan-300/45 dark:border-cyan-300/60 bg-cyan-500/10 shadow-[0_0_20px_rgba(56,189,248,0.3)] animate-pulse" />
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-3 h-3 rounded-full bg-cyan-400 shadow-[0_0_12px_#38bdf8] animate-ping" />
-
-        {/* Constellation Nodes */}
-        <div className="absolute top-1/4 left-1/4 w-2 h-2 rounded-full bg-emerald-400 shadow-[0_0_8px_#10b981]" />
-        <div className="absolute bottom-1/4 right-1/4 w-2 h-2 rounded-full bg-cyan-400 shadow-[0_0_8px_#38bdf8]" />
-        <div className="absolute top-1/3 right-1/4 w-1.5 h-1.5 rounded-full bg-indigo-400 shadow-[0_0_6px_#818cf8]" />
       </div>
 
       {!hasWebGL && (
