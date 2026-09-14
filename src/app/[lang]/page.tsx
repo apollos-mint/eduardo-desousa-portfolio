@@ -6,7 +6,6 @@ import { getCVData } from '@/data/cv-data';
 import HeroSection from '@/components/sections/HeroSection';
 import SpecialFeatureSection from '@/components/sections/SpecialFeatureSection';
 import ContactSection from '@/components/sections/ContactSection';
-import LogisticsIntroSequence from '@/components/intro/LogisticsIntroSequence';
 
 export function generateStaticParams() {
   return getAllStaticLocaleParams();
@@ -44,9 +43,6 @@ export default async function LocalizedHomePage({
 
   return (
     <div className="flex flex-col">
-      {/* 0. Dedicated Fullscreen 3D Logistics Intro (Only plays on website entry / reload) */}
-      <LogisticsIntroSequence />
-
       {/* 1. Concise High-Impact Hero with Portrait & Infinite Brand Marquee */}
       <HeroSection currentLocale={lang as Locale} cvData={cvData} />
 
