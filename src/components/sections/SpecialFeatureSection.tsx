@@ -203,10 +203,14 @@ export default function SpecialFeatureSection({
                 </div>
               </div>
 
-              {/* Description */}
-              <p className="text-sm sm:text-base text-slate-700 dark:text-slate-300 leading-relaxed font-normal max-w-5xl">
-                {renderFormattedText(sourcingPillar.description)}
-              </p>
+              {/* Description with Clean Paragraph Separation & Justified Alignment */}
+              <div className="space-y-3 text-sm sm:text-base text-slate-700 dark:text-slate-300 font-normal max-w-5xl">
+                {sourcingPillar.description.split(/\n\s*\n/).filter(Boolean).map((p, pIdx) => (
+                  <p key={pIdx} className="text-justify leading-relaxed sm:leading-7">
+                    {renderFormattedText(p)}
+                  </p>
+                ))}
+              </div>
 
               {/* Ecosystem Company Logotypes */}
               <div className="pt-1">
@@ -282,9 +286,13 @@ export default function SpecialFeatureSection({
                           {pillar.title}
                         </h3>
                       </Link>
-                      <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed font-normal">
-                        {renderFormattedText(pillar.description)}
-                      </p>
+                      <div className="space-y-2 text-xs sm:text-sm text-slate-600 dark:text-slate-300 font-normal">
+                        {pillar.description.split(/\n\s*\n/).filter(Boolean).map((p, pIdx) => (
+                          <p key={pIdx} className="text-justify leading-relaxed">
+                            {renderFormattedText(p)}
+                          </p>
+                        ))}
+                      </div>
                     </div>
 
                     {/* Direct Company Range Badges */}

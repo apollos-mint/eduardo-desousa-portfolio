@@ -219,7 +219,7 @@ export default async function SkillDetailPage({
             {skill.name}
           </h1>
 
-          <p className="text-base sm:text-lg text-slate-700 dark:text-slate-200 leading-relaxed max-w-4xl font-normal">
+          <p className="text-base sm:text-lg text-slate-700 dark:text-slate-200 leading-relaxed max-w-4xl font-normal text-justify">
             {skill.description}
           </p>
         </div>
@@ -236,7 +236,7 @@ export default async function SkillDetailPage({
                 {loc.frameworkTitle}
               </h3>
             </div>
-            <p className="text-xs sm:text-sm text-slate-700 dark:text-slate-300 leading-relaxed">
+            <p className="text-xs sm:text-sm text-slate-700 dark:text-slate-300 leading-relaxed text-justify">
               {skill.methodology}
             </p>
           </div>
@@ -251,7 +251,7 @@ export default async function SkillDetailPage({
                 {loc.executionTitle}
               </h3>
             </div>
-            <p className="text-xs sm:text-sm text-slate-700 dark:text-slate-300 leading-relaxed">
+            <p className="text-xs sm:text-sm text-slate-700 dark:text-slate-300 leading-relaxed text-justify">
               {skill.practicalApplication}
             </p>
           </div>

@@ -164,7 +164,7 @@ export default function EducationCertificatesSection({
                         <ExternalLink className="w-4 h-4 text-cyan-400 group-hover/card:translate-x-0.5 group-hover/card:-translate-y-0.5 transition-transform" />
                       </h3>
 
-                      <p className="text-xs sm:text-sm text-slate-300 line-clamp-2 leading-relaxed font-normal">
+                      <p className="text-xs sm:text-sm text-slate-300 line-clamp-2 leading-relaxed font-normal text-justify">
                         {item.description}
                       </p>
                     </div>
@@ -208,7 +208,7 @@ export default function EducationCertificatesSection({
                         <span>{item.title}</span>
                       </h3>
 
-                      <p className="text-xs sm:text-sm text-slate-300 line-clamp-2 leading-relaxed font-normal">
+                      <p className="text-xs sm:text-sm text-slate-300 line-clamp-2 leading-relaxed font-normal text-justify">
                         {item.description}
                       </p>
                     </div>
@@ -247,7 +247,7 @@ export default function EducationCertificatesSection({
                             className="flex items-start space-x-2.5 text-xs text-slate-300 p-2 rounded-xl bg-slate-900/60 border border-slate-800/80"
                           >
                             <CheckCircle className="w-4 h-4 text-cyan-400 shrink-0 mt-0.5" />
-                            <span className="leading-relaxed">{takeaway}</span>
+                            <span className="leading-relaxed text-justify">{takeaway}</span>
                           </div>
                         ))}
                       </div>

@@ -141,10 +141,14 @@ export default function ExperienceSection({
                   </div>
                 </div>
 
-                {/* Description */}
-                <p className="text-sm sm:text-base text-slate-700 dark:text-slate-300 leading-relaxed font-normal max-w-5xl">
-                  {primaryExp.summary}
-                </p>
+                {/* Description with Clean Paragraph Separation & Justified Alignment */}
+                <div className="space-y-3 text-sm sm:text-base text-slate-700 dark:text-slate-300 font-normal max-w-5xl">
+                  {primaryExp.summary.split(/\n\s*\n/).filter(Boolean).map((p, pIdx) => (
+                    <p key={pIdx} className="text-justify leading-relaxed sm:leading-7">
+                      {p}
+                    </p>
+                  ))}
+                </div>
 
                 {/* Ecosystem Company Logotypes matching Home */}
                 <div className="pt-1">
@@ -244,7 +248,7 @@ export default function ExperienceSection({
                       <div className="text-xs font-bold text-cyan-600 dark:text-cyan-400">
                         {exp.company} &bull; {exp.location}
                       </div>
-                      <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed font-normal pt-1 line-clamp-3">
+                      <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed font-normal pt-1 line-clamp-3 text-justify">
                         {exp.summary}
                       </p>
                     </div>
@@ -347,7 +351,7 @@ export default function ExperienceSection({
                       <div className="text-xs font-bold text-cyan-600 dark:text-cyan-400">
                         {exp.company} &bull; {exp.location}
                       </div>
-                      <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed font-normal pt-1 line-clamp-3">
+                      <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed font-normal pt-1 line-clamp-3 text-justify">
                         {exp.summary}
                       </p>
                     </div>

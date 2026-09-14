@@ -103,7 +103,7 @@ export default function SkillsMatrixSection({
                   {skill.name}
                 </h3>
 
-                <p className="text-xs text-slate-400 line-clamp-2 leading-relaxed">
+                <p className="text-xs text-slate-400 line-clamp-2 leading-relaxed text-justify">
                   {skill.description}
                 </p>
 

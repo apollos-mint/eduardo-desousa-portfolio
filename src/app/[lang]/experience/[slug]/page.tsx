@@ -419,9 +419,13 @@ export default async function ExperienceDetailPage({
             <span>{experience.company}</span>
           </div>
 
-          <p className="text-base sm:text-lg text-slate-700 dark:text-slate-200 leading-relaxed max-w-4xl font-normal">
-            {renderFormattedText(experience.summary)}
-          </p>
+          <div className="space-y-3.5 text-base sm:text-lg text-slate-700 dark:text-slate-200 leading-relaxed max-w-4xl font-normal">
+            {experience.summary.split(/\n\s*\n/).filter(Boolean).map((paragraph, idx) => (
+              <p key={idx} className="text-justify leading-relaxed sm:leading-8">
+                {renderFormattedText(paragraph)}
+              </p>
+            ))}
+          </div>
         </div>
 
         {/* Operational Challenge, Solution & Impact Triad */}
@@ -434,7 +438,7 @@ export default async function ExperienceDetailPage({
             <h3 className="text-base font-bold text-amber-900 dark:text-amber-200">
               {cvData.common.operationalChallenge}
             </h3>
-            <p className="text-xs sm:text-sm text-slate-700 dark:text-slate-200 leading-relaxed font-normal">
+            <p className="text-xs sm:text-sm text-slate-700 dark:text-slate-200 leading-relaxed font-normal text-justify">
               {renderFormattedText(experience.challenge)}
             </p>
           </div>
@@ -447,7 +451,7 @@ export default async function ExperienceDetailPage({
             <h3 className="text-base font-bold text-cyan-900 dark:text-cyan-200">
               {cvData.common.engineeredSolution}
             </h3>
-            <p className="text-xs sm:text-sm text-slate-700 dark:text-slate-200 leading-relaxed font-normal">
+            <p className="text-xs sm:text-sm text-slate-700 dark:text-slate-200 leading-relaxed font-normal text-justify">
               {renderFormattedText(experience.solution)}
             </p>
           </div>
@@ -460,7 +464,7 @@ export default async function ExperienceDetailPage({
             <h3 className="text-base font-bold text-emerald-900 dark:text-emerald-200">
               {cvData.common.measurableImpact}
             </h3>
-            <p className="text-xs sm:text-sm text-slate-700 dark:text-slate-200 leading-relaxed font-normal">
+            <p className="text-xs sm:text-sm text-slate-700 dark:text-slate-200 leading-relaxed font-normal text-justify">
               {renderFormattedText(experience.impact)}
             </p>
           </div>
@@ -487,7 +491,7 @@ export default async function ExperienceDetailPage({
                 className="flex items-start space-x-3 p-3.5 rounded-xl bg-white/60 dark:bg-slate-900/60 border border-slate-200/80 dark:border-slate-800/80 text-xs sm:text-sm text-slate-700 dark:text-slate-200 leading-relaxed shadow-sm font-normal"
               >
                 <CheckCircle2 className="w-4 h-4 text-emerald-600 dark:text-emerald-400 shrink-0 mt-0.5" />
-                <span>{renderFormattedText(resp)}</span>
+                <span className="text-justify leading-relaxed">{renderFormattedText(resp)}</span>
               </div>
             ))}
           </div>
@@ -564,7 +568,13 @@ export default async function ExperienceDetailPage({
             className="inline-flex items-center space-x-2 px-5 py-2.5 rounded-xl bg-gradient-to-r from-emerald-500 to-teal-500 hover:from-emerald-400 hover:to-teal-400 text-slate-950 font-black text-[11px] uppercase tracking-wider shadow-lg shadow-emerald-500/20 transition-all hover:scale-105"
           >
             <MessageSquare className="w-3.5 h-3.5 text-slate-950" />
-            <span>Discuss This Case Study</span>
+            <span>
+              {isEs
+                ? 'Consultar este Caso de Estudio'
+                : isPt
+                ? 'Consultar este Caso de Estudo'
+                : 'Discuss This Case Study'}
+            </span>
           </a>
 
           {nextExp ? (
