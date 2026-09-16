@@ -51,21 +51,44 @@ export const metadata: Metadata = {
       'x-default': '/en',
     },
   },
+  icons: {
+    icon: [
+      { url: '/icon.svg', type: 'image/svg+xml' },
+      { url: '/favicon.ico', sizes: '32x32' },
+      { url: '/icon-192.png', sizes: '192x192', type: 'image/png' },
+      { url: '/icon-512.png', sizes: '512x512', type: 'image/png' },
+    ],
+    apple: [
+      { url: '/apple-icon.png', sizes: '180x180', type: 'image/png' },
+    ],
+  },
   openGraph: {
-    title: 'Eduardo de Sousa | Staff Operations & Quality Leader',
+    title: 'Eduardo de Sousa | Staff Operations, Quality & High-Tech Process Leader',
     description:
-      'High-performance operations leader specializing in high-tech cleanrooms, automotive manufacturing, and global industrial auditing.',
+      'High-performance operations leader specializing in high-tech cleanrooms, ASML semiconductor supply chain, automotive manufacturing, and Lean Six Sigma Black Belt methodology.',
     url: 'https://eduardodesousa.vercel.app',
     siteName: 'Eduardo de Sousa Portfolio',
     type: 'website',
     locale: 'es_ES',
     alternateLocale: ['en_US', 'pt_PT', 'nl_NL', 'de_DE', 'fr_FR'],
+    images: [
+      {
+        url: 'https://eduardodesousa.vercel.app/opengraph-image',
+        width: 1200,
+        height: 630,
+        alt: 'Eduardo de Sousa | Staff Operations & Quality Leader',
+      },
+    ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Eduardo de Sousa | Staff Operations & Quality Leader',
+    title: 'Eduardo de Sousa | Staff Operations, Quality & High-Tech Process Leader',
     description:
-      'High-performance operations leader specializing in high-tech cleanrooms, automotive manufacturing, and global industrial auditing.',
+      'High-performance operations leader specializing in high-tech cleanrooms, ASML semiconductor supply chain, automotive manufacturing, and Lean Six Sigma Black Belt methodology.',
+    images: ['https://eduardodesousa.vercel.app/opengraph-image'],
+  },
+  verification: {
+    google: process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION || undefined,
   },
 };
 
