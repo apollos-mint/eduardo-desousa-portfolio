@@ -78,6 +78,12 @@ export const metadata: Metadata = {
         height: 630,
         alt: 'Eduardo de Sousa | Staff Operations & Quality Leader',
       },
+      {
+        url: 'https://eduardodesousa.vercel.app/og-image.png',
+        width: 1200,
+        height: 630,
+        alt: 'Eduardo de Sousa | Staff Operations & Quality Leader',
+      },
     ],
   },
   twitter: {
@@ -85,7 +91,10 @@ export const metadata: Metadata = {
     title: 'Eduardo de Sousa | Staff Operations, Quality & High-Tech Process Leader',
     description:
       'High-performance operations leader specializing in high-tech cleanrooms, ASML semiconductor supply chain, automotive manufacturing, and Lean Six Sigma Black Belt methodology.',
-    images: ['https://eduardodesousa.vercel.app/opengraph-image'],
+    images: [
+      'https://eduardodesousa.vercel.app/opengraph-image',
+      'https://eduardodesousa.vercel.app/og-image.png',
+    ],
   },
   verification: {
     google: process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION || undefined,

@@ -5,12 +5,16 @@ import { validLocales, defaultLocale } from '@/lib/i18n';
 export function middleware(request: NextRequest) {
   const { pathname } = request.nextUrl;
 
-  // Ignore static files, images, api, and next internals
+  // Ignore static files, images, api, metadata routes, and next internals
   if (
     pathname.startsWith('/_next') ||
     pathname.startsWith('/api') ||
     pathname.includes('.') ||
-    pathname.startsWith('/favicon.ico')
+    pathname.startsWith('/favicon.ico') ||
+    pathname.startsWith('/opengraph-image') ||
+    pathname.startsWith('/twitter-image') ||
+    pathname.startsWith('/icon') ||
+    pathname.startsWith('/apple-icon')
   ) {
     return NextResponse.next();
   }
