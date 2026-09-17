@@ -19,13 +19,24 @@ export function middleware(request: NextRequest) {
     return NextResponse.next();
   }
 
+  // Edge Geolocation Enrichment from Vercel
+  const country = request.headers.get('x-vercel-ip-country') || (request as any).geo?.country || '';
+  const city = request.headers.get('x-vercel-ip-city') || (request as any).geo?.city || '';
+
   // Check if pathname already starts with a valid locale
   const pathnameHasLocale = validLocales.some(
     (locale) => pathname.startsWith(`/${locale}/`) || pathname === `/${locale}`
   );
 
   if (pathnameHasLocale) {
-    return NextResponse.next();
+    const response = NextResponse.next();
+    if (country && !request.cookies.get('geo_country')) {
+      response.cookies.set('geo_country', country, { path: '/', maxAge: 60 * 60 * 24 * 30, sameSite: 'lax' });
+    }
+    if (city && !request.cookies.get('geo_city')) {
+      response.cookies.set('geo_city', encodeURIComponent(city), { path: '/', maxAge: 60 * 60 * 24 * 30, sameSite: 'lax' });
+    }
+    return response;
   }
 
   // If visiting the root '/', determine preferred language from headers or default to 'es'
@@ -49,7 +60,14 @@ export function middleware(request: NextRequest) {
     `/${targetLocale}${pathname === '/' ? '' : pathname}${request.nextUrl.search}`,
     request.url
   );
-  return NextResponse.redirect(newUrl);
+  const redirectResponse = NextResponse.redirect(newUrl);
+  if (country) {
+    redirectResponse.cookies.set('geo_country', country, { path: '/', maxAge: 60 * 60 * 24 * 30, sameSite: 'lax' });
+  }
+  if (city) {
+    redirectResponse.cookies.set('geo_city', encodeURIComponent(city), { path: '/', maxAge: 60 * 60 * 24 * 30, sameSite: 'lax' });
+  }
+  return redirectResponse;
 }
 
 export const config = {

@@ -8,6 +8,7 @@ import Footer from '@/components/navigation/Footer';
 import InteractiveBackground from '@/components/ui/InteractiveBackground';
 import CookieConsentBanner from '@/components/ui/CookieConsentBanner';
 import JsonLd from '@/components/seo/JsonLd';
+import TelemetryProvider from '@/components/telemetry/TelemetryProvider';
 
 export function generateStaticParams() {
   return getAllStaticLocaleParams();
@@ -39,6 +40,7 @@ export default async function LocalizedLayout({
         Skip to main content
       </a>
       <JsonLd lang={lang as Locale} />
+      <TelemetryProvider />
       <InteractiveBackground />
       <Header currentLocale={lang as Locale} cvData={cvData} />
       <main id="main-content" className="flex-grow">
