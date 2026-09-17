@@ -5,7 +5,6 @@ import Image from 'next/image';
 import dynamic from 'next/dynamic';
 import { Locale, CVContent } from '@/types';
 import { generateVCard } from '@/lib/utils';
-import confetti from 'canvas-confetti';
 
 const HeroScene = dynamic(() => import('@/components/3d/HeroScene'), {
   ssr: false,
@@ -57,10 +56,12 @@ export default function ContactSection({ currentLocale, cvData }: ContactSection
     window.location.href = `mailto:${to}?subject=${subject}&body=${body}`;
 
     try {
-      confetti({
-        particleCount: 70,
-        spread: 60,
-        origin: { y: 0.7 },
+      import('canvas-confetti').then((mod) => {
+        mod.default({
+          particleCount: 70,
+          spread: 60,
+          origin: { y: 0.7 },
+        });
       });
     } catch {}
   };

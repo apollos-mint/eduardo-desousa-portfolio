@@ -2,7 +2,12 @@
 
 import React, { useEffect, useRef, useState } from 'react';
 import * as THREE from 'three';
-import { getClampedPixelRatio } from '@/lib/three-perf';
+import {
+  getClampedPixelRatio,
+  createFpsThrottler,
+  setupVisibilityAndIntersection,
+  disposeThreeScene,
+} from '@/lib/three-perf';
 
 interface HeroSceneProps {
   scale?: number;
@@ -12,8 +17,24 @@ interface HeroSceneProps {
 export default function HeroScene({ scale = 1.0, isContact = false }: HeroSceneProps) {
   const containerRef = useRef<HTMLDivElement>(null);
   const [hasWebGL, setHasWebGL] = useState(true);
+  const [canRender, setCanRender] = useState(false);
+
+  // Defer heavy 3D scene initialization so LCP hero image and text paint FIRST
+  useEffect(() => {
+    let timer: any;
+    if (typeof window !== 'undefined') {
+      if ('requestIdleCallback' in window) {
+        const handle = (window as any).requestIdleCallback(() => setCanRender(true), { timeout: 500 });
+        return () => (window as any).cancelIdleCallback(handle);
+      } else {
+        timer = setTimeout(() => setCanRender(true), 150);
+        return () => clearTimeout(timer);
+      }
+    }
+  }, []);
 
   useEffect(() => {
+    if (!canRender) return;
     const container = containerRef.current;
     if (!container) return;
 
@@ -267,35 +288,56 @@ export default function HeroScene({ scale = 1.0, isContact = false }: HeroSceneP
     scene.add(ambientLight);
 
     // =========================================================================
-    // 5. Active Cursor Tracking & Parallax
+    // 5. Active Cursor Tracking & Parallax with rAF Throttling
     // =========================================================================
     let mouseX = 0;
     let mouseY = 0;
     let targetX = 0;
     let targetY = 0;
 
+    let mouseTicking = false;
     const handleMouseMove = (event: MouseEvent) => {
-      const windowHalfX = window.innerWidth / 2;
-      const windowHalfY = window.innerHeight / 2;
-      mouseX = (event.clientX - windowHalfX) * 0.045;
-      mouseY = (event.clientY - windowHalfY) * 0.045;
+      if (!mouseTicking) {
+        requestAnimationFrame(() => {
+          const windowHalfX = window.innerWidth / 2;
+          const windowHalfY = window.innerHeight / 2;
+          mouseX = (event.clientX - windowHalfX) * 0.045;
+          mouseY = (event.clientY - windowHalfY) * 0.045;
+          mouseTicking = false;
+        });
+        mouseTicking = true;
+      }
     };
     window.addEventListener('mousemove', handleMouseMove, { passive: true });
 
+    let touchTicking = false;
     const handleTouchMove = (event: TouchEvent) => {
-      if (event.touches.length > 0) {
-        const windowHalfX = window.innerWidth / 2;
-        const windowHalfY = window.innerHeight / 2;
-        mouseX = (event.touches[0].clientX - windowHalfX) * 0.045;
-        mouseY = (event.touches[0].clientY - windowHalfY) * 0.045;
+      if (event.touches.length > 0 && !touchTicking) {
+        requestAnimationFrame(() => {
+          if (event.touches.length > 0) {
+            const windowHalfX = window.innerWidth / 2;
+            const windowHalfY = window.innerHeight / 2;
+            mouseX = (event.touches[0].clientX - windowHalfX) * 0.045;
+            mouseY = (event.touches[0].clientY - windowHalfY) * 0.045;
+          }
+          touchTicking = false;
+        });
+        touchTicking = true;
       }
     };
     window.addEventListener('touchmove', handleTouchMove, { passive: true });
 
     // Scroll reaction
     let scrollY = typeof window !== 'undefined' ? window.scrollY : 0;
+    let scrollTicking = false;
     const handleScroll = () => {
-      scrollY = window.scrollY;
+      if (!scrollTicking) {
+        requestAnimationFrame(() => {
+          scrollY = window.scrollY;
+          scrollTicking = false;
+        });
+        scrollTicking = true;
+      }
     };
     window.addEventListener('scroll', handleScroll, { passive: true });
 
@@ -361,10 +403,16 @@ export default function HeroScene({ scale = 1.0, isContact = false }: HeroSceneP
     });
 
     // =========================================================================
-    // 6. Animation Loop with Organic Parallax & Smooth Rotation
+    // 6. Animation Loop with FPS Throttler (40 FPS) & Intersection Pausing
     // =========================================================================
     let animationFrameId: number;
+    let isVisible = true;
+    const fpsThrottler = createFpsThrottler(40);
     const clock = new THREE.Clock();
+
+    const cleanupVisibility = setupVisibilityAndIntersection(container, (visible) => {
+      isVisible = visible;
+    });
 
     let rotGlobeY = 0;
     let rotGlobeX = 0;
@@ -374,8 +422,13 @@ export default function HeroScene({ scale = 1.0, isContact = false }: HeroSceneP
     let rotRing2 = 0;
     let rotRing3 = 0;
 
-    const animate = () => {
+    const animate = (time: number) => {
       animationFrameId = requestAnimationFrame(animate);
+
+      // Pause when not visible in viewport or tab backgrounded, or skip frames if >40 FPS
+      if (!isVisible || !fpsThrottler(time)) {
+        return;
+      }
 
       const delta = Math.min(clock.getDelta(), 0.05);
       const elapsed = clock.getElapsedTime();
@@ -431,10 +484,11 @@ export default function HeroScene({ scale = 1.0, isContact = false }: HeroSceneP
       renderer.render(scene, camera);
     };
 
-    animate();
+    animationFrameId = requestAnimationFrame(animate);
 
     return () => {
       cancelAnimationFrame(animationFrameId);
+      cleanupVisibility();
       observer.disconnect();
       resizeObserver.disconnect();
       window.removeEventListener('mousemove', handleMouseMove);
@@ -447,27 +501,9 @@ export default function HeroScene({ scale = 1.0, isContact = false }: HeroSceneP
       particleGeo.dispose();
       particleMaterial.dispose();
       if (particleTexture) particleTexture.dispose();
-      globeGeo.dispose();
-      globeMat.dispose();
-      innerGeo.dispose();
-      innerMat.dispose();
-      nucleusGeo.dispose();
-      nucleusMat.dispose();
-      ringGeo1.dispose();
-      ringMat1.dispose();
-      nodeGeo1.dispose();
-      nodeMat1.dispose();
-      ringGeo2.dispose();
-      ringMat2.dispose();
-      nodeGeo2.dispose();
-      nodeMat2.dispose();
-      ringGeo3.dispose();
-      ringMat3.dispose();
-      nodeGeo3.dispose();
-      nodeMat3.dispose();
-      renderer.dispose();
+      disposeThreeScene(scene, renderer);
     };
-  }, [scale, isContact]);
+  }, [scale, isContact, canRender]);
 
   return (
     <div

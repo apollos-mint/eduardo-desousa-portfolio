@@ -12,25 +12,36 @@ export default function TelemetryProvider() {
   const pathname = usePathname();
   const scrollMilestones = useRef({ '25': false, '50': false, '75': false, '100': false });
 
-  // 1. Initialize Profile & Clarity Sync on mount and route change
+  // 1. Initialize Profile & Clarity Sync deferred via requestIdleCallback to keep hydration instant
   useEffect(() => {
-    // Initial sync
-    syncProfileWithClarity();
-    sendToClarity('current_route', pathname);
-
-    // Boost score if visiting a high-value case study
-    if (pathname.includes('/experience/')) {
-      boostIntentScore(25, 'view_case_study', { case_slug: pathname.split('/').pop() });
-    } else if (pathname.includes('/skills/')) {
-      boostIntentScore(15, 'view_skill_detail', { skill_slug: pathname.split('/').pop() });
-    } else if (pathname.includes('/certifications')) {
-      boostIntentScore(20, 'view_certifications');
-    } else if (pathname.includes('/contact')) {
-      boostIntentScore(30, 'view_contact_page');
-    }
-
     // Reset scroll milestones for the current page
     scrollMilestones.current = { '25': false, '50': false, '75': false, '100': false };
+
+    const initTelemetry = () => {
+      syncProfileWithClarity();
+      sendToClarity('current_route', pathname);
+
+      // Boost score if visiting a high-value case study
+      if (pathname.includes('/experience/')) {
+        boostIntentScore(25, 'view_case_study', { case_slug: pathname.split('/').pop() });
+      } else if (pathname.includes('/skills/')) {
+        boostIntentScore(15, 'view_skill_detail', { skill_slug: pathname.split('/').pop() });
+      } else if (pathname.includes('/certifications')) {
+        boostIntentScore(20, 'view_certifications');
+      } else if (pathname.includes('/contact')) {
+        boostIntentScore(30, 'view_contact_page');
+      }
+    };
+
+    if (typeof window !== 'undefined') {
+      if ('requestIdleCallback' in window) {
+        const idleId = (window as any).requestIdleCallback(initTelemetry, { timeout: 1000 });
+        return () => (window as any).cancelIdleCallback(idleId);
+      } else {
+        const timer = setTimeout(initTelemetry, 300);
+        return () => clearTimeout(timer);
+      }
+    }
   }, [pathname]);
 
   // 2. Dwell Time Tracker (Time on Page)
@@ -48,29 +59,39 @@ export default function TelemetryProvider() {
     };
   }, [pathname]);
 
-  // 3. Scroll Depth Tracker
+  // 3. Scroll Depth Tracker (rAF-throttled to eliminate layout thrashing during scroll)
   useEffect(() => {
+    let scrollTicking = false;
     const handleScroll = () => {
-      const docHeight = document.documentElement.scrollHeight - window.innerHeight;
-      if (docHeight <= 0) return;
+      if (!scrollTicking) {
+        requestAnimationFrame(() => {
+          const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+          if (docHeight <= 0) {
+            scrollTicking = false;
+            return;
+          }
 
-      const scrollPct = Math.round((window.scrollY / docHeight) * 100);
+          const scrollPct = Math.round((window.scrollY / docHeight) * 100);
 
-      if (scrollPct >= 25 && !scrollMilestones.current['25']) {
-        scrollMilestones.current['25'] = true;
-        boostIntentScore(5, 'scroll_25', { scroll_depth: '25%' });
-      }
-      if (scrollPct >= 50 && !scrollMilestones.current['50']) {
-        scrollMilestones.current['50'] = true;
-        boostIntentScore(5, 'scroll_50', { scroll_depth: '50%' });
-      }
-      if (scrollPct >= 75 && !scrollMilestones.current['75']) {
-        scrollMilestones.current['75'] = true;
-        boostIntentScore(10, 'scroll_75', { scroll_depth: '75%' });
-      }
-      if (scrollPct >= 95 && !scrollMilestones.current['100']) {
-        scrollMilestones.current['100'] = true;
-        boostIntentScore(10, 'scroll_100', { scroll_depth: '100%' });
+          if (scrollPct >= 25 && !scrollMilestones.current['25']) {
+            scrollMilestones.current['25'] = true;
+            boostIntentScore(5, 'scroll_25', { scroll_depth: '25%' });
+          }
+          if (scrollPct >= 50 && !scrollMilestones.current['50']) {
+            scrollMilestones.current['50'] = true;
+            boostIntentScore(5, 'scroll_50', { scroll_depth: '50%' });
+          }
+          if (scrollPct >= 75 && !scrollMilestones.current['75']) {
+            scrollMilestones.current['75'] = true;
+            boostIntentScore(10, 'scroll_75', { scroll_depth: '75%' });
+          }
+          if (scrollPct >= 95 && !scrollMilestones.current['100']) {
+            scrollMilestones.current['100'] = true;
+            boostIntentScore(10, 'scroll_100', { scroll_depth: '100%' });
+          }
+          scrollTicking = false;
+        });
+        scrollTicking = true;
       }
     };
 
@@ -78,7 +99,7 @@ export default function TelemetryProvider() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, [pathname]);
 
-  // 4. Global High-Intent Click Interceptor
+  // 4. Global High-Intent Click Interceptor (decoupled to setTimeout 0 for 0ms INP)
   useEffect(() => {
     const handleClick = (e: MouseEvent) => {
       const target = (e.target as HTMLElement).closest('a, button');
@@ -87,29 +108,32 @@ export default function TelemetryProvider() {
       const href = target.getAttribute('href') || '';
       const text = target.textContent || '';
 
-      // A. CV Download Clicks
-      if (href.endsWith('.pdf') || href.includes('Resume') || href.includes('cv_')) {
-        boostIntentScore(50, 'cv_download_click', {
-          cv_downloaded: 'true',
-          cv_file: href.split('/').pop(),
-          vip_lead: 'true',
-        });
-      }
+      // Defer telemetry execution to avoid blocking browser's paint and navigation
+      setTimeout(() => {
+        // A. CV Download Clicks
+        if (href.endsWith('.pdf') || href.includes('Resume') || href.includes('cv_')) {
+          boostIntentScore(50, 'cv_download_click', {
+            cv_downloaded: 'true',
+            cv_file: href.split('/').pop(),
+            vip_lead: 'true',
+          });
+        }
 
-      // B. Email / Booking Clicks
-      if (href.startsWith('mailto:') || text.toLowerCase().includes('email') || text.toLowerCase().includes('correo')) {
-        boostIntentScore(35, 'email_click', { contact_initiated: 'email' });
-      }
+        // B. Email / Booking Clicks
+        if (href.startsWith('mailto:') || text.toLowerCase().includes('email') || text.toLowerCase().includes('correo')) {
+          boostIntentScore(35, 'email_click', { contact_initiated: 'email' });
+        }
 
-      // C. LinkedIn Link Clicks
-      if (href.includes('linkedin.com')) {
-        boostIntentScore(30, 'linkedin_click', { contact_initiated: 'linkedin' });
-      }
+        // C. LinkedIn Link Clicks
+        if (href.includes('linkedin.com')) {
+          boostIntentScore(30, 'linkedin_click', { contact_initiated: 'linkedin' });
+        }
 
-      // D. Executive Calendar / Contact Buttons
-      if (href.includes('/contact') || text.toLowerCase().includes('contact') || text.toLowerCase().includes('booking')) {
-        boostIntentScore(25, 'contact_btn_click');
-      }
+        // D. Executive Calendar / Contact Buttons
+        if (href.includes('/contact') || text.toLowerCase().includes('contact') || text.toLowerCase().includes('booking')) {
+          boostIntentScore(25, 'contact_btn_click');
+        }
+      }, 0);
     };
 
     document.addEventListener('click', handleClick, { passive: true });

@@ -46,18 +46,30 @@ function generateUuid(): string {
   });
 }
 
+let cachedGpu = '';
 function getGpuRenderer(): string {
+  if (cachedGpu) return cachedGpu;
   try {
     const canvas = document.createElement('canvas');
-    const gl = canvas.getContext('webgl') || canvas.getContext('experimental-webgl');
-    if (!gl) return 'No WebGL';
+    const gl = canvas.getContext('webgl', { powerPreference: 'low-power' }) || canvas.getContext('experimental-webgl');
+    if (!gl) {
+      cachedGpu = 'No WebGL';
+      return cachedGpu;
+    }
     const debugInfo = (gl as any).getExtension('WEBGL_debug_renderer_info');
-    if (!debugInfo) return 'Generic GPU';
+    if (!debugInfo) {
+      cachedGpu = 'Generic GPU';
+      return cachedGpu;
+    }
     const renderer = (gl as any).getParameter(debugInfo.UNMASKED_RENDERER_WEBGL);
-    // Sanitize string to prevent bloating
-    return (renderer || 'Generic GPU').slice(0, 80);
+    cachedGpu = (renderer || 'Generic GPU').slice(0, 80);
+    // Force context release to prevent GPU memory retention
+    const loseContext = (gl as any).getExtension('WEBGL_lose_context');
+    if (loseContext) loseContext.loseContext();
+    return cachedGpu;
   } catch {
-    return 'Unknown';
+    cachedGpu = 'Unknown';
+    return cachedGpu;
   }
 }
 
@@ -187,27 +199,35 @@ export function sendToClarity(key: string, value: string | number) {
 export function boostIntentScore(points: number, reason: string, meta?: Record<string, any>) {
   if (typeof window === 'undefined') return;
 
-  try {
-    const current = parseInt(sessionStorage.getItem('eds_intent_score') || '10', 10);
-    const nextScore = Math.min(100, current + points);
-    sessionStorage.setItem('eds_intent_score', nextScore.toString());
+  const dispatch = () => {
+    try {
+      const current = parseInt(sessionStorage.getItem('eds_intent_score') || '10', 10);
+      const nextScore = Math.min(100, current + points);
+      sessionStorage.setItem('eds_intent_score', nextScore.toString());
 
-    if (cachedProfile) {
-      cachedProfile.intentScore = nextScore;
-      cachedProfile.intentLevel =
-        nextScore >= 80 ? 'VIP Recruiter' : nextScore >= 55 ? 'High Intent' : nextScore >= 25 ? 'Engaged' : 'Casual';
-    }
+      if (cachedProfile) {
+        cachedProfile.intentScore = nextScore;
+        cachedProfile.intentLevel =
+          nextScore >= 80 ? 'VIP Recruiter' : nextScore >= 55 ? 'High Intent' : nextScore >= 25 ? 'Engaged' : 'Casual';
+      }
 
-    sendToClarity('intent_score', nextScore);
-    sendToClarity('intent_level', cachedProfile?.intentLevel || 'Engaged');
-    sendToClarity('last_intent_action', reason);
+      sendToClarity('intent_score', nextScore);
+      sendToClarity('intent_level', cachedProfile?.intentLevel || 'Engaged');
+      sendToClarity('last_intent_action', reason);
 
-    if (meta) {
-      Object.entries(meta).forEach(([k, v]) => {
-        sendToClarity(k, String(v));
-      });
-    }
-  } catch {}
+      if (meta) {
+        Object.entries(meta).forEach(([k, v]) => {
+          sendToClarity(k, String(v));
+        });
+      }
+    } catch {}
+  };
+
+  if ('requestIdleCallback' in window) {
+    (window as any).requestIdleCallback(dispatch, { timeout: 500 });
+  } else {
+    setTimeout(dispatch, 0);
+  }
 }
 
 /**

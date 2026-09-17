@@ -6,7 +6,9 @@ import Image from 'next/image';
 import dynamic from 'next/dynamic';
 import { Locale, CVContent } from '@/types';
 
-import HeroScene from '@/components/3d/HeroScene';
+const HeroScene = dynamic(() => import('@/components/3d/HeroScene'), {
+  ssr: false,
+});
 import InfiniteBrandMarquee from '@/components/ui/InfiniteBrandMarquee';
 import { generateVCard } from '@/lib/utils';
 import { renderFormattedText } from '@/lib/formatter';
@@ -160,6 +162,8 @@ export default function HeroSection({ currentLocale, cvData }: HeroSectionProps)
                     alt="Eduardo de Sousa - Operations & Quality Leader"
                     fill
                     priority
+                    fetchPriority="high"
+                    quality={85}
                     sizes="(max-width: 640px) 280px, (max-width: 1024px) 320px, 340px"
                     className="object-cover object-top filter brightness-[1.02] contrast-[1.03] group-hover:scale-105 transition-transform duration-500 ease-out"
                   />
