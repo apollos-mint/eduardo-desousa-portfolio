@@ -44,7 +44,11 @@ export function middleware(request: NextRequest) {
     }
   }
 
-  const newUrl = new URL(`/${targetLocale}${pathname}`, request.url);
+  // Preserve search parameters (UTM tags, ref query strings, etc.)
+  const newUrl = new URL(
+    `/${targetLocale}${pathname === '/' ? '' : pathname}${request.nextUrl.search}`,
+    request.url
+  );
   return NextResponse.redirect(newUrl);
 }
 
