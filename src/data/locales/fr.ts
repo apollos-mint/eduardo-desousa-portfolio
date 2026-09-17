@@ -615,7 +615,7 @@ export const frData: CVContent = {
     iso9001Auditor: 'Auditeur Principal ISO 9001:2015',
     asmlCleanroom: 'ASML Salle Blanche & ERP ISAH',
     vcaVol: 'Leader Certifié VCA VOL',
-    locations: 'Eindhoven / Valence / Madère',
+    locations: '',
     fullStackArchitecture: 'Architecture Full Stack',
     techStackBadge: 'Next.js 15 App Router & Three.js',
     callsOnlyLabel: '(Appels)',

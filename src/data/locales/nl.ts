@@ -615,7 +615,7 @@ export const nlData: CVContent = {
     iso9001Auditor: 'ISO 9001:2015 Lead Auditor',
     asmlCleanroom: 'ASML Cleanroom & ERP ISAH',
     vcaVol: 'VCA VOL Gecertificeerd Leider',
-    locations: 'Eindhoven / Valencia / Madeira',
+    locations: '',
     fullStackArchitecture: 'Full Stack Architectuur',
     techStackBadge: 'Next.js 15 App Router & Three.js',
     callsOnlyLabel: '(Bellen)',

@@ -27,6 +27,42 @@ interface FooterProps {
   cvData: CVContent;
 }
 
+const legalDisclaimers: Record<
+  Locale,
+  { label: string; text: string; link: string }
+> = {
+  en: {
+    label: 'Legal & Fair Use Notice:',
+    text: 'Corporate trademarks and logos (including ASML, BMW, MINI, Maersk, Hapag-Lloyd, TÜV, Zeiss, Bosch, Google) are property of their respective holders and referenced under nominative fair use for historical career identification. All performance metrics, tolerances, and cost optimizations represent sanitized, illustrative approximations to strictly respect Non-Disclosure Agreements (NDAs).',
+    link: 'Legal, NDA & Privacy Disclosures',
+  },
+  es: {
+    label: 'Aviso Legal y Uso Legítimo de Marcas:',
+    text: 'Las marcas comerciales y logotipos corporativos (incluidos ASML, BMW, MINI, Maersk, Hapag-Lloyd, TÜV, Zeiss, Bosch, Google) son propiedad de sus respectivos titulares y se citan bajo uso nominativo legítimo con fines de identificación de trayectoria profesional. Todas las métricas de rendimiento, tolerancias y optimizaciones de costes constituyen aproximaciones ilustrativas y anonimizadas para respetar estrictamente los acuerdos de confidencialidad (NDA).',
+    link: 'Aviso Legal, NDA y Privacidad',
+  },
+  pt: {
+    label: 'Aviso Legal e Uso Legítimo de Marcas:',
+    text: 'As marcas comerciais e logótipos empresariais (incluindo ASML, BMW, MINI, Maersk, Hapag-Lloyd, TÜV, Zeiss, Bosch, Google) são propriedade dos respetivos titulares e referenciados ao abrigo do uso nominativo legítimo para identificação do percurso profissional. Todas as métricas de desempenho, tolerâncias e otimizações de custos constituem aproximações ilustrativas e higienizadas para cumprir rigorosamente os acordos de confidencialidade (NDA).',
+    link: 'Avisos Legais, NDA e Privacidade',
+  },
+  de: {
+    label: 'Rechtlicher Hinweis & Markennutzung:',
+    text: 'Unternehmensmarken und Logos (einschließlich ASML, BMW, MINI, Maersk, Hapag-Lloyd, TÜV, Zeiss, Bosch, Google) sind Eigentum der jeweiligen Inhaber und werden unter nomineller fairer Nutzung zur Darstellung des beruflichen Werdegangs angeführt. Alle Leistungsmetriken, Toleranzen und Kostenoptimierungen stellen bereinigte, illustrative Näherungswerte dar, um Geheimhaltungsvereinbarungen (NDAs) strikt einzuhalten.',
+    link: 'Rechtliche Hinweise, NDA & Datenschutz',
+  },
+  fr: {
+    label: 'Mentions Légales & Usage Loyal des Marques:',
+    text: "Les marques et logos d'entreprise (notamment ASML, BMW, MINI, Maersk, Hapag-Lloyd, TÜV, Zeiss, Bosch, Google) sont la propriété de leurs détenteurs respectifs et sont mentionnés au titre de l'usage nominatif loyal pour l'identification du parcours professionnel. L'ensemble des métriques de performance, tolérances et optimisations de coûts constituent des approximations illustratives et anonymisées afin de respecter strictement les accords de confidentialité (NDA).",
+    link: 'Mentions Légales, NDA & Confidentialité',
+  },
+  nl: {
+    label: 'Juridische Kennisgeving & Fair Use:',
+    text: "Bedrijfshandelsmerken en logo's (waaronder ASML, BMW, MINI, Maersk, Hapag-Lloyd, TÜV, Zeiss, Bosch, Google) zijn eigendom van hun respectieve houders en worden vermeld onder nominatief eerlijk gebruik voor de identificatie van de professionele loopbaan. Alle prestatiestatistieken, toleranties en kostenoptimalisaties zijn geanonimiseerde, illustratieve benaderingen om geheimhoudingsovereenkomsten (NDA's) strikt na te leven.",
+    link: 'Juridische Informatie, NDA & Privacy',
+  },
+};
+
 export default function Footer({ currentLocale, cvData }: FooterProps) {
   return (
     <footer className="border-t border-slate-800/80 dark:border-slate-800/80 light:border-slate-200 bg-slate-950/90 dark:bg-slate-950/90 light:bg-slate-50 relative overflow-hidden pt-16 pb-12">
@@ -183,24 +219,24 @@ export default function Footer({ currentLocale, cvData }: FooterProps) {
         </div>
 
         {/* Legal & Regulatory Compliance Disclaimer */}
-        <div className="pt-8 pb-4 border-t border-slate-800/60 text-[11px] text-slate-500 leading-relaxed text-justify space-y-2">
-          <p>
-            <strong className="text-slate-400">Legal & Fair Use Notice:</strong> Corporate trademarks and logos (including ASML, BMW, MINI, Maersk, Hapag-Lloyd, TÜV, Zeiss, Bosch, Google) are property of their respective holders and referenced under nominative fair use for historical career identification. All performance metrics, tolerances, and cost optimizations represent sanitized, illustrative approximations to strictly respect Non-Disclosure Agreements (NDAs).
-          </p>
-          <div className="flex flex-wrap items-center gap-x-4 gap-y-1 text-cyan-400/90 font-mono">
-            <Link
-              href={`/${currentLocale}/legal`}
-              className="hover:text-cyan-300 underline underline-offset-2 transition-colors font-medium"
-            >
-              {currentLocale === 'es' ? 'Aviso Legal, NDA y Privacidad' :
-               currentLocale === 'pt' ? 'Avisos Legais, NDA e Privacidade' :
-               currentLocale === 'de' ? 'Rechtliche Hinweise, NDA & Datenschutz' :
-               currentLocale === 'fr' ? 'Mentions Légales, NDA & Confidentialité' :
-               currentLocale === 'nl' ? 'Juridische Informatie, NDA & Privacy' :
-               'Legal, NDA & Privacy Disclosures'} &rarr;
-            </Link>
-          </div>
-        </div>
+        {(() => {
+          const currentLegal = legalDisclaimers[currentLocale] || legalDisclaimers.en;
+          return (
+            <div className="pt-8 pb-4 border-t border-slate-800/60 text-[11px] text-slate-500 leading-relaxed text-justify space-y-2">
+              <p>
+                <strong className="text-slate-400">{currentLegal.label}</strong> {currentLegal.text}
+              </p>
+              <div className="flex flex-wrap items-center gap-x-4 gap-y-1 text-cyan-400/90 font-mono">
+                <Link
+                  href={`/${currentLocale}/legal`}
+                  className="hover:text-cyan-300 underline underline-offset-2 transition-colors font-medium"
+                >
+                  {currentLegal.link} &rarr;
+                </Link>
+              </div>
+            </div>
+          );
+        })()}
 
         {/* Bottom Bar */}
         <div className="pt-4 flex flex-col sm:flex-row items-center justify-between text-xs text-slate-500 font-mono space-y-4 sm:space-y-0">
@@ -208,10 +244,6 @@ export default function Footer({ currentLocale, cvData }: FooterProps) {
             &copy; {new Date().getFullYear()} Eduardo de Sousa. {cvData.common.allRightsReserved}
           </div>
           <div className="flex items-center space-x-4">
-            <span className="flex items-center space-x-1 text-slate-400">
-              <span>{cvData.common.locations}</span>
-            </span>
-            <span>&bull;</span>
             <span className="text-cyan-400 font-medium">{cvData.common.fullStackArchitecture}</span>
           </div>
         </div>

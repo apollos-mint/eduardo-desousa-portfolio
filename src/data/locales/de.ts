@@ -615,7 +615,7 @@ export const deData: CVContent = {
     iso9001Auditor: 'ISO 9001:2015 Leitender Auditor',
     asmlCleanroom: 'ASML Reinraum & ERP ISAH',
     vcaVol: 'VCA VOL Zertifizierte Führungskraft',
-    locations: 'Eindhoven / Valencia / Madeira',
+    locations: '',
     fullStackArchitecture: 'Full-Stack Architektur',
     techStackBadge: 'Next.js 15 App Router & Three.js',
     callsOnlyLabel: '(Anrufe)',

@@ -617,7 +617,7 @@ export const ptData: CVContent = {
     iso9001Auditor: 'Auditor Líder ISO 9001:2015',
     asmlCleanroom: 'ASML Cleanroom & ERP ISAH',
     vcaVol: 'Líder Certificado VCA VOL',
-    locations: 'Eindhoven / Valência / Madeira',
+    locations: '',
     fullStackArchitecture: 'Arquitetura Full Stack',
     techStackBadge: 'Next.js 15 App Router & Three.js',
     callsOnlyLabel: '(Chamadas)',
