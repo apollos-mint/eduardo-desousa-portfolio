@@ -249,7 +249,7 @@ export default function ExperienceSection({
                         {exp.company} &bull; {exp.location}
                       </div>
                       <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed font-normal pt-1 line-clamp-3 text-justify">
-                        {exp.summary}
+                        {exp.homeSummary || exp.summary}
                       </p>
                     </div>
 
@@ -352,7 +352,7 @@ export default function ExperienceSection({
                         {exp.company} &bull; {exp.location}
                       </div>
                       <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed font-normal pt-1 line-clamp-3 text-justify">
-                        {exp.summary}
+                        {exp.homeSummary || exp.summary}
                       </p>
                     </div>
 

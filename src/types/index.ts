@@ -33,6 +33,7 @@ export interface ExperienceItem {
   location: string;
   industry: string;
   summary: string;
+  homeSummary?: string;
   responsibilities: string[];
   metrics: MetricItem[];
   technologies: string[];

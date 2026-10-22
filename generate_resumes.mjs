@@ -43,19 +43,21 @@ const languages = {
     page2Of2: 'Page 2 of 2',
     expContTitle: 'Professional Experience (Continued)',
     expContSubtitle: 'High-Tech Semiconductor Cleanrooms & Automotive OEM',
-    role2Title: 'Operations Process, Quality & Data Specialist · HQ Pack',
-    role2Date: '06/2025 – 07/2026',
+    role2Title: 'Operations Process & Quality Technician · HQ Pack',
+    role2Date: '02/2024 – 07/2026',
     role2Scope: 'Eindhoven, Netherlands (Brainport High-Tech Ecosystem)',
     role2Sub: 'Semiconductor Lithography Packaging (ASML Specs)',
-    role2Bullet1: '<strong>Cleanroom Data Governance in ERP ISAH:</strong> Managed end-to-end digital diagnostic logs, routing sheets, and bill-of-materials (BOM) traceability workflows across 150+ monthly packaging modules for lithography systems (ASML, Zeiss, Boeing).',
-    role2Bullet2: '<strong>-30% Turnaround Cycle Time via DMAIC:</strong> Formulated standard operating procedures (SOPs), redesigned workstation ergonomic layouts, and applied 5S principles, <strong>reducing average turnaround cycle times by 30%</strong>.',
-    role2Bullet3: '<strong>-22% Recurring Defect Elimination:</strong> Led cross-functional root cause investigations (RCA, 5 Whys, Ishikawa) and deployed CAPA/FMEA controls to eliminate particulate contamination under strict <strong>ISO Class 5 cleanroom standards</strong>, passing TÜV Rheinland audits with 0 critical non-conformities.',
-    role3Title: 'Quality, Process & Data Analytics Specialist · VDL Nedcar',
-    role3Date: '04/2022 – 05/2025',
+    role2Bullet1: '<strong>High-Tech Cleanroom Assembly & Precision Repair:</strong> Assembled, disassembled, and repaired ultra-high-precision transport and packaging modules for semiconductor lithography systems (ASML, Zeiss) under strict <strong>ISO Class 5 cleanroom</strong> and standard floor environments.',
+    role2Bullet2: '<strong>Electromechanical, Sensor & TÜV Winch Systems:</strong> Executed hands-on electrical/sensor component replacement, wiring diagnostics, and mechanical overhaul on TÜV-certified winch assemblies, passing technical audits with 0 critical non-conformities.',
+    role2Bullet3: '<strong>AI-Assisted Workflow Optimization & ERP Governance:</strong> Developed an AI-assisted enhancement for internal repair registration, streamlining technical tracking in ERP (ISAH) and compiling daily/weekly productivity and defect reports for management.',
+    role2Bullet4: '<strong>Shop-Floor Safety & Technical Mentoring:</strong> Onboarded and mentored incoming technicians on cleanroom compliance, SOPs, VCA industrial safety standards, and safe operation of powered and manual forklifts.',
+    role3Title: 'Production Quality Technician · VDL Nedcar',
+    role3Date: '04/2022 – 11/2023',
     role3Scope: 'Born, Netherlands · Automotive OEM Manufacturing',
     role3Sub: 'BMW Group / MINI Cooper Platforms',
-    role3Bullet1: '<strong>High-Volume Statistical Process Control (SPC):</strong> Monitored automated vehicle assembly conformity at production cadence of <strong>110–120 vehicles per shift</strong>, analyzing electronic torque telemetry, geometric clearances, and optical sensor feeds.',
-    role3Bullet2: '<strong>-15% Systemic Assembly Defect Reduction:</strong> Directed cross-functional 8D problem-solving squads and process capability studies (Cp/Cpk), driving a <strong>15% reduction in systemic line deviations</strong> with 100% audit conformity.',
+    role3Bullet1: '<strong>Moving Assembly Line & EOL Quality Audits:</strong> Conducted moving line audits and end-of-line (EOL) functional quality checks on BMW Group and MINI Cooper vehicles (110–120 units/shift), verifying body panel fitment alignment, surface flushness, and gap tolerances.',
+    role3Bullet2: '<strong>Precision Torque & Wheel Axis Calibration:</strong> Calibrated and executed critical mechanical torque specifications on wheel axes and structural chassis sub-assemblies using digital torque wrenches, digital screwdriver wrenches, and pneumatic tooling.',
+    role3Bullet3: '<strong>Electrical Diagnostics & Defect Containment:</strong> Validated electrical and electronic components using automotive diagnostic scanners, systematically logging defect telemetry into plant terminal software (MES) and routing containment alerts to production squads.',
     priorTrackTitle: 'Earlier Progressive Operations & Supply Chain Track Record',
     priorRole1: 'Logistics Coordinator',
     priorRole1Company: 'Arkcohogar · 2020–2022 | Spain',
@@ -142,19 +144,21 @@ const languages = {
     page2Of2: 'Página 2 de 2',
     expContTitle: 'Experiencia Profesional (Continuación)',
     expContSubtitle: 'Salas Blancas de Semiconductores de Alta Tecnología y Automoción OEM',
-    role2Title: 'Especialista en Procesos Operativos, Calidad y Datos · HQ Pack',
-    role2Date: '06/2025 – 07/2026',
+    role2Title: 'Técnico de Procesos y Calidad Operativa · HQ Pack',
+    role2Date: '02/2024 – 07/2026',
     role2Scope: 'Eindhoven, Países Bajos (Ecosistema Tecnológico de Brainport)',
     role2Sub: 'Embalaje de Litografía de Semiconductores (Especificaciones ASML)',
-    role2Bullet1: '<strong>Gobernanza de Datos de Sala Blanca en ERP ISAH:</strong> Gestión de registros de diagnóstico digital, rutas de fabricación y trazabilidad de listas de materiales (BOM) en más de 150 módulos mensuales para sistemas de litografía (ASML, Zeiss, Boeing).',
-    role2Bullet2: '<strong>-30% Tiempo de Ciclo mediante DMAIC:</strong> Estandarización de procedimientos operativos (SOP), rediseño ergonómico de puestos de trabajo y metodología 5S, <strong>reduciendo los tiempos de ciclo en un 30%</strong>.',
-    role2Bullet3: '<strong>-22% Eliminación de Defectos Recurrentes:</strong> Liderazgo de investigaciones de causa raíz (RCA, 5 Porqués, Ishikawa) y controles CAPA/FMEA contra contaminación por partículas bajo estrictas <strong>normas de Sala Blanca ISO Clase 5</strong>, superando auditorías de TÜV Rheinland con 0 no conformidades críticas.',
-    role3Title: 'Especialista en Calidad, Procesos y Analítica de Datos · VDL Nedcar',
-    role3Date: '04/2022 – 05/2025',
+    role2Bullet1: '<strong>Ensamblaje y Reparación de Precisión en Sala Limpia:</strong> Montaje, desmontaje y reparación de módulos de transporte y embalaje de ultra-alta precisión para sistemas de litografía (ASML, Zeiss) bajo estrictas normas de <strong>Sala Limpia ISO Clase 5</strong> y planta estándar.',
+    role2Bullet2: '<strong>Sistemas Electromecánicos, Sensores y Cabrestantes TÜV:</strong> Sustitución de componentes eléctricos y sensores, diagnóstico de cableado y reacondicionamiento mecánico de cabrestantes certificados por TÜV, superando auditorías con 0 no conformidades críticas.',
+    role2Bullet3: '<strong>Optimización con IA y Gobernanza en ERP ISAH:</strong> Desarrollo de una mejora asistida por IA para el registro interno de reparaciones, agilizando el seguimiento técnico en ERP (ISAH) y generando reportes de productividad y defectos para la dirección.',
+    role2Bullet4: '<strong>Seguridad en Planta y Mentoría Técnica:</strong> Capacitación y guía técnica a nuevos operarios en protocolos de sala limpia, SOPs, normativa de seguridad industrial VCA y operación segura de carretillas elevadoras motorizadas y manuales.',
+    role3Title: 'Técnico de Calidad de Producción · VDL Nedcar',
+    role3Date: '04/2022 – 11/2023',
     role3Scope: 'Born, Países Bajos · Fabricación Automotriz OEM',
     role3Sub: 'Plataformas BMW Group / MINI Cooper',
-    role3Bullet1: '<strong>Control Estadístico de Procesos (SPC) en Alto Volumen:</strong> Monitorización de conformidad en líneas automatizadas a cadencia de <strong>110–120 vehículos por turno</strong>, analizando telemetría de torque y sensores ópticos.',
-    role3Bullet2: '<strong>-15% Reducción de Defectos Sistémicos de Ensamblaje:</strong> Dirección de equipos multidisciplinares 8D y estudios de capacidad (Cp/Cpk), logrando una <strong>reducción del 15% en desviaciones de línea</strong> con 100% de conformidad en auditoría.',
+    role3Bullet1: '<strong>Auditorías en Línea Continua y Calidad EOL:</strong> Inspecciones en línea continua en movimiento y pruebas funcionales de fin de línea (EOL) en vehículos BMW Group y MINI Cooper (110–120 uds/turno), verificando holguras, enrases de carrocería y tolerancias.',
+    role3Bullet2: '<strong>Calibración de Par de Apriete en Ejes y Chasis:</strong> Calibración y apriete crítico según especificaciones mecánicas en ejes de rueda y subconjuntos estructurales de chasis mediante llaves dinamométricas digitales, atornilladores de precisión y herramientas neumáticas.',
+    role3Bullet3: '<strong>Diagnóstico Eléctrico y Contención de Defectos:</strong> Validación de componentes eléctricos y electrónicos con escáneres de diagnóstico automotriz, registrando la telemetría de fallos en el sistema MES de planta y coordinando acciones de contención con las cuadrillas.',
     priorTrackTitle: 'Trayectoria Profesional Anterior en Operaciones y Cadena de Suministro',
     priorRole1: 'Coordinador de Logística',
     priorRole1Company: 'Arkcohogar · 2020–2022 | España',
@@ -241,19 +245,21 @@ const languages = {
     page2Of2: 'Seite 2 von 2',
     expContTitle: 'Berufliche Erfahrung (Fortsetzung)',
     expContSubtitle: 'High-Tech-Halbleiter-Reinräume & Automobil-OEM',
-    role2Title: 'Spezialist für Betriebsprozesse, Qualität & Daten · HQ Pack',
-    role2Date: '06/2025 – 07/2026',
+    role2Title: 'Techniker für Betriebsprozesse & Qualität · HQ Pack',
+    role2Date: '02/2024 – 07/2026',
     role2Scope: 'Eindhoven, Niederlande (Brainport High-Tech-Ökosystem)',
     role2Sub: 'Halbleiter-Lithographie-Verpackung (ASML-Spezifikationen)',
-    role2Bullet1: '<strong>Reinraum-Daten-Governance im ERP ISAH:</strong> Verwaltung digitaler Diagnoseprotokolle, Arbeitspläne und Stücklisten-Rückverfolgbarkeit (BOM) für über 150 monatliche Lithographie-Module (ASML, Zeiss, Boeing).',
-    role2Bullet2: '<strong>-30% Durchlaufzeitverkürzung via DMAIC:</strong> Erstellung standardisierter Arbeitsanweisungen (SOPs), ergonomische Arbeitsplatzgestaltung und 5S-Einführung mit <strong>30% Reduzierung der Durchlaufzeiten</strong>.',
-    role2Bullet3: '<strong>-22% Beseitigung wiederkehrender Fehler:</strong> Leitung funktionsübergreifender Ursachenanalysen (RCA, 5 Whys, Ishikawa) und CAPA/FMEA-Maßnahmen unter strengen <strong>ISO-Klasse-5-Reinraumstandards</strong> (0 kritische Abweichungen im TÜV-Audit).',
-    role3Title: 'Spezialist für Qualität, Prozesse & Datenanalyse · VDL Nedcar',
-    role3Date: '04/2022 – 05/2025',
+    role2Bullet1: '<strong>Präzisionsmontage & Reparatur im Reinraum:</strong> Montage, Demontage und Reparatur von hochpräzisen Transport- und Verpackungsmodulen für Halbleiter-Lithographiesysteme (ASML, Zeiss) unter strengen <strong>ISO-Klasse-5-Reinraumbedingungen</strong>.',
+    role2Bullet2: '<strong>Elektromechanik, Sensoren & TÜV-Windensysteme:</strong> Hands-on Austausch von elektrischen Komponenten und Sensoren, Verkabelungsdiagnose und mechanische Instandsetzung von TÜV-zertifizierten Winden ohne kritische Abweichungen in Audits.',
+    role2Bullet3: '<strong>KI-gestützte Workflow-Optimierung & ERP-Governance:</strong> Entwicklung einer KI-gestützten Verbesserung für die interne Reparaturerfassung, Optimierung des technischen Trackings im ERP (ISAH) und Erstellung von Qualitäts- und Fehlerberichten.',
+    role2Bullet4: '<strong>Arbeitssicherheit & Technische Einarbeitung:</strong> Einarbeitung und Betreuung neuer Techniker bezüglich Reinraum-SOPs, VCA-Sicherheitsstandards und sicherer Bedienung von Flurförderzeugen und Gabelstaplern.',
+    role3Title: 'Techniker für Produktionsqualität · VDL Nedcar',
+    role3Date: '04/2022 – 11/2023',
     role3Scope: 'Born, Niederlande · Automobil-OEM-Fertigung',
     role3Sub: 'Plattformen BMW Group / MINI Cooper',
-    role3Bullet1: '<strong>Statistische Prozesslenkung (SPC) im Hochvolumen:</strong> Überwachung der automatisierten Fahrzeugmontage bei einer Kadenz von <strong>110–120 Fahrzeugen pro Schicht</strong> mittels Drehmoment-Telemetrie und optischer Sensorik.',
-    role3Bullet2: '<strong>-15% Reduzierung systemischer Montagefehler:</strong> Leitung von 8D-Problemlösungsteams und Prozessfähigkeitsanalysen (Cp/Cpk) mit <strong>15% Reduzierung von Linienabweichungen</strong> bei 100% Audit-Konformität.',
+    role3Bullet1: '<strong>Bandinspektion & EOL-Qualitätsprüfung:</strong> Qualitätsprüfungen an der laufenden Montagelinie und End-of-Line (EOL) Funktionstests bei BMW Group und MINI Cooper Fahrzeugen (110–120 Einheiten/Schicht) bezüglich Spaltmaßen und Karosseriebündigkeit.',
+    role3Bullet2: '<strong>Präzisions-Drehmomentkalibrierung an Radachsen:</strong> Kalibrierung und Ausführung kritischer Drehmomentvorgaben an Radachsen und tragenden Fahrwerksbaugruppen mittels digitaler Drehmomentschlüssel, elektronischer Schrauber und Pneumatikwerkzeugen.',
+    role3Bullet3: '<strong>Elektrische Diagnose & Fehlereingrenzung:</strong> Überprüfung elektrischer und elektronischer Komponenten mit Kfz-Diagnosegeräten, systematische Protokollierung von Defektdaten im Fertigungsleitsystem (MES) und Einleitung von Sofortmaßnahmen.',
     priorTrackTitle: 'Frühere Laufbahn in Operations & Lieferkette',
     priorRole1: 'Logistikkoordinator',
     priorRole1Company: 'Arkcohogar · 2020–2022 | Spanien',
@@ -340,19 +346,21 @@ const languages = {
     page2Of2: 'Page 2 sur 2',
     expContTitle: 'Expérience Professionnelle (Suite)',
     expContSubtitle: 'Salles Blanches Semi-Conducteurs Haute Technologie & Automobile OEM',
-    role2Title: 'Spécialiste Processus Opérationnels, Qualité & Données · HQ Pack',
-    role2Date: '06/2025 – 07/2026',
+    role2Title: 'Technicien Processus Opérationnels & Qualité · HQ Pack',
+    role2Date: '02/2024 – 07/2026',
     role2Scope: 'Eindhoven, Pays-Bas (Écosystème Technologique de Brainport)',
     role2Sub: 'Emballage pour Lithographie de Semi-Conducteurs (Cahier des Charges ASML)',
-    role2Bullet1: '<strong>Gouvernance des Données en Salle Blanche dans ERP ISAH :</strong> Pilotage des registres de diagnostic numérique, fiches suiveuses et nomenclatures (BOM) sur plus de 150 modules mensuels (ASML, Zeiss, Boeing).',
-    role2Bullet2: '<strong>-30% de Réduction du Temps de Cycle via DMAIC :</strong> Rédaction des procédures opérationnelles (SOP), réaménagement ergonomique des postes et méthode 5S, <strong>réduisant les cycles de 30%</strong>.',
-    role2Bullet3: '<strong>-22% d\'Élimination des Défauts Récurrents :</strong> Conduite d\'analyses de causes racines (RCA, 5 Pourquoi, Ishikawa) et plans CAPA/FMEA sous strictes <strong>normes de Salle Blanche ISO Classe 5</strong> (0 non-conformité critique à l\'audit TÜV).',
-    role3Title: 'Spécialiste Qualité, Processus & Analyse de Données · VDL Nedcar',
-    role3Date: '04/2022 – 05/2025',
+    role2Bullet1: '<strong>Assemblage de Haute Précision & Réparation en Salle Blanche :</strong> Montage, démontage et réparation technique de modules de transport et d\'emballage pour la lithographie (ASML, Zeiss) sous strictes normes de <strong>Salle Blanche ISO Classe 5</strong>.',
+    role2Bullet2: '<strong>Systèmes Électromécaniques, Capteurs & Treuils TÜV :</strong> Remplacement de composants électriques et capteurs, diagnostic de câblage et révision mécanique de treuils certifiés TÜV, validant les audits techniques avec 0 non-conformité critique.',
+    role2Bullet3: '<strong>Optimisation des Flux par IA & Gouvernance ERP ISAH :</strong> Développement d\'une amélioration assistée par IA pour la saisie des réparations internes, accélérant le suivi technique dans l\'ERP (ISAH) et produisant des rapports périodiques de défauts.',
+    role2Bullet4: '<strong>Sécurité en Atelier & Mentorat Technique :</strong> Accueil et formation technique des nouveaux arrivants sur la conformité salle blanche, les SOP, les normes de sécurité industrielle VCA et la conduite d\'engins de manutention.',
+    role3Title: 'Technicien Qualité Production · VDL Nedcar',
+    role3Date: '04/2022 – 11/2023',
     role3Scope: 'Born, Pays-Bas · Assemblage Automobile OEM',
     role3Sub: 'Plateformes BMW Group / MINI Cooper',
-    role3Bullet1: '<strong>Maîtrise Statistique des Procédés (SPC) Haute Cadence :</strong> Contrôle de conformité de l\'assemblage à une cadence de <strong>110–120 véhicules par poste</strong> via télémétrie de couple et capteurs optiques.',
-    role3Bullet2: '<strong>-15% de Réduction des Défauts d\'Assemblage Systémiques :</strong> Pilotage de groupes 8D et études de capabilité (Cp/Cpk), permettant une <strong>baisse de 15% des écarts de ligne</strong> avec conformité totale aux audits.',
+    role3Bullet1: '<strong>Contrôle sur Ligne Continue & Qualité Fin de Ligne (EOL) :</strong> Audits sur ligne d\'assemblage mobile et contrôles fonctionnels en sortie d\'usine sur modèles BMW Group et MINI Cooper (110–120 véh./quart), validation des affleurements et jeux.',
+    role3Bullet2: '<strong>Calibrage de Couple de Précision sur Essieux et Châssis :</strong> Calibrage et contrôle de couples de serrage critiques sur essieux et sous-ensembles de châssis à l\'aide de clés dynamométriques numériques et outillage pneumatique.',
+    role3Bullet3: '<strong>Diagnostic Électrique & Confinement des Défauts :</strong> Contrôle des composants électriques et électroniques avec valises de diagnostic automobile, enregistrement des anomalies sous MES et émission d\'alertes de confinement.',
     priorTrackTitle: 'Parcours Antérieur en Opérations & Chaîne Logistique',
     priorRole1: 'Coordinateur Logistique',
     priorRole1Company: 'Arkcohogar · 2020–2022 | Espagne',
@@ -439,19 +447,21 @@ const languages = {
     page2Of2: 'Pagina 2 van 2',
     expContTitle: 'Professionele Ervaring (Vervolg)',
     expContSubtitle: 'High-Tech Semiconductor Cleanrooms & Automotive OEM',
-    role2Title: 'Operations Proces-, Kwaliteits- & Dataspecialist · HQ Pack',
-    role2Date: '06/2025 – 07/2026',
+    role2Title: 'Technicus Operationele Processen & Kwaliteit · HQ Pack',
+    role2Date: '02/2024 – 07/2026',
     role2Scope: 'Eindhoven, Nederland (Brainport High-Tech Ecosysteem)',
     role2Sub: 'Semiconductor Lithografie Verpakking (ASML Specificaties)',
-    role2Bullet1: '<strong>Cleanroom Datagovernance in ERP ISAH:</strong> Beheer van digitale diagnostische logboeken, routekaarten en stuklijsten (BOM) voor meer dan 150 maandelijkse modules voor lithografiesystemen (ASML, Zeiss, Boeing).',
-    role2Bullet2: '<strong>-30% Doorlooptijdverkorting via DMAIC:</strong> Ontwerp van standaard werkinstructies (SOP\'s), ergonomische werkplekherinrichting en 5S-methodiek, wat leidde tot <strong>30% kortere doorlooptijden</strong>.',
-    role2Bullet3: '<strong>-22% Vermindering van Terugkerende Fouten:</strong> Leiding van multidisciplinair oorzakenonderzoek (RCA, 5 Whys, Ishikawa) en CAPA/FMEA-beheersmaatregelen onder strikte <strong>ISO Klasse 5 cleanroomnormen</strong> (0 kritieke afwijkingen bij TÜV Rheinland-audit).',
-    role3Title: 'Kwaliteits-, Proces- & Data-Analytics Specialist · VDL Nedcar',
-    role3Date: '04/2022 – 05/2025',
+    role2Bullet1: '<strong>Precisie-assemblage & Reparatie in Cleanroom:</strong> Assemblage, demontage en technische revisie van ultra-precieze transport- en verpakkingsmodules voor lithografiesystemen (ASML, Zeiss) onder strenge <strong>ISO Klasse 5 cleanroomnormen</strong>.',
+    role2Bullet2: '<strong>Elektromechanica, Sensoren & TÜV-Liersystemen:</strong> Hands-on vervanging van elektrische componenten en sensoren, bedradingsdiagnostiek en mechanische revisie van TÜV-gecertificeerde lieren, met succesvolle audits zonder kritieke non-conformiteiten.',
+    role2Bullet3: '<strong>AI-Ondersteunde Werkstroomoptimalisatie & ERP-Governance:</strong> Ontwikkeling van een AI-ondersteunde verbetering voor interne reparatieregistratie, stroomlijning van tracking in ERP (ISAH) en oplevering van periodieke productiviteitsrapportages.',
+    role2Bullet4: '<strong>Veiligheid op de Werkvloer & Technische Mentoring:</strong> Begeleiding van nieuwe monteurs volgens cleanroom-SOP\'s, VCA-veiligheidsnormen en veilige bediening van heftrucks en intern transportmaterieel.',
+    role3Title: 'Technicus Productiekwaliteit · VDL Nedcar',
+    role3Date: '04/2022 – 11/2023',
     role3Scope: 'Born, Nederland · Automotive OEM Productie',
     role3Sub: 'BMW Group / MINI Cooper Platformen',
-    role3Bullet1: '<strong>High-Volume Statistische Procesbeheersing (SPC):</strong> Bewaking van assemblageconformiteit bij een cadans van <strong>110–120 voertuigen per ploeg</strong> met koppeltelemetrie en optische meetsystemen.',
-    role3Bullet2: '<strong>-15% Reductie van Systemische Assemblagefouten:</strong> Leiding over multidisciplinaire 8D-teams en procesbekwaamheidsstudies (Cp/Cpk), resulterend in <strong>15% minder lijndeviaties</strong> met 100% auditconformiteit.',
+    role3Bullet1: '<strong>Lopende Band- & End-of-Line Kwaliteitsaudits:</strong> Uitvoering van inspecties aan de bewegende band en end-of-line (EOL) functionele kwaliteitscontroles op BMW Group en MINI Cooper auto\'s (110–120 eenheden/dienst) op speling en carrosserienaden.',
+    role3Bullet2: '<strong>Precisie-Draaimomentkalibratie op Wielassen:</strong> Kalibratie en uitvoering van kritieke mechanische koppelingsspecificaties op wielassen en chassisconstructies met behulp van digitale momentsleutels en pneumatisch gereedschap.',
+    role3Bullet3: '<strong>Elektrische Diagnostiek & Defectbeheersing:</strong> Validatie van elektrische en elektronische componenten met automotive diagnoseapparatuur, systematische registratie van fouten in het fabriekssysteem (MES) en directe afstemming met teams.',
     priorTrackTitle: 'Eerdere Loopbaan in Operations & Toeleveringsketen',
     priorRole1: 'Logistiek Coördinator',
     priorRole1Company: 'Arkcohogar · 2020–2022 | Spanje',
@@ -538,19 +548,21 @@ const languages = {
     page2Of2: 'Página 2 de 2',
     expContTitle: 'Experiência Profissional (Continuação)',
     expContSubtitle: 'Salas Limpas de Semicondutores de Alta Tecnologia e Automóvel OEM',
-    role2Title: 'Especialista em Processos Operacionais, Qualidade e Dados · HQ Pack',
-    role2Date: '06/2025 – 07/2026',
+    role2Title: 'Técnico de Processos e Qualidade Operacional · HQ Pack',
+    role2Date: '02/2024 – 07/2026',
     role2Scope: 'Eindhoven, Países Baixos (Ecossistema Tecnológico de Brainport)',
     role2Sub: 'Embalamento para Litografia de Semicondutores (Especificações ASML)',
-    role2Bullet1: '<strong>Governança de Dados de Sala Limpa em ERP ISAH:</strong> Gestão de registos de diagnóstico digital, folhas de rota e rastreabilidade de listas de materiais (BOM) em mais de 150 módulos mensais (ASML, Zeiss, Boeing).',
-    role2Bullet2: '<strong>-30% no Tempo de Ciclo via DMAIC:</strong> Definição de procedimentos padrão (SOPs), redesenho ergonómico de postos e metodologia 5S, <strong>reduzindo tempos médios de ciclo em 30%</strong>.',
-    role2Bullet3: '<strong>-22% na Eliminação de Defeitos Recorrentes:</strong> Liderança de investigações de causa raiz (RCA, 5 Porquês, Ishikawa) e controlos CAPA/FMEA sob estritas <strong>normas de Sala Limpa ISO Classe 5</strong> (0 não conformidades críticas em auditoria TÜV Rheinland).',
-    role3Title: 'Especialista em Qualidade, Processos e Análise de Dados · VDL Nedcar',
-    role3Date: '04/2022 – 05/2025',
+    role2Bullet1: '<strong>Montagem e Reparação de Precisão em Sala Limpa:</strong> Montagem, desmontagem e reparação técnica de módulos de transporte e embalamento de ultra-alta precisão para sistemas de litografia (ASML, Zeiss) sob normas de <strong>Sala Limpa ISO Classe 5</strong>.',
+    role2Bullet2: '<strong>Sistemas Eletromecânicos, Sensores e Guinchos TÜV:</strong> Substituição de componentes elétricos e sensores, diagnóstico de cablagem e revisão mecânica de conjuntos de guinchos certificados pela TÜV, passando auditorias com 0 não conformidades críticas.',
+    role2Bullet3: '<strong>Otimização com IA e Governança no ERP ISAH:</strong> Desenvolvimento de melhoria assistida por IA para registo interno de reparações, agilizando o rastreio técnico no ERP (ISAH) e gerando relatórios de produtividade e defeitos para a gestão.',
+    role2Bullet4: '<strong>Segurança Fabril e Mentoria Técnica:</strong> Integração e formação de novos técnicos em conformidade de sala limpa, SOPs, normas de segurança industrial VCA e operação segura de empilhadores elétricos e manuais.',
+    role3Title: 'Técnico de Qualidade de Produção · VDL Nedcar',
+    role3Date: '04/2022 – 11/2023',
     role3Scope: 'Born, Países Baixos · Fabrico Automóvel OEM',
     role3Sub: 'Plataformas BMW Group / MINI Cooper',
-    role3Bullet1: '<strong>Controlo Estatístico de Processos (SPC) em Alto Volume:</strong> Monitorização da conformidade de montagem a uma cadência de <strong>110–120 veículos por turno</strong> através de telemetria de binário e sensores óticos.',
-    role3Bullet2: '<strong>-15% na Redução de Defeitos Sistémicos de Montagem:</strong> Coordenação de equipas 8D e estudos de capacidade (Cp/Cpk), alcançando uma <strong>redução de 15% nas variações de linha</strong> com 100% de conformidade em auditoria.',
+    role3Bullet1: '<strong>Auditorias em Linha Contínua e Qualidade EOL:</strong> Inspeções em linha contínua em movimento e verificações funcionais de fim de linha (EOL) em modelos BMW Group e MINI Cooper (110–120 uds/turno), avaliando folgas e nivelamento de painéis.',
+    role3Bullet2: '<strong>Calibração de Torque em Eixos e Chassis:</strong> Calibração e aperto de precisão conforme especificações mecânicas em eixos de rodas e subconjuntos estruturais do chassis usando chaves dinamométricas digitais e ferramentas pneumáticas.',
+    role3Bullet3: '<strong>Diagnóstico Elétrico e Contenção de Defectos:</strong> Validação de componentes elétricos e eletrónicos com scanners de diagnóstico automóvel, registando anomalias no sistema MES fabril e coordenando alertas de contenção com as equipas.',
     priorTrackTitle: 'Trajetória Anterior em Operações e Cadeia de Abastecimento',
     priorRole1: 'Coordenador de Logística',
     priorRole1Company: 'Arkcohogar · 2020–2022 | Espanha',
@@ -827,19 +839,19 @@ function generateHtml(d) {
                 </div>
 
                 <!-- ROLE 2: HQ PACK -->
-                <div class="mb-2.5">
+                <div class="mb-2">
                     <div class="flex justify-between items-baseline">
                         <h3 class="text-[11px] font-bold text-slate-900">
                             ${d.role2Title}
                         </h3>
                         <span class="text-[8.5px] font-mono bg-slate-100 text-slate-700 border border-slate-300 px-1.5 py-0.5 rounded font-bold">${d.role2Date}</span>
                     </div>
-                    <div class="flex items-center justify-between text-[9px] font-mono text-cyan-700 font-semibold mb-1">
+                    <div class="flex items-center justify-between text-[9px] font-mono text-cyan-700 font-semibold mb-0.5">
                         <span>${d.role2Scope}</span>
                         <span class="text-slate-500 font-normal">${d.role2Sub}</span>
                     </div>
 
-                    <div class="space-y-1 text-[9.5px] text-slate-700 pl-0.5">
+                    <div class="space-y-0.5 text-[9px] text-slate-700 pl-0.5 leading-snug">
                         <div class="flex items-start gap-1.5">
                             <span class="text-cyan-700 font-bold">▪</span>
                             <p>${d.role2Bullet1}</p>
@@ -852,23 +864,28 @@ function generateHtml(d) {
                             <span class="text-cyan-700 font-bold">▪</span>
                             <p>${d.role2Bullet3}</p>
                         </div>
+                        ${d.role2Bullet4 ? `
+                        <div class="flex items-start gap-1.5">
+                            <span class="text-cyan-700 font-bold">▪</span>
+                            <p>${d.role2Bullet4}</p>
+                        </div>` : ''}
                     </div>
                 </div>
 
                 <!-- ROLE 3: VDL NEDCAR -->
-                <div class="mb-2.5">
+                <div class="mb-2">
                     <div class="flex justify-between items-baseline">
                         <h3 class="text-[11px] font-bold text-slate-900">
                             ${d.role3Title}
                         </h3>
                         <span class="text-[8.5px] font-mono bg-slate-100 text-slate-700 border border-slate-300 px-1.5 py-0.5 rounded font-bold">${d.role3Date}</span>
                     </div>
-                    <div class="flex items-center justify-between text-[9px] font-mono text-cyan-700 font-semibold mb-1">
+                    <div class="flex items-center justify-between text-[9px] font-mono text-cyan-700 font-semibold mb-0.5">
                         <span>${d.role3Scope}</span>
                         <span class="text-slate-500 font-normal">${d.role3Sub}</span>
                     </div>
 
-                    <div class="space-y-1 text-[9.5px] text-slate-700 pl-0.5">
+                    <div class="space-y-0.5 text-[9px] text-slate-700 pl-0.5 leading-snug">
                         <div class="flex items-start gap-1.5">
                             <span class="text-cyan-700 font-bold">▪</span>
                             <p>${d.role3Bullet1}</p>
@@ -877,6 +894,11 @@ function generateHtml(d) {
                             <span class="text-cyan-700 font-bold">▪</span>
                             <p>${d.role3Bullet2}</p>
                         </div>
+                        ${d.role3Bullet3 ? `
+                        <div class="flex items-start gap-1.5">
+                            <span class="text-cyan-700 font-bold">▪</span>
+                            <p>${d.role3Bullet3}</p>
+                        </div>` : ''}
                     </div>
                 </div>
 
