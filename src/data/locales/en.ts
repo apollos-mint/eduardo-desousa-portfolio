@@ -22,7 +22,7 @@ export const enData: CVContent = {
   },
   hero: {
     badge: 'AVAILABLE FOR TECHNICAL LEADERSHIP & HIGH-IMPACT ROLES',
-    developedBySelfBadge: '⚡ Architected & Engineered by Eduardo de Sousa (Staff Engineer & Creative Technologist)',
+    developedBySelfBadge: '⚡ Architected & Engineered by Eduardo de Sousa (Technical Operations & Systems Architect)',
     titleLine1: 'Global Operations,',
     titleLine2: 'Process Automation & High-Tech',
     subtitle: 'Steering the strategic convergence between cross-border procurement ($800K USD/yr in Asia/LatAm), operational software architecture (asset CMMS, iPaaS), and critical precision manufacturing (ASML, BMW OEM).',
