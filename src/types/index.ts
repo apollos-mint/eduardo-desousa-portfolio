@@ -157,6 +157,8 @@ export interface CVContent {
     systemStatus: string;
     operationalReady: string;
     craftedBySelf: string;
+    ndaFootnote: string;
+    legalDossierLink: string;
     executiveCv: string;
     availableForTravel: string;
     leanSixSigmaBadge: string;
