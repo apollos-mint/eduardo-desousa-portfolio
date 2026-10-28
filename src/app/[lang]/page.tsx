@@ -5,6 +5,7 @@ import { isValidLocale, getAllStaticLocaleParams } from '@/lib/i18n';
 import { getCVData } from '@/data/cv-data';
 import HeroSection from '@/components/sections/HeroSection';
 import SpecialFeatureSection from '@/components/sections/SpecialFeatureSection';
+import EngineeringProjectsSection from '@/components/sections/EngineeringProjectsSection';
 import ContactSection from '@/components/sections/ContactSection';
 
 export function generateStaticParams() {
@@ -61,7 +62,10 @@ export default async function LocalizedHomePage({
       {/* 2. Core Competencies & Tier-1 Company Ranges (Directly under marquee, 0 gap) */}
       <SpecialFeatureSection currentLocale={lang as Locale} cvData={cvData} />
 
-      {/* 3. Executive Direct Contact & vCard Hub */}
+      {/* 3. Featured Engineering & Automation Systems Showcase */}
+      <EngineeringProjectsSection currentLocale={lang as Locale} />
+
+      {/* 4. Executive Direct Contact & vCard Hub */}
       <div className="mt-8 sm:mt-12">
         <ContactSection currentLocale={lang as Locale} cvData={cvData} />
       </div>
