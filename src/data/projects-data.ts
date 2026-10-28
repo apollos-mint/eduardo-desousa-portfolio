@@ -52,7 +52,7 @@ export const projectsDataByLocale: Record<Locale, ProjectsSectionContent> = {
         ],
         techStack: ["React 18", "TypeScript", "Node.js", "Express", "PostgreSQL", "MSSQL ERP", "PDFKit", "Docker"],
         demoUrl: "https://optiasset-cmms.vercel.app",
-        sourceUrl: "https://github.com/desousaejai/optiasset-cmms"
+        sourceUrl: "https://github.com/apollos-mint/optiasset-cmms"
       },
       {
         id: "kyrios-keys-marketplace",
@@ -71,7 +71,7 @@ export const projectsDataByLocale: Record<Locale, ProjectsSectionContent> = {
         ],
         techStack: ["Next.js (App Router)", "TypeScript", "Prisma ORM", "PostgreSQL / Neon", "NextAuth", "Tailwind CSS"],
         demoUrl: "https://kyrios-keys-marketplace.vercel.app",
-        sourceUrl: "https://github.com/desousaejai/kyrios-keys-marketplace"
+        sourceUrl: "https://github.com/apollos-mint/kyrios-keys-marketplace"
       },
       {
         id: "doxa-saas-studio",
@@ -90,7 +90,7 @@ export const projectsDataByLocale: Record<Locale, ProjectsSectionContent> = {
         ],
         techStack: ["Next.js", "TypeScript", "Framer Motion", "Tailwind CSS", "i18n Localization"],
         demoUrl: "https://doxa-saas-studio.vercel.app",
-        sourceUrl: "https://github.com/desousaejai/doxa-saas-studio"
+        sourceUrl: "https://github.com/apollos-mint/doxa-saas-studio"
       },
       {
         id: "jobflow-automation-extension",
@@ -108,8 +108,8 @@ export const projectsDataByLocale: Record<Locale, ProjectsSectionContent> = {
           "Zero-server architecture guaranteeing candidate credentials never leave the browser"
         ],
         techStack: ["Chrome Extension MV3", "JavaScript ES2022", "DOM Automation", "Chrome Storage"],
-        demoUrl: "https://github.com/desousaejai/jobflow-automation-extension#readme",
-        sourceUrl: "https://github.com/desousaejai/jobflow-automation-extension",
+        demoUrl: "https://github.com/apollos-mint/jobflow-automation-extension#readme",
+        sourceUrl: "https://github.com/apollos-mint/jobflow-automation-extension",
         isPrototype: true
       }
     ]
@@ -139,7 +139,7 @@ export const projectsDataByLocale: Record<Locale, ProjectsSectionContent> = {
         ],
         techStack: ["React 18", "TypeScript", "Node.js", "Express", "PostgreSQL", "MSSQL ERP", "PDFKit", "Docker"],
         demoUrl: "https://optiasset-cmms.vercel.app",
-        sourceUrl: "https://github.com/desousaejai/optiasset-cmms"
+        sourceUrl: "https://github.com/apollos-mint/optiasset-cmms"
       },
       {
         id: "kyrios-keys-marketplace",
@@ -158,7 +158,7 @@ export const projectsDataByLocale: Record<Locale, ProjectsSectionContent> = {
         ],
         techStack: ["Next.js (App Router)", "TypeScript", "Prisma ORM", "PostgreSQL / Neon", "NextAuth", "Tailwind CSS"],
         demoUrl: "https://kyrios-keys-marketplace.vercel.app",
-        sourceUrl: "https://github.com/desousaejai/kyrios-keys-marketplace"
+        sourceUrl: "https://github.com/apollos-mint/kyrios-keys-marketplace"
       },
       {
         id: "doxa-saas-studio",
@@ -177,7 +177,7 @@ export const projectsDataByLocale: Record<Locale, ProjectsSectionContent> = {
         ],
         techStack: ["Next.js", "TypeScript", "Framer Motion", "Tailwind CSS", "i18n Localization"],
         demoUrl: "https://doxa-saas-studio.vercel.app",
-        sourceUrl: "https://github.com/desousaejai/doxa-saas-studio"
+        sourceUrl: "https://github.com/apollos-mint/doxa-saas-studio"
       },
       {
         id: "jobflow-automation-extension",
@@ -195,8 +195,8 @@ export const projectsDataByLocale: Record<Locale, ProjectsSectionContent> = {
           "Arquitectura con privacidad total: los datos personales nunca salen del navegador local"
         ],
         techStack: ["Chrome Extension MV3", "JavaScript ES2022", "DOM Automation", "Chrome Storage"],
-        demoUrl: "https://github.com/desousaejai/jobflow-automation-extension#readme",
-        sourceUrl: "https://github.com/desousaejai/jobflow-automation-extension",
+        demoUrl: "https://github.com/apollos-mint/jobflow-automation-extension#readme",
+        sourceUrl: "https://github.com/apollos-mint/jobflow-automation-extension",
         isPrototype: true
       }
     ]
@@ -226,7 +226,7 @@ export const projectsDataByLocale: Record<Locale, ProjectsSectionContent> = {
         ],
         techStack: ["React 18", "TypeScript", "Node.js", "Express", "PostgreSQL", "MSSQL ERP", "PDFKit", "Docker"],
         demoUrl: "https://optiasset-cmms.vercel.app",
-        sourceUrl: "https://github.com/desousaejai/optiasset-cmms"
+        sourceUrl: "https://github.com/apollos-mint/optiasset-cmms"
       },
       {
         id: "kyrios-keys-marketplace",
@@ -245,7 +245,7 @@ export const projectsDataByLocale: Record<Locale, ProjectsSectionContent> = {
         ],
         techStack: ["Next.js (App Router)", "TypeScript", "Prisma ORM", "PostgreSQL / Neon", "NextAuth", "Tailwind CSS"],
         demoUrl: "https://kyrios-keys-marketplace.vercel.app",
-        sourceUrl: "https://github.com/desousaejai/kyrios-keys-marketplace"
+        sourceUrl: "https://github.com/apollos-mint/kyrios-keys-marketplace"
       },
       {
         id: "doxa-saas-studio",
@@ -264,7 +264,7 @@ export const projectsDataByLocale: Record<Locale, ProjectsSectionContent> = {
         ],
         techStack: ["Next.js", "TypeScript", "Framer Motion", "Tailwind CSS", "i18n Localization"],
         demoUrl: "https://doxa-saas-studio.vercel.app",
-        sourceUrl: "https://github.com/desousaejai/doxa-saas-studio"
+        sourceUrl: "https://github.com/apollos-mint/doxa-saas-studio"
       },
       {
         id: "jobflow-automation-extension",
@@ -282,8 +282,8 @@ export const projectsDataByLocale: Record<Locale, ProjectsSectionContent> = {
           "Zero servidores externos: credenciais e dados mantidos localmente"
         ],
         techStack: ["Chrome Extension MV3", "JavaScript ES2022", "DOM Automation", "Chrome Storage"],
-        demoUrl: "https://github.com/desousaejai/jobflow-automation-extension#readme",
-        sourceUrl: "https://github.com/desousaejai/jobflow-automation-extension",
+        demoUrl: "https://github.com/apollos-mint/jobflow-automation-extension#readme",
+        sourceUrl: "https://github.com/apollos-mint/jobflow-automation-extension",
         isPrototype: true
       }
     ]
@@ -313,7 +313,7 @@ export const projectsDataByLocale: Record<Locale, ProjectsSectionContent> = {
         ],
         techStack: ["React 18", "TypeScript", "Node.js", "Express", "PostgreSQL", "MSSQL ERP", "PDFKit", "Docker"],
         demoUrl: "https://optiasset-cmms.vercel.app",
-        sourceUrl: "https://github.com/desousaejai/optiasset-cmms"
+        sourceUrl: "https://github.com/apollos-mint/optiasset-cmms"
       },
       {
         id: "kyrios-keys-marketplace",
@@ -332,7 +332,7 @@ export const projectsDataByLocale: Record<Locale, ProjectsSectionContent> = {
         ],
         techStack: ["Next.js (App Router)", "TypeScript", "Prisma ORM", "PostgreSQL / Neon", "NextAuth", "Tailwind CSS"],
         demoUrl: "https://kyrios-keys-marketplace.vercel.app",
-        sourceUrl: "https://github.com/desousaejai/kyrios-keys-marketplace"
+        sourceUrl: "https://github.com/apollos-mint/kyrios-keys-marketplace"
       },
       {
         id: "doxa-saas-studio",
@@ -351,7 +351,7 @@ export const projectsDataByLocale: Record<Locale, ProjectsSectionContent> = {
         ],
         techStack: ["Next.js", "TypeScript", "Framer Motion", "Tailwind CSS", "i18n Localization"],
         demoUrl: "https://doxa-saas-studio.vercel.app",
-        sourceUrl: "https://github.com/desousaejai/doxa-saas-studio"
+        sourceUrl: "https://github.com/apollos-mint/doxa-saas-studio"
       },
       {
         id: "jobflow-automation-extension",
@@ -369,8 +369,8 @@ export const projectsDataByLocale: Record<Locale, ProjectsSectionContent> = {
           "Vollständiger Datenschutz: Profildaten verbleiben lokal im Browser"
         ],
         techStack: ["Chrome Extension MV3", "JavaScript ES2022", "DOM Automation", "Chrome Storage"],
-        demoUrl: "https://github.com/desousaejai/jobflow-automation-extension#readme",
-        sourceUrl: "https://github.com/desousaejai/jobflow-automation-extension",
+        demoUrl: "https://github.com/apollos-mint/jobflow-automation-extension#readme",
+        sourceUrl: "https://github.com/apollos-mint/jobflow-automation-extension",
         isPrototype: true
       }
     ]
@@ -400,7 +400,7 @@ export const projectsDataByLocale: Record<Locale, ProjectsSectionContent> = {
         ],
         techStack: ["React 18", "TypeScript", "Node.js", "Express", "PostgreSQL", "MSSQL ERP", "PDFKit", "Docker"],
         demoUrl: "https://optiasset-cmms.vercel.app",
-        sourceUrl: "https://github.com/desousaejai/optiasset-cmms"
+        sourceUrl: "https://github.com/apollos-mint/optiasset-cmms"
       },
       {
         id: "kyrios-keys-marketplace",
@@ -419,7 +419,7 @@ export const projectsDataByLocale: Record<Locale, ProjectsSectionContent> = {
         ],
         techStack: ["Next.js (App Router)", "TypeScript", "Prisma ORM", "PostgreSQL / Neon", "NextAuth", "Tailwind CSS"],
         demoUrl: "https://kyrios-keys-marketplace.vercel.app",
-        sourceUrl: "https://github.com/desousaejai/kyrios-keys-marketplace"
+        sourceUrl: "https://github.com/apollos-mint/kyrios-keys-marketplace"
       },
       {
         id: "doxa-saas-studio",
@@ -438,7 +438,7 @@ export const projectsDataByLocale: Record<Locale, ProjectsSectionContent> = {
         ],
         techStack: ["Next.js", "TypeScript", "Framer Motion", "Tailwind CSS", "i18n Localization"],
         demoUrl: "https://doxa-saas-studio.vercel.app",
-        sourceUrl: "https://github.com/desousaejai/doxa-saas-studio"
+        sourceUrl: "https://github.com/apollos-mint/doxa-saas-studio"
       },
       {
         id: "jobflow-automation-extension",
@@ -456,8 +456,8 @@ export const projectsDataByLocale: Record<Locale, ProjectsSectionContent> = {
           "Confidentialité absolue : les données du profil ne quittent jamais le navigateur"
         ],
         techStack: ["Chrome Extension MV3", "JavaScript ES2022", "DOM Automation", "Chrome Storage"],
-        demoUrl: "https://github.com/desousaejai/jobflow-automation-extension#readme",
-        sourceUrl: "https://github.com/desousaejai/jobflow-automation-extension",
+        demoUrl: "https://github.com/apollos-mint/jobflow-automation-extension#readme",
+        sourceUrl: "https://github.com/apollos-mint/jobflow-automation-extension",
         isPrototype: true
       }
     ]
@@ -487,7 +487,7 @@ export const projectsDataByLocale: Record<Locale, ProjectsSectionContent> = {
         ],
         techStack: ["React 18", "TypeScript", "Node.js", "Express", "PostgreSQL", "MSSQL ERP", "PDFKit", "Docker"],
         demoUrl: "https://optiasset-cmms.vercel.app",
-        sourceUrl: "https://github.com/desousaejai/optiasset-cmms"
+        sourceUrl: "https://github.com/apollos-mint/optiasset-cmms"
       },
       {
         id: "kyrios-keys-marketplace",
@@ -506,7 +506,7 @@ export const projectsDataByLocale: Record<Locale, ProjectsSectionContent> = {
         ],
         techStack: ["Next.js (App Router)", "TypeScript", "Prisma ORM", "PostgreSQL / Neon", "NextAuth", "Tailwind CSS"],
         demoUrl: "https://kyrios-keys-marketplace.vercel.app",
-        sourceUrl: "https://github.com/desousaejai/kyrios-keys-marketplace"
+        sourceUrl: "https://github.com/apollos-mint/kyrios-keys-marketplace"
       },
       {
         id: "doxa-saas-studio",
@@ -525,7 +525,7 @@ export const projectsDataByLocale: Record<Locale, ProjectsSectionContent> = {
         ],
         techStack: ["Next.js", "TypeScript", "Framer Motion", "Tailwind CSS", "i18n Localization"],
         demoUrl: "https://doxa-saas-studio.vercel.app",
-        sourceUrl: "https://github.com/desousaejai/doxa-saas-studio"
+        sourceUrl: "https://github.com/apollos-mint/doxa-saas-studio"
       },
       {
         id: "jobflow-automation-extension",
@@ -543,8 +543,8 @@ export const projectsDataByLocale: Record<Locale, ProjectsSectionContent> = {
           "Volledige privacy: kandidaatprofielgegevens verlaten de browser nooit"
         ],
         techStack: ["Chrome Extension MV3", "JavaScript ES2022", "DOM Automation", "Chrome Storage"],
-        demoUrl: "https://github.com/desousaejai/jobflow-automation-extension#readme",
-        sourceUrl: "https://github.com/desousaejai/jobflow-automation-extension",
+        demoUrl: "https://github.com/apollos-mint/jobflow-automation-extension#readme",
+        sourceUrl: "https://github.com/apollos-mint/jobflow-automation-extension",
         isPrototype: true
       }
     ]
