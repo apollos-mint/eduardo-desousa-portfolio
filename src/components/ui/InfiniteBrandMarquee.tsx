@@ -67,7 +67,7 @@ export default function InfiniteBrandMarquee({ currentLocale }: InfiniteBrandMar
 
   // Row 2: Technologies, Systems & Accredited Standards
   const techList = [
-    { name: 'ISO 9001', category: 'Quality Lead Auditor' },
+    { name: 'QMS Quality', category: 'Quality Management Systems' },
     { name: 'TÜV', category: 'TÜV Rheinland Certified' },
     { name: 'GOOGLE', category: 'Data Analytics Professional' },
     { name: 'Lean Six Sigma', category: 'Black Belt DMAIC' },
@@ -76,7 +76,7 @@ export default function InfiniteBrandMarquee({ currentLocale }: InfiniteBrandMar
     { name: '8D RCA', category: 'Root Cause Problem Solving' },
     { name: 'Gage R&R', category: 'Measurement System Analysis' },
     { name: 'SPC Metrology', category: 'Statistical Process Control' },
-    { name: 'VCA VOL', category: 'Safety Leadership & Compliance' },
+    { name: 'Industrial Safety', category: 'Cleanroom & Plant Compliance' },
   ];
 
   const duplicatedCompanies = [...companyList, ...companyList];

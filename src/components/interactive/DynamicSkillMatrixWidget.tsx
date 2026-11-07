@@ -26,7 +26,7 @@ interface DynamicSkillMatrixWidgetProps {
 
 const widgetI18n = {
   es: {
-    searchPlaceholder: 'Buscar competencias, herramientas o metodologías (ej. DMAIC, ISAH, ISO 9001)...',
+    searchPlaceholder: 'Buscar competencias, herramientas o metodologías (ej. DMAIC, ISAH, QMS)...',
     showing: 'Mostrando:',
     competencies: 'competencias',
     verified: 'verificadas',
@@ -46,7 +46,7 @@ const widgetI18n = {
     } as Record<string, string>,
   },
   en: {
-    searchPlaceholder: 'Search skills, tools, or methodologies (e.g. DMAIC, ISAH, ISO 9001)...',
+    searchPlaceholder: 'Search skills, tools, or methodologies (e.g. DMAIC, ISAH, QMS)...',
     showing: 'Showing:',
     competencies: 'competencies',
     verified: 'verified',
@@ -66,7 +66,7 @@ const widgetI18n = {
     } as Record<string, string>,
   },
   de: {
-    searchPlaceholder: 'Kompetenzen, Werkzeuge oder Methoden suchen (z.B. DMAIC, ISAH, ISO 9001)...',
+    searchPlaceholder: 'Kompetenzen, Werkzeuge oder Methoden suchen (z.B. DMAIC, ISAH, QMS)...',
     showing: 'Angezeigt:',
     competencies: 'Kompetenzen',
     verified: 'verifiziert',
@@ -86,7 +86,7 @@ const widgetI18n = {
     } as Record<string, string>,
   },
   fr: {
-    searchPlaceholder: 'Rechercher compétences, outils ou méthodologies (ex. DMAIC, ISAH, ISO 9001)...',
+    searchPlaceholder: 'Rechercher compétences, outils ou méthodologies (ex. DMAIC, ISAH, QMS)...',
     showing: 'Affichage :',
     competencies: 'compétences',
     verified: 'vérifiées',
@@ -106,7 +106,7 @@ const widgetI18n = {
     } as Record<string, string>,
   },
   pt: {
-    searchPlaceholder: 'Pesquisar competências, ferramentas ou metodologias (ex. DMAIC, ISAH, ISO 9001)...',
+    searchPlaceholder: 'Pesquisar competências, ferramentas ou metodologias (ex. DMAIC, ISAH, QMS)...',
     showing: 'Mostrando:',
     competencies: 'competências',
     verified: 'verificadas',
@@ -126,7 +126,7 @@ const widgetI18n = {
     } as Record<string, string>,
   },
   nl: {
-    searchPlaceholder: 'Zoek vaardigheden, tools of methodologieën (bijv. DMAIC, ISAH, ISO 9001)...',
+    searchPlaceholder: 'Zoek vaardigheden, tools of methodologieën (bijv. DMAIC, ISAH, QMS)...',
     showing: 'Weergave:',
     competencies: 'competenties',
     verified: 'geverifieerd',

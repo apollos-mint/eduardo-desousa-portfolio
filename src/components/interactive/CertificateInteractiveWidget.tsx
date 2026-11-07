@@ -32,8 +32,6 @@ export default function CertificateInteractiveWidget({
       inspectPhase: 'Haz clic en una fase para inspeccionar entregables y herramientas estadísticas:',
       phaseDeliverable: 'Entregable de la Fase',
       toolsUtilized: 'Herramientas Estadísticas & Lean Utilizadas',
-      isoTitle: 'MATRIZ DE CONFORMIDAD Y AUDITORÍA ISO 9001:2015',
-      isoCompliant: '100% CONFORME',
       googleTitle: 'PIPELINE DE ANÁLISIS DE DATOS, SQL & TELEMETRÍA',
       googleCertified: 'CERTIFICACIÓN PROFESIONAL GOOGLE',
     },
@@ -43,8 +41,6 @@ export default function CertificateInteractiveWidget({
       inspectPhase: 'Click on a phase to inspect industrial execution & statistical tools:',
       phaseDeliverable: 'Phase Deliverable',
       toolsUtilized: 'Statistical & Lean Tools Utilized',
-      isoTitle: 'ISO 9001:2015 AUDIT READINESS & COMPLIANCE MATRIX',
-      isoCompliant: '100% COMPLIANT',
       googleTitle: 'DATA ANALYTICS, SQL & TELEMETRY PIPELINE',
       googleCertified: 'GOOGLE PROFESSIONAL CERTIFIED',
     },
@@ -54,8 +50,6 @@ export default function CertificateInteractiveWidget({
       inspectPhase: 'Clique numa fase para inspecionar entregáveis e ferramentas estatísticas:',
       phaseDeliverable: 'Entregável da Fase',
       toolsUtilized: 'Ferramentas Estatísticas & Lean Utilizadas',
-      isoTitle: 'MATRIZ DE CONFORMIDADE E AUDITORIA ISO 9001:2015',
-      isoCompliant: '100% CONFORME',
       googleTitle: 'PIPELINE DE ANÁLISE DE DADOS, SQL & TELEMETRIA',
       googleCertified: 'CERTIFICAÇÃO PROFISSIONAL GOOGLE',
     },
@@ -65,8 +59,6 @@ export default function CertificateInteractiveWidget({
       inspectPhase: 'Klik op een fase om resultaten en statistische tools te bekijken:',
       phaseDeliverable: 'Fase Resultaat',
       toolsUtilized: 'Statistische & Lean Tools Toegepast',
-      isoTitle: 'ISO 9001:2015 AUDIT-READINESS & COMPLIANCE MATRIX',
-      isoCompliant: '100% CONFORM',
       googleTitle: 'DATA ANALYTICS, SQL & TELEMETRIE PIPELINE',
       googleCertified: 'GOOGLE PROFESSIONEEL GECERTIFICEERD',
     },
@@ -76,8 +68,6 @@ export default function CertificateInteractiveWidget({
       inspectPhase: 'Klicken Sie auf eine Phase zur Anzeige von Ergebnissen und Tools:',
       phaseDeliverable: 'Phasen-Ergebnis',
       toolsUtilized: 'Eingesetzte Statistik- & Lean-Werkzeuge',
-      isoTitle: 'ISO 9001:2015 AUDIT-READINESS- & COMPLIANCE-MATRIX',
-      isoCompliant: '100% KONFORM',
       googleTitle: 'DATENANALYSE, SQL- & TELEMETRIE-PIPELINE',
       googleCertified: 'GOOGLE ZERTIFIZIERT',
     },
@@ -87,8 +77,6 @@ export default function CertificateInteractiveWidget({
       inspectPhase: 'Cliquez sur une phase pour afficher les livrables et outils statistiques:',
       phaseDeliverable: 'Livrable de la Phase',
       toolsUtilized: 'Outils Statistiques & Lean Utilisés',
-      isoTitle: 'MATRICE DE CONFORMITÉ & D’AUDIT ISO 9001:2015',
-      isoCompliant: '100% CONFORME',
       googleTitle: 'PIPELINE D’ANALYSE DE DONNÉES, SQL & TÉLÉMÉTRIE',
       googleCertified: 'CERTIFIÉ PROFESSIONNEL GOOGLE',
     },
@@ -209,39 +197,6 @@ export default function CertificateInteractiveWidget({
     );
   }
 
-  // =========================================================================
-  // 2. ISO 9001:2015 AUDITOR: Interactive Compliance Radar & Checklist
-  // =========================================================================
-  if (itemId === 'iso9001-auditor') {
-    return (
-      <div className="p-4 sm:p-6 rounded-2xl bg-slate-950/90 dark:bg-slate-950/90 light:bg-white border border-cyan-500/40 dark:border-cyan-500/40 light:border-cyan-400 space-y-4 text-xs shadow-lg">
-        <div className="flex items-center justify-between border-b border-slate-800 dark:border-slate-800 light:border-slate-200 pb-3">
-          <div className="flex items-center space-x-2">
-            <ShieldCheck className="w-4 h-4 text-emerald-400" />
-            <span className="font-mono font-bold text-emerald-400 dark:text-emerald-300 light:text-emerald-700">
-              {t.isoTitle}
-            </span>
-          </div>
-          <span className="font-mono text-cyan-500 dark:text-cyan-400 font-bold">{t.isoCompliant}</span>
-        </div>
-
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-2.5">
-          <div className="p-3 rounded-xl bg-slate-900/80 dark:bg-slate-900/80 light:bg-slate-50 border border-slate-800 dark:border-slate-800 light:border-slate-200">
-            <div className="font-mono text-cyan-500 dark:text-cyan-400 font-bold">CLAUSE 6 // RISKS</div>
-            <div className="text-slate-600 dark:text-slate-300 text-[11px] mt-1">Risk-based thinking & preventive mitigation</div>
-          </div>
-          <div className="p-3 rounded-xl bg-slate-900/80 dark:bg-slate-900/80 light:bg-slate-50 border border-slate-800 dark:border-slate-800 light:border-slate-200">
-            <div className="font-mono text-emerald-500 dark:text-emerald-400 font-bold">CLAUSE 8 // OPERATIONS</div>
-            <div className="text-slate-600 dark:text-slate-300 text-[11px] mt-1">Standardized SOPs & trace control in ERP</div>
-          </div>
-          <div className="p-3 rounded-xl bg-slate-900/80 dark:bg-slate-900/80 light:bg-slate-50 border border-slate-800 dark:border-slate-800 light:border-slate-200">
-            <div className="font-mono text-indigo-500 dark:text-indigo-400 font-bold">CLAUSE 9/10 // CAPA</div>
-            <div className="text-slate-600 dark:text-slate-300 text-[11px] mt-1">Closed-loop corrective actions & Kaizen</div>
-          </div>
-        </div>
-      </div>
-    );
-  }
 
   // =========================================================================
   // 3. GOOGLE DATA ANALYTICS: Interactive Query & KPI Pipeline

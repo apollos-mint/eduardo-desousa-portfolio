@@ -13,20 +13,20 @@
 
 ## Primary Credentials & Certifications
 - **Lean Six Sigma Black Belt**: DMAIC, statistical process control, variance reduction, waste eradication.
-- **ISO 9001:2015 Lead Auditor**: TÜV Rheinland certified, factory audit lead, SQA auditing.
-- **VCA-VOL**: Safety leadership for operational supervisors in heavy industrial sites.
+- **Google Data Analytics Professional**: SQL, quantitative modeling, business intelligence, and spreadsheet analytics.
+- **Strategic Supply Chain Management**: University of Munich (LMU Munich) academic credential.
 - **Languages**: Multilingual (Spanish, English, Portuguese, Dutch, German, French).
 
 ## Key Operational Experience
 - **KMWE Group**: High-tech precision machining and sub-assembly for ASML lithography equipment. Cleanroom packaging and ERP governance (ISAH).
-- **HQ Pack**: Cleanroom industrial packaging for semiconductor and optical equipment. ISO Class 6/7 cleanroom compliance.
+- **HQ Pack**: Cleanroom industrial packaging for semiconductor and optical equipment. ISO Class 5 cleanroom compliance.
 - **VDL Nedcar**: Automotive OEM manufacturing, final assembly line quality inspections, and root cause analysis (8D / Ishikawa).
 - **Independent High-Tech Operations Consultant**: Auditing supplier bases, scrap rate minimization (-35%), and cycle time reduction (-30%).
 
 ## Key Sections & Deep Dives
 - [Full Experience Breakdown](https://eduardodesousa.vercel.app/en/experience): Detailed timeline of executive roles, quantitative KPIs, and technical achievements.
 - [Technical Skills & DMAIC Matrix](https://eduardodesousa.vercel.app/en/skills): Core competencies in Lean Six Sigma, ISAH ERP, SQA, and Statistical Process Control.
-- [Certifications & Education](https://eduardodesousa.vercel.app/en/certifications): Formal diplomas, ISO credentials, and institutional accreditations.
+- [Certifications & Education](https://eduardodesousa.vercel.app/en/certifications): Formal diplomas, Lean Six Sigma credentials, and institutional accreditations.
 - [Contact & Executive Booking](https://eduardodesousa.vercel.app/en/contact): Direct scheduling, contact details, and confidentiality policies.
 - [Legal & Compliance Notice](https://eduardodesousa.vercel.app/en/legal): Nominative fair use of brand marks, NDA adherence, and GDPR telemetry statement.
 

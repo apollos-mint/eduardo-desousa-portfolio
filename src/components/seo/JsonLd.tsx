@@ -49,15 +49,11 @@ export default function JsonLd({ lang }: JsonLdProps) {
           },
           {
             '@type': 'EducationalOccupationalCredential',
-            name: 'ISO 9001:2015 Lead Auditor',
+            name: 'Google Data Analytics Professional Certificate',
             recognizedBy: {
               '@type': 'Organization',
-              name: 'TÜV Rheinland',
+              name: 'Google',
             },
-          },
-          {
-            '@type': 'EducationalOccupationalCredential',
-            name: 'VCA-VOL Safety for Operational Supervisors',
           },
         ],
         knowsAbout: [

@@ -22,12 +22,12 @@ A high-performance, multilingual personal CV and portfolio web application built
    - **Arkcohogar (Valencia)**: Inventory & Logistics Coordinator (99.5% stock accuracy).
    - **Ed's Paixão (Madeira)**: Shift Supervisor (HACCP & food safety excellence).
    - **E-Ceramic (Venezuela)**: Commercial & Technical Sales Specialist.
-   - **Academic Degree & Certifications**: Licenciado en Operaciones y Procesos Gerenciales, Lean Six Sigma Black Belt, ISO 9001:2015 Lead Auditor, Google Data Analytics, VCA VOL Safety (Netherlands), LMU Munich (Supply Chain Resilience), and Erasmus University Rotterdam (Communication Science).
+   - **Academic Degree & Certifications**: Licenciado en Operaciones y Procesos Gerenciales, Lean Six Sigma Black Belt, Google Data Analytics, LMU Munich (Supply Chain Resilience), and Erasmus University Rotterdam (Communication Science).
 
 3. **Interactive Main Page & Dedicated Dynamic Pages**:
    - Every experience, certification, and skill is an interactive card linking to a dedicated page:
      - `/[lang]/experience/[slug]` (e.g. `/es/experience/hq-pack`, `/en/experience/vdl-nedcar`)
-     - `/[lang]/skills/[slug]` (e.g. `/en/skills/lean-six-sigma-dmaic`, `/es/skills/iso-9001-compliance`)
+     - `/[lang]/skills/[slug]` (e.g. `/en/skills/lean-six-sigma-dmaic`, `/es/skills/qms-compliance`)
      - `/[lang]/education/[slug]` (e.g. `/pt/education/bachelor-operations-management`)
      - `/[lang]/contact` (Direct communication hub)
 

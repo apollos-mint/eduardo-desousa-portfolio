@@ -181,7 +181,7 @@ export default async function Image() {
               gap: '14px',
             }}
           >
-            {['Lean Six Sigma Black Belt', 'ASML Cleanroom ISO 14644', 'ISO 9001 Lead Auditor', 'Automotive OEM Quality'].map(
+            {['Lean Six Sigma Black Belt', 'ASML Cleanroom ISO 14644', 'DMAIC & Quality Systems', 'Automotive OEM Quality'].map(
               (badge) => (
                 <div
                   key={badge}

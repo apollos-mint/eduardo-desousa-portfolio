@@ -26,7 +26,7 @@ export async function generateMetadata({
   const cvData = getCVData(lang as Locale);
   return {
     title: `Skills Matrix & Competencies | ${cvData.personal.fullName}`,
-    description: 'Interactive visual skills matrix covering Lean Six Sigma DMAIC, ISO 9001 quality compliance, ISAH ERP systems, and cleanroom engineering.',
+    description: 'Interactive visual skills matrix covering Lean Six Sigma DMAIC, Quality Management Systems (QMS), ISAH ERP systems, and cleanroom engineering.',
   };
 }
 

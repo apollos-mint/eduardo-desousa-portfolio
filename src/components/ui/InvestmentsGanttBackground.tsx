@@ -133,7 +133,7 @@ export default function InvestmentsGanttBackground({
           badge: '100% SOP ACTIVO',
         },
       ],
-      qualityAudit: 'AUDITADO ISO 9001:2015 · ASML ISO 14644-1 CL.5 · BMW OEM VDA 6.3',
+      qualityAudit: 'CALIDAD QMS · ASML ISO 14644-1 CL.5 · BMW OEM VDA 6.3 AUDITADO',
       progression: 'PROGRESIÓN DE ETAPAS: SPRINT CONTINUO EN TIEMPO REAL',
     },
     en: {
@@ -182,7 +182,7 @@ export default function InvestmentsGanttBackground({
           badge: '100% SOP LIVE',
         },
       ],
-      qualityAudit: 'ISO 9001:2015 · ASML ISO 14644-1 CL.5 · BMW OEM VDA 6.3 AUDITED',
+      qualityAudit: 'QMS QUALITY · ASML ISO 14644-1 CL.5 · BMW OEM VDA 6.3 AUDITED',
       progression: 'STAGE PROGRESSION: REAL-TIME CONTINUOUS SPRINT',
     },
     pt: {
@@ -231,7 +231,7 @@ export default function InvestmentsGanttBackground({
           badge: '100% SOP ATIVO',
         },
       ],
-      qualityAudit: 'AUDITADO ISO 9001:2015 · ASML ISO 14644-1 CL.5 · BMW OEM VDA 6.3',
+      qualityAudit: 'CALIDAD QMS · ASML ISO 14644-1 CL.5 · BMW OEM VDA 6.3 AUDITADO',
       progression: 'PROGRESSÃO DE ETAPAS: SPRINT CONTÍNUO EM TEMPO REAL',
     },
     nl: {
@@ -280,7 +280,7 @@ export default function InvestmentsGanttBackground({
           badge: '100% SOP LIVE',
         },
       ],
-      qualityAudit: 'ISO 9001:2015 · ASML ISO 14644-1 KL.5 · BMW OEM VDA 6.3 GEAUDITEERD',
+      qualityAudit: 'QMS KWALITEIT · ASML ISO 14644-1 KL.5 · BMW OEM VDA 6.3 GEAUDITEERD',
       progression: 'FASEVOORTGANG: REAL-TIME CONTINU SPRINT',
     },
     de: {
@@ -329,7 +329,7 @@ export default function InvestmentsGanttBackground({
           badge: '100% SOP AKTIV',
         },
       ],
-      qualityAudit: 'ISO 9001:2015 · ASML ISO 14644-1 KL.5 · BMW OEM VDA 6.3 AUDITIERT',
+      qualityAudit: 'QMS QUALITÄT · ASML ISO 14644-1 KL.5 · BMW OEM VDA 6.3 AUDITIERT',
       progression: 'PHASENFORTSCHRITT: ECHTZEIT-SPRINT',
     },
     fr: {
@@ -378,7 +378,7 @@ export default function InvestmentsGanttBackground({
           badge: '100% SOP EN SERVICE',
         },
       ],
-      qualityAudit: 'ISO 9001:2015 · ASML ISO 14644-1 CL.5 · BMW OEM VDA 6.3 AUDITÉ',
+      qualityAudit: 'QUALITÉ SMQ · ASML ISO 14644-1 CL.5 · BMW OEM VDA 6.3 AUDITÉ',
       progression: 'PROGRESSION DES ÉTAPES : SPRINT CONTINU EN TEMPS RÉEL',
     },
   };
@@ -488,7 +488,7 @@ export default function InvestmentsGanttBackground({
       <div className="absolute inset-0 overflow-hidden pointer-events-none opacity-25 dark:opacity-20 font-mono text-[9px] leading-tight select-none flex justify-around">
         {[
           ['ROTTERDAM GATEWAY // 51.92°N 4.48°E', 'MAERSK LINE // 40HQ FCL', 'CUSTOMS CLEARED: EUR-1', 'BERTH 4 · PORT CRANE STS-02', 'TERMINAL APM ROTTERDAM'],
-          ['SHENZHEN SOURCING // 22.54°N', 'DIRECT FACTORY BOM -75%', 'ISO 9001:2015 AUDITED', 'YANTIAN CONTAINER TERMINAL', 'PSI AUDIT: 100% PASS'],
+          ['SHENZHEN SOURCING // 22.54°N', 'DIRECT FACTORY BOM -75%', 'FACTORY QMS AUDITED', 'YANTIAN CONTAINER TERMINAL', 'PSI AUDIT: 100% PASS'],
           ['ASML CLEANROOM ISO 14644-1', 'PARTICULATE <0.1µm // PASS', 'HQ PACK EINDHOVEN BRAINPORT', 'HERMETIC N2 PURGE +0.02BAR', 'EUV NXE 3600D OPTIC POD'],
           ['VALENCIA APMT // 39.46°N', 'MEDITERRANEAN LOGISTICS', '48H CUSTOMS RELEASE', 'HAPAG-LLOYD CARRIER ALLIANCE', 'VALENCIAPORT HUB TELEMETRY'],
           ['VDL NEDCAR AUTOMOTIVE OEM', 'CADENCE: 110-120 VEH/SHIFT', 'BMW GROUP · MINI CABRIO', '8D RCA DEFECT RATE: -15%', 'TORQUE & HV INTERLOCK OK'],

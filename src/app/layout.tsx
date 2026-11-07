@@ -30,7 +30,7 @@ export const metadata: Metadata = {
     'Quality Engineering',
     'Lean Six Sigma Black Belt',
     'ASML Supply Chain',
-    'ISO 9001 Auditor',
+    'Quality Systems',
     'TÜV Certification',
     'DMAIC',
     'Automotive OEM',

@@ -45,12 +45,12 @@ export default function HomeHubPortals({ currentLocale, cvData }: HomeHubPortals
       badge: 'COMPETENCIES MATRIX',
       title: 'Visual Dynamic Skills Matrix',
       description:
-        'Interactive filtering across 16 technical competencies: DMAIC, Root Cause Analysis, ISO 9001 compliance, ISAH ERP systems, and cleanroom mechanics.',
+        'Interactive filtering across 16 technical competencies: DMAIC, Root Cause Analysis, QMS compliance, ISAH ERP systems, and cleanroom mechanics.',
       icon: Sliders,
       accentColor: 'from-emerald-500 to-teal-500',
       badgeColor: 'bg-emerald-950/80 text-emerald-300 border-emerald-500/30',
       highlights: ['DMAIC 5-Phase Framework', 'ISAH ERP 100% Traceability', 'Statistical Process Control (SPC)'],
-      brands: ['ISO 9001', 'TÜV', 'GOOGLE'],
+      brands: ['TÜV', 'GOOGLE', 'ASML'],
       cta: 'Open Skills Matrix',
     },
     {
@@ -59,12 +59,12 @@ export default function HomeHubPortals({ currentLocale, cvData }: HomeHubPortals
       badge: 'VERIFIED CREDENTIALS',
       title: 'Certifications & DMAIC Roadmap',
       description:
-        'Accredited credentials including Lean Six Sigma Black Belt, ISO 9001:2015 Lead Auditor, Google Data Analytics, Dutch VCA VOL, and Operations Degree.',
+        'Accredited credentials including Lean Six Sigma Black Belt, Google Data Analytics, Industrial Safety Standards, and Operations Degree.',
       icon: GraduationCap,
       accentColor: 'from-indigo-500 to-purple-500',
       badgeColor: 'bg-indigo-950/80 text-indigo-300 border-indigo-500/30',
-      highlights: ['Lean Six Sigma Black Belt', 'ISO 9001:2015 Lead Auditor', 'Bachelor in Operations Management'],
-      brands: ['TÜV', 'GOOGLE', 'ISO 9001'],
+      highlights: ['Lean Six Sigma Black Belt', 'Google Data Analytics', 'Bachelor in Operations Management'],
+      brands: ['TÜV', 'GOOGLE', 'BMW'],
       cta: 'View Credentials & Gantt',
     },
   ];

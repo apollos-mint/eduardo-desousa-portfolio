@@ -33,7 +33,7 @@ export default function SpecialFeatureSection({
     icon: Globe2,
     title: cvData.highlights.pillars[0].title,
     description: cvData.highlights.pillars[0].description,
-    companies: ['HAPAG-LLOYD', 'MAERSK', 'MSC', 'ISO 9001', 'MAKE', 'ZAPIER'],
+    companies: ['HAPAG-LLOYD', 'MAERSK', 'MSC', 'MAKE', 'ZAPIER'],
     keyPoints: [
       cvData.common.achievement3,
       cvData.common.sourcingPill2,
@@ -48,7 +48,7 @@ export default function SpecialFeatureSection({
       icon: Cpu,
       title: cvData.highlights.pillars[1].title,
       description: cvData.highlights.pillars[1].description,
-      companies: ['HQPACK', 'ASML', 'ZEISS', 'FRENCKEN', 'NEWAYS', 'ISO 9001', 'TÜV'],
+      companies: ['HQPACK', 'ASML', 'ZEISS', 'FRENCKEN', 'NEWAYS', 'TÜV'],
       achievement: cvData.common.achievement1,
       href: `/${currentLocale}/experience/hq-pack`,
     },

@@ -26,7 +26,7 @@ export async function generateMetadata({
   const cvData = getCVData(lang as Locale);
   return {
     title: `Certifications & Education | ${cvData.personal.fullName}`,
-    description: 'Lean Six Sigma Black Belt, ISO 9001:2015 Lead Auditor, Google Data Analytics, VCA VOL, and Bachelor Degree in Operations Management.',
+    description: 'Lean Six Sigma Black Belt, Quality Systems Management, Google Data Analytics, Industrial Safety, and Bachelor Degree in Operations Management.',
   };
 }
 

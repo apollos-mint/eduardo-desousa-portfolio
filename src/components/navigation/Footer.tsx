@@ -160,7 +160,7 @@ export default function Footer({ currentLocale, cvData }: FooterProps) {
             <ul className="space-y-2 text-xs text-slate-300">
               <li className="flex items-center space-x-2">
                 <ShieldCheck className="w-3.5 h-3.5 text-emerald-400" />
-                <span>{cvData.common.iso9001Auditor}</span>
+                <span>{cvData.common.qualitySystems}</span>
               </li>
               <li className="flex items-center space-x-2">
                 <Cpu className="w-3.5 h-3.5 text-indigo-400" />
@@ -168,7 +168,7 @@ export default function Footer({ currentLocale, cvData }: FooterProps) {
               </li>
               <li className="flex items-center space-x-2">
                 <ShieldCheck className="w-3.5 h-3.5 text-amber-400" />
-                <span>{cvData.common.vcaVol}</span>
+                <span>{cvData.common.safetyCompliance}</span>
               </li>
             </ul>
           </div>

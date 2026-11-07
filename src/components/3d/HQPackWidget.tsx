@@ -78,7 +78,7 @@ const ECOSYSTEM_PARTNERS: EcosystemPartner[] = [
     module: 'Technical QMS Compliance & Recertification',
     description: '100% compliance verification, empirical test protocol preparation, and flawless third-party recertification audits.',
     tolerance: '100% Compliance',
-    compliance: 'ISO 9001 / TÜV QMS',
+    compliance: 'TÜV & Industrial QMS',
     badge: 'TÜV Verified',
   },
   {

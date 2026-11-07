@@ -156,7 +156,7 @@ export default function ExperienceSection({
                     {cvData.common.ecosystemLabel}
                   </div>
                   <div className="flex flex-wrap items-center gap-2">
-                    {['HAPAG-LLOYD', 'MAERSK', 'MSC', 'ISO 9001', 'MAKE', 'ZAPIER'].map((company) => (
+                    {['HAPAG-LLOYD', 'MAERSK', 'MSC', 'MAKE', 'ZAPIER'].map((company) => (
                       <div
                         key={company}
                         className="px-2.5 py-1 rounded-lg bg-slate-50 dark:bg-slate-800/90 border border-slate-200 dark:border-slate-700/80 flex items-center space-x-2 shadow-sm"
@@ -200,7 +200,7 @@ export default function ExperienceSection({
                 ? (cvData.common.achievement1 || 'ISO Class 5 Spec <0.1µm & 150+ ISAH Orders/mo')
                 : (cvData.common.achievement2 || 'Cadence: 110-120 Cars/Shift & -15% Defect Rate');
               const companies = exp.id === 'hq-pack'
-                ? ['HQPACK', 'ASML', 'ZEISS', 'FRENCKEN', 'NEWAYS', 'ISO 9001', 'TÜV']
+                ? ['HQPACK', 'ASML', 'ZEISS', 'FRENCKEN', 'NEWAYS', 'TÜV']
                 : ['BMW', 'MINI', 'BOSCH', 'ZF', 'BROSE', 'VDL'];
 
               return (

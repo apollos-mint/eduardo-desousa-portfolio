@@ -162,9 +162,9 @@ export interface CVContent {
     executiveCv: string;
     availableForTravel: string;
     leanSixSigmaBadge: string;
-    iso9001Auditor: string;
+    qualitySystems: string;
     asmlCleanroom: string;
-    vcaVol: string;
+    safetyCompliance: string;
     locations: string;
     fullStackArchitecture: string;
     techStackBadge: string;

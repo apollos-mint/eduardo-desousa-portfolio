@@ -242,13 +242,13 @@ export default function BrandLogo({ name, className = 'w-6 h-6' }: BrandLogoProp
     );
   }
 
-  // ISO 9001
-  if (norm.includes('ISO')) {
+  // QMS
+  if (norm.includes('QMS')) {
     return (
       <svg role="img" aria-label={name} viewBox="0 0 120 40" className={className}>
         <rect width="120" height="40" rx="8" fill="#047857" />
         <text x="60" y="26" fontSize="16" fontWeight="900" fontFamily="sans-serif" textAnchor="middle" fill="#ffffff">
-          ISO 9001
+          QMS
         </text>
       </svg>
     );
@@ -389,21 +389,6 @@ export default function BrandLogo({ name, className = 'w-6 h-6' }: BrandLogoProp
     );
   }
 
-  // VCA VOL
-  if (norm.includes('VCA') || norm.includes('VOL')) {
-    return (
-      <svg role="img" aria-label={name} viewBox="0 0 120 40" className={className}>
-        <rect width="120" height="40" rx="8" fill="#14532d" stroke="#22c55e" strokeWidth="1.5" />
-        <polygon points="20,10 28,15 28,25 20,30 12,25 12,15" fill="#16a34a" stroke="#86efac" strokeWidth="1" />
-        <text x="20" y="23" fontSize="9" fontWeight="900" fontFamily="sans-serif" textAnchor="middle" fill="#ffffff">
-          ✓
-        </text>
-        <text x="72" y="25" fontSize="13" fontWeight="900" fontFamily="sans-serif" textAnchor="middle" fill="#f0fdf4">
-          VCA VOL
-        </text>
-      </svg>
-    );
-  }
 
   // ASANA
   if (norm.includes('ASANA')) {
