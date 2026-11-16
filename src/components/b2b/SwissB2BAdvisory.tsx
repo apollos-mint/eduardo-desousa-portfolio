@@ -2630,13 +2630,13 @@ export default function SwissB2BAdvisory({
           <div className="flex items-center justify-between h-20">
             {/* Brand Monogram & Wordmark */}
             <a href="#hero" className="flex items-center gap-2.5 sm:gap-3.5 min-w-0 group focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#00D2FF] rounded-lg p-1 -ml-1 transition-colors">
-              <div className="relative shrink-0 w-9 h-9 sm:w-10 sm:h-10 rounded-lg overflow-hidden border border-[#040B14]/20 shadow-xs group-hover:border-[#00D2FF] transition-all bg-[#040B14] flex items-center justify-center p-0.5">
+              <div className="relative shrink-0 w-11 h-11 sm:w-12 sm:h-12 flex items-center justify-center transition-transform duration-200 group-hover:scale-105">
                 <Image
                   src="/images/es-monogram-hex.png"
                   alt="Eduardo de Sousa Monogram"
-                  width={40}
-                  height={40}
-                  className="w-full h-full object-contain"
+                  width={48}
+                  height={48}
+                  className="w-full h-full object-contain filter drop-shadow-[0_2px_4px_rgba(4,11,20,0.18)]"
                   priority
                 />
               </div>
