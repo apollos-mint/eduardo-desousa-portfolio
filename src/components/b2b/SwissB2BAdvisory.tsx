@@ -205,6 +205,7 @@ export interface TranslationBundle {
   t2_name: string;
   t2_price: string;
   t2_period: string;
+  t2_cadence: string;
   t2_desc: string;
   t2_term: string;
   t2_btn: string;
@@ -261,6 +262,10 @@ export interface TranslationBundle {
   footer_sub: string;
   footer_nda: string;
   calc_annual_recovery: string;
+  mid_cta_badge: string;
+  mid_cta_title: string;
+  mid_cta_subtitle: string;
+  mid_cta_btn: string;
   ribbon_direct_engagement: string;
   nav_brand_sub_title: string;
   hero_telemetry_ecosystem: string;
@@ -379,7 +384,7 @@ const TRANSLATIONS: Record<SupportedLanguage, TranslationBundle> = {
     "nav_methodology": "DMAIC Rigor",
     "nav_pedigree": "Executive Profile",
     "nav_economics": "Economics",
-    "nav_cta": "Advisory Briefing",
+    "nav_cta": "Initiate Scoping",
     "hero_kicker": "Executive Industrial Operations & Supply Chain Advisory",
     "hero_title": "Eliminate Plant Downtime and Scale Direct Factory Sourcing with Floor-Level Precision.",
     "hero_subtitle": "Advising industrial leadership on operational transformation. Grounded in ASML-tier cleanroom electromechanical assembly protocols, high-takt automotive OEM Tier 1 & Tier 2 operation floor work, and high-volume direct international procurement.",
@@ -406,7 +411,7 @@ const TRANSLATIONS: Record<SupportedLanguage, TranslationBundle> = {
     "calc_loss_label": "Estimated Monthly Production Hemorrhage:",
     "calc_annual_label": "Annualized Loss:",
     "calc_recovery_label": "Projected Sprint Recovery Potential (-45%):",
-    "calc_guarantee_note": "3x ROI Guarantee Enforced: The 14-day diagnostic identifies at least €16,500 in verified annual savings, or the €5,500 fee is 100% refunded.",
+    "calc_guarantee_note": "100% Fee Credit Guarantee: If the 14-day diagnostic fails to document at least €16,500 in annual procurement or maintenance recovery, 100% of the €5,500 fee is credited toward an On-Site Audit or Fractional Retainer.",
     "calc_cta": "Scope Operational Diagnostic Sprint →",
     "pillars_kicker": "Systematic Interventions",
     "pillars_title": "Three Core Pillars of Industrial Advisory Practice",
@@ -523,29 +528,30 @@ const TRANSLATIONS: Record<SupportedLanguage, TranslationBundle> = {
     "pricing_title": "Productized Advisory Mandates: Fixed Deliverables, Zero Scope Creep",
     "pricing_subtitle": "No ambiguous hourly billables. Fixed milestone pricing with clear ROI thresholds and contractual execution boundaries.",
     "pricing_vat_notice": "excl. VAT / zzgl. MwSt. · Invoiced via European Tax ID · Mutual NDA Included",
-    "t1_badge": "SPEC-SHEET 01 // DIAGNOSTIC SPRINT",
-    "t1_name": "14-Day Remote Diagnostic Sprint",
+    "t1_badge": "SPEC-SHEET 01 // REMOTE DIAGNOSTIC",
+    "t1_name": "14-Day Remote Spend & Telemetry Diagnostic",
     "t1_price": "€5,500",
-    "t1_period": "/ fixed milestone",
-    "t1_desc": "Intensive 100% remote diagnostic of your procurement spend, supplier contract leaks, and maintenance logging bottlenecks.",
-    "t1_roi_badge": "UNCONDITIONAL 3X ROI REFUND GUARANTEE",
-    "t1_roi_text": "If the diagnostic fails to identify at least €16,500 in verified annual procurement savings or scrap reduction, the sprint fee is 100% refunded.",
-    "t1_btn": "Select 14-Day Sprint",
-    "t2_highlight": "[ MOST FREQUENT SELECTION FOR PRODUCTION PLANTS ]",
-    "t2_badge": "SPEC-SHEET 02 // FRACTIONAL LEADERSHIP",
-    "t2_name": "Fractional Head of Operations & Supply Chain",
-    "t2_price": "€6,800",
+    "t1_period": "/ fixed sprint",
+    "t1_desc": "Intensive 100% remote diagnostic targeting procurement spend variance, duplicate/bloated supplier contracts, and CMMS maintenance downtime logs.",
+    "t1_roi_badge": "100% FEE CREDIT GUARANTEE",
+    "t1_roi_text": "If we do not identify at least €16,500 in documented annual unit-price deltas, contract redundancies, or logged maintenance labor inefficiencies within 14 days, 100% of your €5,500 fee is credited toward an On-Site Audit or Fractional Retainer.",
+    "t1_btn": "Select 14-Day Diagnostic",
+    "t2_highlight": "[ FLAGSHIP EXECUTIVE RETAINER ]",
+    "t2_badge": "SPEC-SHEET 03 // FRACTIONAL EXECUTIVE",
+    "t2_name": "Fractional Direct Sourcing & Systems Director",
+    "t2_price": "€8,500",
     "t2_period": "/ month",
-    "t2_desc": "Continuous executive steering. Direct international factory negotiations in Asia/LATAM, CMMS governance, and automated ERP pipelines.",
+    "t2_cadence": "2 Days/Week Equivalent • Async-First Execution",
+    "t2_desc": "Continuous executive steering. Direct international factory negotiations in Asia/LATAM, CMMS governance (PostgreSQL/MSSQL), and automated ERP workflows.",
     "t2_term": "Term: 3-Month Initial Commitment · 30-Day Rolling Notice Thereafter",
     "t2_btn": "Select Fractional Retainer",
-    "t3_badge": "SPEC-SHEET 03 // PHYSICAL INTERVENTION",
+    "t3_badge": "SPEC-SHEET 02 // PHYSICAL PLANT AUDIT",
     "t3_name": "5-Day Physical Plant Walk & Takt Audit",
-    "t3_price": "€7,500",
-    "t3_period": "/ 5 days on-site + travel",
-    "t3_desc": "Physical boots-on-the-ground line walks, bottleneck mapping, technician friction interviews, and takt time discipline.",
+    "t3_price": "€5,400",
+    "t3_period": "/ 5-day sprint (+ travel)",
+    "t3_desc": "Physical gemba walks, moving-line and bottleneck takt timing, gage R&R / torque calibration checks, and an empirical 8D containment roadmap.",
     "t3_travel_note": "Client Covers Travel & Accommodation Strictly Under Corporate Policy",
-    "t3_btn": "Request On-Site Audit",
+    "t3_btn": "Request On-Site Plant Audit",
     "intake_kicker": "Confidential Triage",
     "intake_title": "Initiate Scoping Call or Asynchronous Briefing",
     "intake_subtitle": "Direct technical evaluation with the lead engineer under standard mutual non-disclosure.",
@@ -592,6 +598,10 @@ const TRANSLATIONS: Record<SupportedLanguage, TranslationBundle> = {
     "footer_sub": "Executive Industrial Advisory · European Tax ID Invoicing · High-Tech Cleanrooms & Automotive OEM",
     "footer_nda": "Bilateral Mutual NDA Enforced Across All Engagements · All Rights Reserved © 2026",
     "calc_annual_recovery": "Annualized Recovery:",
+    "mid_cta_badge": "100% FEE CREDIT GUARANTEE PROTECTED",
+    "mid_cta_title": "Identify Auditable Profit Leaks In 14 Days",
+    "mid_cta_subtitle": "Reserve your 14-Day Remote Diagnostic. If we do not uncover at least €16,500 in documented annual procurement deltas or logged downtime inefficiencies, 100% of your €5,500 fee is credited toward an on-site audit or fractional retainer.",
+    "mid_cta_btn": "Book 14-Day Diagnostic →",
     "ribbon_direct_engagement": "DIRECT ENGAGEMENT",
     "nav_brand_sub_title": "Industrial Operations Advisory",
     "hero_telemetry_ecosystem": "TIER-1 & TIER-2 ASML ECOSYSTEM",
@@ -681,9 +691,9 @@ const TRANSLATIONS: Record<SupportedLanguage, TranslationBundle> = {
     "agile_c4_desc": "Empirical quantification of cycle-time recovery, scrap reduction review, and locking validated improvements into digital MES SOPs before sprint closure.",
     "agile_c4_output": "Output: Immutable Standard",
     "field_tier_label": "Advisory Scope / Tier",
-    "tier_opt_sprint": "14-Day Remote Diagnostic Sprint (€5,500)",
-    "tier_opt_fractional": "Fractional Head of Operations & Supply Chain (€6,800/mo)",
-    "tier_opt_onsite": "5-Day Physical Plant Walk & Takt Audit (€7,500)",
+    "tier_opt_sprint": "14-Day Remote Spend & Telemetry Diagnostic (€5,500)",
+    "tier_opt_fractional": "Fractional Direct Sourcing & Systems Director (€8,500/mo)",
+    "tier_opt_onsite": "5-Day Physical Plant Walk & Takt Audit (€5,400)",
     "modal_company_label": "Company:",
     "footer_tax_notice": "Invoiced via European Tax ID · Brainport Eindhoven · Valencia",
     "hero_m4_iso_badge": "Semiconductor & Lithography Packaging Electromechanical & Logistic Work",
@@ -708,7 +718,7 @@ const TRANSLATIONS: Record<SupportedLanguage, TranslationBundle> = {
     "nav_methodology": "Rigor DMAIC",
     "nav_pedigree": "Perfil Ejecutivo",
     "nav_economics": "Tarifas y Alcance",
-    "nav_cta": "Reunión de Asesoría",
+    "nav_cta": "Iniciar Diagnóstico",
     "hero_kicker": "Asesoría Ejecutiva de Operaciones Industriales y Cadena de Suministro",
     "hero_title": "Elimine Paradas de Planta y Escale Compras Directas con Precisión de Taller.",
     "hero_subtitle": "Asesoramiento a la dirección industrial en transformación operativa. Basado en protocolos de ensamblaje electromecánico en sala blanca (estándar ASML), cadencia y trabajo de planta Tier 1 y 2 en línea de montaje de automoción OEM y compras internacionales directas de gran volumen.",
@@ -735,7 +745,7 @@ const TRANSLATIONS: Record<SupportedLanguage, TranslationBundle> = {
     "calc_loss_label": "Pérdida Mensual Estimada en Producción:",
     "calc_annual_label": "Pérdida Anualizada:",
     "calc_recovery_label": "Potencial de Recuperación del Sprint (-45%):",
-    "calc_guarantee_note": "Garantía de Retorno 3x: Si el sprint diagnóstico de 14 días no identifica al menos 16.500 € en ahorro anual verificado, se reembolsa el 100% de los honorarios (5.500 €).",
+    "calc_guarantee_note": "Garantía de Crédito del 100%: Si el diagnóstico de 14 días no documenta al menos 16.500 € en ahorro anual en compras o ineficiencias de mantenimiento, el 100% de los 5.500 € se acredita a una Auditoría en Planta o Retainer Fraccional.",
     "calc_cta": "Iniciar Sprint Diagnóstico de 14 Días →",
     "pillars_kicker": "Intervenciones Sistemáticas",
     "pillars_title": "Tres Pilares Fundamentales de la Práctica de Asesoría Industrial",
@@ -852,27 +862,28 @@ const TRANSLATIONS: Record<SupportedLanguage, TranslationBundle> = {
     "pricing_title": "Mandatos de Asesoría Cerrados: Entregables Claros, Sin Desviación de Costes",
     "pricing_subtitle": "Sin tarifas por horas ambiguas. Precio cerrado por hito con umbrales de retorno claros y límites contractuales definidos.",
     "pricing_vat_notice": "IVA no incluido · Facturación con NIF Europeo · Acuerdo de Confidencialidad (NDA) Incluido",
-    "t1_badge": "PLIEGO TÉCNICO 01 // SPRINT DIAGNÓSTICO",
-    "t1_name": "Sprint Diagnóstico Remoto de 14 Días",
+    "t1_badge": "PLIEGO TÉCNICO 01 // DIAGNÓSTICO REMOTO",
+    "t1_name": "Diagnóstico Remoto de Gasto y Telemetría (14 Días)",
     "t1_price": "5.500 €",
-    "t1_period": "/ hito cerrado",
-    "t1_desc": "Diagnóstico intensivo 100% remoto de su gasto de compras, contratos de proveedores y cuellos de botella de mantenimiento en planta.",
-    "t1_roi_badge": "GARANTÍA INCONDICIONAL DE RETORNO 3X",
-    "t1_roi_text": "Si el diagnóstico no identifica al menos 16.500 € en ahorro anual verificado de compras o reducción de rechazos, se reembolsa el 100% del coste del sprint.",
-    "t1_btn": "Elegir Sprint de 14 Días",
-    "t2_highlight": "[ ELECCIÓN MÁS FRECUENTE EN PLANTAS DE PRODUCCIÓN ]",
-    "t2_badge": "PLIEGO TÉCNICO 02 // DIRECCIÓN FRACCIONADA",
-    "t2_name": "Director de Operaciones y Supply Chain Fraccional",
-    "t2_price": "6.800 €",
+    "t1_period": "/ sprint cerrado",
+    "t1_desc": "Diagnóstico intensivo 100% remoto de variaciones en compras, duplicidades en contratos de proveedores y registros de paradas en CMMS.",
+    "t1_roi_badge": "GARANTÍA DE CRÉDITO DEL 100%",
+    "t1_roi_text": "Si no identificamos al menos 16.500 € en desviaciones anuales de precio unitario, redundancias de contratos o ineficiencias de mano de obra en 14 días, el 100% de los 5.500 € se abona a una Auditoría en Planta o Retainer Fraccional.",
+    "t1_btn": "Elegir Diagnóstico de 14 Días",
+    "t2_highlight": "[ RETRACTOR EJECUTIVO PRINCIPAL ]",
+    "t2_badge": "PLIEGO TÉCNICO 03 // DIRECCIÓN FRACCIONAL",
+    "t2_name": "Director Fraccional de Sourcing Directo y Sistemas",
+    "t2_price": "8.500 €",
     "t2_period": "/ mes",
-    "t2_desc": "Dirección operativa continua. Negociación directa con fábricas en Asia/LATAM, gobernanza del CMMS y automatización de procesos ERP.",
+    "t2_cadence": "Equivalente a 2 Días/Semana • Ejecución Asíncrona Preferente",
+    "t2_desc": "Dirección ejecutiva continua. Negociación directa con fábricas en Asia/LATAM, gobernanza de CMMS (PostgreSQL/MSSQL) y automatización de flujos ERP.",
     "t2_term": "Compromiso Inicial de 3 Meses · Preaviso de 30 Días Posteriormente",
     "t2_btn": "Elegir Dirección Fraccional",
-    "t3_badge": "PLIEGO TÉCNICO 03 // INTERVENCIÓN FÍSICA EN PLANTA",
+    "t3_badge": "PLIEGO TÉCNICO 02 // AUDITORÍA FÍSICA EN PLANTA",
     "t3_name": "Auditoría en Planta y Takt Time de 5 Días",
-    "t3_price": "7.500 €",
-    "t3_period": "/ 5 días en planta + gastos",
-    "t3_desc": "Presencia física en nave: paseos por línea, detección de cuellos de botella, entrevistas con operarios y disciplina de tiempos de ciclo.",
+    "t3_price": "5.400 €",
+    "t3_period": "/ sprint de 5 días (+ gastos)",
+    "t3_desc": "Paseos gemba físicos en nave, cronometraje de takt en línea en movimiento y cuellos de botella, verificación gage R&R / calibración de par y hoja de ruta 8D.",
     "t3_travel_note": "Viaje y alojamiento a cargo del cliente según política de empresa",
     "t3_btn": "Solicitar Auditoría en Planta",
     "intake_kicker": "Evaluación Confidencial",
@@ -921,6 +932,10 @@ const TRANSLATIONS: Record<SupportedLanguage, TranslationBundle> = {
     "footer_sub": "Asesoría Operativa Industrial · Facturación con NIF Europeo · Salas Blancas y Automoción OEM",
     "footer_nda": "Acuerdo de Confidencialidad Mutuo Aplicado en Todos los Mandatos · Todos los derechos reservados © 2026",
     "calc_annual_recovery": "Recuperación Anualizada:",
+    "mid_cta_badge": "GARANTÍA DE CRÉDITO DEL 100% PROTEGIDA",
+    "mid_cta_title": "Identifique Fugas Auditables de Rentabilidad en 14 Días",
+    "mid_cta_subtitle": "Reserve su Diagnóstico Remoto de 14 Días. Si no documentamos al menos 16.500 € en desviaciones de compras o paradas de mantenimiento, el 100% de los 5.500 € se abona a su auditoría en planta o retainer.",
+    "mid_cta_btn": "Reservar Diagnóstico de 14 Días →",
     "ribbon_direct_engagement": "COMPROMISO DIRECTO",
     "nav_brand_sub_title": "Asesoría de Operaciones Industriales",
     "hero_telemetry_ecosystem": "ECOSISTEMA ASML TIER-1 Y TIER-2",
@@ -1010,9 +1025,9 @@ const TRANSLATIONS: Record<SupportedLanguage, TranslationBundle> = {
     "agile_c4_desc": "Cuantificación empírica del tiempo de ciclo recuperado, revisión de reducción de scrap y fijación de mejoras en SOPs digitales de MES antes de cerrar el sprint.",
     "agile_c4_output": "Resultado: Estándar Inmutable",
     "field_tier_label": "Alcance / Nivel de Asesoría",
-    "tier_opt_sprint": "Sprint Diagnóstico Remoto de 14 Días (5.500 €)",
-    "tier_opt_fractional": "Director Fraccional de Operaciones y Cadena de Suministro (6.800 €/mes)",
-    "tier_opt_onsite": "Auditoría Física de Planta y Takt de 5 Días (7.500 €)",
+    "tier_opt_sprint": "Diagnóstico Remoto de Gasto y Telemetría de 14 Días (5.500 €)",
+    "tier_opt_fractional": "Director Fraccional de Sourcing Directo y Sistemas (8.500 €/mes)",
+    "tier_opt_onsite": "Auditoría en Planta y Takt Time de 5 Días (5.400 €)",
     "modal_company_label": "Empresa:",
     "footer_tax_notice": "Facturado con NIF Europeo · Brainport Eindhoven · Valencia",
     "hero_m4_iso_badge": "Trabajo Electromecánico y Logístico de Embalaje de Semiconductores y Litografía",
@@ -1037,7 +1052,7 @@ const TRANSLATIONS: Record<SupportedLanguage, TranslationBundle> = {
     "nav_methodology": "DMAIC Discipline",
     "nav_pedigree": "Directieprofiel",
     "nav_economics": "Diensten",
-    "nav_cta": "Adviesbriefing",
+    "nav_cta": "Start Scoping",
     "hero_kicker": "Tier-1 & Tier-2 ASML Ecosysteem // Senior Industrieel Operationeel Advies",
     "hero_title": "Elimineer Fabrieksstilstand en Schaal Directe Fabrieksinkoop met Werkvloerprecisie.",
     "hero_subtitle": "Advies aan industriële directies over operationele transformatie. Gegrondvest in Tier-1 & Tier-2 ASML cleanroom elektromechanische assemblageprotocollen, hoog-takt automotive OEM lopende band doorvoer, en grootschalige directe internationale inkoop.",
@@ -1064,7 +1079,7 @@ const TRANSLATIONS: Record<SupportedLanguage, TranslationBundle> = {
     "calc_loss_label": "Geschatte Maandelijkse Productiehemorragie:",
     "calc_annual_label": "Jaarlijks Verlies:",
     "calc_recovery_label": "Geprojecteerd Sprint-Herstelpotentieel (~45%):",
-    "calc_guarantee_note": "3x ROI Garantie Handhaving: De 14-dagen diagnostiek identificeert minstens €16.500 aan geverifieerde jaarlijkse besparingen, of het honorarium van €5.500 wordt 100% gerestitueerd.",
+    "calc_guarantee_note": "100% Fee-Tegoed Garantie: Als de 14-dagen diagnostiek niet minstens €16.500 aan gedocumenteerde jaarlijkse inkoopbesparingen of onderhoudsverliezen aantoont, wordt 100% van het €5.500 honorarium gecrediteerd voor een On-Site Audit of Parttime Mandaat.",
     "calc_cta": "Vraag Operationele Sprint Aan →",
     "pillars_kicker": "Systematische Interventies",
     "pillars_title": "Drie Kernpijlers van Industriële Adviespraktijk",
@@ -1181,28 +1196,29 @@ const TRANSLATIONS: Record<SupportedLanguage, TranslationBundle> = {
     "pricing_title": "Vaste Adviesmandaten: Heldere Entregables, Geen Verborgen Kosten",
     "pricing_subtitle": "Geen vage uurtarieven of open eindjes. Scherpe vaste projecttarieven met bindende resultaatverplichting en ROI-garantie.",
     "pricing_vat_notice": "Alle tarieven zijn exclusief BTW en reiskosten conform Europese B2B richtlijnen.",
-    "t1_badge": "Operationele Diagnostiek",
-    "t1_name": "14-Dagen Remote Diagnostische Sprint",
+    "t1_badge": "SPEC-SHEET 01 // REMOTE DIAGNOSTIEK",
+    "t1_name": "14-Dagen Remote Spend & Telemetrie Diagnostiek",
     "t1_price": "€5.500",
-    "t1_period": "Vast Tarief",
-    "t1_desc": "Intensieve 14-dagen analyse van uw fabrieksstilstand, ketenafhankelijkheden en knelpunten. Levert een compleet verbeterdossier op met gekwantificeerde ROI.",
-    "t1_roi_badge": "3x ROI Garantie",
-    "t1_roi_text": "Identificeert minstens €16.500 aan besparingen, anders 100% restitutie van het honorarium.",
-    "t1_btn": "Kies 14-Dagen Sprint",
-    "t2_highlight": "MEEST GEKOZEN DOOR PRODUCTIEBEDRIJVEN",
-    "t2_badge": "Strategische Leiding",
-    "t2_name": "Parttime Operationeel Directeur & Supply Chain Lead",
-    "t2_price": "€6.800",
-    "t2_period": "/maand",
-    "t2_desc": "Continue parttime begeleiding voor industriële directies. Wekelijkse werkvloerinterventies, leveranciersgesprekken en procesborging.",
-    "t2_term": "Minimale inzet 3 maanden · Wekelijkse voortgangsrapportage direct aan het management.",
+    "t1_period": "/ vast sprint-tarief",
+    "t1_desc": "Intensieve 100% remote audit gericht op inkoopvarianties, redundante leverancierscontracten en CMMS-onderhoudsstilstanden.",
+    "t1_roi_badge": "100% FEE-TEGOED GARANTIE",
+    "t1_roi_text": "Als we niet minstens €16.500 aan gedocumenteerde jaarlijkse prijsverschillen, contractredundanties of onderhoudsverliezen aantonen binnen 14 dagen, wordt 100% van uw €5.500 fee gecrediteerd naar een On-Site Audit of Parttime Retainer.",
+    "t1_btn": "Kies 14-Dagen Diagnostiek",
+    "t2_highlight": "[ VASTLEGGEND DIRECTIEMANDAAT ]",
+    "t2_badge": "SPEC-SHEET 03 // PARTTIME DIRECTEUR",
+    "t2_name": "Parttime Direct Sourcing & Systems Director",
+    "t2_price": "€8.500",
+    "t2_period": "/ maand",
+    "t2_cadence": "Equivalent van 2 Dagen/Week • Async-First Uitvoering",
+    "t2_desc": "Continue operationele leiding. Directe fabrieksonderhandelingen in Azië/LATAM, CMMS-governance (PostgreSQL/MSSQL) en geautomatiseerde ERP-processen.",
+    "t2_term": "Minimale inzet 3 maanden · 30 dagen opzegtermijn nadien",
     "t2_btn": "Kies Parttime Mandaat",
-    "t3_badge": "On-Site Interventie",
+    "t3_badge": "SPEC-SHEET 02 // FYSIEKE FABRIEKSAUDIT",
     "t3_name": "5-Dagen Fysieke Fabrieksinspectie & Takt-Audit",
-    "t3_price": "€7.500",
-    "t3_period": "Vast Tarief",
-    "t3_desc": "Volledige werkweek direct op uw werkvloer. Gemba walks, tijdstudies, OEE-metingen en onmiddellijke hands-on optimalisaties van knelpunten.",
-    "t3_travel_note": "Reis- en verblijfkosten binnen Europa worden vooraf transparant begroot en gefactureerd.",
+    "t3_price": "€5.400",
+    "t3_period": "/ 5-dagen sprint (+ reiskosten)",
+    "t3_desc": "Fysieke gemba walks, takt-tijdmetingen op bewegende lijnen, gage R&R / momentsleutelkalibratie en een 8D-inperkingsroadmap.",
+    "t3_travel_note": "Reis- en verblijfkosten conform bedrijfsbeleid van de opdrachtgever",
     "t3_btn": "Vraag Fabrieksinspectie Aan",
     "intake_kicker": "Direct Contact",
     "intake_title": "Plan een Technische Intake of Stuur een Asynchrone Briefing",
@@ -1250,6 +1266,10 @@ const TRANSLATIONS: Record<SupportedLanguage, TranslationBundle> = {
     "footer_sub": "Onafhankelijk Industrieel Advies voor Automotive OEM & Cleanroom Halfgeleider Assemblagefaciliteiten.",
     "footer_nda": "Bilateral Mutual NDA Gegarandeerd Over Alle Mandaten · Alle Rechten Voorbehouden © 2026",
     "calc_annual_recovery": "Jaarlijks Herstel:",
+    "mid_cta_badge": "100% FEE-TEGOED GARANTIE",
+    "mid_cta_title": "Identificeer Auditeerbare Rendementslekken Binnen 14 Dagen",
+    "mid_cta_subtitle": "Reserveer uw 14-dagen remote diagnostiek. Vinden we niet minstens €16.500 aan gedocumenteerde inkoop- of onderhoudslekken, dan wordt 100% van uw investering gecrediteerd naar een audit op locatie of retainer.",
+    "mid_cta_btn": "Boek 14-Dagen Diagnostiek →",
     "ribbon_direct_engagement": "DIRECTE ENGAGEMENT",
     "nav_brand_sub_title": "Industrieel Operationeel Advies",
     "hero_telemetry_ecosystem": "TIER-1 & TIER-2 ASML ECOSYSTEEM",
@@ -1339,9 +1359,9 @@ const TRANSLATIONS: Record<SupportedLanguage, TranslationBundle> = {
     "agile_c4_desc": "Empirische kwantificering van cyclustijdherstel, evaluatie van afvalvermindering en vastlegging van gevalideerde verbeteringen in digitale MES-SOPs.",
     "agile_c4_output": "Resultaat: Onveranderlijke Standaard",
     "field_tier_label": "Adviesomvang / Niveau",
-    "tier_opt_sprint": "14-Dagen Remote Diagnostische Sprint (€5.500)",
-    "tier_opt_fractional": "Fractional Head of Operations & Supply Chain (€6.800/mnd)",
-    "tier_opt_onsite": "5-Dagen Fysieke Plant Walk & Takt Audit (€7.500)",
+    "tier_opt_sprint": "14-Dagen Remote Spend & Telemetrie Diagnostiek (€5.500)",
+    "tier_opt_fractional": "Parttime Direct Sourcing & Systems Director (€8.500/mnd)",
+    "tier_opt_onsite": "5-Dagen Fysieke Fabrieksinspectie & Takt-Audit (€5.400)",
     "modal_company_label": "Bedrijf:",
     "footer_tax_notice": "Gefactureerd via Europees Btw-nummer · Brainport Eindhoven · Valencia",
     "hero_m4_iso_badge": "Elektromechanisch en Logistiek Werk voor Halfgeleider- en Lithografieverpakkingen",
@@ -1366,7 +1386,7 @@ const TRANSLATIONS: Record<SupportedLanguage, TranslationBundle> = {
     "nav_methodology": "DMAIC-Disziplin",
     "nav_pedigree": "Führungsprofil",
     "nav_economics": "Dienstleistungen",
-    "nav_cta": "Beratungs-Briefing",
+    "nav_cta": "Scoping initiieren",
     "hero_kicker": "Tier-1 & Tier-2 ASML-Ökosystem // Senior Industrieberatung Operations",
     "hero_title": "Werksstillstände eliminieren und direkte Fabrikbeschaffung mit Hallenpräzision skalieren.",
     "hero_subtitle": "Beratung für Industrieleiter bei der operativen Transformation. Fundiert in elektromechanischen Montageprotokollen für ASML-Reinräume (Tier-1/Tier-2), Fließband-Durchsatz im Automobil-OEM-Takt und volumenstarker internationaler Direktbeschaffung.",
@@ -1393,7 +1413,7 @@ const TRANSLATIONS: Record<SupportedLanguage, TranslationBundle> = {
     "calc_loss_label": "Geschätzter monatlicher Produktionsverlust:",
     "calc_annual_label": "Jährlicher Verlust:",
     "calc_recovery_label": "Prognostiziertes Sprint-Rückgewinnungspotenzial (~45%):",
-    "calc_guarantee_note": "3x ROI-Garantie: Die 14-tägige Diagnose identifiziert mindestens 16.500 € an verifizierten jährlichen Einsparungen, andernfalls wird das Honorar von 5.500 € zu 100 % erstattet.",
+    "calc_guarantee_note": "100 % Honorargutschrift-Garantie: Wenn die 14-tägige Diagnose nicht mindestens 16.500 € an jährlichen Einkaufseinsparungen oder Wartungsstillständen dokumentiert, werden 100 % des 5.500 € Honorars auf ein Vor-Ort-Audit oder Retainer angerechnet.",
     "calc_cta": "Diagnose-Sprint anfragen →",
     "pillars_kicker": "Systematische Interventionen",
     "pillars_title": "Drei Kernsäulen der industriellen Beratungspraxis",
@@ -1510,28 +1530,29 @@ const TRANSLATIONS: Record<SupportedLanguage, TranslationBundle> = {
     "pricing_title": "Produktbasierte Beratungsmandate: Feste Ergebnisse, planbare Budgets",
     "pricing_subtitle": "Keine offenen Stundensätze. Transparente Festpreismandate mit klarer Ergebnisbindung und vertraglich definierter ROI-Garantie.",
     "pricing_vat_notice": "Alle Preise verstehen sich zzgl. gesetzlicher MwSt. und Reisekosten gemäß B2B-Standard.",
-    "t1_badge": "Operative Diagnose",
-    "t1_name": "14-Tage Remote-Diagnose-Sprint",
+    "t1_badge": "LEISTUNGSPROFIL 01 // REMOTE-DIAGNOSE",
+    "t1_name": "14-Tage Remote Spend- & Telemetrie-Diagnose",
     "t1_price": "5.500 €",
-    "t1_period": "Festpreis",
-    "t1_desc": "Intensives 14-tägiges Audit Ihrer Linienstillstände, Lieferkettenrisiken und Taktengpässe. Liefert ein vollständiges Maßnahmenpaket mit quantifiziertem ROI.",
-    "t1_roi_badge": "3x ROI-Garantie",
-    "t1_roi_text": "Identifiziert mindestens 16.500 € an Einsparpotenzial, andernfalls 100 % Honorarrückerstattung.",
-    "t1_btn": "14-Tage-Sprint wählen",
-    "t2_highlight": "VON PRODUKTIONSWERKEN AM HÄUFIGSTEN GEWÄHLT",
-    "t2_badge": "Strategische Führung",
-    "t2_name": "Fraktioneller Leiter Betrieb & Supply Chain",
-    "t2_price": "6.800 €",
-    "t2_period": "/Monat",
-    "t2_desc": "Kontinuierliche Begleitung für Geschäftsführung und Werksleitung. Wöchentliche Hallen-Interventionen, Lieferantenaudits und Prozessverankerung.",
-    "t2_term": "Mindestlaufzeit 3 Monate · Wöchentliche Fortschrittsberichte direkt an die Geschäftsleitung.",
+    "t1_period": "/ fester Sprint",
+    "t1_desc": "Intensive 100 % Remote-Analyse von Einkaufspreisabweichungen, redundanten Lieferantenverträgen und CMMS-Stillstandsprotokollen.",
+    "t1_roi_badge": "100 % HONORARGUTSCHRIFT-GARANTIE",
+    "t1_roi_text": "Identifizieren wir innerhalb von 14 Tagen nicht mindestens 16.500 € an belegten Stückpreisdeltas, Vertragsüberkapazitäten oder Wartungsineffizienzen, werden 100 % Ihres 5.500 € Honorars voll auf ein Vor-Ort-Audit oder Fraktionelles Mandat angerechnet.",
+    "t1_btn": "14-Tage-Diagnose wählen",
+    "t2_highlight": "[ FLAGGSCHIFF-FÜHRUNGSMANDAT ]",
+    "t2_badge": "LEISTUNGSPROFIL 03 // FRAKTIONELLE LEITUNG",
+    "t2_name": "Fraktioneller Direktor Direct Sourcing & Systems",
+    "t2_price": "8.500 €",
+    "t2_period": "/ Monat",
+    "t2_cadence": "Äquivalent zu 2 Tagen/Woche • Async-First Umsetzung",
+    "t2_desc": "Kontinuierliche operative Leitung. Direkte Fabrikverhandlungen in Asien/LATAM, CMMS-Governance (PostgreSQL/MSSQL) und ERP-Automatisierung.",
+    "t2_term": "Mindestlaufzeit 3 Monate · 30 Tage rollierende Kündigungsfrist",
     "t2_btn": "Fraktionelles Mandat wählen",
-    "t3_badge": "Vor-Ort-Intervention",
+    "t3_badge": "LEISTUNGSPROFIL 02 // VOR-ORT-WERKSAUDIT",
     "t3_name": "5-Tage Vor-Ort-Werksbegehung & Takt-Audit",
-    "t3_price": "7.500 €",
-    "t3_period": "Festpreis",
-    "t3_desc": "Vollständige Arbeitswoche direkt auf Ihrem Hallenboden. Gemba Walks, Zeitanalysen, OEE-Ermittlung und sofortige Beseitigung von Taktbremsen.",
-    "t3_travel_note": "Reise- und Übernachtungskosten innerhalb Europas werden transparent nach Aufwand abgerechnet.",
+    "t3_price": "5.400 €",
+    "t3_period": "/ 5-Tage-Sprint (+ Reisekosten)",
+    "t3_desc": "Physische Gemba Walks, Taktabstimmung bei Taktstraßen, Messmittelfähigkeit (Gage R&R), Drehmoment-Kalibrierprüfung und 8D-Roadmap.",
+    "t3_travel_note": "Reise- und Übernachtungskosten gemäß interner Unternehmensrichtlinie des Auftraggebers",
     "t3_btn": "Vor-Ort-Audit anfragen",
     "intake_kicker": "Direkter Einstieg",
     "intake_title": "Technisches Sondierungsgespräch vereinbaren oder asynchrone Anfrage senden",
@@ -1579,6 +1600,10 @@ const TRANSLATIONS: Record<SupportedLanguage, TranslationBundle> = {
     "footer_sub": "Unabhängige Industrieberatung für Automobil-OEMs und Fertigungsstätten im Halbleiterbereich.",
     "footer_nda": "Beidseitige Geheimhaltungsvereinbarung (Bilateral NDA) für alle Mandate · Alle Rechte vorbehalten © 2026",
     "calc_annual_recovery": "Jährliche Erholung:",
+    "mid_cta_badge": "100 % HONORARGUTSCHRIFT GESICHERT",
+    "mid_cta_title": "Prüffähige Ertragslecks innerhalb von 14 Tagen aufdecken",
+    "mid_cta_subtitle": "Sichern Sie sich die 14-tägige Remote-Diagnose. Werden nicht mindestens 16.500 € an Einsparpotenzial oder Stillstandskosten belegt, werden 100 % Ihres Honorars auf ein Vor-Ort-Audit angerechnet.",
+    "mid_cta_btn": "14-Tage-Diagnose buchen →",
     "ribbon_direct_engagement": "DIREKTES ENGAGEMENT",
     "nav_brand_sub_title": "Industrielle Betriebsberatung",
     "hero_telemetry_ecosystem": "TIER-1 & TIER-2 ASML-ÖKOSYSTEM",
@@ -1668,9 +1693,9 @@ const TRANSLATIONS: Record<SupportedLanguage, TranslationBundle> = {
     "agile_c4_desc": "Empirische Quantifizierung gewonnener Taktzeiten, Analyse reduzierter Ausschussraten und Festschreibung geprüfter Verbesserungen in digitalen MES-SOPs.",
     "agile_c4_output": "Ergebnis: Verbindlicher Standard",
     "field_tier_label": "Beratungsumfang / Stufe",
-    "tier_opt_sprint": "14-Tage-Remote-Diagnose-Sprint (5.500 €)",
-    "tier_opt_fractional": "Fraktionaler Leiter Operations & Supply Chain (6.800 €/Monat)",
-    "tier_opt_onsite": "5-Tage-Werksbegehung & Takt-Audit vor Ort (7.500 €)",
+    "tier_opt_sprint": "14-Tage Remote Spend- & Telemetrie-Diagnose (5.500 €)",
+    "tier_opt_fractional": "Fraktioneller Direktor Direct Sourcing & Systems (8.500 €/Monat)",
+    "tier_opt_onsite": "5-Tage Vor-Ort-Werksbegehung & Takt-Audit (5.400 €)",
     "modal_company_label": "Unternehmen:",
     "footer_tax_notice": "In Rechnung gestellt über europäische USt-IdNr. · Brainport Eindhoven · Valencia",
     "hero_m4_iso_badge": "Elektromechanische & logistische Arbeiten für Halbleiter- & Lithographieverpackungen",
@@ -1695,7 +1720,7 @@ const TRANSLATIONS: Record<SupportedLanguage, TranslationBundle> = {
     "nav_methodology": "Rigueur DMAIC",
     "nav_pedigree": "Profil Exécutif",
     "nav_economics": "Services",
-    "nav_cta": "Briefing Conseil",
+    "nav_cta": "Initier le Cadrage",
     "hero_kicker": "Écosystème ASML Tier-1 & Tier-2 // Conseil Senior en Opérations Industrielles",
     "hero_title": "Éliminez les arrêts d'usine et développez le sourcing direct avec la précision du terrain.",
     "hero_subtitle": "Conseil aux directions industrielles sur la transformation opérationnelle. Fondé sur les protocoles d'assemblage électromécanique en salle blanche ASML (Tier-1/Tier-2), le takt d'assemblage automobile OEM et le sourcing international direct en volume.",
@@ -1722,7 +1747,7 @@ const TRANSLATIONS: Record<SupportedLanguage, TranslationBundle> = {
     "calc_loss_label": "Hémorragie mensuelle de production estimée :",
     "calc_annual_label": "Perte annuelle :",
     "calc_recovery_label": "Potentiel de récupération estimé du sprint (~45%) :",
-    "calc_guarantee_note": "Garantie ROI 3x appliquée : Le diagnostic de 14 jours identifie au moins 16 500 € d'économies annuelles vérifiées, ou les 5 500 € d'honoraires sont remboursés à 100 %.",
+    "calc_guarantee_note": "Garantie Crédit d'Honoraires à 100 % : Si le diagnostic de 14 jours ne documente pas au moins 16 500 € d'économies annuelles sur les achats ou la maintenance, 100 % des 5 500 € sont crédités sur un audit sur site ou un forfait partagé.",
     "calc_cta": "Demander le sprint diagnostique →",
     "pillars_kicker": "Interventions Systématiques",
     "pillars_title": "Trois piliers fondamentaux de conseil industriel",
@@ -1839,28 +1864,29 @@ const TRANSLATIONS: Record<SupportedLanguage, TranslationBundle> = {
     "pricing_title": "Mandats de conseil packagés : Livrables fermes, budget maîtrisé",
     "pricing_subtitle": "Aucune facturation à l'heure imprévisible. Des forfaits clairs avec engagement de résultat et garantie contractuelle de ROI.",
     "pricing_vat_notice": "Tous les tarifs sont indiqués hors TVA et frais de déplacement selon les standards B2B européens.",
-    "t1_badge": "Diagnostic Opérationnel",
-    "t1_name": "Sprint Diagnostique à Distance de 14 Jours",
+    "t1_badge": "FICHE TECHNIQUE 01 // DIAGNOSTIC À DISTANCE",
+    "t1_name": "Diagnostic Spend & Télémétrie à Distance (14 Jours)",
     "t1_price": "5 500 €",
-    "t1_period": "Forfait fixe",
-    "t1_desc": "Audit intensif de 14 jours de vos arrêts d'usine, goulets d'étranglement et dépendances de supply chain. Restitution d'un plan d'actions chiffré avec ROI validé.",
-    "t1_roi_badge": "Garantie ROI 3x",
-    "t1_roi_text": "Identifie au moins 16 500 € d'économies démontrées, ou remboursement intégral des 5 500 €.",
-    "t1_btn": "Choisir le Sprint 14 Jours",
-    "t2_highlight": "LE CHOIX LE PLUS FRÉQUENT DES USINES DE PRODUCTION",
-    "t2_badge": "Direction Opérationnelle",
-    "t2_name": "Directeur des Opérations & Supply Chain à Temps Partagé",
-    "t2_price": "6 800 €",
-    "t2_period": "/mois",
-    "t2_desc": "Accompagnement opérationnel régulier pour les directeurs d'usine. Interventions hebdomadaires sur le terrain, audits fournisseurs et ancrage des standards.",
-    "t2_term": "Engagement minimum de 3 mois · Reporting hebdomadaire direct au comité de direction.",
+    "t1_period": "/ sprint forfaitaire",
+    "t1_desc": "Audit intensif 100 % à distance des écarts d'achats, des redondances de contrats fournisseurs et des journaux d'arrêts de maintenance GMAO.",
+    "t1_roi_badge": "GARANTIE CRÉDIT D'HONORAIRES À 100 %",
+    "t1_roi_text": "Si nous n'identifions pas au moins 16 500 € d'écarts de prix unitaires, de doublons contractuels ou d'inefficacités de maintenance en 14 jours, 100 % de vos 5 500 € sont crédités sur un audit sur site ou un forfait fractionnel.",
+    "t1_btn": "Choisir le Diagnostic 14 Jours",
+    "t2_highlight": "[ DIRECTION DE RÉFÉRENCE ]",
+    "t2_badge": "FICHE TECHNIQUE 03 // DIRECTION FRACTIONNÉE",
+    "t2_name": "Directeur Direct Sourcing & Systèmes à Temps Partagé",
+    "t2_price": "8 500 €",
+    "t2_period": "/ mois",
+    "t2_cadence": "Équivalent 2 Jours/Semaine • Exécution Asynchrone Prioritaire",
+    "t2_desc": "Pilotage exécutif continu. Négociations directes avec usines en Asie/LATAM, gouvernance GMAO (PostgreSQL/MSSQL) et workflows ERP automatisés.",
+    "t2_term": "Engagement initial de 3 mois · Préavis de 30 jours par la suite",
     "t2_btn": "Choisir le Mandat à Temps Partagé",
-    "t3_badge": "Intervention Sur Site",
-    "t3_name": "Audit d'Usine sur Site de 5 Jours & Évaluation du Takt",
-    "t3_price": "7 500 €",
-    "t3_period": "Forfait fixe",
-    "t3_desc": "Une semaine complète en immersion dans votre usine. Gemba walks, chronométrages, mesure du TRS/OEE et déblocage immédiat des goulets de ligne.",
-    "t3_travel_note": "Frais de déplacement et d'hébergement en Europe facturés aux frais réels après accord préalable.",
+    "t3_badge": "FICHE TECHNIQUE 02 // AUDIT D'USINE SUR SITE",
+    "t3_name": "Audit d'Usine sur Site & Analyse du Takt de 5 Jours",
+    "t3_price": "5 400 €",
+    "t3_period": "/ sprint de 5 jours (+ déplacement)",
+    "t3_desc": "Gemba walks physiques en usine, chronométrage du takt sur lignes mouvantes, capabilité instruments (gage R&R), étalonnage couple et feuille de route 8D.",
+    "t3_travel_note": "Frais de déplacement et d'hébergement pris en charge selon la politique de l'entreprise cliente",
     "t3_btn": "Demander l'Audit sur Site",
     "intake_kicker": "Contact Direct",
     "intake_title": "Planifier un entretien de cadrage technique ou envoyer un briefing asynchrone",
@@ -1908,6 +1934,10 @@ const TRANSLATIONS: Record<SupportedLanguage, TranslationBundle> = {
     "footer_sub": "Conseil industriel indépendant pour usines d'assemblage automobile OEM et environnements semi-conducteurs.",
     "footer_nda": "Accord bilatéral de confidentialité garanti pour toutes les missions · Tous droits réservés © 2026",
     "calc_annual_recovery": "Récupération annuelle :",
+    "mid_cta_badge": "GARANTIE CRÉDIT D'HONORAIRES À 100 %",
+    "mid_cta_title": "Identifiez les Fuites de Rentabilité Auditables en 14 Jours",
+    "mid_cta_subtitle": "Réservez votre diagnostic à distance de 14 jours. À défaut d'identifier au moins 16 500 € d'économies annuelles vérifiées, 100 % de votre honoraire de 5 500 € est crédité sur un audit sur site ou retainer.",
+    "mid_cta_btn": "Réserver le Diagnostic 14 Jours →",
     "ribbon_direct_engagement": "ENGAGEMENT DIRECT",
     "nav_brand_sub_title": "Conseil en Opérations Industrielles",
     "hero_telemetry_ecosystem": "ÉCOSYSTÈME ASML TIER-1 ET TIER-2",
@@ -1997,9 +2027,9 @@ const TRANSLATIONS: Record<SupportedLanguage, TranslationBundle> = {
     "agile_c4_desc": "Quantification empirique du temps de cycle récupéré, examen de la réduction des rebuts et verrouillage des améliorations dans les SOP numériques du MES.",
     "agile_c4_output": "Résultat : Standard Invariable",
     "field_tier_label": "Périmètre de Conseil / Niveau",
-    "tier_opt_sprint": "Sprint Diagnostique à Distance de 14 Jours (5 500 €)",
-    "tier_opt_fractional": "Directeur des Opérations & Supply Chain Fractionné (6 800 €/mois)",
-    "tier_opt_onsite": "Audit Physique d'Usine & Takt de 5 Jours (7 500 €)",
+    "tier_opt_sprint": "Diagnostic Spend & Télémétrie à Distance de 14 Jours (5 500 €)",
+    "tier_opt_fractional": "Directeur Direct Sourcing & Systèmes à Temps Partagé (8 500 €/mois)",
+    "tier_opt_onsite": "Audit d'Usine sur Site & Analyse du Takt de 5 Jours (5 400 €)",
     "modal_company_label": "Entreprise :",
     "footer_tax_notice": "Facturation avec Numéro de TVA Européen · Brainport Eindhoven · Valence",
     "hero_m4_iso_badge": "Travail Électromécanique et Logistique d'Emballage Semi-conducteurs et Lithographie",
@@ -2024,7 +2054,7 @@ const TRANSLATIONS: Record<SupportedLanguage, TranslationBundle> = {
     "nav_methodology": "Rigor DMAIC",
     "nav_pedigree": "Perfil Executivo",
     "nav_economics": "Serviços",
-    "nav_cta": "Briefing de Consultoria",
+    "nav_cta": "Iniciar Diagnóstico",
     "hero_kicker": "Ecossistema ASML Tier-1 & Tier-2 // Consultoria Sênior em Operações Industriais",
     "hero_title": "Elimine paradas de fábrica e escale o fornecimento direto com a precisão do chão de fábrica.",
     "hero_subtitle": "Assessoria à liderança industrial em transformação operacional. Fundamentada em protocolos de montagem eletromecânica em sala limpa ASML (Tier-1/Tier-2), cadência de linha móvel automotiva OEM e compras internacionais diretas em alto volume.",
@@ -2051,7 +2081,7 @@ const TRANSLATIONS: Record<SupportedLanguage, TranslationBundle> = {
     "calc_loss_label": "Hemorragia mensal estimada de produção:",
     "calc_annual_label": "Perda anual acumulada:",
     "calc_recovery_label": "Potencial projetado de recuperação do sprint (~45%):",
-    "calc_guarantee_note": "Garantia de ROI de 3x Aplicada: O diagnóstico de 14 dias identifica pelo menos €16.500 em economias anuais comprovadas, ou a taxa de €5.500 é 100% reembolsada.",
+    "calc_guarantee_note": "Garantia de Crédito de 100%: Se o diagnóstico de 14 dias não documentar pelo menos €16.500 em economias anuais de compras ou paradas de manutenção, 100% dos €5.500 são creditados em uma Auditoria Presencial ou Retainer Fracionário.",
     "calc_cta": "Solicitar Sprint Diagnóstico →",
     "pillars_kicker": "Intervenções Sistemáticas",
     "pillars_title": "Três Pilares Centrais da Prática de Consultoria Industrial",
@@ -2168,28 +2198,29 @@ const TRANSLATIONS: Record<SupportedLanguage, TranslationBundle> = {
     "pricing_title": "Mandatos de Consultoria Estruturados: Entregáveis Definidos, Orçamento Fechado",
     "pricing_subtitle": "Sem surpresas com taxas horárias em aberto. Projetos fechados com metas claras, responsabilidade técnica e garantia de ROI contratual.",
     "pricing_vat_notice": "Valores apresentados sem incidência de impostos e despesas de viagem conforme normas B2B europeias.",
-    "t1_badge": "Diagnóstico Operacional",
-    "t1_name": "Sprint Diagnóstico Remoto de 14 Dias",
+    "t1_badge": "ESPECIFICAÇÃO 01 // DIAGNÓSTICO REMOTO",
+    "t1_name": "Diagnóstico Remoto de Spend e Telemetria (14 Dias)",
     "t1_price": "€5.500",
-    "t1_period": "Preço Fechado",
-    "t1_desc": "Diagnóstico aprofundado de 14 dias sobre paradas de fábrica, gargalos de produção e riscos na cadeia de suprimentos. Apresentação de plano de ação com ROI validado.",
-    "t1_roi_badge": "Garantia de 3x ROI",
-    "t1_roi_text": "Identifica no mínimo €16.500 em ganhos anuais comprovados, ou 100% dos €5.500 são devolvidos.",
-    "t1_btn": "Contratar Sprint de 14 Dias",
-    "t2_highlight": "OPÇÃO MAIS ESCOLHIDA POR INDÚSTRIAS DE MANUFATURA",
-    "t2_badge": "Liderança Estratégica",
-    "t2_name": "Diretor de Operações e Cadeia de Suprimentos Fracionário",
-    "t2_price": "€6.800",
-    "t2_period": "/mês",
-    "t2_desc": "Acompanhamento executivo contínuo para a liderança fabril. Intervenções semanais no chão de fábrica, auditorias de fornecedores e sustentação dos padrões.",
-    "t2_term": "Contrato mínimo de 3 meses · Relatórios semanais de evolução apresentados diretamente à diretoria.",
+    "t1_period": "/ sprint fechado",
+    "t1_desc": "Diagnóstico intensivo 100% remoto de dispersão em compras, contratos redundantes de fornecedores e registros de paradas no CMMS.",
+    "t1_roi_badge": "GARANTIA DE CRÉDITO DE 100%",
+    "t1_roi_text": "Se não identificarmos pelo menos €16.500 em variações de preço unitário, redundâncias de contratos ou ineficiências de mão de obra em 14 dias, 100% do seu honorário de €5.500 é creditado para uma Auditoria Presencial ou Retainer Fracionário.",
+    "t1_btn": "Contratar Diagnóstico de 14 Dias",
+    "t2_highlight": "[ MANDATO EXECUTIVO PRINCIPAL ]",
+    "t2_badge": "ESPECIFICAÇÃO 03 // LIDERANÇA FRACIONÁRIA",
+    "t2_name": "Diretor Fracionário de Sourcing Direto e Sistemas",
+    "t2_price": "€8.500",
+    "t2_period": "/ mês",
+    "t2_cadence": "Equivalente a 2 Dias/Semana • Execução Assíncrona Prioritária",
+    "t2_desc": "Direção executiva contínua. Negociações diretas com fábricas na Ásia/LATAM, governança de CMMS (PostgreSQL/MSSQL) e automação de fluxos ERP.",
+    "t2_term": "Contrato inicial de 3 meses · Aviso prévio de 30 dias após esse período",
     "t2_btn": "Contratar Mandato Fracionário",
-    "t3_badge": "Intervenção no Local",
-    "t3_name": "Auditoria Física de Fábrica e Análise de Takt de 5 Dias",
-    "t3_price": "€7.500",
-    "t3_period": "Preço Fechado",
-    "t3_desc": "Uma semana completa atuando diretamente no chão da sua fábrica. Gemba walks, cronoanálise, medição de OEE e destravamento imediato de gargalos de linha.",
-    "t3_travel_note": "Custos com deslocamento e hospedagem na Europa são orçados previamente e cobrados sem margem.",
+    "t3_badge": "ESPECIFICAÇÃO 02 // AUDITORIA PRESENCIAL",
+    "t3_name": "Auditoria Física de Fábrica e Takt Time de 5 Dias",
+    "t3_price": "€5.400",
+    "t3_period": "/ sprint de 5 dias (+ despesas)",
+    "t3_desc": "Gemba walks no chão de fábrica, cronometragem de takt em linhas móveis e gargalos, verificação gage R&R / calibração de torque e roteiro 8D.",
+    "t3_travel_note": "Despesas de viagem e hospedagem sob política corporativa do cliente",
     "t3_btn": "Solicitar Auditoria na Fábrica",
     "intake_kicker": "Contato Direto",
     "intake_title": "Agendar Reunião Técnica de Alinhamento ou Enviar Briefing Assíncrono",
@@ -2237,6 +2268,10 @@ const TRANSLATIONS: Record<SupportedLanguage, TranslationBundle> = {
     "footer_sub": "Consultoria industrial independente especializada em montagem automotiva OEM e instalações de semicondutores.",
     "footer_nda": "Acordo Bilateral de Confidencialidade (NDA) Garantido para Todos os Mandatos · Todos os Direitos Reservados © 2026",
     "calc_annual_recovery": "Recuperação anual estimada:",
+    "mid_cta_badge": "GARANTIA DE CRÉDITO DE 100% ASSEGURADA",
+    "mid_cta_title": "Identifique Perdas Auditáveis de Rentabilidade em 14 Dias",
+    "mid_cta_subtitle": "Reserve o seu Diagnóstico Remoto de 14 Dias. Se não comprovarmos pelo menos €16.500 em desvios de compras ou paradas de manutenção, 100% dos €5.500 são creditados em auditoria presencial ou mandato executivo.",
+    "mid_cta_btn": "Reservar Diagnóstico de 14 Dias →",
     "ribbon_direct_engagement": "ENGAJAMENTO DIRETO",
     "nav_brand_sub_title": "Consultoria de Operações Industriais",
     "hero_telemetry_ecosystem": "ECOSSISTEMA ASML TIER-1 E TIER-2",
@@ -2326,9 +2361,9 @@ const TRANSLATIONS: Record<SupportedLanguage, TranslationBundle> = {
     "agile_c4_desc": "Quantificação empírica da recuperação do tempo de ciclo, revisão da redução de refugos e fixação de melhorias validadas em SOPs digitais do MES antes do fechamento do sprint.",
     "agile_c4_output": "Resultado: Padrão Imutável",
     "field_tier_label": "Escopo da Consultoria / Nível",
-    "tier_opt_sprint": "Sprint de Diagnóstico Remoto de 14 Dias (€5.500)",
-    "tier_opt_fractional": "Diretor Fracionário de Operações e Cadeia de Suprimentos (€6.800/mês)",
-    "tier_opt_onsite": "Auditoria Física de Fábrica e Takt de 5 Dias (€7.500)",
+    "tier_opt_sprint": "Diagnóstico Remoto de Spend e Telemetria de 14 Dias (€5.500)",
+    "tier_opt_fractional": "Diretor Fracionário de Sourcing Direto e Sistemas (€8.500/mês)",
+    "tier_opt_onsite": "Auditoria Física de Fábrica e Takt de 5 Dias (€5.400)",
     "modal_company_label": "Empresa:",
     "footer_tax_notice": "Faturado com NIF/NIPC Europeu · Brainport Eindhoven · Valência",
     "hero_m4_iso_badge": "Trabalho Eletromecânico e Logístico de Embalagem para Semicondutores e Litografia",
@@ -2363,7 +2398,7 @@ export default function SwissB2BAdvisory({
     p2: false,
     p3: false
   });
-  const [selectedTier, setSelectedTier] = useState<string>('14-Day Remote Diagnostic Sprint (€5,500)');
+  const [selectedTier, setSelectedTier] = useState<string>('');
   const [formData, setFormData] = useState({
     name: '',
     company: '',
@@ -2463,8 +2498,8 @@ export default function SwissB2BAdvisory({
           email: formData.email,
           brief: formData.bottleneck,
           bottleneck: formData.bottleneck,
-          mandateScope: selectedTier,
-          tier: selectedTier,
+          mandateScope: selectedTier || t.tier_opt_sprint,
+          tier: selectedTier || t.tier_opt_sprint,
           lang: lang,
           mandateId: generatedMandateId
         })
@@ -2475,14 +2510,14 @@ export default function SwissB2BAdvisory({
         isOpen: true,
         mandateId: finalMandateId,
         companyName: formData.company || 'Industrial Facility',
-        tier: selectedTier
+        tier: selectedTier || t.tier_opt_sprint
       });
     } catch {
       setBookingModal({
         isOpen: true,
         mandateId: generatedMandateId,
         companyName: formData.company || 'Industrial Facility',
-        tier: selectedTier
+        tier: selectedTier || t.tier_opt_sprint
       });
     } finally {
       setIsSubmitting(false);
@@ -2593,14 +2628,26 @@ export default function SwissB2BAdvisory({
       <header className="sticky top-0 z-50 w-full bg-white/95 backdrop-blur-md border-b-2 border-slate-300 shadow-[0_2px_4px_rgba(0,0,0,0.06)]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-20">
-            {/* Wordmark */}
-            <a href="#hero" className="flex flex-col min-w-0 group focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#0066CC] rounded-xs">
-              <span className="text-lg sm:text-xl font-bold tracking-tight text-[#051C2C] group-hover:text-[#0066CC] transition-colors uppercase">
-                Eduardo de Sousa
-              </span>
-              <span className="text-[11px] font-semibold tracking-wider text-slate-500 uppercase">
-                {t.nav_brand_sub_title}
-              </span>
+            {/* Brand Monogram & Wordmark */}
+            <a href="#hero" className="flex items-center gap-2.5 sm:gap-3.5 min-w-0 group focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#00D2FF] rounded-lg p-1 -ml-1 transition-colors">
+              <div className="relative shrink-0 w-9 h-9 sm:w-10 sm:h-10 rounded-lg overflow-hidden border border-[#040B14]/20 shadow-xs group-hover:border-[#00D2FF] transition-all bg-[#040B14] flex items-center justify-center p-0.5">
+                <Image
+                  src="/images/es-monogram-hex.png"
+                  alt="Eduardo de Sousa Monogram"
+                  width={40}
+                  height={40}
+                  className="w-full h-full object-contain"
+                  priority
+                />
+              </div>
+              <div className="flex flex-col min-w-0">
+                <span className="text-base sm:text-lg lg:text-xl font-bold tracking-tight text-[#040B14] group-hover:text-[#0066CC] transition-colors uppercase leading-none sm:leading-tight">
+                  Eduardo de Sousa
+                </span>
+                <span className="text-[10px] sm:text-[11px] font-semibold tracking-wider text-slate-500 uppercase truncate mt-0.5">
+                  {t.nav_brand_sub_title}
+                </span>
+              </div>
             </a>
 
             {/* Desktop Navigation Links */}
@@ -2678,7 +2725,7 @@ export default function SwissB2BAdvisory({
               {/* Primary Header CTA */}
               <a
                 href="#advisory-inquiry"
-                className="hidden sm:inline-flex items-center justify-center min-h-[44px] px-5 py-2.5 text-sm font-semibold text-white bg-[#051C2C] hover:bg-[#0A2540] active:scale-[0.99] rounded-md shadow-xs transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#0066CC] focus-visible:ring-offset-2"
+                className="hidden sm:inline-flex items-center justify-center min-h-[44px] px-5 py-2.5 text-xs sm:text-sm font-semibold text-white bg-[#040B14] hover:bg-[#081a30] active:scale-[0.99] rounded-lg border border-[#00D2FF]/40 hover:border-[#00D2FF] shadow-[0_0_15px_rgba(0,210,255,0.15)] transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#00D2FF] focus-visible:ring-offset-2"
               >
                 {t.nav_cta}
               </a>
@@ -2739,7 +2786,7 @@ export default function SwissB2BAdvisory({
                 <a
                   href="#advisory-inquiry"
                   onClick={() => setMobileMenuOpen(false)}
-                  className="w-full inline-flex items-center justify-center min-h-[48px] px-5 py-3 text-sm font-semibold text-white bg-[#051C2C] hover:bg-[#0A2540] rounded-md shadow-xs"
+                  className="w-full inline-flex items-center justify-center min-h-[48px] px-5 py-3 text-sm font-semibold text-white bg-[#040B14] hover:bg-[#081a30] border border-[#00D2FF]/40 rounded-lg shadow-sm transition-colors"
                 >
                   {t.nav_cta}
                 </a>
@@ -2758,25 +2805,32 @@ export default function SwissB2BAdvisory({
             alt="Advanced Precision Industrial Manufacturing Facility"
             fill
             priority
-            className="object-cover object-center opacity-65"
+            className="object-cover object-center opacity-70 contrast-[1.05]"
             sizes="100vw"
           />
           {/* Executive gradient overlay: high contrast for text on left while robotic manufacturing facility is distinctly visible on right */}
-          <div className="absolute inset-0 bg-gradient-to-r from-white/92 via-white/80 to-white/40" />
-          <div className="absolute inset-0 executive-grid-backdrop opacity-20" />
+          <div className="absolute inset-0 bg-gradient-to-r from-white/98 via-white/90 to-white/60 sm:to-white/40" />
+          {/* Crisp Technical CAD Wireframe Grid Overlay */}
+          <div 
+            className="absolute inset-0 opacity-[0.12]" 
+            style={{
+              backgroundImage: 'linear-gradient(to right, #00D2FF 1px, transparent 1px), linear-gradient(to bottom, #00D2FF 1px, transparent 1px)',
+              backgroundSize: '36px 36px'
+            }}
+          />
         </div>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="max-w-4xl">
             {/* Kicker */}
-            <div className="inline-flex items-center gap-2 px-3 py-1 bg-slate-100/90 border border-slate-200/90 rounded-lg sm:rounded-full mb-4 shadow-2xs">
-              <span className="w-2 h-2 rounded-full bg-[#0066CC] animate-pulse" />
-              <span className="text-xs font-semibold uppercase tracking-wider text-slate-800">
+            <div className="inline-flex items-center gap-2 px-3 py-1 bg-[#040B14] border border-[#00D2FF]/40 rounded-lg sm:rounded-full mb-4 shadow-sm">
+              <span className="w-2 h-2 rounded-full bg-[#00D2FF] animate-pulse" />
+              <span className="text-xs font-semibold uppercase tracking-wider text-[#00D2FF]">
                 {t.hero_kicker}
               </span>
             </div>
 
             {/* Action Title (McKinsey Style) */}
-            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-[#051C2C] leading-[1.12]">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-[#040B14] leading-[1.12]">
               {t.hero_title}
             </h1>
 
@@ -2789,7 +2843,7 @@ export default function SwissB2BAdvisory({
             <div className="mt-8 flex flex-col sm:flex-row items-stretch sm:items-center gap-4">
               <a
                 href="#advisory-inquiry"
-                className="relative group overflow-hidden inline-flex items-center justify-center min-h-[48px] px-7 py-3 text-sm font-semibold text-white bg-[#051C2C] hover:bg-[#0A2540] active:scale-[0.99] rounded-md shadow-xs transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#0066CC] focus-visible:ring-offset-2"
+                className="relative group overflow-hidden inline-flex items-center justify-center min-h-[48px] px-7 py-3 text-sm font-semibold text-white bg-[#040B14] hover:bg-[#081a30] active:scale-[0.99] rounded-lg border border-[#00D2FF]/40 hover:border-[#00D2FF] shadow-[0_0_20px_rgba(0,210,255,0.22)] transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#00D2FF] focus-visible:ring-offset-2"
               >
                 <span className="absolute inset-0 w-1/2 h-full bg-gradient-to-r from-transparent via-white/15 to-transparent -skew-x-12 -translate-x-full group-hover:translate-x-[300%] transition-transform duration-1000 ease-out pointer-events-none" />
                 <span>{t.hero_cta_primary}</span>
@@ -3688,7 +3742,50 @@ export default function SwissB2BAdvisory({
         </div>
       </section>
 
-            {/* 5. EXECUTIVE PROFILE & INDUSTRIAL FIELD GROUNDING (Clean, Grounded) */}
+      {/* 4.5 MID-PAGE HIGH-CONTRAST CONVERSION BAR */}
+      <section className="bg-[#040B14] border-y-2 border-[#00D2FF]/40 py-8 lg:py-10 relative overflow-hidden text-white shadow-xl">
+        {/* CAD Wireframe Grid Overlay */}
+        <div 
+          className="absolute inset-0 pointer-events-none opacity-20"
+          style={{
+            backgroundImage: 'linear-gradient(to right, #00D2FF 1px, transparent 1px), linear-gradient(to bottom, #00D2FF 1px, transparent 1px)',
+            backgroundSize: '24px 24px'
+          }}
+        />
+        {/* Subtle Ambient Radial Glow */}
+        <div className="absolute top-1/2 left-1/4 -translate-y-1/2 w-96 h-96 bg-[#00D2FF]/10 rounded-full blur-3xl pointer-events-none" />
+        <div className="absolute top-1/2 right-1/4 -translate-y-1/2 w-96 h-96 bg-[#F5B041]/10 rounded-full blur-3xl pointer-events-none" />
+
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <div className="flex flex-col lg:flex-row items-center justify-between gap-6 lg:gap-10">
+            <div className="max-w-3xl text-left">
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-[11px] font-mono font-bold uppercase tracking-wider bg-[#00D2FF]/15 border border-[#00D2FF]/50 text-[#00D2FF] mb-3">
+                <span className="w-2 h-2 rounded-full bg-[#F5B041] animate-pulse" />
+                <span>{t.mid_cta_badge}</span>
+              </div>
+              <h3 className="text-xl sm:text-2xl lg:text-3xl font-extrabold tracking-tight text-white leading-tight">
+                {t.mid_cta_title}
+              </h3>
+              <p className="mt-2 text-xs sm:text-sm text-slate-300 leading-relaxed">
+                {t.mid_cta_subtitle}
+              </p>
+            </div>
+
+            <div className="shrink-0 w-full sm:w-auto">
+              <button
+                type="button"
+                onClick={() => handleSelectTier(t.tier_opt_sprint)}
+                className="w-full sm:w-auto inline-flex items-center justify-center min-h-[50px] px-8 py-3.5 text-sm font-bold text-[#040B14] bg-[#00D2FF] hover:bg-[#38bdf8] active:scale-[0.99] rounded-lg shadow-[0_0_25px_rgba(0,210,255,0.4)] hover:shadow-[0_0_35px_rgba(0,210,255,0.6)] transition-all cursor-pointer font-sans"
+              >
+                <span>{t.mid_cta_btn}</span>
+                <ArrowRight className="w-4 h-4 ml-2" />
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* 5. EXECUTIVE PROFILE & INDUSTRIAL FIELD GROUNDING (Clean, Grounded) */}
       <section id="profile" className="scroll-mt-24 bg-white py-10 lg:py-14 border-b border-slate-200">
         <div id="pedigree" className="scroll-mt-28" />
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -3811,10 +3908,10 @@ export default function SwissB2BAdvisory({
             </p>
           </div>
 
-          {/* 3 Productized Advisory Mandates */}
-          <div className="mt-8 grid grid-cols-1 lg:grid-cols-3 gap-6">
-            {/* Tier 1 */}
-            <div className="bg-white/95 backdrop-blur-xs border border-slate-200 rounded-2xl p-6 sm:p-7 flex flex-col justify-between shadow-2xs hover:border-[#0066CC] hover:shadow-md transition-all min-w-0">
+          {/* 3 Productized Advisory Mandates: Ordered Card 1 (Left), Card 2 (Middle), Card 3 (Right - Flagship) */}
+          <div className="mt-8 grid grid-cols-1 lg:grid-cols-3 gap-6 items-stretch">
+            {/* Card 1: 14-Day Remote Spend & Telemetry Diagnostic */}
+            <div className="bg-white/95 backdrop-blur-xs border border-slate-200 rounded-2xl p-6 sm:p-7 flex flex-col justify-between shadow-2xs hover:border-[#00D2FF] hover:shadow-md transition-all min-w-0">
               <div>
                 <div className="flex items-center justify-between">
                   <span className="text-xs font-bold uppercase tracking-wider text-[#0066CC]">
@@ -3822,24 +3919,25 @@ export default function SwissB2BAdvisory({
                   </span>
                   <span className="text-xs font-mono text-slate-500">{t.t1_duration}</span>
                 </div>
-                <h3 className="mt-3 text-lg font-bold text-[#051C2C] tracking-tight">
+                <h3 className="mt-3 text-lg font-bold text-[#040B14] tracking-tight">
                   {t.t1_name}
                 </h3>
                 <div className="mt-3 flex items-baseline">
-                  <span className="text-3xl font-extrabold font-sans tabular-nums text-[#051C2C]">
+                  <span className="text-3xl font-extrabold font-sans tabular-nums text-[#040B14]">
                     {t.t1_price}
                   </span>
-                  <span className="ml-1 text-xs text-slate-500">{t.t1_period}</span>
+                  <span className="ml-1.5 text-xs text-slate-500">{t.t1_period}</span>
                 </div>
                 <p className="mt-3 text-xs text-slate-600 leading-relaxed text-left">
                   {t.t1_desc}
                 </p>
 
                 <div className="mt-5 p-3.5 bg-emerald-50/70 border border-emerald-200 rounded-xl">
-                  <span className="text-[10px] font-mono font-bold text-emerald-800 uppercase block mb-1">
-                    {t.t1_roi_badge}
-                  </span>
-                  <p className="text-xs text-slate-700 text-left">
+                  <div className="flex items-center gap-1.5 text-[10px] font-mono font-bold text-emerald-800 uppercase block mb-1">
+                    <ShieldCheck className="w-3.5 h-3.5 text-emerald-600 shrink-0" />
+                    <span>{t.t1_roi_badge}</span>
+                  </div>
+                  <p className="text-xs text-slate-700 text-left leading-relaxed">
                     {t.t1_roi_text}
                   </p>
                 </div>
@@ -3848,18 +3946,61 @@ export default function SwissB2BAdvisory({
               <div className="mt-6 pt-4 border-t border-slate-100">
                 <button
                   type="button"
-                  onClick={() => handleSelectTier('14-Day Remote Diagnostic Sprint (€5,500)')}
-                  className="w-full inline-flex items-center justify-center min-h-[44px] px-5 py-2.5 text-xs font-bold text-[#051C2C] bg-slate-100 hover:bg-[#051C2C] hover:text-white rounded-lg transition-colors cursor-pointer"
+                  onClick={() => handleSelectTier(t.tier_opt_sprint)}
+                  className="w-full inline-flex items-center justify-center min-h-[44px] px-5 py-2.5 text-xs font-bold text-[#040B14] bg-slate-100 hover:bg-[#040B14] hover:text-white rounded-lg transition-colors cursor-pointer"
                 >
                   {t.t1_btn}
                 </button>
               </div>
             </div>
 
-            {/* Tier 2: Highlighted */}
-            <div className="bg-white/95 backdrop-blur-xs border-2 border-[#0066CC] rounded-2xl p-6 sm:p-7 flex flex-col justify-between shadow-lg relative min-w-0 ring-4 ring-[#0066CC]/10">
-              <div className="absolute -top-3 left-1/2 -translate-x-1/2">
-                <span className="px-3 py-1 rounded-full text-[11px] font-mono font-bold bg-[#0066CC] text-white shadow-xs whitespace-nowrap">
+            {/* Card 2: 5-Day Physical Plant Walk & Takt Audit */}
+            <div className="bg-white/95 backdrop-blur-xs border border-slate-200 rounded-2xl p-6 sm:p-7 flex flex-col justify-between shadow-2xs hover:border-[#00D2FF] hover:shadow-md transition-all min-w-0">
+              <div>
+                <div className="flex items-center justify-between">
+                  <span className="text-xs font-bold uppercase tracking-wider text-slate-700">
+                    {t.t3_badge}
+                  </span>
+                  <span className="text-xs font-mono text-slate-500">{t.t3_duration}</span>
+                </div>
+                <h3 className="mt-3 text-lg font-bold text-[#040B14] tracking-tight">
+                  {t.t3_name}
+                </h3>
+                <div className="mt-3 flex items-baseline">
+                  <span className="text-3xl font-extrabold font-sans tabular-nums text-[#040B14]">
+                    {t.t3_price}
+                  </span>
+                  <span className="ml-1.5 text-xs text-slate-500">{t.t3_period}</span>
+                </div>
+                <p className="mt-3 text-xs text-slate-600 leading-relaxed text-left">
+                  {t.t3_desc}
+                </p>
+
+                <div className="mt-5 p-3.5 bg-slate-100 border border-slate-200 rounded-xl">
+                  <span className="text-[10px] font-mono font-bold text-slate-700 uppercase block mb-1">
+                    {t.t3_policy_badge}
+                  </span>
+                  <p className="text-xs text-slate-600 text-left leading-relaxed">
+                    {t.t3_travel_note}
+                  </p>
+                </div>
+              </div>
+
+              <div className="mt-6 pt-4 border-t border-slate-100">
+                <button
+                  type="button"
+                  onClick={() => handleSelectTier(t.tier_opt_onsite)}
+                  className="w-full inline-flex items-center justify-center min-h-[44px] px-5 py-2.5 text-xs font-bold text-[#040B14] bg-slate-100 hover:bg-[#040B14] hover:text-white rounded-lg transition-colors cursor-pointer"
+                >
+                  {t.t3_btn}
+                </button>
+              </div>
+            </div>
+
+            {/* Card 3: Fractional Direct Sourcing & Systems Director (Highlighted / Flagship on Right) */}
+            <div className="bg-white/95 backdrop-blur-xs border-2 border-[#00D2FF] rounded-2xl p-6 sm:p-7 flex flex-col justify-between shadow-xl relative min-w-0 ring-4 ring-[#00D2FF]/15">
+              <div className="absolute -top-3.5 left-1/2 -translate-x-1/2">
+                <span className="px-3.5 py-1 rounded-full text-[11px] font-mono font-bold bg-[#040B14] text-[#00D2FF] border border-[#00D2FF]/60 shadow-md whitespace-nowrap">
                   {t.t2_highlight}
                 </span>
               </div>
@@ -3871,14 +4012,21 @@ export default function SwissB2BAdvisory({
                   </span>
                   <span className="text-xs font-mono text-slate-500">{t.t2_duration}</span>
                 </div>
-                <h3 className="mt-3 text-lg font-bold text-[#051C2C] tracking-tight">
+                <h3 className="mt-3 text-lg font-bold text-[#040B14] tracking-tight">
                   {t.t2_name}
                 </h3>
+                
+                {/* Explicit Cadence Pill */}
+                <div className="mt-2.5 inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md text-[11px] font-semibold bg-[#F5B041]/15 text-[#9A6000] border border-[#F5B041]/40">
+                  <span className="w-1.5 h-1.5 rounded-full bg-[#F5B041]" />
+                  <span>{t.t2_cadence}</span>
+                </div>
+
                 <div className="mt-3 flex items-baseline">
-                  <span className="text-3xl font-extrabold font-sans tabular-nums text-[#051C2C]">
+                  <span className="text-3xl font-extrabold font-sans tabular-nums text-[#040B14]">
                     {t.t2_price}
                   </span>
-                  <span className="ml-1 text-xs text-slate-500">{t.t2_period}</span>
+                  <span className="ml-1.5 text-xs text-slate-500">{t.t2_period}</span>
                 </div>
                 <p className="mt-3 text-xs text-slate-600 leading-relaxed text-left">
                   {t.t2_desc}
@@ -3888,7 +4036,7 @@ export default function SwissB2BAdvisory({
                   <span className="text-[10px] font-mono font-bold text-[#0066CC] uppercase block mb-1">
                     {t.t2_commitment_badge}
                   </span>
-                  <p className="text-xs text-slate-700 text-left">
+                  <p className="text-xs text-slate-700 text-left leading-relaxed">
                     {t.t2_term}
                   </p>
                 </div>
@@ -3897,53 +4045,10 @@ export default function SwissB2BAdvisory({
               <div className="mt-6 pt-4 border-t border-slate-100">
                 <button
                   type="button"
-                  onClick={() => handleSelectTier('Fractional Head of Operations & Supply Chain (€6,800/mo)')}
-                  className="w-full inline-flex items-center justify-center min-h-[44px] px-5 py-2.5 text-xs font-bold text-white bg-[#0066CC] hover:bg-[#0052A3] rounded-lg shadow-xs transition-colors cursor-pointer"
+                  onClick={() => handleSelectTier(t.tier_opt_fractional)}
+                  className="w-full inline-flex items-center justify-center min-h-[44px] px-5 py-2.5 text-xs font-bold text-white bg-[#040B14] hover:bg-[#081a30] border border-[#00D2FF]/50 hover:border-[#00D2FF] rounded-lg shadow-sm transition-colors cursor-pointer"
                 >
                   {t.t2_btn}
-                </button>
-              </div>
-            </div>
-
-            {/* Tier 3 */}
-            <div className="bg-white/95 backdrop-blur-xs border border-slate-200 rounded-2xl p-6 sm:p-7 flex flex-col justify-between shadow-2xs hover:border-[#0066CC] hover:shadow-md transition-all min-w-0">
-              <div>
-                <div className="flex items-center justify-between">
-                  <span className="text-xs font-bold uppercase tracking-wider text-[#0066CC]">
-                    {t.t3_badge}
-                  </span>
-                  <span className="text-xs font-mono text-slate-500">{t.t3_duration}</span>
-                </div>
-                <h3 className="mt-3 text-lg font-bold text-[#051C2C] tracking-tight">
-                  {t.t3_name}
-                </h3>
-                <div className="mt-3 flex items-baseline">
-                  <span className="text-3xl font-extrabold font-sans tabular-nums text-[#051C2C]">
-                    {t.t3_price}
-                  </span>
-                  <span className="ml-1 text-xs text-slate-500">{t.t3_period}</span>
-                </div>
-                <p className="mt-3 text-xs text-slate-600 leading-relaxed text-left">
-                  {t.t3_desc}
-                </p>
-
-                <div className="mt-5 p-3.5 bg-slate-100 border border-slate-200 rounded-xl">
-                  <span className="text-[10px] font-mono font-bold text-slate-700 uppercase block mb-1">
-                    {t.t3_policy_badge}
-                  </span>
-                  <p className="text-xs text-slate-600 text-left">
-                    {t.t3_travel_note}
-                  </p>
-                </div>
-              </div>
-
-              <div className="mt-6 pt-4 border-t border-slate-100">
-                <button
-                  type="button"
-                  onClick={() => handleSelectTier('5-Day Physical Plant Walk & Takt Audit (€7,500)')}
-                  className="w-full inline-flex items-center justify-center min-h-[44px] px-5 py-2.5 text-xs font-bold text-[#051C2C] bg-slate-100 hover:bg-[#051C2C] hover:text-white rounded-lg transition-colors cursor-pointer"
-                >
-                  {t.t3_btn}
                 </button>
               </div>
             </div>
@@ -4226,13 +4331,13 @@ export default function SwissB2BAdvisory({
                     </label>
                     <select
                       id="intake-tier"
-                      value={selectedTier}
+                      value={selectedTier || t.tier_opt_sprint}
                       onChange={(e) => setSelectedTier(e.target.value)}
                       className="w-full min-h-[44px] px-3.5 py-2.5 text-xs sm:text-sm bg-white border border-slate-300 rounded-md text-slate-900 focus:outline-hidden focus:ring-2 focus:ring-[#0066CC] focus:border-transparent transition-all"
                     >
                       <option value={t.tier_opt_sprint}>{t.tier_opt_sprint}</option>
-                      <option value={t.tier_opt_fractional}>{t.tier_opt_fractional}</option>
                       <option value={t.tier_opt_onsite}>{t.tier_opt_onsite}</option>
+                      <option value={t.tier_opt_fractional}>{t.tier_opt_fractional}</option>
                     </select>
                   </div>
                 </div>
