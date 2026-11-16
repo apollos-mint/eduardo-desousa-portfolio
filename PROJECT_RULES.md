@@ -16,8 +16,8 @@
 * **[RULE 002 - VERIFIED EDUCATION & CREDENTIALS]**:
   * ✅ **Lean Six Sigma Black Belt** (Accredited credential on virtualbadge.io)
   * ✅ **Licenciatura en Operaciones y Procesos Gerenciales** (Bachelor Degree)
-  * ✅ **Google Data Analytics Professional Certificate**
-  * ✅ **Strategic Supply Chain Management** – LMU Munich (Ludwig-Maximilians-Universität München)
+  * ✅ **Google Data Analytics Professional Certificate** (Credly: credly.com/badges/4c25cd0a-54e7-4143-8f91-13a516cda19e)
+  * ✅ **Strategic Supply Chain Management in Turbulent Times** – TUM (Technical University of Munich / Coursera: coursera.org/share/c150410676184580ff99ca41a2453732)
   * ✅ **Introduction to Communication Science** – Erasmus University Rotterdam
   * ✅ **Driving Licenses**: A and B (coche propio)
 
@@ -30,3 +30,15 @@
   * **Automotive OEM (VDL Nedcar / Born)**: Multiplatform quality lines (110–120 BMW/MINI vehicles/shift), 8D, RCA, FMEA, -15% defect reduction.
   * **Logistics & Inventory (Arkcohogar / Valencia)**: 99.5% inventory accuracy, cyclical counting, route dispatch.
   * **Full-Stack Software Architecture**: OptiAsset CMMS (dual PostgreSQL/MSSQL architecture), Next.js, TypeScript, iPaaS automation (Make, Zapier).
+
+---
+
+## 🎯 4. PERMANENT POSITIONING GROUND TRUTH (ANTI-CARICATURE LEDGER)
+* **[RULE 004 - AUTHENTIC VALUE PROPOSITION // BAN ON "PHD DOWNTIME/TAKT DOCTOR"]**:
+  * ❌ **FORBIDDEN CARICATURE:** NEVER frame Eduardo as a single-issue academic "Plant Downtime & Takt Time Doctor" or pretend he is a worldwide PhD theorist lecturing on line queues. That was an AI over-correction that caused impostor syndrome and erased 70% of his real skills.
+  * ✅ **GROUNDED IDENTITY:** **Operations & Global Sourcing Specialist (Execution & Practical Systems)**.
+  * ✅ **THE 3 AUTHENTIC PILLARS (EQUAL WEIGHT):**
+    1. **Direct Global Sourcing & SCM**: China & India direct factory negotiations, cutting domestic broker markups (-75% BOM unit cost), managing 20 FCL containers/quarter ($800K/yr flow), deploying on-site inspection teams (PSI/CLI), 30/70 milestone contract gating.
+    2. **Operational Process & Quality Rigor**: Lean Six Sigma Black Belt (DMAIC), SOP standardization, scrap & defect reduction, backed by real shop-floor standards (ASML cleanroom packaging ISO Class 5 and VDL Nedcar BMW moving line).
+    3. **Practical Operational Tech & CMMS**: Custom CMMS (OptiAsset), operational telemetry, automating manual administrative friction so plant and logistics teams stop double-keying data. Practical tools that solve real operational headaches.
+

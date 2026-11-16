@@ -102,8 +102,8 @@ export const metadata: Metadata = {
 };
 
 export const viewport: Viewport = {
-  themeColor: '#07090e',
-  colorScheme: 'dark',
+  themeColor: '#051C2C',
+  colorScheme: 'light',
   width: 'device-width',
   initialScale: 1,
   maximumScale: 5,
@@ -117,22 +117,19 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`dark scroll-smooth ${plusJakartaSans.variable} ${jetBrainsMono.variable}`}
+      className={`scroll-smooth ${plusJakartaSans.variable} ${jetBrainsMono.variable}`}
       suppressHydrationWarning
-      style={{ backgroundColor: '#07090e', colorScheme: 'dark' }}
+      style={{ backgroundColor: '#ffffff', colorScheme: 'light' }}
     >
       <head>
-        <meta name="color-scheme" content="dark" />
+        <meta name="color-scheme" content="light" />
         <script
           dangerouslySetInnerHTML={{
             __html: `
               (function() {
                 try {
-                  document.documentElement.classList.add('dark');
-                  document.documentElement.classList.remove('light');
-                  document.documentElement.style.backgroundColor = '#07090e';
-                  document.documentElement.style.colorScheme = 'dark';
-                  localStorage.setItem('portfolio-theme', 'dark');
+                  document.documentElement.style.backgroundColor = '#ffffff';
+                  document.documentElement.style.colorScheme = 'light';
                 } catch (e) {}
               })();
             `,
@@ -184,8 +181,7 @@ export default function RootLayout({
         />
       </head>
       <body
-        className="bg-[#07090e] text-slate-100 antialiased min-h-screen selection:bg-cyan-500 selection:text-slate-950 font-sans"
-        style={{ backgroundColor: '#07090e' }}
+        className="text-slate-900 bg-white antialiased min-h-screen selection:bg-[#0066CC] selection:text-white font-sans"
       >
         {children}
         <Analytics />

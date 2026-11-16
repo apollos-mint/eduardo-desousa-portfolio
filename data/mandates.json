@@ -1,0 +1,62 @@
+[
+  {
+    "mandateId": "EDS-MANDATE-MWAK6YUF-7962",
+    "submittedAt": "2026-11-10T10:40:24.039Z",
+    "client": {
+      "name": "Audit Ping",
+      "email": "ping@test.com",
+      "company": "Test BV",
+      "turnover": "To be scoped during 20-min triage",
+      "bottleneck": "Operational Diagnostic",
+      "volume": "To be scoped during 20-min triage",
+      "brief": "N/A"
+    },
+    "engagement": {
+      "selectedTier": "14-Day Remote Diagnostic Sprint (€5,500)",
+      "preferredWindow": "Morning CET (09:00 - 12:00)",
+      "language": "en"
+    },
+    "status": "LOGGED_PENDING_TRIAGE",
+    "ndaStatus": "MUTUAL_NDA_ATTACHED"
+  },
+  {
+    "mandateId": "EDS-MANDATE-MW9NH12Z-6808",
+    "submittedAt": "2026-11-09T19:24:26.171Z",
+    "client": {
+      "name": "Jan de Vries",
+      "email": "jan@asml-supplier.nl",
+      "company": "ASML Supplier Tech B.V.",
+      "turnover": "To be scoped during 20-min triage",
+      "bottleneck": "Cleanroom assembly queue delays",
+      "volume": "To be scoped during 20-min triage",
+      "brief": "N/A"
+    },
+    "engagement": {
+      "selectedTier": "14-Dagen Remote Diagnostische Sprint (€5.500)",
+      "preferredWindow": "Morning CET (09:00 - 12:00)",
+      "language": "nl"
+    },
+    "status": "LOGGED_PENDING_TRIAGE",
+    "ndaStatus": "MUTUAL_NDA_ATTACHED"
+  },
+  {
+    "mandateId": "EDS-MANDATE-MW9ML1LM-7071",
+    "submittedAt": "2026-11-09T18:59:33.850Z",
+    "client": {
+      "name": "Dr. Christian Visser",
+      "email": "c.visser@asml-supplier.nl",
+      "company": "Visser Precision Tooling BV",
+      "turnover": "To be scoped during 20-min triage",
+      "bottleneck": "Throughput constraint on EUV optics chamber",
+      "volume": "To be scoped during 20-min triage",
+      "brief": "N/A"
+    },
+    "engagement": {
+      "selectedTier": "14-Day Remote Diagnostic Sprint (€5,500)",
+      "preferredWindow": "Morning CET (09:00 - 12:00)",
+      "language": "en"
+    },
+    "status": "LOGGED_PENDING_TRIAGE",
+    "ndaStatus": "MUTUAL_NDA_ATTACHED"
+  }
+]

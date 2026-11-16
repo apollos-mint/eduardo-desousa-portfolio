@@ -10,7 +10,27 @@
 }
 
 @layer base {
-  :root,
+  :root {
+    color-scheme: light;
+    --bg-primary: #ffffff;
+    --bg-secondary: #f8fafc;
+    --bg-card: #ffffff;
+    --bg-card-hover: #f8fafc;
+    --border-subtle: #e2e8f0;
+    --border-hover: #cbd5e1;
+    --text-primary: #0f172a;
+    --text-secondary: #334155;
+    --text-muted: #64748b;
+    --header-bg: rgba(255, 255, 255, 0.95);
+    --footer-bg: #051c2c;
+    --input-bg: #ffffff;
+    --badge-bg: #f1f5f9;
+    --accent-cyan: #0284c7;
+    --accent-emerald: #10b981;
+    --accent-indigo: #0066cc;
+    --accent-amber: #f59e0b;
+  }
+
   html.dark {
     color-scheme: dark;
     --bg-primary: #07090e;
@@ -43,19 +63,6 @@
     font-feature-settings: "cv02", "cv03", "cv04", "cv11";
     overflow-x: hidden;
     transition: background-color 0.25s ease, color 0.25s ease;
-  }
-
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6 {
-    color: #ffffff;
-  }
-
-  p {
-    color: #cbd5e1;
   }
 
   /* Custom scrollbar */
@@ -337,5 +344,59 @@
   animation: spin-tilted-y 26s linear infinite;
   will-change: transform;
 }
+
+/* Executive Institutional Grid Backdrop (Deloitte / Palantir) */
+.executive-grid-backdrop {
+  background-image: 
+    linear-gradient(to right, rgba(15, 28, 44, 0.04) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(15, 28, 44, 0.04) 1px, transparent 1px);
+  background-size: 32px 32px;
+  mask-image: radial-gradient(ellipse 70% 60% at 50% 0%, #000 65%, transparent 100%);
+  -webkit-mask-image: radial-gradient(ellipse 70% 60% at 50% 0%, #000 65%, transparent 100%);
+}
+
+/* Tactile Range Slider for Downtime Calculator */
+.custom-range-slider {
+  appearance: none;
+  width: 100%;
+  height: 10px;
+  border-radius: 9999px;
+  outline: none;
+  cursor: pointer;
+}
+
+.custom-range-slider::-webkit-slider-thumb {
+  appearance: none;
+  width: 22px;
+  height: 22px;
+  border-radius: 9999px;
+  background-color: #ffffff;
+  border: 2.5px solid #0066CC;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.custom-range-slider::-webkit-slider-thumb:hover {
+  transform: scale(1.15);
+  box-shadow: 0 0 0 6px rgba(0, 102, 204, 0.15);
+}
+
+.custom-range-slider::-moz-range-thumb {
+  width: 22px;
+  height: 22px;
+  border-radius: 9999px;
+  background-color: #ffffff;
+  border: 2.5px solid #0066CC;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.custom-range-slider::-moz-range-thumb:hover {
+  transform: scale(1.15);
+  box-shadow: 0 0 0 6px rgba(0, 102, 204, 0.15);
+}
+
 
 

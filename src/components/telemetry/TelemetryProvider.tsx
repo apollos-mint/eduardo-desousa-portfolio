@@ -18,6 +18,7 @@ export default function TelemetryProvider() {
     scrollMilestones.current = { '25': false, '50': false, '75': false, '100': false };
 
     const initTelemetry = () => {
+      if (!pathname) return;
       syncProfileWithClarity();
       sendToClarity('current_route', pathname);
 

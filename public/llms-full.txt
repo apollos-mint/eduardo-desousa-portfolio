@@ -18,9 +18,9 @@
 - **Languages**: Multilingual (Spanish, English, Portuguese, Dutch, German, French).
 
 ## Key Operational Experience
-- **KMWE Group**: High-tech precision machining and sub-assembly for ASML lithography equipment. Cleanroom packaging and ERP governance (ISAH).
-- **HQ Pack**: Cleanroom industrial packaging for semiconductor and optical equipment. ISO Class 5 cleanroom compliance.
-- **VDL Nedcar**: Automotive OEM manufacturing, final assembly line quality inspections, and root cause analysis (8D / Ishikawa).
+- **HQ Pack (Brainport Eindhoven)**: Cleanroom industrial packaging and electromechanical assembly for ASML lithography equipment (ISO Class 5 compliance). ERP governance (ISAH) and TÜV winch refurbishment support.
+- **VDL Nedcar**: Automotive OEM manufacturing, multiplatform final assembly line quality inspections (110–120 vehicles/shift), 8D, RCA, and FMEA (-15% defect reduction).
+- **Global Sourcing & Supply Chain Direct**: Direct factory negotiations in China & India ($800K/year, 20 containers/quarter, -75% cost desintermediation), on-site PSI/CLI inspection teams.
 - **Independent High-Tech Operations Consultant**: Auditing supplier bases, scrap rate minimization (-35%), and cycle time reduction (-30%).
 
 ## Key Sections & Deep Dives

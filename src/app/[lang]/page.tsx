@@ -3,10 +3,7 @@ import { notFound } from 'next/navigation';
 import { Locale } from '@/types';
 import { isValidLocale, getAllStaticLocaleParams } from '@/lib/i18n';
 import { getCVData } from '@/data/cv-data';
-import HeroSection from '@/components/sections/HeroSection';
-import SpecialFeatureSection from '@/components/sections/SpecialFeatureSection';
-import EngineeringProjectsSection from '@/components/sections/EngineeringProjectsSection';
-import ContactSection from '@/components/sections/ContactSection';
+import SwissB2BAdvisory, { SupportedLanguage } from '@/components/b2b/SwissB2BAdvisory';
 
 export function generateStaticParams() {
   return getAllStaticLocaleParams();
@@ -23,7 +20,7 @@ export async function generateMetadata({
 
   const cvData = getCVData(lang as Locale);
   return {
-    title: `${cvData.personal.fullName} | ${cvData.personal.roleTitle}`,
+    title: `${cvData.personal.fullName} | Senior Operations & Supply Chain Advisory`,
     description: cvData.personal.summary.replace(/\n+/g, ' '),
     alternates: {
       canonical: `/${lang}`,
@@ -52,23 +49,5 @@ export default async function LocalizedHomePage({
     notFound();
   }
 
-  const cvData = getCVData(lang as Locale);
-
-  return (
-    <div className="flex flex-col">
-      {/* 1. Concise High-Impact Hero with Portrait & Infinite Brand Marquee */}
-      <HeroSection currentLocale={lang as Locale} cvData={cvData} />
-
-      {/* 2. Core Competencies & Tier-1 Company Ranges (Directly under marquee, 0 gap) */}
-      <SpecialFeatureSection currentLocale={lang as Locale} cvData={cvData} />
-
-      {/* 3. Featured Engineering & Automation Systems Showcase */}
-      <EngineeringProjectsSection currentLocale={lang as Locale} />
-
-      {/* 4. Executive Direct Contact & vCard Hub */}
-      <div className="mt-8 sm:mt-12">
-        <ContactSection currentLocale={lang as Locale} cvData={cvData} />
-      </div>
-    </div>
-  );
+  return <SwissB2BAdvisory initialLanguage={lang as SupportedLanguage} />;
 }
