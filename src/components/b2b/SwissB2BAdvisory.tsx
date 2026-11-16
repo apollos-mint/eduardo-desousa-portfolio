@@ -2629,7 +2629,7 @@ export default function SwissB2BAdvisory({
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-20">
             {/* Brand Monogram & Wordmark */}
-            <a href="#hero" className="flex items-center gap-2.5 sm:gap-3.5 min-w-0 group focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#00D2FF] rounded-lg p-1 -ml-1 transition-colors">
+            <a href="#hero" className="flex items-center gap-2.5 sm:gap-3.5 shrink-0 group focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#00D2FF] rounded-lg p-1 -ml-1 transition-colors">
               <div className="relative shrink-0 w-11 h-11 sm:w-12 sm:h-12 flex items-center justify-center transition-transform duration-200 group-hover:scale-105">
                 <Image
                   src="/images/es-monogram-hex.png"
@@ -2640,18 +2640,18 @@ export default function SwissB2BAdvisory({
                   priority
                 />
               </div>
-              <div className="flex flex-col min-w-0">
+              <div className="flex flex-col shrink-0">
                 <span className="text-base sm:text-lg lg:text-xl font-bold tracking-tight text-[#040B14] group-hover:text-[#0066CC] transition-colors uppercase leading-none sm:leading-tight">
                   Eduardo de Sousa
                 </span>
-                <span className="text-[10px] sm:text-[11px] font-semibold tracking-wider text-slate-500 uppercase truncate mt-0.5">
+                <span className="text-[10px] sm:text-[11px] font-semibold tracking-wider text-slate-500 uppercase whitespace-nowrap mt-0.5">
                   {t.nav_brand_sub_title}
                 </span>
               </div>
             </a>
 
             {/* Desktop Navigation Links */}
-            <nav className="hidden lg:flex items-center gap-2 xl:gap-3.5 mr-4 xl:mr-8">
+            <nav className="hidden lg:flex items-center gap-1.5 xl:gap-3 mr-2 xl:mr-6">
               <a 
                 href="#pillars" 
                 className="px-2.5 py-1.5 text-xs xl:text-sm font-semibold tracking-normal text-slate-700 hover:text-[#0066CC] hover:bg-slate-50 rounded-md transition-colors whitespace-nowrap"
@@ -2865,11 +2865,11 @@ export default function SwissB2BAdvisory({
             </div>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4">
               {/* Metric 1: Global Procurement */}
-              <div className="p-4 sm:p-5 bg-white/95 backdrop-blur-xs border border-slate-200/90 rounded-xl min-w-0 shadow-2xs hover:border-[#0066CC] hover:shadow-md transition-all duration-300 group flex flex-col justify-between">
+              <div className="p-4 sm:p-5 bg-white/95 backdrop-blur-xs border border-slate-200/90 rounded-xl min-w-0 shadow-2xs hover:border-[#0066CC] hover:shadow-md transition-all duration-300 group flex flex-col justify-between min-h-[220px]">
                 <div>
-                  <div className="text-[11px] sm:text-xs font-semibold uppercase tracking-wider text-[#0066CC] flex items-center justify-between">
-                    <span className="truncate mr-1">{t.hero_m1_label}</span>
-                    <span className="relative flex h-2 w-2 shrink-0">
+                  <div className="text-[11px] sm:text-xs font-semibold uppercase tracking-wider text-[#0066CC] flex items-start justify-between gap-2">
+                    <span className="leading-snug">{t.hero_m1_label}</span>
+                    <span className="relative flex h-2 w-2 shrink-0 mt-0.5">
                       <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-75" />
                       <span className="relative inline-flex rounded-full h-2 w-2 bg-[#0066CC]" />
                     </span>
@@ -2881,18 +2881,18 @@ export default function SwissB2BAdvisory({
                     {t.hero_m1_sub}
                   </div>
                 </div>
-                <div className="mt-3.5 pt-2.5 border-t border-slate-100 flex items-center gap-1.5 font-mono text-[10px] text-slate-700">
-                  <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 shrink-0" />
-                  <span className="font-semibold truncate" title={t.hero_m1_badge}>{t.hero_m1_badge}</span>
+                <div className="mt-4 pt-3 border-t border-slate-100 flex items-start gap-2 font-mono text-[10.5px] text-slate-700 leading-tight">
+                  <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 shrink-0 mt-1" />
+                  <span className="font-semibold leading-snug">{t.hero_m1_badge}</span>
                 </div>
               </div>
 
               {/* Metric 2 (Position 2): Semiconductor High-Tech HQPack / ASML Ecosystem */}
-              <div className="p-4 sm:p-5 bg-white/95 backdrop-blur-xs border border-slate-200/90 rounded-xl min-w-0 shadow-2xs hover:border-[#0066CC] hover:shadow-md transition-all duration-300 group flex flex-col justify-between">
+              <div className="p-4 sm:p-5 bg-white/95 backdrop-blur-xs border border-slate-200/90 rounded-xl min-w-0 shadow-2xs hover:border-[#0066CC] hover:shadow-md transition-all duration-300 group flex flex-col justify-between min-h-[220px]">
                 <div>
-                  <div className="text-[11px] sm:text-xs font-semibold uppercase tracking-wider text-slate-700 flex items-center justify-between">
-                    <span className="group-hover:text-[#0066CC] transition-colors truncate mr-1">{t.hero_m4_label}</span>
-                    <span className="relative flex h-2 w-2 shrink-0">
+                  <div className="text-[11px] sm:text-xs font-semibold uppercase tracking-wider text-slate-700 flex items-start justify-between gap-2">
+                    <span className="group-hover:text-[#0066CC] transition-colors leading-snug">{t.hero_m4_label}</span>
+                    <span className="relative flex h-2 w-2 shrink-0 mt-0.5">
                       <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75" />
                       <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500" />
                     </span>
@@ -2904,18 +2904,18 @@ export default function SwissB2BAdvisory({
                     {t.hero_m4_sub}
                   </div>
                 </div>
-                <div className="mt-3.5 pt-2.5 border-t border-slate-100 flex items-center gap-1.5 font-mono text-[10px] text-slate-700">
-                  <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 shrink-0" />
-                  <span className="font-semibold truncate" title={t.hero_m4_badge}>{t.hero_m4_badge}</span>
+                <div className="mt-4 pt-3 border-t border-slate-100 flex items-start gap-2 font-mono text-[10.5px] text-slate-700 leading-tight">
+                  <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 shrink-0 mt-1" />
+                  <span className="font-semibold leading-snug">{t.hero_m4_badge}</span>
                 </div>
               </div>
 
               {/* Metric 3 (Position 3): Unit Cost Disintermediation */}
-              <div className="p-4 sm:p-5 bg-white/95 backdrop-blur-xs border border-slate-200/90 rounded-xl min-w-0 shadow-2xs hover:border-emerald-600 hover:shadow-md transition-all duration-300 group flex flex-col justify-between">
+              <div className="p-4 sm:p-5 bg-white/95 backdrop-blur-xs border border-slate-200/90 rounded-xl min-w-0 shadow-2xs hover:border-emerald-600 hover:shadow-md transition-all duration-300 group flex flex-col justify-between min-h-[220px]">
                 <div>
-                  <div className="text-[11px] sm:text-xs font-semibold uppercase tracking-wider text-emerald-700 flex items-center justify-between">
-                    <span className="truncate mr-1">{t.hero_m2_label}</span>
-                    <span className="relative flex h-2 w-2 shrink-0">
+                  <div className="text-[11px] sm:text-xs font-semibold uppercase tracking-wider text-emerald-700 flex items-start justify-between gap-2">
+                    <span className="leading-snug">{t.hero_m2_label}</span>
+                    <span className="relative flex h-2 w-2 shrink-0 mt-0.5">
                       <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75" />
                       <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500" />
                     </span>
@@ -2927,18 +2927,18 @@ export default function SwissB2BAdvisory({
                     {t.hero_m2_sub}
                   </div>
                 </div>
-                <div className="mt-3.5 pt-2.5 border-t border-slate-100 flex items-center gap-1.5 font-mono text-[10px] text-slate-700">
-                  <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 shrink-0" />
-                  <span className="font-semibold truncate" title={t.hero_m2_badge}>{t.hero_m2_badge}</span>
+                <div className="mt-4 pt-3 border-t border-slate-100 flex items-start gap-2 font-mono text-[10.5px] text-slate-700 leading-tight">
+                  <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 shrink-0 mt-1" />
+                  <span className="font-semibold leading-snug">{t.hero_m2_badge}</span>
                 </div>
               </div>
 
               {/* Metric 4 (Position 4): Automotive OEM Moving Line & Floor Work */}
-              <div className="p-4 sm:p-5 bg-white/95 backdrop-blur-xs border border-slate-200/90 rounded-xl min-w-0 shadow-2xs hover:border-[#0066CC] hover:shadow-md transition-all duration-300 group flex flex-col justify-between">
+              <div className="p-4 sm:p-5 bg-white/95 backdrop-blur-xs border border-slate-200/90 rounded-xl min-w-0 shadow-2xs hover:border-[#0066CC] hover:shadow-md transition-all duration-300 group flex flex-col justify-between min-h-[220px]">
                 <div>
-                  <div className="text-[11px] sm:text-xs font-semibold uppercase tracking-wider text-[#0066CC] flex items-center justify-between">
-                    <span className="truncate mr-1">{t.hero_m3_label}</span>
-                    <span className="relative flex h-2 w-2 shrink-0">
+                  <div className="text-[11px] sm:text-xs font-semibold uppercase tracking-wider text-[#0066CC] flex items-start justify-between gap-2">
+                    <span className="leading-snug">{t.hero_m3_label}</span>
+                    <span className="relative flex h-2 w-2 shrink-0 mt-0.5">
                       <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-75" />
                       <span className="relative inline-flex rounded-full h-2 w-2 bg-[#0066CC]" />
                     </span>
@@ -2950,9 +2950,9 @@ export default function SwissB2BAdvisory({
                     {t.hero_m3_sub}
                   </div>
                 </div>
-                <div className="mt-3.5 pt-2.5 border-t border-slate-100 flex items-center gap-1.5 font-mono text-[10px] text-slate-700">
-                  <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 shrink-0" />
-                  <span className="font-semibold truncate" title={t.hero_m3_badge}>{t.hero_m3_badge}</span>
+                <div className="mt-4 pt-3 border-t border-slate-100 flex items-start gap-2 font-mono text-[10.5px] text-slate-700 leading-tight">
+                  <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 shrink-0 mt-1" />
+                  <span className="font-semibold leading-snug">{t.hero_m3_badge}</span>
                 </div>
               </div>
             </div>
@@ -3623,13 +3623,29 @@ export default function SwissB2BAdvisory({
               <div className="lg:col-span-6 space-y-6 bg-slate-50/80 p-5 rounded-xl border border-slate-200">
                 {/* Control 1: Monthly Downtime Hours */}
                 <div className="space-y-2.5">
-                  <div className="flex items-center justify-between">
-                    <label htmlFor="downtime-slider" className="text-xs sm:text-sm font-semibold text-slate-800">
+                  <div className="flex items-center justify-between gap-3">
+                    <label htmlFor="downtime-input" className="text-xs sm:text-sm font-semibold text-slate-800">
                       {t.calc_slider_label}
                     </label>
-                    <span className="font-mono text-sm sm:text-base font-bold text-[#051C2C] bg-white border border-slate-200 px-3 py-1 rounded shadow-2xs">
-                      {downtimeHours} {t.calc_hours}
-                    </span>
+                    <div className="flex items-center gap-1.5 bg-white border border-slate-300 focus-within:border-[#0066CC] focus-within:ring-2 focus-within:ring-[#0066CC]/20 rounded-lg px-2.5 py-1 shadow-2xs transition-all">
+                      <input
+                        id="downtime-input"
+                        type="number"
+                        min="1"
+                        max="100"
+                        value={downtimeHours === 0 ? '' : downtimeHours}
+                        onChange={(e) => {
+                          const val = e.target.value === '' ? 0 : parseInt(e.target.value, 10);
+                          if (!isNaN(val)) setDowntimeHours(Math.max(0, Math.min(100, val)));
+                        }}
+                        onBlur={() => {
+                          if (downtimeHours < 2) setDowntimeHours(2);
+                        }}
+                        className="w-12 text-right font-mono text-sm sm:text-base font-bold text-[#051C2C] bg-transparent focus:outline-none [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none"
+                        aria-label="Directly input downtime hours"
+                      />
+                      <span className="text-xs font-mono font-medium text-slate-500">{t.calc_hours}</span>
+                    </div>
                   </div>
                   <input
                     id="downtime-slider"
@@ -3637,10 +3653,10 @@ export default function SwissB2BAdvisory({
                     min="2"
                     max="50"
                     step="1"
-                    value={downtimeHours}
+                    value={Math.min(50, Math.max(2, downtimeHours))}
                     onChange={(e) => setDowntimeHours(parseInt(e.target.value, 10))}
                     style={{
-                      background: `linear-gradient(to right, #0066CC 0%, #0066CC ${((downtimeHours - 2) / (50 - 2)) * 100}%, #CBD5E1 ${((downtimeHours - 2) / (50 - 2)) * 100}%, #CBD5E1 100%)`
+                      background: `linear-gradient(to right, #0066CC 0%, #0066CC ${((Math.min(50, Math.max(2, downtimeHours)) - 2) / (50 - 2)) * 100}%, #CBD5E1 ${((Math.min(50, Math.max(2, downtimeHours)) - 2) / (50 - 2)) * 100}%, #CBD5E1 100%)`
                     }}
                     className="custom-range-slider"
                     aria-label={t.calc_slider_aria}
@@ -3654,13 +3670,31 @@ export default function SwissB2BAdvisory({
 
                 {/* Control 2: Stoppage Cost Per Hour (Adjustable €1,000 - €12,000/hr) */}
                 <div className="space-y-2.5 pt-4 border-t border-slate-200">
-                  <div className="flex items-center justify-between">
-                    <label htmlFor="rate-slider" className="text-xs sm:text-sm font-semibold text-slate-800">
+                  <div className="flex items-center justify-between gap-3">
+                    <label htmlFor="rate-input" className="text-xs sm:text-sm font-semibold text-slate-800">
                       {t.calc_rate_label}
                     </label>
-                    <span className="font-mono text-sm sm:text-base font-bold text-emerald-800 bg-white border border-slate-200 px-3 py-1 rounded shadow-2xs">
-                      €{hourlyRate.toLocaleString()} {t.calc_rate_unit}
-                    </span>
+                    <div className="flex items-center gap-1 bg-white border border-slate-300 focus-within:border-emerald-600 focus-within:ring-2 focus-within:ring-emerald-600/20 rounded-lg px-2.5 py-1 shadow-2xs transition-all">
+                      <span className="text-xs font-mono font-bold text-emerald-700">€</span>
+                      <input
+                        id="rate-input"
+                        type="number"
+                        min="500"
+                        max="50000"
+                        step="100"
+                        value={hourlyRate === 0 ? '' : hourlyRate}
+                        onChange={(e) => {
+                          const val = e.target.value === '' ? 0 : parseInt(e.target.value, 10);
+                          if (!isNaN(val)) setHourlyRate(Math.max(0, Math.min(50000, val)));
+                        }}
+                        onBlur={() => {
+                          if (hourlyRate < 500) setHourlyRate(1000);
+                        }}
+                        className="w-20 text-right font-mono text-sm sm:text-base font-bold text-emerald-800 bg-transparent focus:outline-none [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none"
+                        aria-label="Directly input hourly stoppage rate"
+                      />
+                      <span className="text-xs font-mono font-medium text-slate-500">{t.calc_rate_unit}</span>
+                    </div>
                   </div>
                   <input
                     id="rate-slider"
@@ -3668,10 +3702,10 @@ export default function SwissB2BAdvisory({
                     min="1000"
                     max="12000"
                     step="250"
-                    value={hourlyRate}
+                    value={Math.min(12000, Math.max(1000, hourlyRate))}
                     onChange={(e) => setHourlyRate(parseInt(e.target.value, 10))}
                     style={{
-                      background: `linear-gradient(to right, #16A34A 0%, #16A34A ${((hourlyRate - 1000) / (12000 - 1000)) * 100}%, #CBD5E1 ${((hourlyRate - 1000) / (12000 - 1000)) * 100}%, #CBD5E1 100%)`
+                      background: `linear-gradient(to right, #16A34A 0%, #16A34A ${((Math.min(12000, Math.max(1000, hourlyRate)) - 1000) / (12000 - 1000)) * 100}%, #CBD5E1 ${((Math.min(12000, Math.max(1000, hourlyRate)) - 1000) / (12000 - 1000)) * 100}%, #CBD5E1 100%)`
                     }}
                     className="custom-range-slider"
                     aria-label="Hourly stoppage cost slider"
@@ -3722,20 +3756,41 @@ export default function SwissB2BAdvisory({
                     {t.calc_annual_recovery} €{annualRecovery.toLocaleString()}
                   </div>
                 </div>
+              </div>
 
-                {/* Guarantee Banner spanning 2 columns */}
-                <div className="sm:col-span-2 p-4 bg-white border border-slate-200 rounded-xl flex flex-col sm:flex-row items-center justify-between gap-4 shadow-2xs">
-                  <div className="flex items-start gap-2.5 text-xs text-slate-600 text-left">
-                    <ShieldCheck className="w-4 h-4 text-emerald-600 shrink-0 mt-0.5" />
-                    <span>{t.calc_guarantee_note}</span>
-                  </div>
-                  <a
-                    href="#advisory-inquiry"
-                    className="shrink-0 inline-flex items-center min-h-[44px] px-5 py-2 text-xs font-bold text-white bg-[#051C2C] hover:bg-[#0A2540] rounded-md transition-colors whitespace-nowrap shadow-xs"
-                  >
-                    {t.calc_cta}
-                  </a>
-                </div>
+              {/* Guarantee Banner spanning full 12 columns across calculator */}
+              <div className="lg:col-span-12">
+                {(() => {
+                  const colonIdx = t.calc_guarantee_note.indexOf(':');
+                  const guaranteeTitle = colonIdx !== -1 ? t.calc_guarantee_note.substring(0, colonIdx).trim() : '100% Fee Credit Guarantee';
+                  const guaranteeBody = colonIdx !== -1 ? t.calc_guarantee_note.substring(colonIdx + 1).trim() : t.calc_guarantee_note;
+                  return (
+                    <div className="p-5 bg-gradient-to-r from-emerald-50/70 via-slate-50/50 to-white border border-emerald-200/90 rounded-xl shadow-2xs flex flex-col md:flex-row md:items-center justify-between gap-5">
+                      <div className="flex items-start gap-3.5 text-left flex-1 min-w-0">
+                        <div className="w-10 h-10 rounded-lg bg-emerald-100/90 border border-emerald-200 flex items-center justify-center text-emerald-700 shrink-0 mt-0.5">
+                          <ShieldCheck className="w-5 h-5" />
+                        </div>
+                        <div className="space-y-1.5 flex-1 min-w-0">
+                          <div className="flex items-center gap-2">
+                            <span className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded text-[11px] font-mono font-bold uppercase tracking-wider bg-emerald-600 text-white shadow-2xs">
+                              <span className="w-1.5 h-1.5 rounded-full bg-white animate-pulse" />
+                              {guaranteeTitle}
+                            </span>
+                          </div>
+                          <p className="text-xs sm:text-[13px] text-slate-700 leading-relaxed font-normal">
+                            {guaranteeBody}
+                          </p>
+                        </div>
+                      </div>
+                      <a
+                        href="#advisory-inquiry"
+                        className="shrink-0 inline-flex items-center justify-center min-h-[44px] px-6 py-2.5 text-xs font-bold text-white bg-[#040B14] hover:bg-[#0A2540] rounded-lg border border-[#00D2FF]/30 hover:border-[#00D2FF] transition-all whitespace-nowrap shadow-xs"
+                      >
+                        {t.calc_cta}
+                      </a>
+                    </div>
+                  );
+                })()}
               </div>
             </div>
           </div>
