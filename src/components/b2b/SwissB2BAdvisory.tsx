@@ -32,7 +32,8 @@ import {
   Globe,
   Menu,
   X,
-  CheckCircle2
+  CheckCircle2,
+  Cookie
 } from 'lucide-react';
 
 export type SupportedLanguage = 'en' | 'es' | 'nl' | 'de' | 'fr' | 'pt';
@@ -2380,13 +2381,13 @@ const TRANSLATIONS: Record<SupportedLanguage, TranslationBundle> = {
 };
 
 export default function SwissB2BAdvisory({
-  initialLanguage = 'en'
+  initialLanguage
 }: {
   initialLanguage?: SupportedLanguage;
 }) {
   const SUPPORTED_LANGS: SupportedLanguage[] = ['en', 'es', 'de', 'nl', 'fr', 'pt'];
   const [lang, setLang] = useState<SupportedLanguage>(
-    SUPPORTED_LANGS.includes(initialLanguage as SupportedLanguage) ? (initialLanguage as SupportedLanguage) : 'en'
+    initialLanguage && SUPPORTED_LANGS.includes(initialLanguage) ? initialLanguage : 'en'
   );
   const [langOpen, setLangOpen] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -2428,6 +2429,7 @@ export default function SwissB2BAdvisory({
       window.history.replaceState({}, '', url.toString());
       try {
         localStorage.setItem('preferred_language', newL);
+        localStorage.setItem('preferred_lang', newL);
         document.cookie = `preferred_lang=${newL};path=/;max-age=31536000;SameSite=Lax`;
       } catch {
         // ignore
@@ -2436,19 +2438,51 @@ export default function SwissB2BAdvisory({
   };
 
   useEffect(() => {
-    if (initialLanguage && TRANSLATIONS[initialLanguage]) {
+    // 1. If explicit initialLanguage passed from server, use it
+    if (initialLanguage && SUPPORTED_LANGS.includes(initialLanguage)) {
       setLang(initialLanguage);
-    } else if (typeof window !== 'undefined') {
+      return;
+    }
+
+    if (typeof window !== 'undefined') {
+      // 2. Check URL ?lang= parameter
       const urlParams = new URLSearchParams(window.location.search);
       const urlLang = urlParams.get('lang') as SupportedLanguage | null;
       if (urlLang && SUPPORTED_LANGS.includes(urlLang)) {
         setLang(urlLang);
         return;
       }
+
+      // 3. Check localStorage or cookie preference
       try {
-        const stored = localStorage.getItem('preferred_language') as SupportedLanguage | null;
+        const stored = (localStorage.getItem('preferred_language') || localStorage.getItem('preferred_lang')) as SupportedLanguage | null;
         if (stored && SUPPORTED_LANGS.includes(stored)) {
           setLang(stored);
+          return;
+        }
+        const cookieMatch = document.cookie.match(/(?:^|;\s*)preferred_lang=([^;]+)/);
+        if (cookieMatch && SUPPORTED_LANGS.includes(cookieMatch[1] as SupportedLanguage)) {
+          setLang(cookieMatch[1] as SupportedLanguage);
+          return;
+        }
+      } catch {
+        // ignore
+      }
+
+      // 4. Auto-detect from visitor device languages (navigator.languages / navigator.language)
+      try {
+        const deviceLangs = navigator.languages && navigator.languages.length > 0
+          ? navigator.languages
+          : [navigator.language || 'en'];
+
+        for (const rawLang of deviceLangs) {
+          const primary = rawLang.split('-')[0].toLowerCase() as SupportedLanguage;
+          if (SUPPORTED_LANGS.includes(primary)) {
+            setLang(primary);
+            localStorage.setItem('preferred_language', primary);
+            document.cookie = `preferred_lang=${primary};path=/;max-age=31536000;SameSite=Lax`;
+            return;
+          }
         }
       } catch {
         // ignore
@@ -4519,20 +4553,57 @@ export default function SwissB2BAdvisory({
 
       {/* 12. INSTITUTIONAL CORPORATE FOOTER (Deep Midnight Navy, Strict Legal Notices) */}
       <footer className="bg-[#051C2C] text-slate-300 py-12 px-4 sm:px-6 lg:px-8 border-t border-slate-800">
-        <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6 text-xs">
-          <div className="text-center md:text-left">
-            <div className="font-bold text-white uppercase tracking-wider text-sm">
-              {t.footer_brand}
+        <div className="max-w-7xl mx-auto space-y-6 text-xs">
+          <div className="flex flex-col md:flex-row items-center justify-between gap-6">
+            <div className="text-center md:text-left">
+              <div className="font-bold text-white uppercase tracking-wider text-sm">
+                {t.footer_brand}
+              </div>
+              <div className="text-slate-400 mt-1">
+                {t.footer_sub}
+              </div>
             </div>
-            <div className="text-slate-400 mt-1">
-              {t.footer_sub}
+            <div className="text-center md:text-right text-slate-400">
+              <div>{t.footer_nda}</div>
+              <div className="mt-1 font-mono text-[11px] text-slate-500">
+                {t.footer_tax_notice}
+              </div>
             </div>
           </div>
-          <div className="text-center md:text-right text-slate-400">
-            <div>{t.footer_nda}</div>
-            <div className="mt-1 font-mono text-[11px] text-slate-500">
-              {t.footer_tax_notice}
+
+          {/* GDPR & COOKIE GOVERNANCE BAR */}
+          <div className="pt-4 border-t border-slate-800/80 flex flex-col sm:flex-row items-center justify-between gap-3 text-[11px] text-slate-400">
+            <div className="flex items-center gap-2 text-slate-400">
+              <ShieldCheck className="w-3.5 h-3.5 text-cyan-400 shrink-0" />
+              <span>
+                {lang === 'es' && 'Cumplimiento estricto RGPD (UE) 2016/679 · Directiva ePrivacy 2002/58/CE · Responsable: Eduardo de Sousa'}
+                {lang === 'en' && 'Strict GDPR (EU) 2016/679 & ePrivacy 2002/58/EC Compliance · Data Controller: Eduardo de Sousa'}
+                {lang === 'de' && 'Strikte DSGVO (EU) 2016/679 & ePrivacy 2002/58/EG Konformität · Verantwortlicher: Eduardo de Sousa'}
+                {lang === 'nl' && 'Strikte AVG (EU) 2016/679 & ePrivacy 2002/58/EG Naleving · Verwerkingsverantwoordelijke: Eduardo de Sousa'}
+                {lang === 'fr' && 'Conformité stricte RGPD (UE) 2016/679 & ePrivacy 2002/58/CE · Responsable: Eduardo de Sousa'}
+                {lang === 'pt' && 'Cumprimento estrito RGPD (UE) 2016/679 & Diretiva ePrivacy 2002/58/CE · Responsável: Eduardo de Sousa'}
+              </span>
             </div>
+
+            <button
+              type="button"
+              onClick={() => {
+                if (typeof window !== 'undefined') {
+                  window.dispatchEvent(new CustomEvent('open-gdpr-modal'));
+                }
+              }}
+              className="font-mono text-cyan-400 hover:text-cyan-300 underline font-semibold flex items-center gap-1.5 transition-colors focus:outline-none focus:ring-1 focus:ring-cyan-400 px-2.5 py-1 rounded bg-slate-900/80 border border-slate-700 hover:border-cyan-500/50"
+            >
+              <Cookie className="w-3.5 h-3.5 text-cyan-400" />
+              <span>
+                {lang === 'es' && 'Configuración de Privacidad & Cookies (RGPD)'}
+                {lang === 'en' && 'Privacy Settings & Cookie Disclosure (GDPR)'}
+                {lang === 'de' && 'Datenschutzeinstellungen & Cookies (DSGVO)'}
+                {lang === 'nl' && 'Privacy-instellingen & Cookies (AVG)'}
+                {lang === 'fr' && 'Paramètres de Confidentialité & Cookies (RGPD)'}
+                {lang === 'pt' && 'Definições de Privacidade & Cookies (RGPD)'}
+              </span>
+            </button>
           </div>
         </div>
       </footer>

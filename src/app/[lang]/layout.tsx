@@ -6,7 +6,6 @@ import { getCVData } from '@/data/cv-data';
 import Header from '@/components/navigation/Header';
 import Footer from '@/components/navigation/Footer';
 import InteractiveBackground from '@/components/ui/InteractiveBackground';
-import CookieConsentBanner from '@/components/ui/CookieConsentBanner';
 import JsonLd from '@/components/seo/JsonLd';
 import TelemetryProvider from '@/components/telemetry/TelemetryProvider';
 
@@ -47,7 +46,6 @@ export default async function LocalizedLayout({
         {children}
       </main>
       <Footer currentLocale={lang as Locale} cvData={cvData} />
-      <CookieConsentBanner currentLocale={lang as Locale} />
     </div>
   );
 }

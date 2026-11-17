@@ -3,6 +3,7 @@ import { Plus_Jakarta_Sans, JetBrains_Mono } from 'next/font/google';
 import './globals.css';
 import { Analytics } from '@vercel/analytics/next';
 import { SpeedInsights } from '@vercel/speed-insights/next';
+import CookieConsentBanner from '@/components/ui/CookieConsentBanner';
 
 // Self-hosted via next/font — eliminates external CDN dependency with optimal variable woff2
 const plusJakartaSans = Plus_Jakarta_Sans({
@@ -175,6 +176,13 @@ export default function RootLayout({
                 if (localStorage.getItem('cookie-consent') === 'accepted') {
                   window.initClarity();
                 }
+                window.addEventListener('cookie-consent-updated', function(e) {
+                  try {
+                    if (localStorage.getItem('cookie-consent') === 'accepted') {
+                      window.initClarity();
+                    }
+                  } catch (err) {}
+                });
               } catch (e) {}
             `,
           }}
@@ -186,6 +194,7 @@ export default function RootLayout({
         {children}
         <Analytics />
         <SpeedInsights />
+        <CookieConsentBanner />
       </body>
     </html>
   );
