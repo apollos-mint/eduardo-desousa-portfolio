@@ -717,7 +717,7 @@ function generateHtml(d) {
                         <div class="flex justify-end gap-2 text-cyan-800 font-semibold pt-0.5">
                             <a href="https://www.linkedin.com/in/eduardo-desousa/" target="_blank" class="hover:underline">LinkedIn ↗</a> ·
                             <a href="https://github.com/apollos-mint" target="_blank" class="hover:underline">GitHub ↗</a> ·
-                            <a href="https://eduardodesousa.vercel.app" target="_blank" class="hover:underline font-bold text-cyan-900">${d.livePortfolio}</a>
+                            <a href="https://desousaops.vercel.app" target="_blank" class="hover:underline font-bold text-cyan-900">${d.livePortfolio}</a>
                         </div>
                     </div>
                 </div>

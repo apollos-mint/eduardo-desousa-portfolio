@@ -2,7 +2,7 @@ import { MetadataRoute } from 'next';
 import { validLocales, defaultLocale } from '@/lib/i18n';
 import { cvDataByLocale } from '@/data/cv-data';
 
-const BASE_URL = 'https://eduardodesousa.vercel.app';
+const BASE_URL = 'https://desousaops.vercel.app';
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const currentDate = new Date();

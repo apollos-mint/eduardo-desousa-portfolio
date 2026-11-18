@@ -2431,6 +2431,7 @@ export default function SwissB2BAdvisory({
         localStorage.setItem('preferred_language', newL);
         localStorage.setItem('preferred_lang', newL);
         document.cookie = `preferred_lang=${newL};path=/;max-age=31536000;SameSite=Lax`;
+        window.dispatchEvent(new CustomEvent('language-changed', { detail: { lang: newL } }));
       } catch {
         // ignore
       }
@@ -2667,7 +2668,7 @@ export default function SwissB2BAdvisory({
               <div className="relative shrink-0 w-11 h-11 sm:w-12 sm:h-12 flex items-center justify-center transition-transform duration-200 group-hover:scale-105">
                 <Image
                   src="/images/es-monogram-hex.png"
-                  alt="Eduardo de Sousa Monogram"
+                  alt="De Sousa Monogram"
                   width={48}
                   height={48}
                   className="w-full h-full object-contain filter drop-shadow-[0_2px_4px_rgba(4,11,20,0.18)]"
@@ -2676,7 +2677,7 @@ export default function SwissB2BAdvisory({
               </div>
               <div className="flex flex-col shrink-0">
                 <span className="text-base sm:text-lg lg:text-xl font-bold tracking-tight text-[#040B14] group-hover:text-[#0066CC] transition-colors uppercase leading-none sm:leading-tight">
-                  Eduardo de Sousa
+                  De Sousa
                 </span>
                 <span className="text-[10px] sm:text-[11px] font-semibold tracking-wider text-slate-500 uppercase whitespace-nowrap mt-0.5">
                   {t.nav_brand_sub_title}
@@ -4589,7 +4590,7 @@ export default function SwissB2BAdvisory({
               type="button"
               onClick={() => {
                 if (typeof window !== 'undefined') {
-                  window.dispatchEvent(new CustomEvent('open-gdpr-modal'));
+                  window.dispatchEvent(new CustomEvent('open-gdpr-modal', { detail: { lang } }));
                 }
               }}
               className="font-mono text-cyan-400 hover:text-cyan-300 underline font-semibold flex items-center gap-1.5 transition-colors focus:outline-none focus:ring-1 focus:ring-cyan-400 px-2.5 py-1 rounded bg-slate-900/80 border border-slate-700 hover:border-cyan-500/50"

@@ -21,7 +21,7 @@ const jetBrainsMono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://eduardodesousa.vercel.app'),
+  metadataBase: new URL('https://desousaops.vercel.app'),
   title: 'Eduardo de Sousa | Staff Operations, Quality & High-Tech Process Leader',
   description:
     'Executive portfolio of Eduardo de Sousa. Operations, Quality and Process Leader. Lean Six Sigma Black Belt, ASML semiconductor supply chain, automotive OEM quality inspections, and global factory auditing.',
@@ -67,20 +67,20 @@ export const metadata: Metadata = {
     title: 'Eduardo de Sousa | Staff Operations, Quality & High-Tech Process Leader',
     description:
       'High-performance operations leader specializing in high-tech cleanrooms, ASML semiconductor supply chain, automotive manufacturing, and Lean Six Sigma Black Belt methodology.',
-    url: 'https://eduardodesousa.vercel.app',
-    siteName: 'Eduardo de Sousa Portfolio',
+    url: 'https://desousaops.vercel.app',
+    siteName: 'De Sousa Industrial Operations Advisory',
     type: 'website',
     locale: 'es_ES',
     alternateLocale: ['en_US', 'pt_PT', 'nl_NL', 'de_DE', 'fr_FR'],
     images: [
       {
-        url: 'https://eduardodesousa.vercel.app/opengraph-image',
+        url: 'https://desousaops.vercel.app/opengraph-image',
         width: 1200,
         height: 630,
         alt: 'Eduardo de Sousa | Staff Operations & Quality Leader',
       },
       {
-        url: 'https://eduardodesousa.vercel.app/og-image.png',
+        url: 'https://desousaops.vercel.app/og-image.png',
         width: 1200,
         height: 630,
         alt: 'Eduardo de Sousa | Staff Operations & Quality Leader',
@@ -93,8 +93,8 @@ export const metadata: Metadata = {
     description:
       'High-performance operations leader specializing in high-tech cleanrooms, ASML semiconductor supply chain, automotive manufacturing, and Lean Six Sigma Black Belt methodology.',
     images: [
-      'https://eduardodesousa.vercel.app/opengraph-image',
-      'https://eduardodesousa.vercel.app/og-image.png',
+      'https://desousaops.vercel.app/opengraph-image',
+      'https://desousaops.vercel.app/og-image.png',
     ],
   },
   verification: {

@@ -209,7 +209,7 @@ export default async function Image() {
               letterSpacing: '0.5px',
             }}
           >
-            eduardodesousa.vercel.app
+            desousaops.vercel.app
           </div>
         </div>
       </div>

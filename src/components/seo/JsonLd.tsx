@@ -11,13 +11,13 @@ export default function JsonLd({ lang }: JsonLdProps) {
     '@graph': [
       {
         '@type': 'Person',
-        '@id': 'https://eduardodesousa.vercel.app/#person',
+        '@id': 'https://desousaops.vercel.app/#person',
         name: 'Eduardo de Sousa',
         givenName: 'Eduardo',
         familyName: 'de Sousa',
         jobTitle: 'Staff Operations, Quality & High-Tech Process Leader',
-        url: 'https://eduardodesousa.vercel.app',
-        image: 'https://eduardodesousa.vercel.app/images/eduardo-hero.jpg',
+        url: 'https://desousaops.vercel.app',
+        image: 'https://desousaops.vercel.app/images/eduardo-hero.jpg',
         email: 'mailto:desousaej@gmail.com',
         telephone: '+31 6 12345678',
         sameAs: [
@@ -73,21 +73,21 @@ export default function JsonLd({ lang }: JsonLdProps) {
       },
       {
         '@type': 'ProfilePage',
-        '@id': `https://eduardodesousa.vercel.app/${lang}/#webpage`,
-        url: `https://eduardodesousa.vercel.app/${lang}`,
+        '@id': `https://desousaops.vercel.app/${lang}/#webpage`,
+        url: `https://desousaops.vercel.app/${lang}`,
         name: 'Eduardo de Sousa | Staff Operations, Quality & Process Leader',
         isPartOf: {
           '@type': 'WebSite',
-          '@id': 'https://eduardodesousa.vercel.app/#website',
-          url: 'https://eduardodesousa.vercel.app',
+          '@id': 'https://desousaops.vercel.app/#website',
+          url: 'https://desousaops.vercel.app',
           name: 'Eduardo de Sousa Portfolio',
           publisher: {
-            '@id': 'https://eduardodesousa.vercel.app/#person',
+            '@id': 'https://desousaops.vercel.app/#person',
           },
           inLanguage: ['es', 'en', 'pt', 'de', 'fr', 'nl'],
         },
         mainEntity: {
-          '@id': 'https://eduardodesousa.vercel.app/#person',
+          '@id': 'https://desousaops.vercel.app/#person',
         },
       },
     ],

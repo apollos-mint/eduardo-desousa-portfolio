@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
-import { ShieldCheck, Cookie, X, Lock, BarChart3, Check } from "lucide-react";
+import { ShieldCheck, Cookie, X, Lock, BarChart3 } from "lucide-react";
 import { Locale } from "@/types";
 
 interface CookieConsentBannerProps {
@@ -9,6 +9,7 @@ interface CookieConsentBannerProps {
 }
 
 interface TranslationData {
+  badge: string;
   bannerTitle: string;
   bannerDesc: string;
   accept: string;
@@ -16,6 +17,7 @@ interface TranslationData {
   details: string;
   modalTitle: string;
   modalSub: string;
+  controllerTitle: string;
   controller: string;
   legalBasisTitle: string;
   catEssentialTitle: string;
@@ -34,6 +36,7 @@ interface TranslationData {
 
 const dict: Record<Locale, TranslationData> = {
   es: {
+    badge: "RGPD (UE) 2016/679 · Directiva ePrivacy 2002/58/CE",
     bannerTitle: "Gobernanza de Privacidad & Cookies (RGPD / Directiva ePrivacy)",
     bannerDesc: "Este portal utiliza cookies técnicas esenciales para el funcionamiento de la sesión y la memorización de su idioma preferido. Opcionalmente, empleamos telemetría agregada (Vercel) y analítica de interacción (Microsoft Clarity) para auditar la usabilidad técnica.",
     accept: "Aceptar Analítica",
@@ -41,7 +44,8 @@ const dict: Record<Locale, TranslationData> = {
     details: "Configuración & Legal",
     modalTitle: "Aviso de Privacidad y Declaración de Cookies",
     modalSub: "Conforme al Reglamento (UE) 2016/679 (RGPD) y Directiva 2002/58/CE (ePrivacy)",
-    controller: "Responsable del Tratamiento: Eduardo de Sousa · Asesoría de Operaciones Industriales · Valencia, España · Contacto: desousaejai@gmail.com",
+    controllerTitle: "Responsable del Tratamiento",
+    controller: "Responsable del Tratamiento: Eduardo de Sousa · De Sousa Industrial Operations Advisory · Valencia, España · Contacto: desousaejai@gmail.com",
     legalBasisTitle: "Bases Jurídicas del Tratamiento",
     catEssentialTitle: "1. Cookies Técnicas y Funcionales Esenciales",
     catEssentialBadge: "Obligatorias / Siempre Activas",
@@ -57,6 +61,7 @@ const dict: Record<Locale, TranslationData> = {
     statusDeclined: "Solo Esenciales (Bloqueada)",
   },
   en: {
+    badge: "EU GDPR 2016/679 · ePrivacy Directive 2002/58/EC",
     bannerTitle: "Privacy & Cookie Governance (GDPR / ePrivacy Directive)",
     bannerDesc: "This portal uses essential technical cookies to ensure platform operations and preserve your preferred language. Optionally, we use aggregated performance telemetry (Vercel) and session interaction analytics (Microsoft Clarity) to audit usability.",
     accept: "Accept Analytics",
@@ -64,7 +69,8 @@ const dict: Record<Locale, TranslationData> = {
     details: "Preferences & Disclosure",
     modalTitle: "Privacy Notice & Cookie Policy Disclosure",
     modalSub: "Compliant with EU Regulation 2016/679 (GDPR) & Directive 2002/58/EC (ePrivacy)",
-    controller: "Data Controller: Eduardo de Sousa · Industrial Operations Advisory Practice · Valencia, Spain · Contact: desousaejai@gmail.com",
+    controllerTitle: "Data Controller",
+    controller: "Data Controller: Eduardo de Sousa · De Sousa Industrial Operations Advisory · Valencia, Spain · Contact: desousaejai@gmail.com",
     legalBasisTitle: "Legal Grounds for Processing",
     catEssentialTitle: "1. Strictly Necessary Technical & Functional Cookies",
     catEssentialBadge: "Mandatory / Always Active",
@@ -80,6 +86,7 @@ const dict: Record<Locale, TranslationData> = {
     statusDeclined: "Essential Only (Blocked)",
   },
   de: {
+    badge: "EU-DSGVO 2016/679 · ePrivacy-Richtlinie 2002/58/EG",
     bannerTitle: "Datenschutz & Cookie-Governance (DSGVO / ePrivacy)",
     bannerDesc: "Dieses Portal verwendet essenzielle technische Cookies für den Betrieb und zur Speicherung Ihrer Sprachauswahl. Optional nutzen wir Leistungs-Telemetrie (Vercel) und Interaktionsanalytik (Microsoft Clarity).",
     accept: "Analytik Akzeptieren",
@@ -87,11 +94,12 @@ const dict: Record<Locale, TranslationData> = {
     details: "Einstellungen & Rechtliches",
     modalTitle: "Datenschutzerklärung & Cookie-Richtlinie",
     modalSub: "Gemäß EU-Verordnung 2016/679 (DSGVO) und Richtlinie 2002/58/EG (ePrivacy)",
-    controller: "Verantwortlicher: Eduardo de Sousa · Industrielle Betriebsberatung · Valencia, Spanien · Kontakt: desousaejai@gmail.com",
+    controllerTitle: "Verantwortlicher",
+    controller: "Verantwortlicher: Eduardo de Sousa · De Sousa Industrielle Betriebsberatung · Valencia, Spanien · Kontakt: desousaejai@gmail.com",
     legalBasisTitle: "Rechtsgrundlagen der Verarbeitung",
     catEssentialTitle: "1. Technisch Notwendige Cookies",
     catEssentialBadge: "Obligatorisch / Immer Aktiv",
-    catEssentialDesc: "Erforderlich für Sicherheit, Edge-Routing und Sprachspeicherung ('preferred_lang', 'cookie-consent'). Ausgenommen von der Einwilligungspflicht gemäß Art. 5.3 ePrivacy-Richtlinie / Art. 6.1.f DSGVO.",
+    catEssentialDesc: "Erforderlich für Sicherheit, Edge-Routing und Sprachspeicherung ('preferred_lang', 'cookie-consent'). Ausgenommen von der Einwilligungspflicht gemäß Art. 5.3 ePrivacy-Richtlinie / Art. 6.1.f DSGVO (Berechtigtes Interesse).",
     catAnalyticsTitle: "2. Sitzungstelemetrie & Heatmaps (Microsoft Clarity & Vercel)",
     catAnalyticsBadge: "Optional / Ausdrückliche Einwilligung",
     catAnalyticsDesc: "Erfasst anonyme Interaktionen zur Optimierung der Benutzerführung mit automatischer Maskierung sensibler Felder. Vercel Analytics arbeitet cookieless. Nur aktiv nach Bestätigung gemäß Art. 6.1.a DSGVO.",
@@ -103,6 +111,7 @@ const dict: Record<Locale, TranslationData> = {
     statusDeclined: "Nur Essenziell (Blockiert)",
   },
   nl: {
+    badge: "EU-AVG 2016/679 · ePrivacy-richtlijn 2002/58/EG",
     bannerTitle: "Privacy & Cookiebeheer (AVG / ePrivacy-richtlijn)",
     bannerDesc: "Dit portaal gebruikt strikt noodzakelijke cookies voor paginawerking en taalvoorkeur. Optioneel gebruiken we prestatietelemetrie (Vercel) en sessie-analyse (Microsoft Clarity).",
     accept: "Analytica Accepteren",
@@ -110,11 +119,12 @@ const dict: Record<Locale, TranslationData> = {
     details: "Voorkeuren & Juridisch",
     modalTitle: "Privacyverklaring & Cookiebeleid",
     modalSub: "Conform EU-verordening 2016/679 (AVG) en Richtlijn 2002/58/EG (ePrivacy)",
-    controller: "Verwerkingsverantwoordelijke: Eduardo de Sousa · Industrieel Advies · Valencia, Spanje · Contact: desousaejai@gmail.com",
+    controllerTitle: "Verwerkingsverantwoordelijke",
+    controller: "Verwerkingsverantwoordelijke: Eduardo de Sousa · De Sousa Industrieel Advies · Valencia, Spanje · Contact: desousaejai@gmail.com",
     legalBasisTitle: "Juridische Grondslagen",
     catEssentialTitle: "1. Strikt Noodzakelijke Functionele Cookies",
     catEssentialBadge: "Verplicht / Altijd Actief",
-    catEssentialDesc: "Essentieel voor veilige navigatie, routing en taalbehoud ('preferred_lang', 'cookie-consent'). Vrijgesteld van toestemming conform Art. 5.3 ePrivacy-richtlijn / Art. 6.1.f AVG.",
+    catEssentialDesc: "Essentieel voor veilige navigatie, routing en taalbehoud ('preferred_lang', 'cookie-consent'). Vrijgesteld van toestemming conform Art. 5.3 ePrivacy-richtlijn / Art. 6.1.f AVG (Gerechtvaardigd belang).",
     catAnalyticsTitle: "2. Sessietelemetrie & Interactie-Heatmaps (Microsoft Clarity & Vercel)",
     catAnalyticsBadge: "Optioneel / Uitdrukkelijke Toestemming",
     catAnalyticsDesc: "Verzamelt anonieme interactiepatronen met automatische maskering van gevoelige invoer. Vercel Analytics werkt zonder cookies. Wordt pas geladen na toestemming conform Art. 6.1.a AVG.",
@@ -126,6 +136,7 @@ const dict: Record<Locale, TranslationData> = {
     statusDeclined: "Alleen Noodzakelijk (Geblokkeerd)",
   },
   fr: {
+    badge: "RGPD (UE) 2016/679 · Directive ePrivacy 2002/58/CE",
     bannerTitle: "Gouvernance de la Confidentialité & Cookies (RGPD / ePrivacy)",
     bannerDesc: "Ce portail utilise des cookies techniques essentiels pour le fonctionnement et la mémorisation de votre langue. En option, nous utilisons la télémétrie (Vercel) et l'analytique (Microsoft Clarity).",
     accept: "Accepter l'analytique",
@@ -133,11 +144,12 @@ const dict: Record<Locale, TranslationData> = {
     details: "Préférences & Légal",
     modalTitle: "Politique de Confidentialité et Déclaration relative aux Cookies",
     modalSub: "Conforme au Règlement (UE) 2016/679 (RGPD) et à la Directive 2002/58/CE (ePrivacy)",
-    controller: "Responsable du Traitement: Eduardo de Sousa · Conseil en Opérations Industrielles · Valence, Espagne · Contact: desousaejai@gmail.com",
+    controllerTitle: "Responsable du Traitement",
+    controller: "Responsable du Traitement: Eduardo de Sousa · De Sousa Conseil en Opérations Industrielles · Valence, Espagne · Contact: desousaejai@gmail.com",
     legalBasisTitle: "Bases Légales du Traitement",
     catEssentialTitle: "1. Cookies Techniques et Fonctionnels Essentiels",
     catEssentialBadge: "Obligatoire / Toujours Actif",
-    catEssentialDesc: "Indispensables à la sécurité, à l'acheminement et à la conservation des préférences ('preferred_lang', 'cookie-consent'). Exemptés de consentement selon l'Art. 5.3 Directive ePrivacy / Art. 6.1.f RGPD.",
+    catEssentialDesc: "Indispensables à la sécurité, à l'acheminement et à la conservation des préférences ('preferred_lang', 'cookie-consent'). Exemptés de consentement selon l'Art. 5.3 Directive ePrivacy / Art. 6.1.f RGPD (Intérêt Légitime).",
     catAnalyticsTitle: "2. Télémétrie de Session & Cartes de Chaleur (Microsoft Clarity & Vercel)",
     catAnalyticsBadge: "Optionnel / Consentement Explicite",
     catAnalyticsDesc: "Enregistre anonymement les interactions avec masquage automatique des données sensibles. Vercel opère sans cookies. Activé uniquement après accord selon l'Art. 6.1.a RGPD.",
@@ -149,6 +161,7 @@ const dict: Record<Locale, TranslationData> = {
     statusDeclined: "Essentiels Uniquement (Bloqué)",
   },
   pt: {
+    badge: "RGPD (UE) 2016/679 · Diretiva ePrivacy 2002/58/CE",
     bannerTitle: "Governança de Privacidade & Cookies (RGPD / Diretiva ePrivacy)",
     bannerDesc: "Este portal utiliza cookies técnicos essenciais para o funcionamento e memorização do seu idioma. Opcionalmente, utilizamos telemetria agregada (Vercel) e análise de sessão (Microsoft Clarity).",
     accept: "Aceitar Analítica",
@@ -156,11 +169,12 @@ const dict: Record<Locale, TranslationData> = {
     details: "Definições & Legal",
     modalTitle: "Aviso de Privacidade e Declaração de Cookies",
     modalSub: "Em conformidade com o Regulamento (UE) 2016/679 (RGPD) e Diretiva 2002/58/CE (ePrivacy)",
-    controller: "Responsável pelo Tratamento: Eduardo de Sousa · Consultoria de Operações Industriais · Valência, Espanha · Contacto: desousaejai@gmail.com",
+    controllerTitle: "Responsável pelo Tratamento",
+    controller: "Responsável pelo Tratamento: Eduardo de Sousa · De Sousa Consultoria de Operações Industriais · Valência, Espanha · Contacto: desousaejai@gmail.com",
     legalBasisTitle: "Bases Jurídicas do Tratamento",
     catEssentialTitle: "1. Cookies Técnicos e Funcionais Essenciais",
     catEssentialBadge: "Obrigatórios / Sempre Ativos",
-    catEssentialDesc: "Indispensáveis para a segurança da navegação e preservação do idioma ('preferred_lang', 'cookie-consent'). Isentos de consentimento prévio segundo o Art. 5.3 Diretiva ePrivacy / Art. 6.1.f RGPD.",
+    catEssentialDesc: "Indispensáveis para a segurança da navegação e preservação do idioma ('preferred_lang', 'cookie-consent'). Isentos de consentimento prévio segundo o Art. 5.3 Diretiva ePrivacy / Art. 6.1.f RGPD (Interesse Legítimo).",
     catAnalyticsTitle: "2. Telemetria de Sessão e Mapas de Calor (Microsoft Clarity & Vercel)",
     catAnalyticsBadge: "Opcional / Consentimento Expresso",
     catAnalyticsDesc: "Regista padrões anónimos com mascaramento automático de campos sensíveis. Vercel funciona sem cookies. Apenas é ativado após consentimento expresso nos termos do Art. 6.1.a RGPD.",
@@ -173,52 +187,41 @@ const dict: Record<Locale, TranslationData> = {
   },
 };
 
+function resolveClientLocale(preferred?: Locale): Locale {
+  if (preferred && dict[preferred]) return preferred;
+  if (typeof window === "undefined") return "en";
+
+  const urlLang = new URLSearchParams(window.location.search).get("lang") as Locale | null;
+  if (urlLang && dict[urlLang]) return urlLang;
+
+  const cookieMatch = document.cookie.match(/(?:^|;\s*)preferred_lang=([^;]+)/);
+  if (cookieMatch && dict[cookieMatch[1] as Locale]) return cookieMatch[1] as Locale;
+
+  const stored = localStorage.getItem("preferred_language") as Locale | null;
+  if (stored && dict[stored]) return stored;
+
+  if (navigator.languages) {
+    for (const l of navigator.languages) {
+      const code = l.split("-")[0].toLowerCase() as Locale;
+      if (dict[code]) return code;
+    }
+  }
+
+  return "en";
+}
+
 export default function CookieConsentBanner({ currentLocale }: CookieConsentBannerProps) {
-  const [activeLocale, setActiveLocale] = useState<Locale>("en");
+  const [activeLocale, setActiveLocale] = useState<Locale>(() => currentLocale || "en");
   const [isBannerVisible, setIsBannerVisible] = useState(false);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [analyticsEnabled, setAnalyticsEnabled] = useState(false);
 
-  // Determine active locale dynamically
+  // Sync active locale on mount and upon external props
   useEffect(() => {
-    if (currentLocale && dict[currentLocale]) {
-      setActiveLocale(currentLocale);
-      return;
-    }
-
-    if (typeof window !== "undefined") {
-      const urlLang = new URLSearchParams(window.location.search).get("lang") as Locale | null;
-      if (urlLang && dict[urlLang]) {
-        setActiveLocale(urlLang);
-        return;
-      }
-
-      const cookieMatch = document.cookie.match(/(?:^|;\s*)preferred_lang=([^;]+)/);
-      if (cookieMatch && dict[cookieMatch[1] as Locale]) {
-        setActiveLocale(cookieMatch[1] as Locale);
-        return;
-      }
-
-      const stored = localStorage.getItem("preferred_language") as Locale | null;
-      if (stored && dict[stored]) {
-        setActiveLocale(stored);
-        return;
-      }
-
-      // Browser language check
-      if (navigator.languages) {
-        for (const l of navigator.languages) {
-          const code = l.split("-")[0].toLowerCase() as Locale;
-          if (dict[code]) {
-            setActiveLocale(code);
-            return;
-          }
-        }
-      }
-    }
+    setActiveLocale(resolveClientLocale(currentLocale));
   }, [currentLocale]);
 
-  // Check initial consent state on mount & listen to open events
+  // Check initial consent state on mount & register dynamic event listeners
   useEffect(() => {
     try {
       const consent = localStorage.getItem("cookie-consent");
@@ -239,8 +242,27 @@ export default function CookieConsentBanner({ currentLocale }: CookieConsentBann
       // ignore
     }
 
+    // Listener for language change on page (dropdown)
+    const handleLanguageChanged = (e: any) => {
+      const newL = e?.detail?.lang as Locale | undefined;
+      if (newL && dict[newL]) {
+        setActiveLocale(newL);
+      } else {
+        setActiveLocale(resolveClientLocale());
+      }
+    };
+    window.addEventListener("language-changed", handleLanguageChanged);
+
     // Global listener so any footer link or button can trigger the GDPR Disclosure Modal
-    const handleOpenModal = () => setIsModalOpen(true);
+    const handleOpenModal = (e?: any) => {
+      const requestedLang = e?.detail?.lang as Locale | undefined;
+      if (requestedLang && dict[requestedLang]) {
+        setActiveLocale(requestedLang);
+      } else {
+        setActiveLocale(resolveClientLocale());
+      }
+      setIsModalOpen(true);
+    };
     window.addEventListener("open-gdpr-modal", handleOpenModal);
 
     const handleKeyDown = (e: KeyboardEvent) => {
@@ -251,6 +273,7 @@ export default function CookieConsentBanner({ currentLocale }: CookieConsentBann
     window.addEventListener("keydown", handleKeyDown);
 
     return () => {
+      window.removeEventListener("language-changed", handleLanguageChanged);
       window.removeEventListener("open-gdpr-modal", handleOpenModal);
       window.removeEventListener("keydown", handleKeyDown);
     };
@@ -309,7 +332,7 @@ export default function CookieConsentBanner({ currentLocale }: CookieConsentBann
                 </div>
                 <div>
                   <span className="text-[9.5px] font-mono uppercase tracking-wider text-cyan-400 font-bold block">
-                    EU RGPD / GDPR · ePrivacy 2002/58/EC
+                    {t.badge}
                   </span>
                   <h2 id="cookie-banner-title" className="text-xs font-bold text-white tracking-wide uppercase">
                     {t.bannerTitle}
@@ -400,7 +423,7 @@ export default function CookieConsentBanner({ currentLocale }: CookieConsentBann
               {/* Controller Details */}
               <div className="pb-3">
                 <span className="font-mono font-bold text-[10px] uppercase text-sky-900 tracking-wider block mb-1">
-                  Responsable del Tratamiento / Data Controller
+                  {t.controllerTitle}
                 </span>
                 <p className="text-slate-700 font-medium bg-slate-50 border border-slate-200 rounded-lg p-2.5 text-[11px]">
                   {t.controller}

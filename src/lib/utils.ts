@@ -17,7 +17,7 @@ TEL;TYPE=WHATSAPP,MSG:+34661440045
 EMAIL;TYPE=PREF,INTERNET:desousaej@gmail.com
 ADR;TYPE=WORK:;;Enguera;Comunidad Valenciana;;46810;Spain
 NOTE:${note || 'Lean Six Sigma Black Belt (DMAIC) | CMMS Software Architect | Global Sourcing ($800K/yr) | Ex-ASML Supply Chain'}
-URL:https://eduardodesousa.vercel.app
+URL:https://desousaops.vercel.app
 X-SOCIALPROFILE;type=linkedin:https://www.linkedin.com/in/eduardo-desousa/
 END:VCARD`;
 
