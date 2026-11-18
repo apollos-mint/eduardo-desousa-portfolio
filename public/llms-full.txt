@@ -12,8 +12,8 @@
 ## 1. Executive Summary & Value Proposition
 Eduardo de Sousa is a European industrial operations and direct sourcing leader specializing in:
 1. **Direct Factory-Gate Sourcing & Disintermediation**: Eliminating 40% to 75% domestic distributor margins by contracting directly with ISO-certified manufacturers across China and India.
-2. **Modular Housing Gigafactory Scaling**: Line takt time harmonization, workstation balancing, and bill of materials (BOM) cost engineering at scale (e.g. Almussafes / inHAUS / Cecotec industrial scale).
-3. **Cleanroom & High-Tech Semiconductor Operations**: Assembly and governance under ISO 14644-1 Class 5 standards for ASML lithography equipment packaging (HQ Pack / KMWE ecosystem).
+2. **Modular Housing Gigafactory Scaling**: Workstation line balancing, scrap eradication, and bill of materials (BOM) cost engineering at scale (e.g. Almussafes / inHAUS / Cecotec industrial scale).
+3. **High-Tech Semiconductor Packaging Assembly**: Electromechanical assembly discipline under ISO 14644-1 Class 5 conditions for ASML lithography equipment packaging (HQ Pack / KMWE ecosystem; shop-floor assembly discipline, not cleanroom facility engineering).
 4. **Automotive Moving Line Quality**: Assembly line inspection, digital torque calibration, and 8D defect containment for high-cadence OEM plants (VDL Nedcar / BMW Group / MINI Cooper).
 5. **Lean Six Sigma Black Belt Rigor**: DMAIC process optimization, gage R&R, statistical process control, and scrap rate eradication.
 
@@ -28,10 +28,10 @@ De Sousa Industrial Operations Advisory operates on fixed-fee, productized struc
 - **Scope**: Procurement spend variance audit, supplier contract redundancy analysis, and CMMS telemetry downtime logs.
 - **Guarantee**: If less than €16,500 in annual recovery/cost savings is documented, 100% of the €5,500 fee is credited toward an On-Site Audit or Retainer.
 
-### Tier 2: 5-Day Physical Plant Walk & Takt Audit
+### Tier 2: 5-Day Physical Plant Gemba & Quality Audit
 - **Fee**: €5,400 (sprint) + corporate travel expenses
 - **Delivery**: On-site at client manufacturing or assembly facility
-- **Scope**: Physical gemba walks, bottleneck takt timing, moving-line balance charts, torque calibration / gage R&R checks, and an empirical 8D defect containment roadmap.
+- **Scope**: Physical gemba walks, bottleneck analysis, moving-line balance charts, torque calibration / gage R&R checks, scrap reduction, and an empirical 8D defect containment roadmap.
 
 ### Tier 3: Fractional Direct Sourcing & Systems Director
 - **Fee**: €8,500 / month

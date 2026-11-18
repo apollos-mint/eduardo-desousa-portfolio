@@ -67,16 +67,15 @@ export default function JsonLd({ lang }: JsonLdProps) {
           'Modular Housing Manufacturing',
           'Almussafes Industrial Corridor Operations',
           'Lean Six Sigma Black Belt (DMAIC)',
-          'ASML Lithography Cleanroom Packaging (ISO 14644 Class 5)',
+          'High-Tech Packaging Assembly (ISO Class 5 Cleanroom Environment)',
           'Automotive OEM Moving Line Assembly (VDL Nedcar / BMW / MINI)',
-          'ISO 9001 Quality Management Systems',
-          'IATF 16949 Automotive Quality Standards',
+          '8D Root Cause Problem Solving & Quality Systems',
           'ISAH ERP System Governance',
           'PostgreSQL and MSSQL CMMS Telemetry Architecture',
           'Pre-Shipment & Container Loading Inspections (PSI/CLI)',
         ],
         description:
-          'European operations leader and direct sourcing advisor specializing in factory-gate procurement, modular housing manufacturing scale, ASML cleanroom compliance, and Lean Six Sigma Black Belt optimization.',
+          'European operations leader and direct sourcing advisor specializing in factory-gate procurement, modular housing manufacturing scale, shop-floor assembly discipline, and Lean Six Sigma Black Belt quality systems.',
       },
 
       // 2. Industrial Advisory Firm / ProfessionalService Entity
@@ -140,15 +139,15 @@ export default function JsonLd({ lang }: JsonLdProps) {
             {
               '@type': 'Offer',
               '@id': `${BASE_URL}/#offer-plant-audit`,
-              name: '5-Day Physical Plant Walk & Takt Audit',
+              name: '5-Day Physical Plant Gemba & Quality Audit',
               description:
-                'On-site gemba walk, moving-line bottleneck takt timing, torque calibration / gage R&R checks, and empirical 8D containment roadmap for manufacturing plants and modular assembly facilities.',
+                'On-site gemba walk, moving-line bottleneck analysis, torque calibration / gage R&R checks, scrap reduction, and empirical 8D containment roadmap for manufacturing plants and modular assembly facilities.',
               price: '5400.00',
               priceCurrency: 'EUR',
               validFrom: '2026-01-01',
               itemOffered: {
                 '@type': 'Service',
-                name: '5-Day On-Site Gemba & Takt Time Audit',
+                name: '5-Day On-Site Gemba & Quality Audit',
                 serviceType: 'Factory Physical Plant Audit',
               },
             },
@@ -187,7 +186,7 @@ export default function JsonLd({ lang }: JsonLdProps) {
             name: 'What services does Eduardo de Sousa provide for European manufacturing and modular housing companies?',
             acceptedAnswer: {
               '@type': 'Answer',
-              text: 'Eduardo de Sousa provides productized advisory in factory-gate procurement, direct sourcing disintermediation (reducing supply chain costs by up to 75% across Asia and Latin America), modular housing takt time optimization (at inHAUS, Cecotec, and Almussafes industrial scale), and ISO 9001 / ASML-grade cleanroom quality management.',
+              text: 'Eduardo de Sousa provides productized advisory in factory-gate procurement, direct sourcing disintermediation (reducing supply chain costs by up to 75% across Asia and Latin America), modular housing BOM optimization (at inHAUS, Cecotec, and Almussafes industrial scale), and Lean Six Sigma Black Belt shop-floor quality execution.',
             },
           },
           {
@@ -203,7 +202,7 @@ export default function JsonLd({ lang }: JsonLdProps) {
             name: 'What are the commercial pricing tiers for De Sousa Industrial Advisory?',
             acceptedAnswer: {
               '@type': 'Answer',
-              text: 'Mandates are offered under three transparent fixed structures: 1) 14-Day Remote Spend & Telemetry Diagnostic at €5,500 fixed sprint; 2) 5-Day Physical Plant Walk & Takt Audit at €5,400 sprint plus corporate travel expenses; and 3) Fractional Direct Sourcing & Systems Director at €8,500/month (2 days/week equivalent, async-first).',
+              text: 'Mandates are offered under three transparent fixed structures: 1) 14-Day Remote Spend & Telemetry Diagnostic at €5,500 fixed sprint; 2) 5-Day Physical Plant Gemba & Quality Audit at €5,400 sprint plus corporate travel expenses; and 3) Fractional Direct Sourcing & Systems Director at €8,500/month (2 days/week equivalent, async-first).',
             },
           },
           {

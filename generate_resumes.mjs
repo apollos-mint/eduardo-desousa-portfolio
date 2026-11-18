@@ -151,7 +151,7 @@ const languages = {
     role2Bullet1: '<strong>Trazabilidad en ERP ISAH y Liderazgo Operativo:</strong> Control y seguimiento de telemetría técnica en ERP (ISAH) en más de 2.000 órdenes de trabajo mensuales con 100% de trazabilidad en auditorías; capacitación y guía técnica a técnicos en SOPs, normas de seguridad y salas limpias, coordinando un equipo operativo de 50 profesionales entre logística, inspección y planta.',
     role2Bullet2: '<strong>Ensamblaje y Reparación de Precisión en Sala Limpia:</strong> Montaje, desmontaje y reacondicionamiento técnico de módulos de transporte y embalaje de ultra-alta precisión y cabrestantes certificados por TÜV bajo norma de <strong>Sala Limpia ISO Clase 5</strong> (especificaciones ASML/Zeiss), alcanzando 0 no conformidades críticas.',
     role2Bullet3: '<strong>Optimización Lean y Reducción de Tiempos de Ciclo (-30%):</strong> Estandarización de flujos de trabajo de mantenimiento y procedimientos normalizados (SOP) mediante DMAIC y 5S, reduciendo tiempos de ciclo promedio en un 30% y eliminando un 22% de defectos técnicos recurrentes.',
-    role2Bullet4: '<strong>Seguridad en Planta y Mentoría Técnica:</strong> Capacitación y auditoría técnica a nuevos operarios en protocolos de sala limpia, SOPs de planta, normativa de seguridad industrial y manipulación de equipos de elevación.',
+    role2Bullet4: '<strong>Seguridad en Planta y Mentoría Técnica:</strong> Capacitación y mentoría técnica a nuevos operarios en protocolos de sala limpia, SOPs de planta, normativa de seguridad industrial y manipulación de equipos de elevación.',
     role3Title: 'Técnico de Calidad de Producción · VDL Nedcar',
     role3Date: '04/2022 – 11/2023',
     role3Scope: 'Born, Países Bajos · Fabricación Automotriz OEM',

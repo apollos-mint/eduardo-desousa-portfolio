@@ -1,6 +1,6 @@
 # Eduardo de Sousa - European Industrial Operations & Sourcing Advisory
 
-> European Operations Leader & Direct Sourcing Advisor specializing in factory-gate procurement disintermediation, modular housing manufacturing scaling (inHAUS / Almussafes / Cecotec industrial scale), ASML Tier-1 cleanroom quality systems (ISO 14644 Class 5), automotive OEM moving lines (VDL Nedcar / BMW / MINI), and Lean Six Sigma Black Belt optimization.
+> European Operations Leader & Direct Sourcing Advisor specializing in factory-gate procurement disintermediation, modular housing manufacturing scaling (inHAUS / Almussafes / Cecotec industrial scale), shop-floor assembly discipline, automotive OEM moving lines (VDL Nedcar / BMW / MINI), and Lean Six Sigma Black Belt optimization.
 
 ## Core Professional Identity
 - **Full Name**: Eduardo de Sousa
@@ -16,16 +16,16 @@
 1. **14-Day Remote Spend & Telemetry Diagnostic (€5,500 fixed sprint)**
    - Audit of procurement spend variance, supplier contract redundancies, and CMMS telemetry downtime logs.
    - 100% Fee Credit Guarantee: If less than €16,500 in annual recovery is identified, 100% of the €5,500 is credited toward an On-Site Audit or Retainer.
-2. **5-Day Physical Plant Walk & Takt Audit (€5,400 sprint + corporate travel)**
-   - Physical gemba walks, bottleneck takt timing, gage R&R / torque calibration, and empirical 8D containment roadmap.
+2. **5-Day Physical Plant Gemba & Quality Audit (€5,400 sprint + corporate travel)**
+   - Physical gemba walks, bottleneck analysis, gage R&R / torque calibration, scrap reduction, and empirical 8D containment roadmap.
 3. **Fractional Direct Sourcing & Systems Director (€8,500 / month)**
    - 2 Days/Week equivalent, async-first executive steering. Direct international factory negotiations (China, India, LatAm), CMMS governance (PostgreSQL/MSSQL), and ERP automation.
 
 ## Core Industrial Track Record
 - **Direct Sourcing & Disintermediation**: Directed $800,000 USD/year portfolio (20 containers/quarter from China & India), achieving up to 75% cost reduction by bypassing intermediaries and deploying bilingual on-site inspection teams (PSI/CLI).
 - **Automotive OEM Moving Line (VDL Nedcar)**: Quality inspection of 110–120 BMW and MINI vehicles/shift. Reduced recurrent assembly defects by 15% through digital torque calibration and MES defect logging.
-- **ASML Cleanroom Lithography Packaging (HQ Pack / KMWE)**: Electromechanical assembly under ISO Class 5 cleanroom conditions, TÜV winch overhaul, and ISAH ERP governance.
-- **Modular Housing & Industrial Manufacturing**: Takt time harmonization, line balancing, and factory-gate component procurement for modular construction (e.g. Almussafes / inHAUS / Cecotec industrial scale).
+- **High-Tech Assembly Discipline (HQ Pack / KMWE)**: Electromechanical assembly under ISO Class 5 cleanroom conditions, TÜV winch overhaul, and ISAH ERP governance (assembly/repair discipline; not a cleanroom auditor/builder).
+- **Modular Housing & Industrial Manufacturing**: Workstation balancing, scrap reduction, and factory-gate component procurement for modular construction (e.g. Almussafes / inHAUS / Cecotec industrial scale).
 
 ## Language Capabilities
 - Spanish (Native)

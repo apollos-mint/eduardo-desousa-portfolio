@@ -27,7 +27,7 @@ export const metadata: Metadata = {
     template: '%s | Eduardo de Sousa | Industrial Advisory',
   },
   description:
-    'Industrial Operations & Direct Sourcing Leader. Lean Six Sigma Black Belt. Factory-gate procurement, modular housing manufacturing, ASML cleanroom & automotive OEM quality.',
+    'Industrial Operations & Direct Sourcing Leader. Lean Six Sigma Black Belt. Factory-gate procurement, modular housing manufacturing, shop-floor assembly discipline & automotive OEM quality.',
   keywords: [
     'Eduardo de Sousa',
     'European Industrial Operations',
@@ -38,8 +38,8 @@ export const metadata: Metadata = {
     'Almussafes Industrial Corridor',
     'Lean Six Sigma Black Belt',
     'DMAIC Process Optimization',
-    'ASML Cleanroom ISO 14644',
-    'ISO 9001 Quality Systems',
+    'Shop-Floor Assembly Discipline',
+    '8D Problem Solving',
     'Automotive OEM Quality Control',
     'VDL Nedcar Assembly Line',
     'ISAH ERP Systems',

@@ -168,7 +168,7 @@ export default async function Image() {
               margin: '6px 0 0 0',
             }}
           >
-            Factory-gate procurement (-75% cost desintermediation in Asia/LatAm), modular housing takt time optimization (Almussafes / inHAUS scale), ASML Tier-1 cleanrooms, and Lean Six Sigma Black Belt rigor.
+            Factory-gate procurement (-75% cost desintermediation in Asia/LatAm), modular housing manufacturing scale (Almussafes / inHAUS), shop-floor assembly discipline, and Lean Six Sigma Black Belt quality rigor.
           </p>
         </div>
 
@@ -187,8 +187,8 @@ export default async function Image() {
           <div style={{ display: 'flex', gap: '12px' }}>
             {[
               'Direct Sourcing ($800K/yr)',
-              'Modular Housing & Automotive',
-              'ASML ISO Class 5 Cleanroom',
+              'Modular Systems & SCM',
+              'High-Tech Assembly Discipline',
               'Lean Six Sigma Black Belt',
             ].map((badge) => (
               <div
