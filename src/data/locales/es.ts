@@ -18,7 +18,7 @@ export const esData: CVContent = {
     roleTitle: 'Líder de Operaciones Digitales, Automatización & Cadena de Suministro Global',
     headline: 'Lean Six Sigma Black Belt | Sourcing Global ($800K/año · 20 Cont/Trimestre) | Automatización iPaaS & Software B2B | Ex-ASML & BMW OEM',
     summary:
-      'Líder de Operaciones, Digitalización y Procesos con certificación Lean Six Sigma Black Belt y más de una década de experiencia combinando gestión de cadenas de suministro internacionales, manufactura de alta tecnología y desarrollo de software operativo.\n\nEspecializado en la dirección estratégica de compras globales para cuentas corporativas en construcción ($800,000 USD/año, 20 contenedores trimestrales, hasta -75% de ahorro en China/India), con enfoque simultáneo en la arquitectura y desarrollo de aplicaciones web empresariales (CMMS de activos con scoring de KPIs de empleados, portales B2B y marketplaces transaccionales) mediante IA agentística y automatización.\n\nTrilingüe: Español (Nativo), Inglés (C1 - Profesional) y Portugués (C1 - Profesional).',
+      'Líder de Operaciones, Digitalización y Procesos con certificación Lean Six Sigma Black Belt y más de una década de experiencia combinando gestión de cadenas de suministro internacionales, manufactura de alta tecnología y desarrollo de software operativo.\n\nEspecializado en la dirección estratégica de compras globales para cuentas corporativas en construcción ($800,000 USD/año, 20 contenedores trimestrales, hasta -75% de ahorro en China/India), con enfoque simultáneo en la arquitectura y desarrollo de aplicaciones web empresariales (CMMS de activos con scoring de KPIs de empleados, portales B2B y marketplaces transaccionales) mediante arquitecturas web modernas y automatización iPaaS.\n\nTrilingüe: Español (Nativo), Inglés (C1 - Profesional) y Portugués (C1 - Profesional).',
   },
   hero: {
     badge: 'DISPONIBLE PARA PROYECTOS & LIDERAZGO TÉCNICO',
@@ -45,7 +45,7 @@ export const esData: CVContent = {
       },
       {
         title: 'Cadena ASML & Semiconductores',
-        description: 'Ensamblaje electromecánico en sala limpia, reacondicionamiento de cabrestantes TÜV y registro asistido por IA en ERP ISAH para sistemas ASML (ISO Clase 5).',
+        description: 'Ensamblaje electromecánico en sala limpia, reacondicionamiento de cabrestantes TÜV y registro digitalizado de mantenimiento en ERP ISAH para sistemas ASML (ISO Clase 5).',
         icon: 'microchip',
       },
       {
@@ -105,12 +105,12 @@ export const esData: CVContent = {
       period: '02/24 - 07/26',
       location: 'Eindhoven, Holanda (Brainport)',
       industry: 'Alta Tecnología & Cadena de Suministro de Semiconductores',
-      summary: 'Ensamblaje electromecánico en sala limpia ISO Clase 5, reacondicionamiento técnico de cabrestantes con certificación TÜV y optimización del registro de reparaciones con IA en ERP ISAH para la cadena de suministro litográfico de ASML.',
-      homeSummary: 'Ensamblaje electromecánico en sala limpia, reacondicionamiento de cabrestantes TÜV y registro asistido por IA en ERP ISAH para ASML.',
+      summary: 'Ensamblaje electromecánico en sala limpia ISO Clase 5, reacondicionamiento técnico de cabrestantes con certificación TÜV y registro digitalizado de mantenimiento en ERP ISAH para la cadena de suministro litográfico de ASML.',
+      homeSummary: 'Ensamblaje electromecánico en sala limpia, reacondicionamiento de cabrestantes TÜV y registro digitalizado de mantenimiento en ERP ISAH para ASML.',
       responsibilities: [
         'Ensamblaje y Reparación de Precisión en Sala Limpia: Montaje, desmontaje y reparación técnica de módulos de transporte y embalaje de ultra-alta precisión para sistemas de litografía (ASML, Zeiss) bajo estrictas normas de Sala Limpia ISO Clase 5 y planta estándar.',
         'Sistemas Electromecánicos, Sensores y Cabrestantes TÜV: Sustitución de componentes eléctricos y sensores, diagnóstico de cableado y reacondicionamiento mecánico de cabrestantes certificados por TÜV, superando auditorías con 0 no conformidades críticas.',
-        'Optimización con IA y Gobernanza en ERP ISAH: Desarrollo de una mejora asistida por IA para el registro interno de reparaciones, agilizando el seguimiento técnico en ERP (ISAH) y generando reportes diarios/semanales de productividad y defectos para la dirección.',
+        'Digitalización de Procesos y Gobernanza en ERP ISAH: Desarrollo de un flujo de trabajo digitalizado para el registro interno de reparaciones, agilizando el seguimiento técnico en ERP (ISAH) y generando reportes diarios/semanales de productividad y defectos para la dirección.',
         'Seguridad en Planta y Mentoría Técnica: Capacitación y guía técnica a nuevos operarios en protocolos de sala limpia, SOPs, normativa de seguridad industrial y protocolos SOP y operación segura de carretillas elevadoras motorizadas y manuales.',
       ],
       metrics: [
@@ -119,10 +119,10 @@ export const esData: CVContent = {
         { value: '-22%', label: 'Defectos recurrentes', subtext: 'Six Sigma FMEA / CAPA' },
         { value: 'TÜV', label: 'Conformidad Técnica', subtext: 'Auditorías de calidad' },
       ],
-      technologies: ['ERP ISAH', 'Sala Limpia ISO Clase 5', 'Montaje Electromecánico', 'Revisión Cabrestantes TÜV', 'Diagnóstico de Cableado', 'Normas de Seguridad Industrial', 'Registro Asistido por IA'],
+      technologies: ['ERP ISAH', 'Sala Limpia ISO Clase 5', 'Montaje Electromecánico', 'Revisión Cabrestantes TÜV', 'Diagnóstico de Cableado', 'Normas de Seguridad Industrial', 'Registro Digitalizado ERP'],
       partners: ['ASML', 'Zeiss', 'Frencken', 'Neways', 'VDL', 'TÜV Rheinland'],
       challenge: 'Garantizar la disponibilidad con cero defectos y estricta contención de partículas en módulos de transporte y embalaje para sistemas litográficos bajo normas de sala limpia ASML.',
-      solution: 'Ejecución de montaje electromecánico de precisión en sala limpia, reacondicionamiento TÜV de cabrestantes e implementación de registro asistido por IA en ERP ISAH.',
+      solution: 'Ejecución de montaje electromecánico de precisión en sala limpia, reacondicionamiento TÜV de cabrestantes e implementación de registro digitalizado de mantenimiento en ERP ISAH.',
       impact: 'Reducción del 30% en tiempos de ciclo, disminución del 22% en defectos recurrentes y aprobación impecable de auditorías TÜV sin no conformidades.',
       visualType: 'cleanroom',
     },

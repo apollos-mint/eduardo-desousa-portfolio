@@ -53,26 +53,23 @@ export function middleware(request: NextRequest) {
   const country = request.headers.get('x-vercel-ip-country') || (request as any).geo?.country || '';
   const city = request.headers.get('x-vercel-ip-city') || (request as any).geo?.city || '';
 
-  // If visiting a language root like /en, /es, /nl, /de, /fr, /pt, route to Swiss B2B advisory with lang param
+  // If visiting a language root like /en, /es, /nl, /de, /fr, /pt, serve directly without 307 redirect
   const isLanguageRoot = validLocales.some((locale) => pathname === `/${locale}`);
   if (isLanguageRoot) {
     const locale = pathname.slice(1);
-    const search = request.nextUrl.search;
-    const queryJoin = search ? (search.startsWith('?') ? '&' + search.slice(1) : '&' + search) : '';
-    const newUrl = new URL(`/?lang=${locale}${queryJoin}`, request.url);
-    const redirectResponse = NextResponse.redirect(newUrl);
-    redirectResponse.cookies.set('preferred_lang', locale, {
+    const response = NextResponse.next();
+    response.cookies.set('preferred_lang', locale, {
       path: '/',
       maxAge: 60 * 60 * 24 * 365,
       sameSite: 'lax',
     });
     if (country) {
-      redirectResponse.cookies.set('geo_country', country, { path: '/', maxAge: 60 * 60 * 24 * 30, sameSite: 'lax' });
+      response.cookies.set('geo_country', country, { path: '/', maxAge: 60 * 60 * 24 * 30, sameSite: 'lax' });
     }
     if (city) {
-      redirectResponse.cookies.set('geo_city', encodeURIComponent(city), { path: '/', maxAge: 60 * 60 * 24 * 30, sameSite: 'lax' });
+      response.cookies.set('geo_city', encodeURIComponent(city), { path: '/', maxAge: 60 * 60 * 24 * 30, sameSite: 'lax' });
     }
-    return redirectResponse;
+    return response;
   }
 
   // Check if pathname starts with a valid locale subpath (e.g. /es/skills)

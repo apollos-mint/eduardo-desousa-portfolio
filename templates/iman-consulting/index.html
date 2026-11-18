@@ -422,7 +422,7 @@
       transform: scale(1.02);
     }
 
-    /* Modal for AI CV Parser Simulation */
+    /* Modal for ATS CV Parser Simulation */
     .modal-overlay {
       position: fixed;
       inset: 0;
@@ -456,14 +456,14 @@
       font-size: 15px;
       margin-bottom: 24px;
     }
-    .ai-scan-bar {
+    .ats-scan-bar {
       height: 8px;
       background: #1E293B;
       border-radius: 4px;
       overflow: hidden;
       margin-bottom: 24px;
     }
-    .ai-scan-fill {
+    .ats-scan-fill {
       height: 100%;
       width: 100%;
       background: linear-gradient(90deg, var(--orange), var(--cyan));
@@ -531,7 +531,7 @@
     <section class="hero">
       <div class="hero-badge">⚡ ARQUITECTURA NEXT.JS 15 // EDGE TTFB < 0.2s</div>
       <h2>Transformamos Operaciones y<br>Conectamos Talento Estratégico</h2>
-      <p>Consultoría técnica global y soluciones avanzadas de capital humano. Plataforma unificada de alta velocidad con indexación instantánea y selección automatizada mediante IA.</p>
+      <p>Consultoría técnica global y soluciones avanzadas de capital humano. Plataforma unificada de alta velocidad con indexación instantánea y selección automatizada de perfiles.</p>
       
       <div style="display: flex; justify-content: center; gap: 16px;">
         <a href="#ats-hub" class="btn-pill" style="padding: 14px 32px; font-size: 16px;">Explorar 348 Ofertas Tech</a>
@@ -577,7 +577,7 @@
           <button class="tag-btn" onclick="filterTag(this, 'remote')">100% Remoto</button>
           <button class="tag-btn" onclick="filterTag(this, 'cloud')">Cloud & DevOps</button>
           <button class="tag-btn" onclick="filterTag(this, 'frontend')">Frontend / Next.js</button>
-          <button class="tag-btn" onclick="filterTag(this, 'ai')">Inteligencia Artificial</button>
+          <button class="tag-btn" onclick="filterTag(this, 'data')">Data & Automatización</button>
           <button class="tag-btn" onclick="filterTag(this, 'senior')">Senior / Lead (50k+)</button>
         </div>
       </div>
@@ -637,11 +637,11 @@
         </div>
 
         <!-- Card 3 -->
-        <div class="job-card" data-category="ai remote senior">
+        <div class="job-card" data-category="data remote senior">
           <div>
             <div class="job-top">
               <div>
-                <h4 class="job-title">AI & Data Operations Specialist</h4>
+                <h4 class="job-title">Data & Operations Specialist</h4>
                 <div class="job-dept">IMAN Data Intelligence</div>
               </div>
               <span class="job-badge">100% Remoto</span>
@@ -650,13 +650,13 @@
             <div class="job-skills">
               <span class="skill-pill">Python</span>
               <span class="skill-pill">FastAPI</span>
-              <span class="skill-pill">LangChain</span>
               <span class="skill-pill">PostgreSQL</span>
+              <span class="skill-pill">ETL / Pipelines</span>
             </div>
           </div>
           <div class="job-footer">
             <span class="job-loc">📍 España (Full Remote)</span>
-            <button class="btn-apply" onclick="openApplyModal('AI & Data Operations Specialist')">
+            <button class="btn-apply" onclick="openApplyModal('Data & Operations Specialist')">
               ✨ Postulación 1-Clic
             </button>
           </div>
@@ -696,13 +696,13 @@
     </footer>
   </div>
 
-  <!-- AI Parser Modal -->
+  <!-- ATS Parser Modal -->
   <div class="modal-overlay" id="applyModal">
     <div class="modal-card">
-      <div style="font-size: 38px; margin-bottom: 12px;">🤖</div>
-      <h4 id="modalJobTitle">Postulación Inteligente en 1 Clic</h4>
-      <p>El motor de Inteligencia Artificial procesa tu perfil o CV en PDF sin necesidad de rellenar formularios manuales.</p>
-      <div class="ai-scan-bar"><div class="ai-scan-fill"></div></div>
+      <div style="font-size: 38px; margin-bottom: 12px;">⚡</div>
+      <h4 id="modalJobTitle">Postulación Optimizada en 1 Clic</h4>
+      <p>El motor automatizado procesa tu perfil o CV en PDF sin necesidad de rellenar formularios manuales.</p>
+      <div class="ats-scan-bar"><div class="ats-scan-fill"></div></div>
       <div style="background: rgba(16, 185, 129, 0.15); border: 1px solid var(--green); padding: 12px; border-radius: 12px; color: var(--green); font-size: 14px; font-weight: 700; margin-bottom: 24px;">
         ✓ 94% Compatibilidad con el perfil técnico detectada
       </div>

@@ -18,7 +18,7 @@ export const enData: CVContent = {
     roleTitle: 'Digital Operations, Process Automation & Global Supply Chain Lead',
     headline: 'Lean Six Sigma Black Belt | Global Sourcing ($800K/yr · 20 Cont/Qtr) | iPaaS Automation & B2B Software | Ex-ASML & BMW OEM',
     summary:
-      'Digital Operations, Automation, and Process Leader with Lean Six Sigma Black Belt certification and over a decade of cross-functional experience across global supply chains, high-tech cleanroom manufacturing, and operational software development.\n\nSpecializing in international strategic procurement for enterprise construction and renovation accounts ($800,000 USD/year portfolio, 20 containers/quarter, achieving up to 75% cost reduction in China and India), while concurrently architecting enterprise web applications (CMMS asset management platforms with employee KPI scoring, B2B service portals, and transactional marketplaces) powered by agentic AI and modern web architectures.\n\nTrilingual: Spanish (Native), English (C1 - Professional), and Portuguese (C1 - Professional).',
+      'Digital Operations, Automation, and Process Leader with Lean Six Sigma Black Belt certification and over a decade of cross-functional experience across global supply chains, high-tech cleanroom manufacturing, and operational software development.\n\nSpecializing in international strategic procurement for enterprise construction and renovation accounts ($800,000 USD/year portfolio, 20 containers/quarter, achieving up to 75% cost reduction in China and India), while concurrently architecting enterprise web applications (CMMS asset management platforms with employee KPI scoring, B2B service portals, and transactional marketplaces) engineered with modern web architectures and automated data pipelines.\n\nTrilingual: Spanish (Native), English (C1 - Professional), and Portuguese (C1 - Professional).',
   },
   hero: {
     badge: 'AVAILABLE FOR TECHNICAL LEADERSHIP & HIGH-IMPACT ROLES',
@@ -45,7 +45,7 @@ export const enData: CVContent = {
       },
       {
         title: 'ASML & Semiconductor Ecosystem',
-        description: 'Cleanroom electromechanical assembly, TÜV winch overhaul, and AI-assisted repair logging for ASML lithography packaging systems under ISO Class 5.',
+        description: 'Cleanroom electromechanical assembly, TÜV winch overhaul, and digitized repair logging for ASML lithography packaging systems under ISO Class 5.',
         icon: 'microchip',
       },
       {
@@ -105,12 +105,12 @@ export const enData: CVContent = {
       period: '02/24 - 07/26',
       location: 'Eindhoven, Netherlands (Brainport)',
       industry: 'High-Tech & Semiconductor Supply Chain',
-      summary: 'Hands-on electromechanical assembly under ISO Class 5 cleanroom conditions, TÜV-certified winch overhaul, and AI-assisted repair registration in ERP ISAH for ASML lithography packaging systems.',
-      homeSummary: 'Cleanroom electromechanical assembly, TÜV winch overhaul, and AI-assisted repair logging for ASML lithography packaging systems.',
+      summary: 'Hands-on electromechanical assembly under ISO Class 5 cleanroom conditions, TÜV-certified winch overhaul, and digitized repair registration in ERP ISAH for ASML lithography packaging systems.',
+      homeSummary: 'Cleanroom electromechanical assembly, TÜV winch overhaul, and digitized repair logging for ASML lithography packaging systems.',
       responsibilities: [
         'High-Tech Cleanroom Assembly & Precision Repair: Assembled, disassembled, and repaired ultra-high-precision transport and packaging modules for semiconductor lithography systems (ASML, Zeiss) under strict ISO Class 5 cleanroom and standard floor environments.',
         'Electromechanical, Sensor & TÜV Winch Systems: Executed hands-on electrical/sensor component replacement, wiring diagnostics, and mechanical overhaul on TÜV-certified winch assemblies, passing technical audits with 0 critical non-conformities.',
-        'AI-Assisted Workflow Optimization & ERP Governance: Developed an AI-assisted enhancement for internal repair registration, streamlining technical tracking in ERP (ISAH) and compiling daily/weekly productivity and defect reports for management.',
+        'Digitized Workflow Optimization & ERP Governance: Engineered a standardized digital workflow enhancement for internal repair registration, streamlining technical tracking in ERP (ISAH) and compiling daily/weekly productivity and defect reports for management.',
         'Shop-Floor Safety & Technical Mentoring: Onboarded and mentored incoming technicians on cleanroom compliance, SOPs, industrial safety standards and protocols, and safe operation of powered and manual forklifts.',
       ],
       metrics: [
@@ -119,10 +119,10 @@ export const enData: CVContent = {
         { value: '-22%', label: 'Recurring defects', subtext: 'Six Sigma FMEA / CAPA' },
         { value: 'TÜV', label: 'Technical Compliance', subtext: 'Audits passed flawlessly' },
       ],
-      technologies: ['ERP ISAH', 'Cleanroom ISO Class 5', 'Electromechanical Assembly', 'TÜV Winch Overhaul', 'Wiring Diagnostics', 'Industrial Safety Standards', 'AI-Assisted Logging'],
+      technologies: ['ERP ISAH', 'Cleanroom ISO Class 5', 'Electromechanical Assembly', 'TÜV Winch Overhaul', 'Wiring Diagnostics', 'Industrial Safety Standards', 'Digitized ERP Logging'],
       partners: ['ASML', 'Zeiss', 'Frencken', 'Neways', 'VDL', 'TÜV Rheinland'],
       challenge: 'Ensuring zero-defect availability and strict particulate containment on ultra-sensitive packaging modules for lithography systems under ASML cleanroom standards.',
-      solution: 'Executed precision cleanroom electro-mechanical assembly, TÜV winch recertification, and built AI-assisted logging workflows in ERP ISAH to accelerate turnaround.',
+      solution: 'Executed precision cleanroom electro-mechanical assembly, TÜV winch recertification, and built digitized logging workflows in ERP ISAH to accelerate turnaround.',
       impact: 'Delivered a 30% reduction in turnaround times, cut recurring defects by 22%, and achieved flawless TÜV compliance with zero critical audit findings.',
       visualType: 'cleanroom',
     },

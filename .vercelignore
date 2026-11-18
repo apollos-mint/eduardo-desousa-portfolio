@@ -10,6 +10,7 @@ feedback*
 cloudflared
 ngrok*
 graphify-out/
+brag-output/
 patch_*.js
 cv_*.html
 *.tgz

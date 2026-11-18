@@ -45,7 +45,7 @@ export const nlData: CVContent = {
       },
       {
         title: 'ASML & Semiconductor Supply Chain',
-        description: 'Elektromechanische assemblage in cleanroom, TÜV-lierrevisie en AI-gebaseerde reparatieregistratie in ERP ISAH voor ASML-systemen (ISO Klasse 5).',
+        description: 'Elektromechanische assemblage in cleanroom, TÜV-lierrevisie en gedigitaliseerde reparatieregistratie in ERP ISAH voor ASML-systemen (ISO Klasse 5).',
         icon: 'microchip',
       },
       {
@@ -105,12 +105,12 @@ export const nlData: CVContent = {
       period: '02/24 - 07/26',
       location: 'Eindhoven, Nederland (Brainport)',
       industry: 'High-Tech & Semiconductor Supply Chain',
-      summary: 'Elektromechanische assemblage in ISO Klasse 5 cleanroom, revisie van TÜV-gecertificeerde lieren en AI-ondersteunde reparatieregistratie in ERP ISAH voor ASML-lithografiesystemen.',
-      homeSummary: 'Elektromechanische assemblage in cleanroom, TÜV-lierrevisie en AI-gebaseerde reparatieregistratie in ERP ISAH voor ASML-systemen.',
+      summary: 'Elektromechanische assemblage in ISO Klasse 5 cleanroom, revisie van TÜV-gecertificeerde lieren en gedigitaliseerde reparatieregistratie in ERP ISAH voor ASML-lithografiesystemen.',
+      homeSummary: 'Elektromechanische assemblage in cleanroom, TÜV-lierrevisie en gedigitaliseerde reparatieregistratie in ERP ISAH voor ASML-systemen.',
       responsibilities: [
         'Precisie-assemblage & Reparatie in Cleanroom: Assemblage, demontage en technische revisie van ultra-precieze transport- en verpakkingsmodules voor lithografiesystemen (ASML, Zeiss) onder strenge ISO Klasse 5 cleanroomnormen en standaard werkplaatscondities.',
         'Elektromechanica, Sensoren & TÜV-Liersystemen: Hands-on vervanging van elektrische componenten en sensoren, bedradingsdiagnostiek en mechanische revisie van TÜV-gecertificeerde lieren, met succesvolle audits zonder kritieke non-conformiteiten.',
-        'AI-Ondersteunde Werkstroomoptimalisatie & ERP-Governance: Ontwikkeling van een AI-ondersteunde verbetering voor interne reparatieregistratie, stroomlijning van technische tracking in ERP (ISAH) en oplevering van periodieke productiviteitsrapportages voor het management.',
+        'Gedigitaliseerde Werkstroomoptimalisatie & ERP-Governance: Ontwikkeling van een gestandaardiseerde digitale verbetering voor interne reparatieregistratie, stroomlijning van technische tracking in ERP (ISAH) en oplevering van periodieke productiviteitsrapportages voor het management.',
         'Veiligheid op de Werkvloer & Technische Mentoring: Begeleiding en onboarding van nieuwe monteurs volgens cleanroom-SOP\'s, industriële veiligheidsnormen en SOPs en veilige bediening van heftrucks en intern transportmaterieel.',
       ],
       metrics: [
@@ -119,10 +119,10 @@ export const nlData: CVContent = {
         { value: '-22%', label: 'Herhaalde defecten', subtext: 'Six Sigma FMEA / CAPA' },
         { value: 'TÜV', label: 'Technische Naleving', subtext: 'Audits vlekkeloos doorstaan' },
       ],
-      technologies: ['ERP ISAH', 'ISO Klasse 5 Cleanroom', 'Elektromechanische Assemblage', 'TÜV Lierrevisie', 'Bedradingsdiagnostiek', 'Industriële Veiligheidsnormen', 'AI-Gestuurde Registratie'],
+      technologies: ['ERP ISAH', 'ISO Klasse 5 Cleanroom', 'Elektromechanische Assemblage', 'TÜV Lierrevisie', 'Bedradingsdiagnostiek', 'Industriële Veiligheidsnormen', 'Digitale ERP-Registratie'],
       partners: ['ASML', 'Zeiss', 'Frencken', 'Neways', 'VDL', 'TÜV Rheinland'],
       challenge: 'Garantie van maximale uptime en nul deeltjesvervuiling in litografische verpakkingsmodules volgens ASML-specificaties.',
-      solution: 'Precisie-assemblage in cleanroom, TÜV-lierhercertificering en AI-gebaseerde registratieworkflows in ERP ISAH.',
+      solution: 'Precisie-assemblage in cleanroom, TÜV-lierhercertificering en gedigitaliseerde registratieworkflows in ERP ISAH.',
       impact: '30% snellere reparaties, 22% defectreductie en vlekkeloze TÜV-auditresultaten zonder non-conformiteiten.',
       visualType: 'cleanroom',
     },

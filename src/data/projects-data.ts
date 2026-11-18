@@ -102,7 +102,7 @@ export const projectsDataByLocale: Record<Locale, ProjectsSectionContent> = {
         metrics: "Fuzzy Form Classifier | 100% Local Privacy | Daily Rate Limit",
         description: "Browser automation prototype demonstrating Chrome Extension Manifest V3 engineering. Features multi-lingual heuristic form-field classification, employer deduplication in local storage, and humanized jitter submission delays.",
         highlights: [
-          "Heuristic form-field analyzer mapping multi-lingual prompts to candidate experience matrices",
+          "Heuristic form-field analyzer mapping multi-lingual form fields to candidate experience matrices",
           "Persistent local deduplication preventing repeated submissions to identical employers",
           "Daily application rate-capping (20/day) with real-time visual progress counter",
           "Zero-server architecture guaranteeing candidate credentials never leave the browser"

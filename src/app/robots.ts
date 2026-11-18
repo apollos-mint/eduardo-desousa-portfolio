@@ -1,5 +1,7 @@
 import { MetadataRoute } from 'next';
 
+const BASE_URL = 'https://desousaops.vercel.app';
+
 export default function robots(): MetadataRoute.Robots {
   return {
     rules: [
@@ -8,7 +10,28 @@ export default function robots(): MetadataRoute.Robots {
         allow: '/',
         disallow: ['/api/'],
       },
+      // Generative Search & AI Answer Engine Indexers
+      {
+        userAgent: [
+          'OAI-SearchBot',
+          'GPTBot',
+          'ChatGPT-User',
+          'PerplexityBot',
+          'ClaudeBot',
+          'Claude-Web',
+          'anthropic-ai',
+          'Google-Extended',
+          'Applebot',
+          'Applebot-Extended',
+          'Bingbot',
+          'cohere-ai',
+          'Diffbot',
+        ],
+        allow: ['/', '/llms.txt', '/llms-full.txt'],
+        disallow: ['/api/'],
+      },
     ],
-    sitemap: 'https://desousaops.vercel.app/sitemap.xml',
+    sitemap: `${BASE_URL}/sitemap.xml`,
+    host: BASE_URL,
   };
 }

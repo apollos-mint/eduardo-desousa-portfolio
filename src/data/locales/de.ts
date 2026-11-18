@@ -45,7 +45,7 @@ export const deData: CVContent = {
       },
       {
         title: 'ASML & Halbleiter-Lieferkette',
-        description: 'Reinraum-Elektromechanikmontage, TÜV-Windenüberholung und KI-gestützte Reparaturerfassung im ERP ISAH für ASML-Lithographiesysteme (ISO-Klasse 5).',
+        description: 'Reinraum-Elektromechanikmontage, TÜV-Windenüberholung und digitalisierte Reparaturerfassung im ERP ISAH für ASML-Lithographiesysteme (ISO-Klasse 5).',
         icon: 'microchip',
       },
       {
@@ -105,12 +105,12 @@ export const deData: CVContent = {
       period: '02/24 - 07/26',
       location: 'Eindhoven, Niederlande (Brainport)',
       industry: 'High-Tech & Halbleiter-Lieferkette',
-      summary: 'Elektromechanische Reinraummontage nach ISO-Klasse 5, TÜV-Windenüberholung und KI-gestützte Reparaturerfassung im ERP ISAH für ASML-Lithographiesysteme.',
-      homeSummary: 'Reinraum-Elektromechanikmontage, TÜV-Windenüberholung und KI-gestützte Reparaturerfassung im ERP ISAH für ASML-Lithographiesysteme.',
+      summary: 'Elektromechanische Reinraummontage nach ISO-Klasse 5, TÜV-Windenüberholung und digitalisierte Reparaturerfassung im ERP ISAH für ASML-Lithographiesysteme.',
+      homeSummary: 'Reinraum-Elektromechanikmontage, TÜV-Windenüberholung und digitalisierte Reparaturerfassung im ERP ISAH für ASML-Lithographiesysteme.',
       responsibilities: [
         'Präzisionsmontage & Reparatur im Reinraum: Montage, Demontage und Reparatur von hochpräzisen Transport- und Verpackungsmodulen für Halbleiter-Lithographiesysteme (ASML, Zeiss) unter strengen ISO-Klasse-5-Reinraumbedingungen und Standard-Produktionsumgebungen.',
         'Elektromechanik, Sensoren & TÜV-Windensysteme: Hands-on Austausch von elektrischen Komponenten und Sensoren, Verkabelungsdiagnose und mechanische Instandsetzung von TÜV-zertifizierten Winden ohne kritische Abweichungen in Audits.',
-        'KI-gestützte Workflow-Optimierung & ERP-Governance: Entwicklung einer KI-gestützten Verbesserung für die interne Reparaturerfassung, Optimierung des technischen Trackings im ERP (ISAH) und Erstellung von Qualitäts- und Fehlerberichten für das Management.',
+        'Digitalisierte Workflow-Optimierung & ERP-Governance: Entwicklung einer standardisierten digitalen Verbesserung für die interne Reparaturerfassung, Optimierung des technischen Trackings im ERP (ISAH) und Erstellung von Qualitäts- und Fehlerberichten für das Management.',
         'Arbeitssicherheit & Technische Einarbeitung: Einarbeitung und Betreuung neuer Techniker bezüglich Reinraum-SOPs, industriellen Arbeitssicherheitsstandards und sicherer Bedienung von Flurförderzeugen und Gabelstaplern.',
       ],
       metrics: [
@@ -119,10 +119,10 @@ export const deData: CVContent = {
         { value: '-22%', label: 'Wiederkehrende Fehler', subtext: 'Six Sigma FMEA / CAPA' },
         { value: 'TÜV', label: 'Technische Konformität', subtext: 'Audits fehlerfrei bestanden' },
       ],
-      technologies: ['ERP ISAH', 'ISO-Klasse 5 Reinraum', 'Elektromechanische Montage', 'TÜV-Windenüberholung', 'Verkabelungsdiagnose', 'industriellen Arbeitssicherheitsstandards', 'KI-gestützte Erfassung'],
+      technologies: ['ERP ISAH', 'ISO-Klasse 5 Reinraum', 'Elektromechanische Montage', 'TÜV-Windenüberholung', 'Verkabelungsdiagnose', 'industriellen Arbeitssicherheitsstandards', 'Digitale ERP-Erfassung'],
       partners: ['ASML', 'Zeiss', 'Frencken', 'Neways', 'VDL', 'TÜV Rheinland'],
       challenge: 'Sicherstellung maximaler Verfügbarkeit und partikelfreier Reinheitsbedingungen für Lithografie-Transportmodule unter ASML-Vorgaben.',
-      solution: 'Präzisionsmontage im Reinraum, TÜV-Windenrezertifizierung und KI-gestützte Dokumentationsprozesse im ERP ISAH.',
+      solution: 'Präzisionsmontage im Reinraum, TÜV-Windenrezertifizierung und digitalisierte Dokumentationsprozesse im ERP ISAH.',
       impact: '30% schnellere Durchlaufzeiten, 22% Fehlerreduktion und fehlerfreie TÜV-Auditergebnisse ohne Abweichungen.',
       visualType: 'cleanroom',
     },

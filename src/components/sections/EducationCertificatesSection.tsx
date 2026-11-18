@@ -166,7 +166,7 @@ export default function EducationCertificatesSection({
                     </p>
                   </div>
 
-                  {/* Expand Prompt Button with Cursor Reactive Glow */}
+                  {/* Expand Certificate Details Button with Cursor Reactive Glow */}
                   <div className="flex items-center justify-between lg:justify-end space-x-3 shrink-0 pt-2 lg:pt-0">
                     <div className={`flex items-center space-x-2 px-5 py-2.5 rounded-xl transition-all duration-200 cursor-pointer shadow-md text-xs font-bold uppercase tracking-wider ${
                       isExpanded

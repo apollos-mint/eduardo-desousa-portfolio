@@ -1,6 +1,7 @@
 import { ImageResponse } from 'next/og';
 
-export const alt = 'Eduardo de Sousa | Staff Operations, Quality & High-Tech Process Leader';
+export const alt =
+  'Eduardo de Sousa | European Industrial Operations, Direct Sourcing & Quality Advisory';
 export const size = {
   width: 1200,
   height: 630,
@@ -16,27 +17,28 @@ export default async function Image() {
           width: '100%',
           display: 'flex',
           flexDirection: 'column',
-          backgroundColor: '#07090e',
+          backgroundColor: '#051C2C',
           backgroundImage:
-            'radial-gradient(circle at 25px 25px, #1e293b 2%, transparent 0%), radial-gradient(circle at 75px 75px, #0f172a 2%, transparent 0%)',
+            'radial-gradient(circle at 25px 25px, #0B2B44 2%, transparent 0%), radial-gradient(circle at 75px 75px, #071724 2%, transparent 0%)',
           backgroundSize: '100px 100px',
           padding: '60px 80px',
           justifyContent: 'space-between',
           fontFamily: 'sans-serif',
-          border: '12px solid #0f172a',
+          border: '12px solid #0B2B44',
           position: 'relative',
         }}
       >
-        {/* Glow Effects */}
+        {/* Ambient Gradient Highlights */}
         <div
           style={{
             position: 'absolute',
             top: '-100px',
             right: '-100px',
-            width: '450px',
-            height: '450px',
+            width: '500px',
+            height: '500px',
             borderRadius: '50%',
-            background: 'radial-gradient(circle, rgba(6, 182, 212, 0.25) 0%, rgba(6, 182, 212, 0) 70%)',
+            background:
+              'radial-gradient(circle, rgba(0, 102, 204, 0.35) 0%, rgba(0, 102, 204, 0) 70%)',
           }}
         />
         <div
@@ -47,11 +49,12 @@ export default async function Image() {
             width: '500px',
             height: '500px',
             borderRadius: '50%',
-            background: 'radial-gradient(circle, rgba(16, 185, 129, 0.2) 0%, rgba(16, 185, 129, 0) 70%)',
+            background:
+              'radial-gradient(circle, rgba(22, 163, 74, 0.25) 0%, rgba(22, 163, 74, 0) 70%)',
           }}
         />
 
-        {/* Top Bar: Brand & Telemetry Badge */}
+        {/* Header Bar */}
         <div
           style={{
             display: 'flex',
@@ -61,40 +64,48 @@ export default async function Image() {
             zIndex: 10,
           }}
         >
-          <div
-            style={{
-              display: 'flex',
-              alignItems: 'center',
-              gap: '16px',
-            }}
-          >
+          <div style={{ display: 'flex', alignItems: 'center', gap: '16px' }}>
             <div
               style={{
-                width: '48px',
-                height: '48px',
-                borderRadius: '12px',
-                background: 'linear-gradient(135deg, #06b6d4, #10b981)',
+                width: '52px',
+                height: '52px',
+                borderRadius: '10px',
+                background: 'linear-gradient(135deg, #0066CC, #16A34A)',
                 display: 'flex',
                 alignItems: 'center',
                 justifyContent: 'center',
-                color: '#07090e',
-                fontSize: '24px',
+                color: '#FFFFFF',
+                fontSize: '26px',
                 fontWeight: 900,
+                letterSpacing: '-1px',
               }}
             >
               ED
             </div>
-            <span
-              style={{
-                color: '#94a3b8',
-                fontSize: '18px',
-                letterSpacing: '3px',
-                textTransform: 'uppercase',
-                fontWeight: 700,
-              }}
-            >
-              Executive Portfolio
-            </span>
+            <div style={{ display: 'flex', flexDirection: 'column' }}>
+              <span
+                style={{
+                  color: '#FFFFFF',
+                  fontSize: '18px',
+                  fontWeight: 800,
+                  letterSpacing: '1.5px',
+                  textTransform: 'uppercase',
+                }}
+              >
+                De Sousa Advisory
+              </span>
+              <span
+                style={{
+                  color: '#60A5FA',
+                  fontSize: '12px',
+                  letterSpacing: '2px',
+                  textTransform: 'uppercase',
+                  fontWeight: 600,
+                }}
+              >
+                Industrial Operations & Direct Sourcing
+              </span>
+            </div>
           </div>
 
           <div
@@ -103,63 +114,61 @@ export default async function Image() {
               alignItems: 'center',
               padding: '8px 20px',
               borderRadius: '9999px',
-              border: '1px solid rgba(6, 182, 212, 0.4)',
-              background: 'rgba(6, 182, 212, 0.1)',
-              color: '#38bdf8',
-              fontSize: '14px',
+              border: '1px solid rgba(96, 165, 250, 0.4)',
+              background: 'rgba(0, 102, 204, 0.2)',
+              color: '#93C5FD',
+              fontSize: '13px',
               fontWeight: 700,
               letterSpacing: '1px',
             }}
           >
-            VERIFIED CREDENTIALS // ASML & TÜV
+            EUROPE // SPAIN · BENELUX · DACH
           </div>
         </div>
 
-        {/* Middle Main Content */}
+        {/* Central Proposition */}
         <div
           style={{
             display: 'flex',
             flexDirection: 'column',
-            gap: '16px',
+            gap: '14px',
             zIndex: 10,
-            marginTop: '20px',
+            marginTop: '15px',
           }}
         >
           <h1
             style={{
-              fontSize: '64px',
+              fontSize: '56px',
               fontWeight: 900,
-              color: '#ffffff',
+              color: '#FFFFFF',
               letterSpacing: '-1.5px',
               margin: 0,
-              lineHeight: 1.05,
+              lineHeight: 1.1,
             }}
           >
             Eduardo de Sousa
           </h1>
           <p
             style={{
-              fontSize: '28px',
-              fontWeight: 600,
-              background: 'linear-gradient(90deg, #38bdf8, #34d399)',
-              backgroundClip: 'text',
-              color: 'transparent',
+              fontSize: '27px',
+              fontWeight: 700,
+              color: '#38BDF8',
               margin: 0,
               letterSpacing: '-0.5px',
             }}
           >
-            Staff Operations, Quality & High-Tech Process Leader
+            European Industrial Operations, Direct Sourcing & Modular Systems
           </p>
           <p
             style={{
-              fontSize: '20px',
-              color: '#cbd5e1',
-              maxWidth: '900px',
-              lineHeight: 1.4,
-              margin: '8px 0 0 0',
+              fontSize: '19px',
+              color: '#CBD5E1',
+              maxWidth: '960px',
+              lineHeight: 1.45,
+              margin: '6px 0 0 0',
             }}
           >
-            Operations leadership in high-tech cleanrooms, automotive manufacturing, and global factory auditing. Specialized in DMAIC Lean Six Sigma Black Belt methodology.
+            Factory-gate procurement (-75% cost desintermediation in Asia/LatAm), modular housing takt time optimization (Almussafes / inHAUS scale), ASML Tier-1 cleanrooms, and Lean Six Sigma Black Belt rigor.
           </p>
         </div>
 
@@ -169,42 +178,40 @@ export default async function Image() {
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'space-between',
-            borderTop: '1px solid rgba(148, 163, 184, 0.15)',
-            paddingTop: '28px',
+            borderTop: '1px solid rgba(148, 163, 184, 0.2)',
+            paddingTop: '24px',
             width: '100%',
             zIndex: 10,
           }}
         >
-          <div
-            style={{
-              display: 'flex',
-              gap: '14px',
-            }}
-          >
-            {['Lean Six Sigma Black Belt', 'ASML Cleanroom ISO 14644', 'DMAIC & Quality Systems', 'Automotive OEM Quality'].map(
-              (badge) => (
-                <div
-                  key={badge}
-                  style={{
-                    padding: '8px 18px',
-                    borderRadius: '10px',
-                    backgroundColor: 'rgba(15, 23, 42, 0.8)',
-                    border: '1px solid rgba(56, 189, 248, 0.3)',
-                    color: '#e2e8f0',
-                    fontSize: '14px',
-                    fontWeight: 600,
-                  }}
-                >
-                  {badge}
-                </div>
-              )
-            )}
+          <div style={{ display: 'flex', gap: '12px' }}>
+            {[
+              'Direct Sourcing ($800K/yr)',
+              'Modular Housing & Automotive',
+              'ASML ISO Class 5 Cleanroom',
+              'Lean Six Sigma Black Belt',
+            ].map((badge) => (
+              <div
+                key={badge}
+                style={{
+                  padding: '7px 16px',
+                  borderRadius: '8px',
+                  backgroundColor: 'rgba(11, 43, 68, 0.85)',
+                  border: '1px solid rgba(56, 189, 248, 0.35)',
+                  color: '#E2E8F0',
+                  fontSize: '13px',
+                  fontWeight: 600,
+                }}
+              >
+                {badge}
+              </div>
+            ))}
           </div>
 
           <div
             style={{
-              color: '#64748b',
-              fontSize: '16px',
+              color: '#94A3B8',
+              fontSize: '15px',
               fontWeight: 600,
               letterSpacing: '0.5px',
             }}

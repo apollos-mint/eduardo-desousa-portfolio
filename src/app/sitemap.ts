@@ -3,26 +3,41 @@ import { validLocales, defaultLocale } from '@/lib/i18n';
 import { cvDataByLocale } from '@/data/cv-data';
 
 const BASE_URL = 'https://desousaops.vercel.app';
+const STATIC_LAST_MOD = new Date('2026-11-15T00:00:00.000Z');
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
-  const currentDate = new Date();
   const entries: MetadataRoute.Sitemap = [];
-
   const baseData = cvDataByLocale[defaultLocale];
 
-  // Core static section paths
+  // 1. Root canonical entry
+  const rootLanguages: Record<string, string> = {};
+  validLocales.forEach((l) => {
+    rootLanguages[l] = `${BASE_URL}/${l}`;
+  });
+  rootLanguages['x-default'] = `${BASE_URL}/en`;
+
+  entries.push({
+    url: `${BASE_URL}/`,
+    lastModified: STATIC_LAST_MOD,
+    changeFrequency: 'weekly',
+    priority: 1.0,
+    alternates: {
+      languages: rootLanguages,
+    },
+  });
+
+  // 2. Core section paths
   const sectionPaths = [
-    '',
-    '/experience',
-    '/skills',
-    '/certifications',
-    '/education',
-    '/contact',
-    '/legal',
+    { path: '', priority: 1.0, freq: 'weekly' as const },
+    { path: '/experience', priority: 0.85, freq: 'monthly' as const },
+    { path: '/skills', priority: 0.85, freq: 'monthly' as const },
+    { path: '/certifications', priority: 0.8, freq: 'monthly' as const },
+    { path: '/education', priority: 0.75, freq: 'monthly' as const },
+    { path: '/contact', priority: 0.9, freq: 'monthly' as const },
+    { path: '/legal', priority: 0.3, freq: 'yearly' as const },
   ];
 
-  // 1. Generate section URLs with hreflang alternates
-  sectionPaths.forEach((path) => {
+  sectionPaths.forEach(({ path, priority, freq }) => {
     validLocales.forEach((lang) => {
       const languages: Record<string, string> = {};
       validLocales.forEach((l) => {
@@ -32,9 +47,9 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
 
       entries.push({
         url: `${BASE_URL}/${lang}${path}`,
-        lastModified: currentDate,
-        changeFrequency: path === '' ? 'weekly' : 'monthly',
-        priority: path === '' ? 1.0 : path === '/legal' ? 0.4 : 0.8,
+        lastModified: STATIC_LAST_MOD,
+        changeFrequency: freq,
+        priority,
         alternates: {
           languages,
         },
@@ -42,7 +57,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     });
   });
 
-  // 2. Generate dynamic experience deep-dive URLs
+  // 3. Dynamic experience deep-dive URLs
   baseData.experiences.forEach((exp) => {
     validLocales.forEach((lang) => {
       const languages: Record<string, string> = {};
@@ -53,7 +68,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
 
       entries.push({
         url: `${BASE_URL}/${lang}/experience/${exp.id}`,
-        lastModified: currentDate,
+        lastModified: STATIC_LAST_MOD,
         changeFrequency: 'monthly',
         priority: 0.75,
         alternates: {
@@ -63,7 +78,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     });
   });
 
-  // 3. Generate dynamic skill deep-dive URLs
+  // 4. Dynamic skill deep-dive URLs
   baseData.skills.forEach((skill) => {
     validLocales.forEach((lang) => {
       const languages: Record<string, string> = {};
@@ -74,7 +89,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
 
       entries.push({
         url: `${BASE_URL}/${lang}/skills/${skill.id}`,
-        lastModified: currentDate,
+        lastModified: STATIC_LAST_MOD,
         changeFrequency: 'monthly',
         priority: 0.7,
         alternates: {
@@ -84,7 +99,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     });
   });
 
-  // 4. Generate dynamic education/certification deep-dive URLs
+  // 5. Dynamic education deep-dive URLs
   baseData.educationAndCertifications.forEach((edu) => {
     validLocales.forEach((lang) => {
       const languages: Record<string, string> = {};
@@ -95,7 +110,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
 
       entries.push({
         url: `${BASE_URL}/${lang}/education/${edu.id}`,
-        lastModified: currentDate,
+        lastModified: STATIC_LAST_MOD,
         changeFrequency: 'monthly',
         priority: 0.65,
         alternates: {

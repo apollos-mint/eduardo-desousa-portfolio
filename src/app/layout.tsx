@@ -22,24 +22,45 @@ const jetBrainsMono = JetBrains_Mono({
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://desousaops.vercel.app'),
-  title: 'Eduardo de Sousa | Staff Operations, Quality & High-Tech Process Leader',
+  title: {
+    default: 'Eduardo de Sousa | European Industrial Operations & Direct Sourcing Advisory',
+    template: '%s | Eduardo de Sousa | Industrial Advisory',
+  },
   description:
-    'Executive portfolio of Eduardo de Sousa. Operations, Quality and Process Leader. Lean Six Sigma Black Belt, ASML semiconductor supply chain, automotive OEM quality inspections, and global factory auditing.',
+    'Industrial Operations & Direct Sourcing Leader. Lean Six Sigma Black Belt. Factory-gate procurement, modular housing manufacturing, ASML cleanroom & automotive OEM quality.',
   keywords: [
     'Eduardo de Sousa',
-    'Operations Leader',
-    'Quality Engineering',
+    'European Industrial Operations',
+    'Direct Sourcing',
+    'Factory-Gate Procurement',
+    'Supply Chain Disintermediation',
+    'Modular Housing Manufacturing',
+    'Almussafes Industrial Corridor',
     'Lean Six Sigma Black Belt',
-    'ASML Supply Chain',
-    'Quality Systems',
-    'TÜV Certification',
-    'DMAIC',
-    'Automotive OEM',
-    'ISAH ERP',
+    'DMAIC Process Optimization',
+    'ASML Cleanroom ISO 14644',
+    'ISO 9001 Quality Systems',
+    'Automotive OEM Quality Control',
+    'VDL Nedcar Assembly Line',
+    'ISAH ERP Systems',
     'Brainport Eindhoven',
+    'DACH Manufacturing Advisory',
+    'Valencia Industrial Operations',
   ],
   authors: [{ name: 'Eduardo de Sousa', url: 'mailto:desousaej@gmail.com' }],
   creator: 'Eduardo de Sousa',
+  publisher: 'De Sousa Industrial Operations Advisory',
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
+  },
   alternates: {
     canonical: '/',
     languages: {
@@ -64,34 +85,34 @@ export const metadata: Metadata = {
     ],
   },
   openGraph: {
-    title: 'Eduardo de Sousa | Staff Operations, Quality & High-Tech Process Leader',
+    title: 'Eduardo de Sousa | European Industrial Operations & Direct Sourcing Advisory',
     description:
-      'High-performance operations leader specializing in high-tech cleanrooms, ASML semiconductor supply chain, automotive manufacturing, and Lean Six Sigma Black Belt methodology.',
+      'Productized advisory mandates for European manufacturing plants: 14-day diagnostic sprints, direct sourcing disintermediation (-75% cost), modular housing scaling, and ASML-grade quality systems.',
     url: 'https://desousaops.vercel.app',
     siteName: 'De Sousa Industrial Operations Advisory',
     type: 'website',
-    locale: 'es_ES',
-    alternateLocale: ['en_US', 'pt_PT', 'nl_NL', 'de_DE', 'fr_FR'],
+    locale: 'en_US',
+    alternateLocale: ['es_ES', 'pt_PT', 'nl_NL', 'de_DE', 'fr_FR'],
     images: [
       {
         url: 'https://desousaops.vercel.app/opengraph-image',
         width: 1200,
         height: 630,
-        alt: 'Eduardo de Sousa | Staff Operations & Quality Leader',
+        alt: 'Eduardo de Sousa | European Industrial Operations Advisory',
       },
       {
         url: 'https://desousaops.vercel.app/og-image.png',
         width: 1200,
         height: 630,
-        alt: 'Eduardo de Sousa | Staff Operations & Quality Leader',
+        alt: 'Eduardo de Sousa | European Industrial Operations Advisory',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Eduardo de Sousa | Staff Operations, Quality & High-Tech Process Leader',
+    title: 'Eduardo de Sousa | European Industrial Operations & Direct Sourcing Advisory',
     description:
-      'High-performance operations leader specializing in high-tech cleanrooms, ASML semiconductor supply chain, automotive manufacturing, and Lean Six Sigma Black Belt methodology.',
+      'Direct sourcing disintermediation, factory-gate procurement, modular housing manufacturing scale, and ASML cleanroom quality leadership.',
     images: [
       'https://desousaops.vercel.app/opengraph-image',
       'https://desousaops.vercel.app/og-image.png',

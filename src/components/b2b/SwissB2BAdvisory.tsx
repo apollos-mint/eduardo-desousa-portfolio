@@ -443,7 +443,7 @@ const TRANSLATIONS: Record<SupportedLanguage, TranslationBundle> = {
     "p3_title": "High-Tech Cleanroom Assembly & Digital Systems Governance",
     "p3_desc": "Servicing the Brainport Eindhoven semiconductor ecosystem (HQ Pack: ASML lithography packaging). Electromechanical assembly under ISO 14644-1 Class 5 conditions, TÜV-certified winch recertification, and ISAH ERP lot traceability paired with OptiAsset CMMS dual-DB architecture.",
     "p3_f1": "ISO Class 5 cleanroom electromechanical assembly protocols.",
-    "p3_f2": "ISAH ERP component traceability and AI-assisted repair registration.",
+    "p3_f2": "ISAH ERP component traceability and digitized repair registration.",
     "p3_f3": "Proprietary OptiAsset CMMS dual-database architecture (PostgreSQL + MSSQL).",
     "p3_drawer_btn": "View Cleanroom & ERP Traceability SOPs",
     "p3_drawer_title": "ISO Class 5 Cleanroom & ERP Governance SOPs",
@@ -481,7 +481,7 @@ const TRANSLATIONS: Record<SupportedLanguage, TranslationBundle> = {
     "c3_challenge_title": "Operational Challenge",
     "c3_challenge_text": "Sub-assembly and packaging modules for ASML semiconductor lithography equipment required absolute zero particulate contamination (ISO Class 5) and flawless mechanical reliability on TÜV-certified hoisting equipment.",
     "c3_intervention_title": "Strategic Intervention",
-    "c3_intervention_text": "Executed precision electromechanical assembly, wiring diagnostics, and mechanical overhauls on TÜV-certified winches under strict cleanroom conditions. Developed an AI-assisted workflow enhancement for internal repair registration, streamlining technical tracking in ERP ISAH and management reporting.",
+    "c3_intervention_text": "Executed precision electromechanical assembly, wiring diagnostics, and mechanical overhauls on TÜV-certified winches under strict cleanroom conditions. Engineered a digitized workflow enhancement for internal repair registration, streamlining technical tracking in ERP ISAH and management reporting.",
     "c3_outcome_title": "Empirical Outcome",
     "c3_outcome_text": "Cut repair turnaround time by 30%, reduced recurring defects by 22%, and achieved 100% audit pass rates on TÜV equipment compliance with zero critical findings.",
     "c3_metric_label": "Turnaround Time Reduction",
@@ -777,7 +777,7 @@ const TRANSLATIONS: Record<SupportedLanguage, TranslationBundle> = {
     "p3_title": "Ensamblaje en Sala Blanca de Alta Tecnología y Gobernanza Digital",
     "p3_desc": "Experiencia en el ecosistema de semiconductores de Brainport Eindhoven (HQ Pack: sistemas de embalaje litográfico ASML). Montaje electromecánico bajo norma ISO 14644-1 Clase 5, recertificación TÜV y trazabilidad en ERP ISAH con CMMS OptiAsset.",
     "p3_f1": "Protocolos de montaje electromecánico en sala blanca ISO Clase 5.",
-    "p3_f2": "Trazabilidad de componentes en ERP ISAH y registro asistido por IA.",
+    "p3_f2": "Trazabilidad de componentes en ERP ISAH y registro digitalizado de mantenimiento.",
     "p3_f3": "Arquitectura de base de datos dual propia en OptiAsset CMMS (PostgreSQL + MSSQL).",
     "p3_drawer_btn": "Ver Procedimientos de Sala Blanca y Trazabilidad ERP",
     "p3_drawer_title": "PNT de Sala Blanca ISO Clase 5 y Gobernanza ERP",
@@ -815,7 +815,7 @@ const TRANSLATIONS: Record<SupportedLanguage, TranslationBundle> = {
     "c3_challenge_title": "Desafío Operativo",
     "c3_challenge_text": "Los módulos de embalaje y subensamblaje para equipos de litografía de ASML exigían cero contaminación por partículas (ISO Clase 5) y fiabilidad mecánica absoluta en polipastos certificados por TÜV.",
     "c3_intervention_title": "Intervención Estratégica",
-    "c3_intervention_text": "Ensamblaje electromecánico de precisión, diagnóstico de cableados y puesta a punto de polipastos TÜV en sala blanca. Creación de un flujo de trabajo optimizado con IA para registro interno de averías, agilizando el seguimiento en ERP ISAH.",
+    "c3_intervention_text": "Ensamblaje electromecánico de precisión, diagnóstico de cableados y puesta a punto de polipastos TÜV en sala blanca. Creación de un flujo de trabajo digitalizado y estandarizado para registro interno de averías, agilizando el seguimiento en ERP ISAH.",
     "c3_outcome_title": "Resultado Empírico",
     "c3_outcome_text": "Disminución del 30% en los tiempos de reparación, reducción del 22% en defectos recurrentes y 100% de aprobados en auditorías TÜV sin no conformidades críticas.",
     "c3_metric_label": "Reducción de Tiempo de Ciclo",
@@ -2665,13 +2665,15 @@ export default function SwissB2BAdvisory({
           <div className="flex items-center justify-between h-20">
             {/* Brand Monogram & Wordmark */}
             <a href="#hero" className="flex items-center gap-2.5 sm:gap-3.5 shrink-0 group focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#00D2FF] rounded-lg p-1 -ml-1 transition-colors">
-              <div className="relative shrink-0 w-11 h-11 sm:w-12 sm:h-12 flex items-center justify-center transition-transform duration-200 group-hover:scale-105">
+              <div className="relative shrink-0 w-[50px] h-[50px] sm:w-[56px] sm:h-[56px] flex items-center justify-center transition-transform duration-200 group-hover:scale-105">
                 <Image
-                  src="/images/es-monogram-hex.png"
+                  src="/images/es-monogram-hd.png"
                   alt="De Sousa Monogram"
-                  width={48}
-                  height={48}
+                  width={56}
+                  height={56}
+                  unoptimized
                   className="w-full h-full object-contain filter drop-shadow-[0_2px_4px_rgba(4,11,20,0.18)]"
+                  style={{ imageRendering: '-webkit-optimize-contrast' }}
                   priority
                 />
               </div>

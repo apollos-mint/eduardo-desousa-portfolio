@@ -45,7 +45,7 @@ export const ptData: CVContent = {
       },
       {
         title: 'Cadeia ASML & Semicondutores',
-        description: 'Montagem eletromecânica em sala limpa, revisão de guinchos TÜV e registo assistido por IA no ERP ISAH para sistemas ASML (ISO Classe 5).',
+        description: 'Montagem eletromecânica em sala limpa, revisão de guinchos TÜV e registo digitalizado de manutenção no ERP ISAH para sistemas ASML (ISO Classe 5).',
         icon: 'microchip',
       },
       {
@@ -105,12 +105,12 @@ export const ptData: CVContent = {
       period: '02/24 - 07/26',
       location: 'Eindhoven, Holanda (Brainport)',
       industry: 'Alta Tecnologia & Cadeia de Semicondutores',
-      summary: 'Montagem eletromecânica em sala limpa ISO Classe 5, revisão técnica de guinchos com certificação TÜV e otimização do registo de reparações com IA no ERP ISAH para a cadeia de litografia da ASML.',
-      homeSummary: 'Montagem eletromecânica em sala limpa, revisão de guinchos TÜV e registo assistido por IA no ERP ISAH para a ASML.',
+      summary: 'Montagem eletromecânica em sala limpa ISO Classe 5, revisão técnica de guinchos com certificação TÜV e registo digitalizado de manutenção no ERP ISAH para a cadeia de litografia da ASML.',
+      homeSummary: 'Montagem eletromecânica em sala limpa, revisão de guinchos TÜV e registo digitalizado de manutenção no ERP ISAH para a ASML.',
       responsibilities: [
         'Montagem e Reparação de Precisão em Sala Limpa: Montagem, desmontagem e reparação técnica de módulos de transporte e embalamento de ultra-alta precisão para sistemas de litografia (ASML, Zeiss) sob normas estritas de Sala Limpa ISO Classe 5 e ambiente fabril.',
         'Sistemas Eletromecânicos, Sensores e Guinchos TÜV: Substituição direta de componentes elétricos e sensores, diagnóstico de cablagem e revisão mecânica de conjuntos de guinchos certificados pela TÜV, passando auditorias com 0 não conformidades críticas.',
-        'Otimização com IA e Governança no ERP ISAH: Desenvolvimento de uma melhoria assistida por IA para o registo interno de reparações, agilizando o rastreio técnico no ERP (ISAH) e gerando relatórios de produtividade e defeitos para a gestão.',
+        'Digitalização de Processos e Governança no ERP ISAH: Desenvolvimento de um fluxo digitalizado para o registo interno de reparações, agilizando o rastreio técnico no ERP (ISAH) e gerando relatórios de produtividade e defeitos para a gestão.',
         'Segurança Fabril e Mentoria Técnica: Integração e formação de novos técnicos em conformidade de sala limpa, SOPs, normas de segurança industrial e protocolos SOP e operação segura de empilhadores elétricos e manuais.',
       ],
       metrics: [
@@ -119,10 +119,10 @@ export const ptData: CVContent = {
         { value: '-22%', label: 'Defeitos recorrentes', subtext: 'Six Sigma FMEA / CAPA' },
         { value: 'TÜV', label: 'Conformidade Técnica', subtext: 'Auditorias de qualidade' },
       ],
-      technologies: ['ERP ISAH', 'Sala Limpa ISO Classe 5', 'Montagem Eletromecânica', 'Revisão Guinchos TÜV', 'Diagnóstico de Cablagem', 'Normas de Segurança Industrial', 'Registo Assistido por IA'],
+      technologies: ['ERP ISAH', 'Sala Limpa ISO Classe 5', 'Montagem Eletromecânica', 'Revisão Guinchos TÜV', 'Diagnóstico de Cablagem', 'Normas de Segurança Industrial', 'Registo Digitalizado ERP'],
       partners: ['ASML', 'Zeiss', 'Frencken', 'Neways', 'VDL', 'TÜV Rheinland'],
       challenge: 'Garantir disponibilidade máxima e zero contaminação por partículas em módulos de embalagem e transporte de litografia sob normas ASML.',
-      solution: 'Execução de montagem eletromecânica de precisão em sala limpa, revisão TÜV de guinchos e implementação de registo assistido por IA no ERP ISAH.',
+      solution: 'Execução de montagem eletromecânica de precisão em sala limpa, revisão TÜV de guinchos e implementação de registo digitalizado de manutenção no ERP ISAH.',
       impact: 'Redução de 30% nos tempos de reparação, corte de 22% em defeitos e aprovação perfeita em auditorias TÜV.',
       visualType: 'cleanroom',
     },

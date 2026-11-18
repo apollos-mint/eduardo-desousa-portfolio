@@ -45,7 +45,7 @@ export const frData: CVContent = {
       },
       {
         title: 'Écosystème ASML & Semi-conducteurs',
-        description: 'Assemblage électromécanique en salle blanche, révision de treuils TÜV et suivi de réparation assisté par IA sous ERP ISAH pour ASML (ISO Classe 5).',
+        description: 'Assemblage électromécanique en salle blanche, révision de treuils TÜV et suivi digitalisé des réparations sous ERP ISAH pour ASML (ISO Classe 5).',
         icon: 'microchip',
       },
       {
@@ -105,12 +105,12 @@ export const frData: CVContent = {
       period: '02/24 - 07/26',
       location: 'Eindhoven, Pays-Bas (Brainport)',
       industry: 'Haute Technologie & Semi-conducteurs',
-      summary: 'Assemblage électromécanique en salle blanche ISO Classe 5, révision technique de treuils certifiés TÜV et optimisation du suivi de réparation par IA sous ERP ISAH pour ASML.',
-      homeSummary: 'Assemblage électromécanique en salle blanche, révision de treuils TÜV et suivi de réparation assisté par IA sous ERP ISAH pour ASML.',
+      summary: 'Assemblage électromécanique en salle blanche ISO Classe 5, révision technique de treuils certifiés TÜV et suivi digitalisé des réparations sous ERP ISAH pour ASML.',
+      homeSummary: 'Assemblage électromécanique en salle blanche, révision de treuils TÜV et suivi digitalisé des réparations sous ERP ISAH pour ASML.',
       responsibilities: [
         'Assemblage de Haute Précision & Réparation en Salle Blanche : Montage, démontage et réparation technique de modules de transport et d\'emballage pour la lithographie (ASML, Zeiss) sous strictes normes de Salle Blanche ISO Classe 5 et atelier standard.',
         'Systèmes Électromécaniques, Capteurs & Treuils TÜV : Remplacement pratique de composants électriques et capteurs, diagnostic de câblage et révision mécanique de treuils certifiés TÜV, validant les audits techniques avec 0 non-conformité critique.',
-        'Optimisation des Flux par IA & Gouvernance ERP ISAH : Développement d\'une amélioration assistée par IA pour la saisie des réparations internes, accélérant le suivi technique dans l\'ERP (ISAH) et produisant des rapports périodiques de productivité et de défauts.',
+        'Digitalisation des Flux & Gouvernance ERP ISAH : Développement d\'une amélioration digitalisée pour la saisie des réparations internes, accélérant le suivi technique dans l\'ERP (ISAH) et produisant des rapports périodiques de productivité et de défauts.',
         'Sécurité en Atelier & Mentorat Technique : Accueil et formation technique des nouveaux arrivants sur la conformité salle blanche, les SOP, les normes de sécurité industrielle et protocoles SOP et la conduite d\'engins de manutention.',
       ],
       metrics: [
@@ -119,10 +119,10 @@ export const frData: CVContent = {
         { value: '-22%', label: 'Défauts récurrents', subtext: 'Six Sigma FMEA / CAPA' },
         { value: 'TÜV', label: 'Conformité Technique', subtext: 'Audits validés sans réserve' },
       ],
-      technologies: ['ERP ISAH', 'Salle Blanche ISO Classe 5', 'Assemblage Électromécanique', 'Révision Treuils TÜV', 'Diagnostic Câblage', 'Normes de Sécurité Industrielle', 'Saisie Assistée par IA'],
+      technologies: ['ERP ISAH', 'Salle Blanche ISO Classe 5', 'Assemblage Électromécanique', 'Révision Treuils TÜV', 'Diagnostic Câblage', 'Normes de Sécurité Industrielle', 'Saisie Digitalisée ERP'],
       partners: ['ASML', 'Zeiss', 'Frencken', 'Neways', 'VDL', 'TÜV Rheinland'],
       challenge: 'Garantir une disponibilité maximale et zéro contamination particulaire sur les modules de transport lithographique sous spécifications ASML.',
-      solution: 'Assemblage électromécanique de précision en salle blanche, recertification TÜV de treuils et flux de saisie par IA sous ERP ISAH.',
+      solution: 'Assemblage électromécanique de précision en salle blanche, recertification TÜV de treuils et flux de saisie digitalisés sous ERP ISAH.',
       impact: 'Réduction de 30% des temps de réparation, baisse de 22% des défauts et conformité parfaite aux audits TÜV sans réserve.',
       visualType: 'cleanroom',
     },
