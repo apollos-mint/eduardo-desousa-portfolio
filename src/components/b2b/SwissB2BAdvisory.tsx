@@ -2717,38 +2717,38 @@ export default function SwissB2BAdvisory({
     <div className="min-h-screen bg-white text-slate-900 font-sans antialiased selection:bg-[#0066CC] selection:text-white w-full max-w-full overflow-x-hidden">
       
       {/* 1. TOP INSTITUTIONAL TRUST RIBBON (McKinsey / Deloitte Style) */}
-      <div className="bg-[#051C2C] text-slate-200 text-[11px] sm:text-xs py-2 px-4 sm:px-6 lg:px-8 border-b border-slate-800">
-        <div className="max-w-7xl mx-auto flex items-center justify-between">
-          <div className="flex items-center gap-2.5">
+      <div className="bg-[#051C2C] text-slate-200 text-[11px] sm:text-xs py-2.5 sm:py-3 px-4 sm:px-6 lg:px-8 border-b border-slate-800 min-h-[38px] sm:min-h-[42px] flex items-center">
+        <div className="max-w-7xl mx-auto w-full flex items-center justify-between gap-4">
+          <div className="flex items-center gap-2.5 min-w-0">
             <span className="relative flex h-2 w-2 shrink-0">
               <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75" />
               <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500 shadow-[0_0_8px_rgba(16,185,129,0.6)]" />
             </span>
-            <span className="font-semibold tracking-wide text-white">
+            <span className="font-semibold tracking-wide text-white truncate">
               {t.status_ribbon}
             </span>
-            <span className="text-slate-500 hidden sm:inline">|</span>
-            <span className="text-emerald-400 font-medium hidden sm:inline">{t.status_mode}</span>
+            <span className="text-slate-500 hidden sm:inline shrink-0">|</span>
+            <span className="text-emerald-400 font-medium hidden sm:inline shrink-0">{t.status_mode}</span>
           </div>
-          <div className="hidden sm:flex items-center gap-2 font-mono text-[11px] text-slate-400">
+          <div className="hidden sm:flex items-center gap-2 font-mono text-[11px] text-slate-400 shrink-0">
             <span className="text-emerald-400">●</span>
             <span>{t.ribbon_direct_engagement}</span>
           </div>
         </div>
       </div>
 
-      {/* 2. CORPORATE NAVIGATION (High-Contrast Border, Balanced Spacing) */}
+      {/* 2. CORPORATE NAVIGATION (High-Contrast Border, Balanced Spacing, Zero Cutoff) */}
       <header className="sticky top-0 z-50 w-full bg-white/95 backdrop-blur-md border-b-2 border-slate-300 shadow-[0_2px_4px_rgba(0,0,0,0.06)]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center justify-between h-20">
+          <div className="flex items-center justify-between h-20 gap-3 sm:gap-4">
             {/* Brand Monogram & Wordmark */}
             <a href="#hero" className="flex items-center gap-2.5 sm:gap-3.5 shrink-0 group focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#00D2FF] rounded-lg p-1 -ml-1 transition-colors">
-              <div className="relative shrink-0 w-[50px] h-[50px] sm:w-[56px] sm:h-[56px] flex items-center justify-center transition-transform duration-200 group-hover:scale-105">
+              <div className="relative shrink-0 w-[46px] h-[46px] sm:w-[54px] sm:h-[54px] flex items-center justify-center transition-transform duration-200 group-hover:scale-105">
                 <Image
                   src="/images/es-monogram-hd.png"
-                  alt="De Sousa Monogram"
-                  width={56}
-                  height={56}
+                  alt="De Sousa Ops Monogram"
+                  width={54}
+                  height={54}
                   unoptimized
                   className="w-full h-full object-contain filter drop-shadow-[0_2px_4px_rgba(4,11,20,0.18)]"
                   style={{ imageRendering: '-webkit-optimize-contrast' }}
@@ -2757,7 +2757,7 @@ export default function SwissB2BAdvisory({
               </div>
               <div className="flex flex-col shrink-0">
                 <span className="text-base sm:text-lg lg:text-xl font-bold tracking-tight text-[#040B14] group-hover:text-[#0066CC] transition-colors uppercase leading-none sm:leading-tight">
-                  De Sousa
+                  De Sousa Ops
                 </span>
                 <span className="text-[10px] sm:text-[11px] font-semibold tracking-wider text-slate-500 uppercase whitespace-nowrap mt-0.5">
                   {t.nav_brand_sub_title}
@@ -2765,8 +2765,8 @@ export default function SwissB2BAdvisory({
               </div>
             </a>
 
-            {/* Desktop Navigation Links */}
-            <nav className="hidden lg:flex items-center gap-1.5 xl:gap-3 mr-2 xl:mr-6">
+            {/* Desktop Navigation Links (Visible on xl: >= 1280px to prevent crowding/cutting off CTA on 1024-1279px screens) */}
+            <nav className="hidden xl:flex items-center gap-2 2xl:gap-3 mr-2">
               <a 
                 href="#pillars" 
                 className="px-2.5 py-1.5 text-xs xl:text-sm font-semibold tracking-normal text-slate-700 hover:text-[#0066CC] hover:bg-slate-50 rounded-md transition-colors whitespace-nowrap"
@@ -2799,14 +2799,14 @@ export default function SwissB2BAdvisory({
               </a>
             </nav>
 
-            {/* Language Selector & CTA (Clean separation from Economics link) */}
-            <div className="flex items-center gap-3.5 pl-4 border-l border-slate-300">
+            {/* Language Selector & CTA (Clean separation, shrink-0, zero clipping) */}
+            <div className="flex items-center gap-2.5 sm:gap-3.5 pl-3 sm:pl-4 border-l border-slate-300 shrink-0">
               {/* Language Dropdown */}
               <div className="relative">
                 <button
                   type="button"
                   onClick={() => setLangOpen(!langOpen)}
-                  className="flex items-center gap-1.5 min-h-[44px] px-3 py-2 text-xs font-bold text-slate-700 bg-slate-50 border border-slate-300 rounded-md hover:bg-slate-100 hover:text-slate-900 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#0066CC]"
+                  className="flex items-center gap-1.5 min-h-[42px] px-2.5 sm:px-3 py-1.5 text-xs font-bold text-slate-700 bg-slate-50 border border-slate-300 rounded-md hover:bg-slate-100 hover:text-slate-900 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#0066CC] cursor-pointer"
                   aria-label="Select Language"
                 >
                   <Globe className="w-3.5 h-3.5 text-[#0066CC]" />
@@ -2823,7 +2823,7 @@ export default function SwissB2BAdvisory({
                         onClick={() => {
                           handleLanguageChange(l);
                         }}
-                        className={`w-full text-left px-3 py-2 flex items-center justify-between hover:bg-slate-50 min-h-[38px] ${
+                        className={`w-full text-left px-3 py-2 flex items-center justify-between hover:bg-slate-50 min-h-[38px] cursor-pointer ${
                           lang === l ? 'font-bold text-[#0066CC] bg-blue-50/50' : 'text-slate-700'
                         }`}
                       >
@@ -2837,31 +2837,31 @@ export default function SwissB2BAdvisory({
                 )}
               </div>
 
-              {/* WhatsApp Quick Direct Link */}
+              {/* WhatsApp Quick Direct Link (Visible on 2xl to avoid crowding primary CTA) */}
               <a
                 href={`https://wa.me/34661440045?text=${encodeURIComponent(whatsAppMessages[lang])}`}
                 target="_blank"
                 rel="noopener noreferrer"
                 title={whatsAppLabels[lang]}
-                className="hidden md:inline-flex items-center justify-center min-h-[44px] px-3.5 py-2 text-xs font-bold text-emerald-800 bg-emerald-50 hover:bg-emerald-100 border border-emerald-300 rounded-md transition-colors gap-1.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500"
+                className="hidden 2xl:inline-flex items-center justify-center min-h-[42px] px-3.5 py-2 text-xs font-bold text-emerald-800 bg-emerald-50 hover:bg-emerald-100 border border-emerald-300 rounded-md transition-colors gap-1.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500"
               >
                 <WhatsAppIcon className="w-4 h-4 text-emerald-600 fill-current" />
                 <span>WhatsApp</span>
               </a>
 
-              {/* Primary Header CTA */}
+              {/* Primary Header CTA (Never truncated, whitespace-nowrap, shrink-0) */}
               <a
                 href="#advisory-inquiry"
-                className="hidden sm:inline-flex items-center justify-center min-h-[44px] px-5 py-2.5 text-xs sm:text-sm font-semibold text-white bg-[#040B14] hover:bg-[#081a30] active:scale-[0.99] rounded-lg border border-[#00D2FF]/40 hover:border-[#00D2FF] shadow-[0_0_15px_rgba(0,210,255,0.15)] transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#00D2FF] focus-visible:ring-offset-2"
+                className="inline-flex items-center justify-center min-h-[42px] px-3.5 sm:px-5 py-2 sm:py-2.5 text-xs sm:text-sm font-semibold text-white bg-[#040B14] hover:bg-[#081a30] active:scale-[0.99] rounded-lg border border-[#00D2FF]/40 hover:border-[#00D2FF] shadow-[0_0_15px_rgba(0,210,255,0.15)] transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#00D2FF] focus-visible:ring-offset-2 whitespace-nowrap shrink-0"
               >
                 {t.nav_cta}
               </a>
 
-              {/* Mobile Hamburger Toggle */}
+              {/* Mobile/Tablet Hamburger Toggle */}
               <button
                 type="button"
                 onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-                className="lg:hidden inline-flex items-center justify-center min-h-[44px] min-w-[44px] p-2 text-slate-700 hover:bg-slate-100 rounded-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#0066CC]"
+                className="xl:hidden inline-flex items-center justify-center min-h-[42px] min-w-[42px] p-2 text-slate-700 hover:bg-slate-100 rounded-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#0066CC] cursor-pointer shrink-0"
                 aria-label="Toggle navigation menu"
               >
                 {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
@@ -2872,7 +2872,7 @@ export default function SwissB2BAdvisory({
 
         {/* Mobile Navigation Drawer */}
         {mobileMenuOpen && (
-          <div className="lg:hidden border-t border-slate-200 bg-white px-4 pt-3 pb-6 shadow-lg">
+          <div className="xl:hidden border-t border-slate-200 bg-white px-4 pt-3 pb-6 shadow-lg">
             <nav className="flex flex-col space-y-1">
               <a
                 href="#pillars"
@@ -2934,7 +2934,7 @@ export default function SwissB2BAdvisory({
       </header>
 
       {/* 3. EXECUTIVE HERO SECTION (Industrial Background, Grounded Proof) */}
-      <section id="hero" className="relative bg-slate-100 pt-8 pb-14 lg:pt-12 lg:pb-18 border-b-2 border-slate-300 overflow-hidden">
+      <section id="hero" className="scroll-mt-28 relative bg-slate-100 pt-8 pb-14 lg:pt-12 lg:pb-18 border-b-2 border-slate-300 overflow-hidden">
         {/* Real Industrial High-Precision Manufacturing Photographic Backdrop */}
         <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none">
           <Image

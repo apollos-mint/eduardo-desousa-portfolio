@@ -49,7 +49,7 @@ export const metadata: Metadata = {
   ],
   authors: [{ name: 'Eduardo de Sousa', url: 'mailto:desousaej@gmail.com' }],
   creator: 'Eduardo de Sousa',
-  publisher: 'De Sousa Industrial Operations Advisory',
+  publisher: 'De Sousa Ops | Industrial Operations Advisory',
   robots: {
     index: true,
     follow: true,
@@ -89,7 +89,7 @@ export const metadata: Metadata = {
     description:
       'Productized advisory mandates for European manufacturing plants: 14-day diagnostic sprints, direct sourcing disintermediation (-75% cost), modular housing scaling, and ASML-grade quality systems.',
     url: 'https://desousaops.vercel.app',
-    siteName: 'De Sousa Industrial Operations Advisory',
+    siteName: 'De Sousa Ops | Industrial Operations Advisory',
     type: 'website',
     locale: 'en_US',
     alternateLocale: ['es_ES', 'pt_PT', 'nl_NL', 'de_DE', 'fr_FR'],
