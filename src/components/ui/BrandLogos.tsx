@@ -191,13 +191,13 @@ export default function BrandLogo({ name, className = 'w-6 h-6' }: BrandLogoProp
     );
   }
 
-  // VDL
+  // VDL NEDCAR
   if (norm.includes('VDL')) {
     return (
-      <svg role="img" aria-label={name} viewBox="0 0 110 40" className={className}>
-        <rect width="110" height="40" rx="8" fill="#dc2626" />
-        <text x="55" y="27" fontSize="22" fontWeight="900" fontFamily="sans-serif" textAnchor="middle" fill="#ffffff">
-          VDL
+      <svg role="img" aria-label={name} viewBox="0 0 140 40" className={className}>
+        <rect width="140" height="40" rx="8" fill="#dc2626" />
+        <text x="70" y="26" fontSize="15" fontWeight="900" fontFamily="sans-serif" textAnchor="middle" fill="#ffffff">
+          VDL NEDCAR
         </text>
       </svg>
     );
@@ -230,13 +230,14 @@ export default function BrandLogo({ name, className = 'w-6 h-6' }: BrandLogoProp
     );
   }
 
-  // TÜV
+  // TÜV / TÜV NORD
   if (norm.includes('TÜV') || norm.includes('TUV')) {
+    const isNord = norm.includes('NORD');
     return (
-      <svg role="img" aria-label={name} viewBox="0 0 120 45" className={className}>
-        <polygon points="60,2 115,22 60,42 5,22" fill="#0284c7" />
-        <text x="60" y="28" fontSize="16" fontWeight="900" fontFamily="sans-serif" textAnchor="middle" fill="#ffffff">
-          TÜV
+      <svg role="img" aria-label={name} viewBox="0 0 130 45" className={className}>
+        <polygon points="65,2 125,22 65,42 5,22" fill="#0284c7" />
+        <text x="65" y="28" fontSize={isNord ? "13" : "16"} fontWeight="900" fontFamily="sans-serif" textAnchor="middle" fill="#ffffff">
+          {isNord ? "TÜV NORD" : "TÜV"}
         </text>
       </svg>
     );
@@ -413,6 +414,142 @@ export default function BrandLogo({ name, className = 'w-6 h-6' }: BrandLogoProp
         <path d="M12,20 L20,12 L20,28 Z M20,12 L28,20 L20,28 Z" fill="#ffffff" />
         <text x="68" y="25" fontSize="14" fontWeight="800" fontFamily="sans-serif" textAnchor="middle" fill="#ffffff">
           Jira
+        </text>
+      </svg>
+    );
+  }
+
+  // TYPESCRIPT
+  if (norm.includes('TYPESCRIPT') || norm === 'TS') {
+    return (
+      <svg role="img" aria-label={name} viewBox="0 0 130 40" className={className}>
+        <rect width="130" height="40" rx="8" fill="#3178c6" />
+        <rect x="6" y="6" width="28" height="28" rx="4" fill="#ffffff" />
+        <text x="20" y="26" fontSize="16" fontWeight="900" fontFamily="sans-serif" textAnchor="middle" fill="#3178c6">
+          TS
+        </text>
+        <text x="78" y="26" fontSize="13" fontWeight="900" fontFamily="sans-serif" textAnchor="middle" fill="#ffffff">
+          TypeScript
+        </text>
+      </svg>
+    );
+  }
+
+  // PYTHON
+  if (norm.includes('PYTHON') || norm === 'PY') {
+    return (
+      <svg role="img" aria-label={name} viewBox="0 0 120 40" className={className}>
+        <rect width="120" height="40" rx="8" fill="#1e293b" stroke="#38bdf8" strokeWidth="1.5" />
+        <circle cx="20" cy="20" r="10" fill="#0284c7" />
+        <text x="20" y="25" fontSize="11" fontWeight="900" fontFamily="sans-serif" textAnchor="middle" fill="#facc15">
+          PY
+        </text>
+        <text x="70" y="26" fontSize="14" fontWeight="900" fontFamily="sans-serif" textAnchor="middle" fill="#ffffff">
+          Python
+        </text>
+      </svg>
+    );
+  }
+
+  // POSTGRESQL
+  if (norm.includes('POSTGRES') || norm.includes('SQL')) {
+    return (
+      <svg role="img" aria-label={name} viewBox="0 0 130 40" className={className}>
+        <rect width="130" height="40" rx="8" fill="#336791" />
+        <circle cx="20" cy="20" r="11" fill="#204060" />
+        <text x="20" y="25" fontSize="11" fontWeight="900" fontFamily="sans-serif" textAnchor="middle" fill="#ffffff">
+          SQL
+        </text>
+        <text x="76" y="25" fontSize="13" fontWeight="900" fontFamily="sans-serif" textAnchor="middle" fill="#ffffff">
+          PostgreSQL
+        </text>
+      </svg>
+    );
+  }
+
+  // COSCO SHIPPING
+  if (norm.includes('COSCO')) {
+    return (
+      <svg role="img" aria-label={name} viewBox="0 0 130 40" className={className}>
+        <rect width="130" height="40" rx="8" fill="#003580" />
+        <circle cx="20" cy="20" r="11" fill="#c8102e" />
+        <text x="20" y="24" fontSize="9" fontWeight="900" fontFamily="sans-serif" textAnchor="middle" fill="#ffffff">
+          COS
+        </text>
+        <text x="75" y="25" fontSize="14" fontWeight="900" fontFamily="sans-serif" textAnchor="middle" fill="#ffffff">
+          COSCO
+        </text>
+      </svg>
+    );
+  }
+
+  // CMA CGM
+  if (norm.includes('CMA') || norm.includes('CGM')) {
+    return (
+      <svg role="img" aria-label={name} viewBox="0 0 130 40" className={className}>
+        <rect width="130" height="40" rx="8" fill="#03224c" stroke="#e0292b" strokeWidth="1.5" />
+        <rect x="6" y="6" width="28" height="28" rx="4" fill="#e0292b" />
+        <text x="20" y="25" fontSize="10" fontWeight="900" fontFamily="sans-serif" textAnchor="middle" fill="#ffffff">
+          CMA
+        </text>
+        <text x="78" y="26" fontSize="14" fontWeight="900" fontFamily="sans-serif" textAnchor="middle" fill="#ffffff">
+          CMA CGM
+        </text>
+      </svg>
+    );
+  }
+
+  // EVERGREEN
+  if (norm.includes('EVERGREEN')) {
+    return (
+      <svg role="img" aria-label={name} viewBox="0 0 140 40" className={className}>
+        <rect width="140" height="40" rx="8" fill="#007a3d" />
+        <circle cx="20" cy="20" r="11" fill="#ffffff" />
+        <polygon points="20,11 23,17 29,17 24,21 26,27 20,23 14,27 16,21 11,17 17,17" fill="#007a3d" />
+        <text x="80" y="25" fontSize="13" fontWeight="900" fontFamily="sans-serif" textAnchor="middle" fill="#ffffff">
+          EVERGREEN
+        </text>
+      </svg>
+    );
+  }
+
+  // ONE (OCEAN NETWORK EXPRESS)
+  if (norm === 'ONE' || norm.includes('NETWORK EXPRESS') || norm.includes('OCEAN NETWORK')) {
+    return (
+      <svg role="img" aria-label={name} viewBox="0 0 110 40" className={className}>
+        <rect width="110" height="40" rx="8" fill="#e6007e" />
+        <text x="55" y="27" fontSize="22" fontWeight="900" fontStyle="italic" fontFamily="sans-serif" textAnchor="middle" fill="#ffffff">
+          ONE
+        </text>
+      </svg>
+    );
+  }
+
+  // KUEHNE+NAGEL
+  if (norm.includes('KUEHNE') || norm.includes('NAGEL')) {
+    return (
+      <svg role="img" aria-label={name} viewBox="0 0 150 40" className={className}>
+        <rect width="150" height="40" rx="8" fill="#002d62" />
+        <rect x="6" y="6" width="28" height="28" rx="4" fill="#009fe3" />
+        <path d="M12,12 L18,20 L12,28 M24,12 L18,20 L24,28" stroke="#ffffff" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" fill="none" />
+        <text x="90" y="25" fontSize="12" fontWeight="900" fontFamily="sans-serif" textAnchor="middle" fill="#ffffff">
+          KUEHNE+NAGEL
+        </text>
+      </svg>
+    );
+  }
+
+  // APM TERMINALS
+  if (norm.includes('APM') || norm.includes('TERMINAL')) {
+    return (
+      <svg role="img" aria-label={name} viewBox="0 0 150 40" className={className}>
+        <rect width="150" height="40" rx="8" fill="#00243d" stroke="#f26a36" strokeWidth="1.5" />
+        <rect x="6" y="6" width="28" height="28" rx="4" fill="#f26a36" />
+        <text x="20" y="25" fontSize="10" fontWeight="900" fontFamily="sans-serif" textAnchor="middle" fill="#ffffff">
+          APM
+        </text>
+        <text x="90" y="25" fontSize="11" fontWeight="900" fontFamily="sans-serif" textAnchor="middle" fill="#ffffff">
+          APM TERMINALS
         </text>
       </svg>
     );
