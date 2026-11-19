@@ -2714,7 +2714,7 @@ export default function SwissB2BAdvisory({
 
 
   return (
-    <div className="min-h-screen bg-white text-slate-900 font-sans antialiased selection:bg-[#0066CC] selection:text-white">
+    <div className="min-h-screen bg-white text-slate-900 font-sans antialiased selection:bg-[#0066CC] selection:text-white w-full max-w-full overflow-x-hidden">
       
       {/* 1. TOP INSTITUTIONAL TRUST RIBBON (McKinsey / Deloitte Style) */}
       <div className="bg-[#051C2C] text-slate-200 text-[11px] sm:text-xs py-2 px-4 sm:px-6 lg:px-8 border-b border-slate-800">
@@ -3114,7 +3114,7 @@ export default function SwissB2BAdvisory({
       {/* 4. THREE PILLARS OF ADVISORY PRACTICE (Deloitte Grid, Expandable SOP Drawers) */}
       {/* 4. ADVISORY PRACTICE PILLARS & VERIFIED TRACK RECORD (Merged Executive Dossiers) */}
             {/* 4. TRACK RECORD OF INDUSTRIAL PROFESSIONAL EXPERIENCE (Horizontal Motion Architecture) */}
-      <section id="pillars" className="scroll-mt-24 relative bg-slate-50 py-10 lg:py-14 border-b border-slate-300">
+      <section id="pillars" className="scroll-mt-24 relative bg-slate-50 py-10 lg:py-14 border-b border-slate-300 overflow-hidden">
         <div id="track-record" className="scroll-mt-28" />
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl">
@@ -3992,7 +3992,7 @@ export default function SwissB2BAdvisory({
       </section>
 
       {/* 5. EXECUTIVE PROFILE & INDUSTRIAL FIELD GROUNDING (Clean, Grounded) */}
-      <section id="profile" className="scroll-mt-24 bg-white py-10 lg:py-14 border-b border-slate-200">
+      <section id="profile" className="scroll-mt-24 bg-white py-10 lg:py-14 border-b border-slate-200 overflow-hidden">
         <div id="pedigree" className="scroll-mt-28" />
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl">
@@ -4263,7 +4263,7 @@ export default function SwissB2BAdvisory({
       </section>
 
       {/* 7. METHODOLOGICAL RIGOR: DMAIC & AGILE/SCRUM OPERATIONAL FRAMEWORK (Clean White) */}
-      <section id="methodology" className="scroll-mt-24 bg-white py-10 lg:py-14 border-b border-slate-200">
+      <section id="methodology" className="scroll-mt-24 bg-white py-10 lg:py-14 border-b border-slate-200 overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl">
             <span className="text-xs font-semibold uppercase tracking-wider text-[#0066CC]">

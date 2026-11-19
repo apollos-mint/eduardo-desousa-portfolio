@@ -82,20 +82,20 @@ export default function InfiniteBrandMarquee({ currentLocale }: InfiniteBrandMar
   const duplicatedRow2 = [...row2List, ...row2List];
 
   return (
-    <div className="w-full space-y-3 pt-2">
+    <div className="w-full max-w-full overflow-hidden space-y-3 pt-2">
       {/* =========================================================================
          ROW 1: CLIENT COMPANIES, QUALITY STANDARDS & TECH STACK
          ========================================================================= */}
       <div className="space-y-1.5">
         {/* Row Header + Controls */}
-        <div className="flex items-center justify-between text-xs font-mono px-1">
-          <div className="flex items-center space-x-2 text-cyan-900 dark:text-cyan-400 font-bold tracking-wider text-[11px] sm:text-xs">
-            <Building2 className="w-3.5 h-3.5 text-cyan-600 dark:text-cyan-400" />
-            <span>{t.row1}</span>
+        <div className="flex items-center justify-between text-xs font-mono px-1 gap-2 min-w-0">
+          <div className="flex items-center space-x-2 text-cyan-900 dark:text-cyan-400 font-bold tracking-wider text-[10px] sm:text-xs min-w-0 flex-1">
+            <Building2 className="w-3.5 h-3.5 text-cyan-600 dark:text-cyan-400 shrink-0" />
+            <span className="truncate">{t.row1}</span>
           </div>
 
           {/* Direction & Pause Controls for Line 1 */}
-          <div className="flex items-center space-x-1 bg-white dark:bg-slate-900/90 p-0.5 rounded-lg border border-slate-200 dark:border-slate-800 shadow-xs">
+          <div className="flex items-center space-x-1 shrink-0 bg-white dark:bg-slate-900/90 p-0.5 rounded-lg border border-slate-200 dark:border-slate-800 shadow-xs">
             <button
               onClick={() => setDirRow1('left')}
               title="Scroll Left"
@@ -174,14 +174,14 @@ export default function InfiniteBrandMarquee({ currentLocale }: InfiniteBrandMar
          ========================================================================= */}
       <div className="space-y-1.5">
         {/* Row Header + Controls */}
-        <div className="flex items-center justify-between text-xs font-mono px-1">
-          <div className="flex items-center space-x-2 text-emerald-900 dark:text-emerald-400 font-bold tracking-wider text-[11px] sm:text-xs">
-            <Ship className="w-3.5 h-3.5 text-emerald-600 dark:text-emerald-400" />
-            <span>{t.row2}</span>
+        <div className="flex items-center justify-between text-xs font-mono px-1 gap-2 min-w-0">
+          <div className="flex items-center space-x-2 text-emerald-900 dark:text-emerald-400 font-bold tracking-wider text-[10px] sm:text-xs min-w-0 flex-1">
+            <Ship className="w-3.5 h-3.5 text-emerald-600 dark:text-emerald-400 shrink-0" />
+            <span className="truncate">{t.row2}</span>
           </div>
 
           {/* Direction & Pause Controls for Line 2 */}
-          <div className="flex items-center space-x-1 bg-white dark:bg-slate-900/90 p-0.5 rounded-lg border border-slate-200 dark:border-slate-800 shadow-xs">
+          <div className="flex items-center space-x-1 shrink-0 bg-white dark:bg-slate-900/90 p-0.5 rounded-lg border border-slate-200 dark:border-slate-800 shadow-xs">
             <button
               onClick={() => setDirRow2('left')}
               title="Scroll Left"

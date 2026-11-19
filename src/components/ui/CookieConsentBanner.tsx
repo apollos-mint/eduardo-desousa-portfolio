@@ -39,9 +39,9 @@ const dict: Record<Locale, TranslationData> = {
     badge: "RGPD (UE) 2016/679 · Directiva ePrivacy 2002/58/CE",
     bannerTitle: "Gobernanza de Privacidad & Cookies (RGPD / Directiva ePrivacy)",
     bannerDesc: "Este portal utiliza cookies técnicas esenciales para el funcionamiento de la sesión y la memorización de su idioma preferido. Opcionalmente, empleamos telemetría agregada (Vercel) y analítica de interacción (Microsoft Clarity) para auditar la usabilidad técnica.",
-    accept: "Aceptar Analítica",
+    accept: "Aceptar y Continuar",
     decline: "Solo Esenciales",
-    details: "Configuración & Legal",
+    details: "Personalizar / Ver Detalles",
     modalTitle: "Aviso de Privacidad y Declaración de Cookies",
     modalSub: "Conforme al Reglamento (UE) 2016/679 (RGPD) y Directiva 2002/58/CE (ePrivacy)",
     controllerTitle: "Responsable del Tratamiento",
@@ -64,9 +64,9 @@ const dict: Record<Locale, TranslationData> = {
     badge: "EU GDPR 2016/679 · ePrivacy Directive 2002/58/EC",
     bannerTitle: "Privacy & Cookie Governance (GDPR / ePrivacy Directive)",
     bannerDesc: "This portal uses essential technical cookies to ensure platform operations and preserve your preferred language. Optionally, we use aggregated performance telemetry (Vercel) and session interaction analytics (Microsoft Clarity) to audit usability.",
-    accept: "Accept Analytics",
+    accept: "Accept & Continue",
     decline: "Essential Only",
-    details: "Preferences & Disclosure",
+    details: "Customize / View Details",
     modalTitle: "Privacy Notice & Cookie Policy Disclosure",
     modalSub: "Compliant with EU Regulation 2016/679 (GDPR) & Directive 2002/58/EC (ePrivacy)",
     controllerTitle: "Data Controller",
@@ -89,9 +89,9 @@ const dict: Record<Locale, TranslationData> = {
     badge: "EU-DSGVO 2016/679 · ePrivacy-Richtlinie 2002/58/EG",
     bannerTitle: "Datenschutz & Cookie-Governance (DSGVO / ePrivacy)",
     bannerDesc: "Dieses Portal verwendet essenzielle technische Cookies für den Betrieb und zur Speicherung Ihrer Sprachauswahl. Optional nutzen wir Leistungs-Telemetrie (Vercel) und Interaktionsanalytik (Microsoft Clarity).",
-    accept: "Analytik Akzeptieren",
+    accept: "Akzeptieren & Weiter",
     decline: "Nur Essenziell",
-    details: "Einstellungen & Rechtliches",
+    details: "Anpassen / Details",
     modalTitle: "Datenschutzerklärung & Cookie-Richtlinie",
     modalSub: "Gemäß EU-Verordnung 2016/679 (DSGVO) und Richtlinie 2002/58/EG (ePrivacy)",
     controllerTitle: "Verantwortlicher",
@@ -114,9 +114,9 @@ const dict: Record<Locale, TranslationData> = {
     badge: "EU-AVG 2016/679 · ePrivacy-richtlijn 2002/58/EG",
     bannerTitle: "Privacy & Cookiebeheer (AVG / ePrivacy-richtlijn)",
     bannerDesc: "Dit portaal gebruikt strikt noodzakelijke cookies voor paginawerking en taalvoorkeur. Optioneel gebruiken we prestatietelemetrie (Vercel) en sessie-analyse (Microsoft Clarity).",
-    accept: "Analytica Accepteren",
+    accept: "Accepteren & Doorgaan",
     decline: "Alleen Noodzakelijk",
-    details: "Voorkeuren & Juridisch",
+    details: "Aanpassen / Details",
     modalTitle: "Privacyverklaring & Cookiebeleid",
     modalSub: "Conform EU-verordening 2016/679 (AVG) en Richtlijn 2002/58/EG (ePrivacy)",
     controllerTitle: "Verwerkingsverantwoordelijke",
@@ -139,9 +139,9 @@ const dict: Record<Locale, TranslationData> = {
     badge: "RGPD (UE) 2016/679 · Directive ePrivacy 2002/58/CE",
     bannerTitle: "Gouvernance de la Confidentialité & Cookies (RGPD / ePrivacy)",
     bannerDesc: "Ce portail utilise des cookies techniques essentiels pour le fonctionnement et la mémorisation de votre langue. En option, nous utilisons la télémétrie (Vercel) et l'analytique (Microsoft Clarity).",
-    accept: "Accepter l'analytique",
+    accept: "Accepter & Continuer",
     decline: "Essentiels Uniquement",
-    details: "Préférences & Légal",
+    details: "Personnaliser / Détails",
     modalTitle: "Politique de Confidentialité et Déclaration relative aux Cookies",
     modalSub: "Conforme au Règlement (UE) 2016/679 (RGPD) et à la Directive 2002/58/CE (ePrivacy)",
     controllerTitle: "Responsable du Traitement",
@@ -164,9 +164,9 @@ const dict: Record<Locale, TranslationData> = {
     badge: "RGPD (UE) 2016/679 · Diretiva ePrivacy 2002/58/CE",
     bannerTitle: "Governança de Privacidade & Cookies (RGPD / Diretiva ePrivacy)",
     bannerDesc: "Este portal utiliza cookies técnicos essenciais para o funcionamento e memorização do seu idioma. Opcionalmente, utilizamos telemetria agregada (Vercel) e análise de sessão (Microsoft Clarity).",
-    accept: "Aceitar Analítica",
+    accept: "Aceitar e Continuar",
     decline: "Apenas Essenciais",
-    details: "Definições & Legal",
+    details: "Personalizar / Ver Detalhes",
     modalTitle: "Aviso de Privacidade e Declaração de Cookies",
     modalSub: "Em conformidade com o Regulamento (UE) 2016/679 (RGPD) e Diretiva 2002/58/CE (ePrivacy)",
     controllerTitle: "Responsável pelo Tratamento",
@@ -316,72 +316,63 @@ export default function CookieConsentBanner({ currentLocale }: CookieConsentBann
 
   return (
     <>
-      {/* 1. COMPLIANT FLOATING BANNER (Swiss Titanium Slate Theme) */}
-      {isBannerVisible && (
-        <aside
+      {/* 1. COMPLIANT CENTERED MODAL BANNER (Swiss Titanium Slate Theme) */}
+      {isBannerVisible && !isModalOpen && (
+        <div
           role="dialog"
+          aria-modal="true"
           aria-labelledby="cookie-banner-title"
           aria-describedby="cookie-banner-desc"
-          className="fixed bottom-4 left-4 right-4 sm:left-auto sm:right-6 sm:max-w-lg z-50 animate-in slide-in-from-bottom-5 duration-300"
+          className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6 bg-slate-950/70 backdrop-blur-xs animate-in fade-in duration-200"
         >
-          <div className="p-5 sm:p-6 rounded-2xl bg-[#051C2C]/98 border border-cyan-500/40 shadow-2xl shadow-cyan-950/60 backdrop-blur-xl text-slate-200 relative ring-1 ring-white/10">
-            <div className="flex items-start justify-between gap-3 mb-2.5">
-              <div className="flex items-center gap-2.5">
-                <div className="w-8 h-8 rounded-lg bg-cyan-950/90 border border-cyan-500/40 flex items-center justify-center text-cyan-400 shrink-0">
-                  <ShieldCheck className="w-4 h-4" />
-                </div>
-                <div>
-                  <span className="text-[9.5px] font-mono uppercase tracking-wider text-cyan-400 font-bold block">
-                    {t.badge}
-                  </span>
-                  <h2 id="cookie-banner-title" className="text-xs font-bold text-white tracking-wide uppercase">
-                    {t.bannerTitle}
-                  </h2>
-                </div>
+          <div className="w-full max-w-md sm:max-w-lg p-5 sm:p-6 rounded-2xl bg-[#051C2C] border border-cyan-500/40 shadow-2xl shadow-cyan-950/80 text-slate-200 relative ring-1 ring-white/10 space-y-4">
+            <div className="flex items-start gap-3">
+              <div className="w-10 h-10 rounded-xl bg-cyan-950/90 border border-cyan-500/40 flex items-center justify-center text-cyan-400 shrink-0">
+                <ShieldCheck className="w-5 h-5" />
               </div>
-              <button
-                onClick={handleDeclineAll}
-                className="text-slate-400 hover:text-white p-1 rounded transition-colors focus:outline-none focus:ring-1 focus:ring-cyan-400"
-                aria-label={t.decline}
-                title={t.decline}
-              >
-                <X className="w-4 h-4" />
-              </button>
+              <div className="min-w-0 flex-1">
+                <span className="text-[10px] font-mono uppercase tracking-wider text-cyan-400 font-bold block truncate">
+                  {t.badge}
+                </span>
+                <h2 id="cookie-banner-title" className="text-xs sm:text-sm font-bold text-white tracking-wide uppercase mt-0.5">
+                  {t.bannerTitle}
+                </h2>
+              </div>
             </div>
 
-            <p id="cookie-banner-desc" className="text-[11.5px] text-slate-300 leading-relaxed mb-4 text-justify">
+            <p id="cookie-banner-desc" className="text-xs text-slate-300 leading-relaxed text-left sm:text-justify">
               {t.bannerDesc}
             </p>
 
-            <div className="flex flex-wrap items-center justify-between gap-2.5 pt-2 border-t border-slate-700/60">
+            <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-3 pt-3 border-t border-slate-700/60">
               <button
                 type="button"
                 onClick={() => setIsModalOpen(true)}
-                className="text-[11px] font-mono text-cyan-400 hover:text-cyan-300 underline font-semibold flex items-center gap-1 transition-colors"
+                className="text-xs font-mono text-cyan-400 hover:text-cyan-300 underline font-semibold flex items-center justify-center sm:justify-start gap-1.5 transition-colors cursor-pointer py-1"
               >
-                <Cookie className="w-3.5 h-3.5" />
+                <Cookie className="w-3.5 h-3.5 shrink-0" />
                 <span>{t.details}</span>
               </button>
 
-              <div className="flex items-center gap-2 ml-auto">
+              <div className="flex items-center gap-2.5 sm:ml-auto">
                 <button
                   type="button"
                   onClick={handleDeclineAll}
-                  className="px-3.5 py-1.5 rounded-lg bg-slate-800/90 hover:bg-slate-700 border border-slate-600 text-slate-300 text-xs font-medium transition-all focus:outline-none focus:ring-1 focus:ring-slate-400"
+                  className="flex-1 sm:flex-initial px-4 py-2.5 rounded-xl bg-slate-800/90 hover:bg-slate-700 border border-slate-600 text-slate-300 text-xs font-semibold transition-all focus:outline-none focus:ring-1 focus:ring-slate-400 cursor-pointer"
                 >
                   {t.decline}
                 </button>
                 <button
                   type="button"
                   onClick={handleAcceptAll}
-                  className="px-4 py-1.5 rounded-lg bg-cyan-500 hover:bg-cyan-400 text-slate-950 text-xs font-bold uppercase tracking-wider transition-all shadow-md shadow-cyan-500/25 focus:outline-none focus:ring-2 focus:ring-cyan-300"
+                  className="flex-1 sm:flex-initial px-5 py-2.5 rounded-xl bg-gradient-to-r from-cyan-500 to-emerald-500 hover:from-cyan-400 hover:to-emerald-400 text-slate-950 text-xs font-bold uppercase tracking-wider transition-all shadow-lg shadow-cyan-500/25 focus:outline-none focus:ring-2 focus:ring-cyan-300 cursor-pointer"
                 >
                   {t.accept}
                 </button>
               </div>
             </div>
           </div>
-        </aside>
+        </div>
       )}
 
       {/* 2. INTERACTIVE GDPR & ePRIVACY DISCLOSURE MODAL */}
