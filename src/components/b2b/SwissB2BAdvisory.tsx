@@ -33,7 +33,8 @@ import {
   Menu,
   X,
   CheckCircle2,
-  Cookie
+  Cookie,
+  Scale
 } from 'lucide-react';
 import InfiniteBrandMarquee from '@/components/ui/InfiniteBrandMarquee';
 import { Locale } from '@/types';
@@ -373,6 +374,13 @@ export interface TranslationBundle {
   calc_rate_benchmark: string;
   calc_rate_min: string;
   calc_rate_max: string;
+  tooling_banner_pill: string;
+  calc_simulator_badge: string;
+  calc_slider_min_label: string;
+  calc_slider_std_label: string;
+  pillar_prefix: string;
+  footer_legal_link: string;
+  footer_trademark_disclaimer: string;
 }
 
 const TRANSLATIONS: Record<SupportedLanguage, TranslationBundle> = {
@@ -708,7 +716,14 @@ const TRANSLATIONS: Record<SupportedLanguage, TranslationBundle> = {
     "calc_rate_unit": "€/hr",
     "calc_rate_benchmark": "European Benchmark: €4,200/hr",
     "calc_rate_min": "Min: €1,000/hr",
-    "calc_rate_max": "Max: €12,000/hr (OEM Assembly)"
+    "calc_rate_max": "Max: €12,000/hr (OEM Assembly)",
+    "tooling_banner_pill": "ZERO SOFTWARE COST",
+    "calc_simulator_badge": "Dual-Variable Simulator",
+    "calc_slider_min_label": "Min: 2h",
+    "calc_slider_std_label": "Standard: 14h",
+    "pillar_prefix": "Pillar",
+    "footer_legal_link": "Legal, Trademark & Privacy Disclosures",
+    "footer_trademark_disclaimer": "All third-party trademarks, brand logos, and commercial designations (including ASML, VDL Nedcar, BMW, MINI, Maersk, Hapag-Lloyd, TÜV Nord, Zeiss, and Bosch) are the exclusive property of their respective holders. Displayed strictly under Nominative Fair Use (Art. 14 EU Reg 2017/1001) for professional factual identification. No commercial sponsorship or endorsement implied."
   },
   "es": {
     "status_ribbon": "CAPACIDAD Q4/Q1: 1 MANDATO DE ASESORÍA DISPONIBLE",
@@ -1042,7 +1057,14 @@ const TRANSLATIONS: Record<SupportedLanguage, TranslationBundle> = {
     "calc_rate_unit": "€/h",
     "calc_rate_benchmark": "Referencia Europea: 4.200 €/h",
     "calc_rate_min": "Mín: 1.000 €/h",
-    "calc_rate_max": "Máx: 12.000 €/h (Montaje OEM)"
+    "calc_rate_max": "Máx: 12.000 €/h (Montaje OEM)",
+    "tooling_banner_pill": "COSTE CERO DE SOFTWARE",
+    "calc_simulator_badge": "Simulador de Doble Variable",
+    "calc_slider_min_label": "Mín: 2h",
+    "calc_slider_std_label": "Estándar: 14h",
+    "pillar_prefix": "Pilar",
+    "footer_legal_link": "Aviso Legal, Marcas & Privacidad",
+    "footer_trademark_disclaimer": "Todas las marcas de terceros, logotipos y nombres comerciales (incluidos ASML, VDL Nedcar, BMW, MINI, Maersk, Hapag-Lloyd, TÜV Nord, Zeiss y Bosch) son propiedad exclusiva de sus respectivos titulares. Se exhiben exclusivamente bajo Uso Nominativo Legítimo (Art. 14 Reg. UE 2017/1001) con fines de identificación profesional veraz. No implican patrocinio ni respaldo societario."
   },
   "nl": {
     "status_ribbon": "Q4/Q1 BESCHIKBAARHEID: 1 ADVIESMANDAAT BESCHIKBAAR",
@@ -1376,7 +1398,14 @@ const TRANSLATIONS: Record<SupportedLanguage, TranslationBundle> = {
     "calc_rate_unit": "€/uur",
     "calc_rate_benchmark": "Europese Benchmark: €4.200/uur",
     "calc_rate_min": "Min: €1.000/uur",
-    "calc_rate_max": "Max: €12.000/uur (OEM Assemblage)"
+    "calc_rate_max": "Max: €12.000/uur (OEM Assemblage)",
+    "tooling_banner_pill": "NUL SOFTWAREKOSTEN",
+    "calc_simulator_badge": "Twee-Variabelen Simulator",
+    "calc_slider_min_label": "Min: 2u",
+    "calc_slider_std_label": "Standaard: 14u",
+    "pillar_prefix": "Pijler",
+    "footer_legal_link": "Juridische Informatie & Privacy",
+    "footer_trademark_disclaimer": "Alle handelsmerken, merklogo's en handelsnamen van derden (waaronder ASML, VDL Nedcar, BMW, MINI, Maersk, Hapag-Lloyd, TÜV Nord, Zeiss en Bosch) zijn het exclusieve eigendom van hun respectieve houders. Strikt weergegeven onder nominatief eerlijk gebruik (Art. 14 EU-Verordening 2017/1001). Geen enkele commerciële sponsoring of goedkeuring wordt geïmpliceerd."
   },
   "de": {
     "status_ribbon": "Q4/Q1 KAPAZITÄT: 1 BERATUNGSMANDAT VERFÜGBAR",
@@ -1710,7 +1739,14 @@ const TRANSLATIONS: Record<SupportedLanguage, TranslationBundle> = {
     "calc_rate_unit": "€/Std.",
     "calc_rate_benchmark": "Europäischer Benchmark: 4.200 €/Std.",
     "calc_rate_min": "Min: 1.000 €/Std.",
-    "calc_rate_max": "Max: 12.000 €/Std. (OEM-Montage)"
+    "calc_rate_max": "Max: 12.000 €/Std. (OEM-Montage)",
+    "tooling_banner_pill": "KEINE LIZENZKOSTEN",
+    "calc_simulator_badge": "Zwei-Variablen-Simulator",
+    "calc_slider_min_label": "Min: 2h",
+    "calc_slider_std_label": "Standard: 14h",
+    "pillar_prefix": "Säule",
+    "footer_legal_link": "Rechtliche Hinweise & Datenschutz",
+    "footer_trademark_disclaimer": "Alle Marken, Firmenlogos und Handelsnamen Dritter (u. a. ASML, VDL Nedcar, BMW, MINI, Maersk, Hapag-Lloyd, TÜV Nord, Zeiss und Bosch) sind das ausschließliche Eigentum der jeweiligen Inhaber. Die Darstellung erfolgt rein nominativ (Art. 14 EU-VO 2017/1001) zur wahrheitsgemäßen Darlegung beruflicher Stationen ohne geschäftliche Verbindung oder Sponsoring."
   },
   "fr": {
     "status_ribbon": "DISPONIBILITÉ T4/T1 : 1 MANDAT DE CONSEIL OUVERT",
@@ -2044,7 +2080,14 @@ const TRANSLATIONS: Record<SupportedLanguage, TranslationBundle> = {
     "calc_rate_unit": "€/h",
     "calc_rate_benchmark": "Référence Européenne : 4 200 €/h",
     "calc_rate_min": "Min : 1 000 €/h",
-    "calc_rate_max": "Max : 12 000 €/h (Montage OEM)"
+    "calc_rate_max": "Max : 12 000 €/h (Montage OEM)",
+    "tooling_banner_pill": "ZÉRO COÛT LOGICIEL",
+    "calc_simulator_badge": "Simulateur à Double Variable",
+    "calc_slider_min_label": "Min : 2h",
+    "calc_slider_std_label": "Standard : 14h",
+    "pillar_prefix": "Pilier",
+    "footer_legal_link": "Mentions Légales & Confidentialité",
+    "footer_trademark_disclaimer": "Toutes les marques de tiers, logos et dénominations commerciales (notamment ASML, VDL Nedcar, BMW, MINI, Maersk, Hapag-Lloyd, TÜV Nord, Zeiss et Bosch) sont la propriété exclusive de leurs titulaires respectifs. Présentées strictement au titre de l'usage nominatif loyal (Art. 14 Règlement UE 2017/1001) à des fins d'identification professionnelle factuelle. Aucun parrainage ni affiliation n'est impliqué."
   },
   "pt": {
     "status_ribbon": "DISPONIBILIDADE 4T/1T: 1 MANDATO DE CONSULTORIA ABERTO",
@@ -2378,7 +2421,14 @@ const TRANSLATIONS: Record<SupportedLanguage, TranslationBundle> = {
     "calc_rate_unit": "€/h",
     "calc_rate_benchmark": "Referência Europeia: €4.200/h",
     "calc_rate_min": "Mín: €1.000/h",
-    "calc_rate_max": "Máx: €12.000/h (Montagem OEM)"
+    "calc_rate_max": "Máx: €12.000/h (Montagem OEM)",
+    "tooling_banner_pill": "CUSTO ZERO DE SOFTWARE",
+    "calc_simulator_badge": "Simulador de Dupla Variável",
+    "calc_slider_min_label": "Mín: 2h",
+    "calc_slider_std_label": "Padrão: 14h",
+    "pillar_prefix": "Pilar",
+    "footer_legal_link": "Avisos Legais, Marcas & Privacidade",
+    "footer_trademark_disclaimer": "Todas as marcas de terceiros, logotipos e denominações comerciais (incluindo ASML, VDL Nedcar, BMW, MINI, Maersk, Hapag-Lloyd, TÜV Nord, Zeiss e Bosch) são propriedade exclusiva dos respetivos detentores. Exibidas estritamente sob Uso Nominativo Legítimo (Art. 14 Reg. UE 2017/1001) para fins de identificação profissional factual, sem qualquer patrocínio ou endosso comercial."
   }
 };
 
@@ -3097,7 +3147,7 @@ export default function SwissB2BAdvisory({
                 </div>
                 <div className="min-w-0">
                   <div className="flex items-center gap-2">
-                    <span className="text-[10px] font-mono font-bold text-[#0066CC] uppercase">Pillar 01</span>
+                    <span className="text-[10px] font-mono font-bold text-[#0066CC] uppercase">{t.pillar_prefix} 01</span>
                     <span className="text-[10px] font-mono text-slate-600 bg-slate-100 px-1.5 py-0.2 rounded">China & India</span>
                   </div>
                   <div className="text-xs sm:text-sm font-bold text-[#051C2C] truncate mt-0.5">{t.tab_p1_title}</div>
@@ -3125,7 +3175,7 @@ export default function SwissB2BAdvisory({
                 </div>
                 <div className="min-w-0">
                   <div className="flex items-center gap-2">
-                    <span className="text-[10px] font-mono font-bold text-[#0066CC] uppercase">Pillar 02</span>
+                    <span className="text-[10px] font-mono font-bold text-[#0066CC] uppercase">{t.pillar_prefix} 02</span>
                     <span className="text-[10px] font-mono text-slate-600 bg-slate-100 px-1.5 py-0.2 rounded">VDL Nedcar</span>
                   </div>
                   <div className="text-xs sm:text-sm font-bold text-[#051C2C] truncate mt-0.5">{t.tab_p2_title}</div>
@@ -3153,7 +3203,7 @@ export default function SwissB2BAdvisory({
                 </div>
                 <div className="min-w-0">
                   <div className="flex items-center gap-2">
-                    <span className="text-[10px] font-mono font-bold text-[#0066CC] uppercase">Pillar 03</span>
+                    <span className="text-[10px] font-mono font-bold text-[#0066CC] uppercase">{t.pillar_prefix} 03</span>
                     <span className="text-[10px] font-mono text-slate-600 bg-slate-100 px-1.5 py-0.2 rounded">Brainport</span>
                   </div>
                   <div className="text-xs sm:text-sm font-bold text-[#051C2C] truncate mt-0.5">{t.tab_p3_title}</div>
@@ -3589,7 +3639,7 @@ export default function SwissB2BAdvisory({
           <div className="p-4 bg-[#051C2C] text-slate-200 rounded-lg mb-8 flex flex-col md:flex-row items-start md:items-center justify-between gap-3 shadow-xs">
             <div className="flex items-center gap-2.5">
               <span className="inline-block px-2 py-0.5 rounded text-[10px] font-mono font-bold bg-emerald-500 text-[#051C2C] uppercase">
-                Zero Software Cost
+                {t.tooling_banner_pill}
               </span>
               <span className="text-xs font-semibold tracking-wide text-white">
                 {t.tooling_banner_badge}
@@ -3707,7 +3757,7 @@ export default function SwissB2BAdvisory({
                     {t.calc_badge}
                   </span>
                   <span className="text-xs font-mono text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded font-semibold border border-emerald-200">
-                    Dual-Variable Simulator
+                    {t.calc_simulator_badge}
                   </span>
                 </div>
                 <h3 className="mt-2 text-xl sm:text-2xl font-bold text-[#051C2C] tracking-tight">
@@ -3763,8 +3813,8 @@ export default function SwissB2BAdvisory({
                     aria-label={t.calc_slider_aria}
                   />
                   <div className="flex justify-between text-[11px] text-slate-500 font-mono">
-                    <span>Min: 2h</span>
-                    <span>Standard: 14h</span>
+                    <span>{t.calc_slider_min_label}</span>
+                    <span>{t.calc_slider_std_label}</span>
                     <span>Max: 50h ({t.calc_critical})</span>
                   </div>
                 </div>
@@ -4638,7 +4688,22 @@ export default function SwissB2BAdvisory({
             </div>
           </div>
 
-          {/* GDPR & COOKIE GOVERNANCE BAR */}
+          {/* NOMINATIVE FAIR USE & TRADEMARK DISCLAIMER NOTICE */}
+          <div className="pt-4 border-t border-slate-800/80 text-[11px] text-slate-400 leading-relaxed text-justify sm:text-left">
+            <p className="font-mono text-slate-400">
+              <strong className="text-slate-300 uppercase tracking-wider">
+                {lang === 'es' && 'Aviso de Marcas y Propiedad Intelectual: '}
+                {lang === 'en' && 'Trademark & Intellectual Property Notice: '}
+                {lang === 'de' && 'Marken- und Urheberrechtshinweis: '}
+                {lang === 'nl' && 'Kennisgeving van Merken & Intellectueel Eigendom: '}
+                {lang === 'fr' && 'Mention relative aux Marques et à la Propriété Intellectuelle : '}
+                {lang === 'pt' && 'Aviso de Marcas e Propriedade Intelectual: '}
+              </strong>
+              {t.footer_trademark_disclaimer}
+            </p>
+          </div>
+
+          {/* GDPR, COOKIE GOVERNANCE & LEGAL DOSSIER BAR */}
           <div className="pt-4 border-t border-slate-800/80 flex flex-col sm:flex-row items-center justify-between gap-3 text-[11px] text-slate-400">
             <div className="flex items-center gap-2 text-slate-400">
               <ShieldCheck className="w-3.5 h-3.5 text-cyan-400 shrink-0" />
@@ -4652,25 +4717,35 @@ export default function SwissB2BAdvisory({
               </span>
             </div>
 
-            <button
-              type="button"
-              onClick={() => {
-                if (typeof window !== 'undefined') {
-                  window.dispatchEvent(new CustomEvent('open-gdpr-modal', { detail: { lang } }));
-                }
-              }}
-              className="font-mono text-cyan-400 hover:text-cyan-300 underline font-semibold flex items-center gap-1.5 transition-colors focus:outline-none focus:ring-1 focus:ring-cyan-400 px-2.5 py-1 rounded bg-slate-900/80 border border-slate-700 hover:border-cyan-500/50"
-            >
-              <Cookie className="w-3.5 h-3.5 text-cyan-400" />
-              <span>
-                {lang === 'es' && 'Configuración de Privacidad & Cookies (RGPD)'}
-                {lang === 'en' && 'Privacy Settings & Cookie Disclosure (GDPR)'}
-                {lang === 'de' && 'Datenschutzeinstellungen & Cookies (DSGVO)'}
-                {lang === 'nl' && 'Privacy-instellingen & Cookies (AVG)'}
-                {lang === 'fr' && 'Paramètres de Confidentialité & Cookies (RGPD)'}
-                {lang === 'pt' && 'Definições de Privacidade & Cookies (RGPD)'}
-              </span>
-            </button>
+            <div className="flex flex-wrap items-center gap-3">
+              <a
+                href={`/${lang}/legal`}
+                className="font-mono text-cyan-400 hover:text-cyan-300 underline font-semibold flex items-center gap-1.5 transition-colors px-2.5 py-1 rounded bg-slate-900/80 border border-slate-700 hover:border-cyan-500/50"
+              >
+                <Scale className="w-3.5 h-3.5 text-cyan-400" />
+                <span>{t.footer_legal_link}</span>
+              </a>
+
+              <button
+                type="button"
+                onClick={() => {
+                  if (typeof window !== 'undefined') {
+                    window.dispatchEvent(new CustomEvent('open-gdpr-modal', { detail: { lang } }));
+                  }
+                }}
+                className="font-mono text-cyan-400 hover:text-cyan-300 underline font-semibold flex items-center gap-1.5 transition-colors focus:outline-none focus:ring-1 focus:ring-cyan-400 px-2.5 py-1 rounded bg-slate-900/80 border border-slate-700 hover:border-cyan-500/50"
+              >
+                <Cookie className="w-3.5 h-3.5 text-cyan-400" />
+                <span>
+                  {lang === 'es' && 'Configuración de Privacidad & Cookies (RGPD)'}
+                  {lang === 'en' && 'Privacy Settings & Cookie Disclosure (GDPR)'}
+                  {lang === 'de' && 'Datenschutzeinstellungen & Cookies (DSGVO)'}
+                  {lang === 'nl' && 'Privacy-instellingen & Cookies (AVG)'}
+                  {lang === 'fr' && 'Paramètres de Confidentialité & Cookies (RGPD)'}
+                  {lang === 'pt' && 'Definições de Privacidade & Cookies (RGPD)'}
+                </span>
+              </button>
+            </div>
           </div>
         </div>
       </footer>
