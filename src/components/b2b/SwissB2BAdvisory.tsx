@@ -4751,7 +4751,7 @@ export default function SwissB2BAdvisory({
       </footer>
 
       {/* 13. FLOATING WHATSAPP ACTION BUTTON (Direct Principal Channel) */}
-      <aside aria-label="Quick WhatsApp contact" className="fixed bottom-6 right-6 z-40 print:hidden">
+      <aside aria-label="Quick WhatsApp contact" className="fixed bottom-6 left-6 z-40 print:hidden">
         <a
           href={`https://wa.me/34661440045?text=${encodeURIComponent(whatsAppMessages[lang])}`}
           target="_blank"
