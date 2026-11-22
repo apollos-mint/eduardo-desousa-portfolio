@@ -8,7 +8,7 @@
 * **[RULE 001 - PURGED CREDENTIALS & FALSE CAPABILITIES]**: Eduardo de Sousa **DOES NOT** hold and **DOES NOT** perform:
   * ❌ **ISO 9001:2015 Quality Management System Auditor**
   * ❌ **VCA VOL (Safety for Operational Supervisors - Netherlands)**
-  * ❌ **ISO Class 5 / ISO 14644 Cleanroom Auditor, Certifier, or Implementer:** He worked *inside* an ISO Class 5 cleanroom doing electromechanical assembly. He is **NOT** an ISO 14644 auditor, certifier, or facility engineer. He **CANNOT** and **DOES NOT** walk into a facility to "enable", "build", or "certify" an ISO Class 5 cleanroom. NEVER offer or claim cleanroom engineering, auditing, commissioning, or certification services.
+  * ❌ **BANNED TOKENS (ZERO TOLERANCE):** "ISO Class 5", "ISO 14644", "EUV Compliance", "EUV Protocols", "Cleanroom Auditor / Engineer / Builder", "Cleanroom Assembly Protocols", "Cleanroom Particulate Governance". Eduardo is NOT an auditor, NOT a builder, and DOES NOT certify cleanrooms or ISO environments.
   * ❌ **Takt Time Doctor / Queue Theory Academic:** He is NOT a niche "Takt Time Doctor" or academic line-pacing theorist. Automotive shop-floor work was practical moving-line quality control, not a theoretical takt-consultancy.
   * *Status:* Explicitly designated by the user as hallucinations from past AI iterations. **NEVER** present, imply, or rely on these claims in any proposal, pitch, commercial offer, CV, or agent memory.
 
@@ -28,7 +28,10 @@
 ## 🏭 3. VERIFIED OPERATIONAL & COMMERCIAL TRACK RECORD
 * **[RULE 003 - DEMONSTRABLE TRACK RECORD]**:
   * **Global Sourcing & Supply Chain Direct (11/2024 – Present)**: $800,000 USD/year sourcing for building materials distributor (20 maritime containers/quarter), direct plant agreements in China & India (-75% cost desintermediation), PSI/CLI on-site inspection teams, 30% proforma / 70% BL contract structuring.
-  * **High-Tech Assembly Discipline (HQ Pack / Eindhoven)**: Electromechanical assembly and repair under ISO Class 5 cleanroom conditions, ISAH ERP traceability, TÜV winch refurbishment support. (Strictly as assembly/repair operator discipline, NOT cleanroom auditor or certifier).
+  * **Brainport Eindhoven / HQ Pack / Ecosistema ASML (MANDATORY FRAMING)**:
+    1. Término principal: "High-Tech Semiconductor Packaging Preparation & Electromechanical Sub-Assembly" (Embalaje y Preparación Técnica para Semiconductores).
+    2. Relación con ASML: "HQ Pack Tier 2/3 supplier in the ASML semiconductor lithography ecosystem".
+    3. Alcance técnico real: "Pre-cleanroom staging, TÜV hoisting winch recertification, wiring diagnostics, and ERP ISAH lot tracking prior to cleanroom entry".
   * **Automotive OEM (VDL Nedcar / Born)**: Multiplatform quality lines (110–120 BMW/MINI vehicles/shift), 8D, RCA, FMEA, -15% defect reduction.
   * **Logistics & Inventory (Arkcohogar / Valencia)**: 99.5% inventory accuracy, cyclical counting, route dispatch.
   * **Full-Stack Software Architecture**: OptiAsset CMMS (dual PostgreSQL/MSSQL architecture), Next.js, TypeScript, iPaaS automation (Make, Zapier).
@@ -39,8 +42,8 @@
 * **[RULE 004 - AUTHENTIC VALUE PROPOSITION // ZERO CARICATURES]**:
   * ❌ **FORBIDDEN CARICATURE:** NEVER frame Eduardo as a single-issue academic "Plant Downtime & Takt Time Doctor", nor as a cleanroom implementer who certifies facilities. That was an AI over-correction that caused impostor syndrome and erased 70% of his real skills.
   * ✅ **GROUNDED IDENTITY:** **Operations & Global Sourcing Specialist (Execution & Practical Systems)**.
-  * ✅ **THE 3 AUTHENTIC PILLARS (EQUAL WEIGHT):**
-    1. **Direct Global Sourcing & SCM**: China & India direct factory negotiations, cutting domestic broker markups (-75% BOM unit cost), managing 20 FCL containers/quarter ($800K/yr flow), deploying on-site inspection teams (PSI/CLI), 30/70 milestone contract gating.
-    2. **Operational Process & Quality Rigor**: Lean Six Sigma Black Belt (DMAIC), 8D root-cause problem solving, SOP standardization, scrap & defect reduction, backed by real shop-floor standards (ASML packaging assembly protocols and VDL Nedcar BMW moving line).
-    3. **Practical Operational Tech & CMMS**: Custom CMMS (OptiAsset), operational telemetry, automating manual administrative friction so plant and logistics teams stop double-keying data. Practical tools that solve real operational headaches.
+  * ✅ **THE 3 OFFICIAL SERVICE PILLARS:**
+    1. **Direct Factory Sourcing**: Desintermediación directa en China e India, -40% a -75% BOM, inspecciones presenciales PSI/CLI en origen, contratos 30/70 BL.
+    2. **Operational Quality & Shop-Floor Discipline**: Lean Six Sigma Black Belt, DMAIC, contención de defectos 8D, calibración dinamométrica digital, estandarización de SOPs.
+    3. **Operations Systems & CMMS**: OptiAsset CMMS (arquitectura dual PostgreSQL/MSSQL), trazabilidad de órdenes de trabajo, digitalización de reparaciones en planta.
 
