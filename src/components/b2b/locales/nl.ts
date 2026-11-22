@@ -341,22 +341,3 @@ export const nl: TranslationBundle = {
     "footer_legal_link": "Juridische Informatie & Privacy",
     "footer_trademark_disclaimer": "Alle handelsmerken, merklogo's en handelsnamen van derden (waaronder ASML, VDL Nedcar, BMW, MINI, Maersk, Hapag-Lloyd, TÜV Nord, Zeiss en Bosch) zijn het exclusieve eigendom van hun respectieve houders. Strikt weergegeven onder nominatief eerlijk gebruik (Art. 14 EU-Verordening 2017/1001). Geen enkele commerciële sponsoring of goedkeuring wordt geïmpliceerd."
 };
-
-export const procurementReview = {
-  "headline": "Bepaal of u moet heronderhandelen, overstappen of direct inkopen.",
-  "intro": "Een inkoopkostenanalyse voor industriële inkopers bij een prijsverhoging, contractverlenging of alternatieve offerte.",
-  "contact": "Vraag een gesprek van 20 minuten aan",
-  "experience": "Professionele ervaring",
-  "caseTitle": "Directe fabrieksinkoop in China en India",
-  "caseBody": "Beheerde een inkoopprogramma van $800.000 per jaar voor een bouwmaterialendistributeur, met 20 containers per kwartaal. Sloot directe fabriekscontracten, coördineerde inspecties bij de bron en structureerde 30/70-betalingen gekoppeld aan het cognossement.",
-  "profile": "Specialist in operations en internationale inkoop. Lean Six Sigma Black Belt met praktijkervaring in kwaliteitscontrole aan de productielijn bij VDL Nedcar.",
-  "scope": "Wat de analyse omvat",
-  "scopeBody": "Eén productfamilie, maximaal vijf artikelen. Lever de huidige prijzen, een vergelijkbare offerte en specificaties aan. U krijgt een bewerkbare vergelijking van totale kosten, inclusief vracht, minimale bestelhoeveelheid en inspectie, plus een gezamenlijk besproken advies.",
-  "timing": "Volledig op afstand · 10 werkdagen na ontvangst van alle gegevens",
-  "pricing": "€2.500 excl. btw · 50% bij aanvang, 50% bij oplevering",
-  "capabilities": "Overige expertise",
-  "quality": "Kwaliteit op de werkvloer, 8D en standaardwerk.",
-  "systems": "Digitalisering van onderhoud en traceerbare werkorders met OptiAsset CMMS.",
-  "privacy": "Privacy- en cookie-instellingen",
-  "example": "Rekenvoorbeeld. Een offerte van €9,00 komt na €1,30 aan vracht en inspectie uit op €10,30 per stuk. Bij vergelijkbare totale kosten van €10,00 is de huidige leverancier €0,30 per stuk voordeliger."
-};

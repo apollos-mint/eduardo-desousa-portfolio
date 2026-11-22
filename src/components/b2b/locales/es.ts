@@ -341,22 +341,3 @@ export const es: TranslationBundle = {
     "footer_legal_link": "Aviso Legal, Marcas & Privacidad",
     "footer_trademark_disclaimer": "Todas las marcas de terceros, logotipos y nombres comerciales (incluidos ASML, VDL Nedcar, BMW, MINI, Maersk, Hapag-Lloyd, TÜV Nord, Zeiss y Bosch) son propiedad exclusiva de sus respectivos titulares. Se exhiben exclusivamente bajo Uso Nominativo Legítimo (Art. 14 Reg. UE 2017/1001) con fines de identificación profesional veraz. No implican patrocinio ni respaldo societario."
 };
-
-export const procurementReview = {
-  "headline": "Decide si conviene renegociar, cambiar de proveedor o comprar directo.",
-  "intro": "Revisión del coste total de compra para fabricantes ante una subida de precio, una renovación o una cotización alternativa.",
-  "contact": "Solicitar una llamada de 20 minutos",
-  "experience": "Experiencia profesional seleccionada",
-  "caseTitle": "Compra directa en fábricas de China e India",
-  "caseBody": "Gestioné un programa de compras de 800.000 USD al año para un distribuidor de materiales de construcción, con 20 contenedores por trimestre. Negocié acuerdos directos, coordiné inspecciones en origen y estructuré pagos 30/70 vinculados al conocimiento de embarque.",
-  "profile": "Especialista en operaciones y compras internacionales. Lean Six Sigma Black Belt con experiencia práctica en calidad en línea móvil en VDL Nedcar.",
-  "scope": "Qué incluye la revisión",
-  "scopeBody": "Una familia de componentes, hasta cinco referencias. Aporta el precio vigente, una cotización comparable y las especificaciones. Recibe un comparador editable del coste puesto en destino, con flete, pedido mínimo e inspección, y una recomendación que revisamos juntos.",
-  "timing": "100 % remoto · 10 días laborables desde la recepción de los datos completos",
-  "pricing": "2.500 € sin IVA · 50 % al inicio y 50 % a la entrega",
-  "capabilities": "Otras capacidades",
-  "quality": "Calidad en planta, contención de defectos con 8D y trabajo estandarizado.",
-  "systems": "Digitalización de mantenimiento y trazabilidad de órdenes con OptiAsset CMMS.",
-  "privacy": "Privacidad y cookies",
-  "example": "Ejemplo ficticio. Una oferta de 9,00 € pasa a 10,30 € por unidad al añadir 1,30 € de flete e inspección. Con un coste comparable de 10,00 € puesto en destino, el proveedor actual cuesta 0,30 € menos por unidad."
-};

@@ -341,22 +341,3 @@ export const pt: TranslationBundle = {
     "footer_legal_link": "Avisos Legais, Marcas & Privacidade",
     "footer_trademark_disclaimer": "Todas as marcas de terceiros, logotipos e denominações comerciais (incluindo ASML, VDL Nedcar, BMW, MINI, Maersk, Hapag-Lloyd, TÜV Nord, Zeiss e Bosch) são propriedade exclusiva dos respetivos detentores. Exibidas estritamente sob Uso Nominativo Legítimo (Art. 14 Reg. UE 2017/1001) para fins de identificação profissional factual, sem qualquer patrocínio ou endosso comercial."
 };
-
-export const procurementReview = {
-  "headline": "Decida se deve renegociar, mudar de fornecedor ou comprar diretamente.",
-  "intro": "Uma análise do custo total para compradores industriais perante um aumento de preço, uma renovação ou uma proposta alternativa.",
-  "contact": "Pedir uma conversa de 20 minutos",
-  "experience": "Experiência profissional",
-  "caseTitle": "Compras diretas em fábricas na China e na Índia",
-  "caseBody": "Geri um programa de compras de 800.000 USD por ano para um distribuidor de materiais de construção, com 20 contentores por trimestre. Negociei acordos diretos, coordenei inspeções na origem e estruturei pagamentos 30/70 vinculados ao conhecimento de embarque.",
-  "profile": "Especialista em operações e compras internacionais. Lean Six Sigma Black Belt com experiência prática em controlo de qualidade na linha de montagem da VDL Nedcar.",
-  "scope": "O que inclui a análise",
-  "scopeBody": "Uma família de componentes, até cinco referências. Envie o preço atual, uma proposta comparável e as especificações. Receba uma comparação editável do custo no destino, incluindo frete, quantidade mínima e inspeção, e uma recomendação revista em conjunto.",
-  "timing": "100% remoto · 10 dias úteis após receção dos dados completos",
-  "pricing": "2.500 € sem IVA · 50% no início, 50% na entrega",
-  "capabilities": "Outras competências",
-  "quality": "Qualidade em fábrica, contenção de defeitos com 8D e trabalho normalizado.",
-  "systems": "Digitalização da manutenção e rastreabilidade de ordens de trabalho com OptiAsset CMMS.",
-  "privacy": "Privacidade e cookies",
-  "example": "Exemplo fictício. Uma proposta de 9,00 € passa a 10,30 € por unidade após acrescentar 1,30 € de frete e inspeção. Com um custo comparável no destino de 10,00 €, o fornecedor atual custa menos 0,30 € por unidade."
-};

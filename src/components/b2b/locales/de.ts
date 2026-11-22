@@ -341,22 +341,3 @@ export const de: TranslationBundle = {
     "footer_legal_link": "Rechtliche Hinweise & Datenschutz",
     "footer_trademark_disclaimer": "Alle Marken, Firmenlogos und Handelsnamen Dritter (u. a. ASML, VDL Nedcar, BMW, MINI, Maersk, Hapag-Lloyd, TÜV Nord, Zeiss und Bosch) sind das ausschließliche Eigentum der jeweiligen Inhaber. Die Darstellung erfolgt rein nominativ (Art. 14 EU-VO 2017/1001) zur wahrheitsgemäßen Darlegung beruflicher Stationen ohne geschäftliche Verbindung oder Sponsoring."
 };
-
-export const procurementReview = {
-  "headline": "Entscheiden Sie, ob sich Nachverhandeln, ein Lieferantenwechsel oder Direkteinkauf lohnt.",
-  "intro": "Eine Gesamtkostenanalyse für den industriellen Einkauf bei Preiserhöhung, Vertragsverlängerung oder Alternativangebot.",
-  "contact": "20-minütiges Gespräch anfragen",
-  "experience": "Ausgewählte Berufserfahrung",
-  "caseTitle": "Direkteinkauf bei Herstellern in China und Indien",
-  "caseBody": "Betreute für einen Baustoffhändler ein Einkaufsprogramm über 800.000 USD pro Jahr mit 20 Containern pro Quartal. Vereinbarte direkte Werksverträge, koordinierte Inspektionen vor Ort und strukturierte 30/70-Zahlungen mit Bezug zum Konnossement.",
-  "profile": "Spezialist für industrielle Abläufe und internationalen Einkauf. Lean Six Sigma Black Belt mit Praxiserfahrung in der Qualitätskontrolle an der Montagelinie bei VDL Nedcar.",
-  "scope": "Leistungsumfang",
-  "scopeBody": "Eine Teilefamilie, bis zu fünf Artikel. Sie stellen aktuelle Preise, ein vergleichbares Angebot und Spezifikationen bereit. Sie erhalten einen editierbaren Gesamtkostenvergleich inklusive Fracht, Mindestbestellmenge und Inspektion sowie eine gemeinsam besprochene Empfehlung.",
-  "timing": "Vollständig remote · 10 Arbeitstage ab Eingang aller Daten",
-  "pricing": "2.500 € zzgl. MwSt. · 50 % zu Beginn, 50 % bei Lieferung",
-  "capabilities": "Weitere Leistungen",
-  "quality": "Qualität in der Fertigung, 8D-Fehlerbehebung und standardisierte Arbeitsabläufe.",
-  "systems": "Digitalisierung der Instandhaltung und Rückverfolgbarkeit von Arbeitsaufträgen mit OptiAsset CMMS.",
-  "privacy": "Datenschutz und Cookie-Einstellungen",
-  "example": "Rechenbeispiel. Ein Angebot von 9,00 € steigt nach 1,30 € für Fracht und Inspektion auf 10,30 € pro Stück. Bei vergleichbaren Gesamtkosten von 10,00 € ist der bisherige Lieferant pro Stück 0,30 € günstiger."
-};
