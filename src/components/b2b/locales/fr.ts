@@ -341,3 +341,22 @@ export const fr: TranslationBundle = {
     "footer_legal_link": "Mentions Légales & Confidentialité",
     "footer_trademark_disclaimer": "Toutes les marques de tiers, logos et dénominations commerciales (notamment ASML, VDL Nedcar, BMW, MINI, Maersk, Hapag-Lloyd, TÜV Nord, Zeiss et Bosch) sont la propriété exclusive de leurs titulaires respectifs. Présentées strictement au titre de l'usage nominatif loyal (Art. 14 Règlement UE 2017/1001) à des fins d'identification professionnelle factuelle. Aucun parrainage ni affiliation n'est impliqué."
 };
+
+export const procurementReview = {
+  "headline": "Décidez s’il faut renégocier, changer de fournisseur ou acheter en direct.",
+  "intro": "Une analyse du coût complet pour les acheteurs industriels confrontés à une hausse de prix, un renouvellement ou une offre alternative.",
+  "contact": "Demander un échange de 20 minutes",
+  "experience": "Expérience professionnelle",
+  "caseTitle": "Achats directs en usine en Chine et en Inde",
+  "caseBody": "J’ai piloté un programme d’achats de 800 000 USD par an pour un distributeur de matériaux de construction, à raison de 20 conteneurs par trimestre. J’ai négocié des accords directs, coordonné les inspections à la source et structuré des paiements 30/70 liés au connaissement.",
+  "profile": "Spécialiste des opérations et des achats internationaux. Lean Six Sigma Black Belt avec une expérience de terrain en contrôle qualité sur ligne chez VDL Nedcar.",
+  "scope": "Ce que comprend l’analyse",
+  "scopeBody": "Une famille de composants, cinq références au maximum. Fournissez le prix actuel, une offre comparable et les spécifications. Vous recevez un comparatif modifiable du coût rendu, incluant le fret, le minimum de commande et l’inspection, ainsi qu’une recommandation discutée ensemble.",
+  "timing": "Entièrement à distance · 10 jours ouvrés après réception des données complètes",
+  "pricing": "2 500 € HT · 50 % au démarrage, 50 % à la livraison",
+  "capabilities": "Autres compétences",
+  "quality": "Qualité en atelier, confinement des défauts avec la méthode 8D et travail standardisé.",
+  "systems": "Numérisation de la maintenance et traçabilité des ordres de travail avec OptiAsset CMMS.",
+  "privacy": "Confidentialité et cookies",
+  "example": "Exemple fictif. Une offre de 9,00 € atteint 10,30 € par pièce après ajout de 1,30 € de fret et d’inspection. Avec un coût rendu comparable de 10,00 €, le fournisseur actuel coûte 0,30 € de moins par pièce."
+};

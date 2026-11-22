@@ -341,3 +341,22 @@ export const en: TranslationBundle = {
     "footer_legal_link": "Legal, Trademark & Privacy Disclosures",
     "footer_trademark_disclaimer": "All third-party trademarks, brand logos, and commercial designations (including ASML, VDL Nedcar, BMW, MINI, Maersk, Hapag-Lloyd, TÜV Nord, Zeiss, and Bosch) are the exclusive property of their respective holders. Displayed strictly under Nominative Fair Use (Art. 14 EU Reg 2017/1001) for professional factual identification. No commercial sponsorship or endorsement implied."
 };
+
+export const procurementReview = {
+  "headline": "Know whether to renegotiate, switch suppliers, or buy direct.",
+  "intro": "A landed-cost review for industrial buyers facing a price increase, a supplier renewal, or an alternative quote.",
+  "contact": "Request a 20-minute call",
+  "experience": "Selected professional experience",
+  "caseTitle": "Direct factory sourcing in China and India",
+  "caseBody": "Managed a sourcing programme of $800,000 a year for a building-materials distributor, covering 20 containers per quarter. Set up direct factory agreements, coordinated inspections at origin and structured 30/70 payment terms tied to the bill of lading.",
+  "profile": "Operations and global sourcing specialist. Lean Six Sigma Black Belt with hands-on moving-line quality experience at VDL Nedcar.",
+  "scope": "What the review includes",
+  "scopeBody": "One component family, up to five references. Bring your current pricing, a comparable quote and the relevant specifications. Receive an editable comparison of landed cost, including freight, order minimums and inspection, plus a recommendation reviewed together.",
+  "timing": "Fully remote · 10 business days from receipt of complete data",
+  "pricing": "€2,500 excl. VAT · 50% at kickoff, 50% on delivery",
+  "capabilities": "Additional capabilities",
+  "quality": "Shop-floor quality, 8D defect containment and standard work.",
+  "systems": "Maintenance digitisation and work-order traceability with OptiAsset CMMS.",
+  "privacy": "Privacy and cookie settings",
+  "example": "Illustrative example. A €9.00 quote becomes €10.30 per unit after €1.30 in freight and inspection. At a comparable €10.00 landed cost, the current supplier is €0.30 cheaper per unit."
+};
