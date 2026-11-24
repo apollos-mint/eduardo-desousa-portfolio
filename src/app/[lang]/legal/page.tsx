@@ -165,8 +165,8 @@ const legalContent: Record<Locale, LegalContent> = {
         "Cleanroom optical tolerances (<0.1 µm): Normalized approximation demonstrating precision assembly protocols.",
         "Automotive OEM cadence (110–120 units/shift): Scaled representation of high-speed moving line throughput.",
         "Quality defect reduction (15%): Representative magnitude of DMAIC and 8D defect eradication.",
-        "Procurement landed-cost optimization (-75% / $800,000 USD/yr): Normalized figures illustrating direct factory homologation impact.",
-        "Maritime freight dispatch (20 containers/quarter): Approximate volume representation for intercontinental containerized shipping."
+        "Procurement landed-cost optimization (-40% to -75% BOM): Normalized figures illustrating direct factory homologation impact.",
+        "Maritime freight dispatch (Full Container Load / FCL): Approximate volume representation for intercontinental containerized shipping."
       ],
       "cleanroomTitle": "3. Strict Professional Engineering Demarcation & Cleanroom Assembly Ground Truth",
       "cleanroomSubtitle": "Absence of ISO 14644 auditor or certification body services",
@@ -301,8 +301,8 @@ const legalContent: Record<Locale, LegalContent> = {
         "Tolerancias ópticas de sala blanca (<0.1 µm): Aproximación representativa de protocolos de precisión sin desvelar tolerancias de clientes.",
         "Cadencia automotriz OEM (110–120 unidades/turno): Representación normalizada del ritmo de línea de montaje.",
         "Reducción de defectos de calidad (15%): Magnitud ilustrativa de erradicación mediante DMAIC y 8D.",
-        "Optimización de compras (75% / $800.000 USD/año): Cifras normalizadas que demuestran el impacto de la desintermediación en fábrica.",
-        "Flete marítimo (20 contenedores/trimestre): Representación aproximada del volumen de expedición intercontinental."
+        "Optimización de costes de adquisición (-40% a -75% BOM): Cifras normalizadas que demuestran el impacto de la desintermediación directa en fábrica.",
+        "Despacho de flete marítimo (Contenedores completos FCL): Representación aproximada del volumen de expedición intercontinental."
       ],
       "cleanroomTitle": "3. Delimitación Estricta de Competencias Técnicas y Salas Blancas (Ground Truth)",
       "cleanroomSubtitle": "Ausencia de servicios de auditoría, comisionamiento o certificación ISO 14644",
@@ -437,8 +437,8 @@ const legalContent: Record<Locale, LegalContent> = {
         "Cleanroom optische toleranties (<0.1 µm): Genormaliseerde weergave van precisie-assemblageprotocollen.",
         "Automotive OEM doorvoer (110–120 eenheden/ploeg): Geschaalde weergave van productielijncadans.",
         "Kwaliteitsverbetering (15% defectreductie): Representatieve omvang van DMAIC en 8D probleemoplossing.",
-        "Inkoopoptimalisatie (-75% / $800.000 USD/jaar): Genormaliseerde waarden ter illustratie van directe fabriekshomologatie.",
-        "Zeevrachtlogistiek (20 containers/kwartaal): Benadering van intercontinentaal vrachtvolume."
+        "Inkoopkostenoptimalisatie (-40% tot -75% BOM): Genormaliseerde waarden ter illustratie van directe fabriekshomologatie en disintermediatie.",
+        "Zeevrachtlogistiek (Volle containers FCL): Benadering van intercontinentaal vrachtvolume."
       ],
       "cleanroomTitle": "3. Strikte Beroepsafbakening & Cleanroompraktijk (Ground Truth)",
       "cleanroomSubtitle": "Geen ISO 14644 lead auditor-, certificerings- of installatiebouwactiviteiten",
@@ -573,8 +573,8 @@ const legalContent: Record<Locale, LegalContent> = {
         "Reinraum-Toleranzen (<0.1 µm): Bereinigte Näherung zur Demonstration präziser Montageprotokolle.",
         "Automobil-OEM-Takt (110–120 Einheiten/Schicht): Skalierte Darstellung des Produktionsflusses.",
         "Fehlerreduktion (15%): Repräsentative Dimension systematischer DMAIC- und 8D-Beseitigung.",
-        "Einkaufsoptimierung (-75% / 800.000 USD/Jahr): Normalisierte Zahlen zum Nachweis direkter Werksverhandlungen.",
-        "Seefracht (20 Container/Quartal): Annäherung interkontinentaler Containerversandvolumina."
+        "Einkaufsoptimierung (-40% bis -75% BOM): Normalisierte Zahlen zum Nachweis direkter Werksverhandlungen und Disintermediation.",
+        "Seefracht (Vollcontainer FCL): Annäherung interkontinentaler Containerversandvolumina."
       ],
       "cleanroomTitle": "3. Strikte fachliche Abgrenzung & Reinraum-Praxis (Ground Truth)",
       "cleanroomSubtitle": "Keine Tätigkeiten als ISO 14644 Auditor, Zertifizierer oder Reinraumbauer",
@@ -709,8 +709,8 @@ const legalContent: Record<Locale, LegalContent> = {
         "Tolérances optiques en salle blanche (<0.1 µm) : Approximation illustrant la rigueur d'assemblage de précision.",
         "Cadence automobile OEM (110–120 unités/poste) : Représentation normalisée du flux de production en chaîne continue.",
         "Éradication des défauts (15%) : Ampleur représentative des démarches DMAIC et 8D.",
-        "Optimisation des coûts d'achat (-75% / 800 000 USD/an) : Chiffres normalisés illustrant l'impact du sourcing direct en usine.",
-        "Fret maritime (20 conteneurs/trimestre) : Estimation illustrative de volume de transport international."
+        "Optimisation des coûts d'approvisionnement (-40% à -75% BOM) : Chiffres normalisés illustrant l'impact du sourcing direct en usine et de la désintermédiation.",
+        "Fret maritime (Conteneurs complets FCL) : Estimation illustrative de volume de transport maritime international."
       ],
       "cleanroomTitle": "3. Délimitation Professionnelle Stricte & Réalité des Salles Blanches (Ground Truth)",
       "cleanroomSubtitle": "Absence d'activité d'auditeur principal, d'organisme certificateur ou de constructeur ISO 14644",
@@ -845,8 +845,8 @@ const legalContent: Record<Locale, LegalContent> = {
         "Tolerâncias ópticas em sala limpa (<0.1 µm): Aproximação representativa de protocolos de alta precisão.",
         "Cadência automóvel OEM (110–120 unidades/turno): Representação normalizada de fluxo produtivo em linha móvel.",
         "Redução de defeitos (15%): Dimensão ilustrativa de resolução de problemas via DMAIC e 8D.",
-        "Otimização em compras (-75% / 800.000 USD/ano): Valores representativos do impacto da homologação direta em fábrica.",
-        "Frete marítimo (20 contentores/trimestre): Estimativa ilustrativa do volume expedido em rotas internacionais."
+        "Otimização de custos de aquisição (-40% a -75% BOM): Valores representativos do impacto da homologação direta em fábrica e desintermediação comercial.",
+        "Frete marítimo (Contentores cheios FCL): Estimativa ilustrativa do volume expedido em rotas transcontinentais."
       ],
       "cleanroomTitle": "3. Delimitação Rigorosa de Competências Técnicas & Salas Limpas (Ground Truth)",
       "cleanroomSubtitle": "Ausência de serviços de auditoria, comissionamento ou certificação ISO 14644",

@@ -124,7 +124,7 @@ export default function ExperienceSection({
                       href={`/${currentLocale}/experience/${primaryExp.id}`}
                       className="px-3.5 py-1.5 rounded-xl bg-emerald-50 dark:bg-emerald-950/80 border border-emerald-500/40 hover:border-emerald-400 font-mono text-xs font-bold text-emerald-800 dark:text-emerald-300 shadow-sm whitespace-nowrap transition-all duration-200 hover:scale-105 hover:bg-emerald-100 dark:hover:bg-emerald-900/90 cursor-pointer"
                     >
-                      ✓ {cvData.common.achievement3 || '$800K/yr · 20 Cont/Quarter'}
+                      ✓ {cvData.common.achievement3 || '-75% BOM · Direct Factory Sourcing'}
                     </Link>
                     <Link
                       href={`/${currentLocale}/experience/${primaryExp.id}`}
@@ -197,7 +197,7 @@ export default function ExperienceSection({
               const cardNumber = String(index + 2).padStart(2, '0');
               const Icon = exp.id === 'hq-pack' ? Cpu : ShieldCheck;
               const achievement = exp.id === 'hq-pack'
-                ? (cvData.common.achievement1 || 'ISO Class 5 Spec <0.1µm & 150+ ISAH Orders/mo')
+                ? (cvData.common.achievement1 || 'HQ Pack ASML Packaging & 150+ ISAH Orders/mo')
                 : (cvData.common.achievement2 || 'Cadence: 110-120 Cars/Shift & -15% Defect Rate');
               const companies = exp.id === 'hq-pack'
                 ? ['HQPACK', 'ASML', 'ZEISS', 'FRENCKEN', 'NEWAYS', 'TÜV']

@@ -27,7 +27,7 @@
 
 ## 🏭 3. VERIFIED OPERATIONAL & COMMERCIAL TRACK RECORD
 * **[RULE 003 - DEMONSTRABLE TRACK RECORD]**:
-  * **Global Sourcing & Supply Chain Direct (11/2024 – Present)**: $800,000 USD/year sourcing for building materials distributor (20 maritime containers/quarter), direct plant agreements in China & India (-75% cost desintermediation), PSI/CLI on-site inspection teams, 30% proforma / 70% BL contract structuring.
+  * **Direct Factory Sourcing & Supply Chain Disintermediation (11/2024 – Present)**: Sourcing directo para distribuidor de materiales de construcción con fletes transcontinentales FCL 40ft HC, acuerdos directos de planta en China e India (-40% a -75% BOM), equipos de inspección presencial PSI/CLI en origen, contratos 30% proforma / 70% BL.
   * **Brainport Eindhoven / HQ Pack / Ecosistema ASML (MANDATORY FRAMING)**:
     1. Término principal: "High-Tech Semiconductor Packaging Preparation & Electromechanical Sub-Assembly" (Embalaje y Preparación Técnica para Semiconductores).
     2. Relación con ASML: "HQ Pack Tier 2/3 supplier in the ASML semiconductor lithography ecosystem".

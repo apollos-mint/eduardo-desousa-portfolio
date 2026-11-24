@@ -2,9 +2,9 @@
 // Aesthetic: Executive Management Consulting (McKinsey & Company / Deloitte Advisory / Palantir Enterprise Precision)
 // Clean architectural white canvas, McKinsey Midnight Navy (#051C2C), Corporate Blue (#0066CC), and subtle Deloitte Green (#16A34A)
 // 100% Grounded in Eduardo de Sousa's authentic operational track record:
-// - Global Sourcing ($800K/yr, 20 containers/quarter from China & India, -75% cost savings)
+// - Direct Factory Sourcing (China & India factory-gate agreements, -75% BOM, FCL logistics)
 // - Automotive OEM moving line cadence (VDL Nedcar: BMW Group & MINI Cooper, 110-120 cars/shift, digital torque wrenches, -15% defects)
-// - High-Tech Cleanroom Electromechanical Assembly (HQ Pack: ASML lithography packaging, ISO Class 5, TÜV winch recertification)
+// - High-Tech Semiconductor Packaging Preparation & Electromechanical Sub-Assembly (HQ Pack: ASML lithography packaging, pre-cleanroom staging, TÜV winch recertification)
 // - OptiAsset CMMS dual-DB sync (PostgreSQL + MSSQL) & iPaaS workflow automation (Make, Zapier, Asana)
 // - Verified credentials: Lean Six Sigma Black Belt (DMAIC), Operations Bachelor Degree, LMU Munich Strategic Supply Chain
 // ZERO unverified credentials (no ISO 9001 Lead Auditor, no VCA-VOL)
@@ -833,7 +833,7 @@ export default function SwissB2BAdvisory({
                     <div className="absolute inset-0 bg-gradient-to-t from-[#051C2C]/90 via-[#051C2C]/30 to-transparent" />
                     <div className="absolute top-3 left-3">
                       <span className="inline-flex items-center px-2 py-0.5 rounded text-[10px] font-mono font-bold bg-[#051C2C]/90 text-white backdrop-blur-xs border border-white/20">
-                        [ 20 TEU / QTR • FACTORY GATE ]
+                        [ TRANSCONTINENTAL FCL • FACTORY GATE ]
                       </span>
                     </div>
                     <div className="absolute top-3 right-3">

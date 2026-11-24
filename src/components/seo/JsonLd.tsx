@@ -67,7 +67,7 @@ export default function JsonLd({ lang }: JsonLdProps) {
           'Modular Housing Manufacturing',
           'Almussafes Industrial Corridor Operations',
           'Lean Six Sigma Black Belt (DMAIC)',
-          'High-Tech Packaging Assembly (ISO Class 5 Cleanroom Environment)',
+          'High-Tech Semiconductor Packaging Preparation & Electromechanical Sub-Assembly',
           'Automotive OEM Moving Line Assembly (VDL Nedcar / BMW / MINI)',
           '8D Root Cause Problem Solving & Quality Systems',
           'ISAH ERP System Governance',
@@ -156,7 +156,7 @@ export default function JsonLd({ lang }: JsonLdProps) {
               '@id': `${BASE_URL}/#offer-fractional`,
               name: 'Fractional Direct Sourcing & Systems Director',
               description:
-                'Ongoing executive steering (2 days/week equivalent, async-first). International factory-gate negotiations in Asia/LatAm ($800K/yr scale, up to -75% cost savings), CMMS governance, and ERP integration.',
+                'Ongoing executive steering (2 days/week equivalent, async-first). Transcontinental factory-gate negotiations in Asia/LatAm (-40% to -75% BOM cost reduction), FCL logistics governance, CMMS architecture, and ERP integration.',
               price: '8500.00',
               priceCurrency: 'EUR',
               priceSpecification: {
@@ -210,7 +210,7 @@ export default function JsonLd({ lang }: JsonLdProps) {
             name: 'What is Eduardo de Sousa’s track record in automotive assembly and high-tech cleanrooms?',
             acceptedAnswer: {
               '@type': 'Answer',
-              text: 'Eduardo inspected moving-line assembly at VDL Nedcar (110–120 BMW and MINI Cooper vehicles/shift), resolving torque calibration and electrical defects (-15% defect reduction). In the Brainport Eindhoven semiconductor ecosystem (HQ Pack / KMWE), he led electromechanical assembly of ASML lithography packaging under ISO Class 5 cleanroom conditions and TÜV winch refurbishments.',
+              text: 'Eduardo inspected moving-line assembly at VDL Nedcar (110–120 BMW and MINI Cooper vehicles/shift), resolving torque calibration and electrical defects (-15% defect reduction). In the Brainport Eindhoven semiconductor ecosystem (HQ Pack Tier 2/3 supplier in the ASML semiconductor lithography ecosystem), he performed pre-cleanroom packaging preparation, electromechanical sub-assembly, TÜV hoisting winch recertification, and ISAH ERP lot tracking prior to cleanroom entry.',
             },
           },
           {
@@ -218,7 +218,7 @@ export default function JsonLd({ lang }: JsonLdProps) {
             name: 'How does factory-gate procurement disintermediate conventional supply chains?',
             acceptedAnswer: {
               '@type': 'Answer',
-              text: 'By bypassing domestic trading intermediaries and sourcing directly from ISO-certified manufacturers in China and India ($800K/year, 20 containers/quarter), deploying bilingual on-site engineering inspection teams (PSI/CLI), and securing factory-gate container pricing, clients eliminate 30% to 75% in middleman markup.',
+              text: 'By bypassing domestic trading intermediaries and sourcing directly from ISO-certified manufacturers in China and India, deploying bilingual on-site engineering inspection teams (PSI/CLI), and securing factory-gate container pricing with full-container-load (FCL) maritime freight governance, clients eliminate 30% to 75% in middleman markup.',
             },
           },
         ],

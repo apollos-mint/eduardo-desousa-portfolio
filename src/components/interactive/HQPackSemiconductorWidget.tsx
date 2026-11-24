@@ -26,14 +26,14 @@ export default function HQPackSemiconductorWidget({ currentLocale }: HQPackSemic
   const [particleCounter, setParticleCounter] = useState<number>(0);
 
   const partners = [
-    { id: 'ASML', name: 'ASML', tag: 'EUV/DUV Lithography Systems', spec: 'ISO Class 5 Spec <0.1µm', status: 'Certified Tier-1' },
+    { id: 'ASML', name: 'ASML', tag: 'Lithography Supply Chain', spec: 'Tier 2/3 Supplier Spec', status: 'Active Supplier' },
     { id: 'ZEISS', name: 'Zeiss', tag: 'High-NA Mirror Arrays', spec: 'Sub-nanometer Interferometry', status: 'Calibrated' },
     { id: 'TUV', name: 'TÜV Rheinland', tag: 'Audit & Compliance Certification', spec: '100% Traceability Verified', status: 'Audit Passed' },
-    { id: 'ISO14644', name: 'ISO 14644', tag: 'Cleanroom Particulate Protocol', spec: 'Class 5 Particle Spec <0.1µm', status: 'Active Spec' },
+    { id: 'PRECLEANROOM', name: 'Pre-Staging', tag: 'Module Packaging Prep', spec: 'Pre-Cleanroom Staging Spec', status: 'Active Spec' },
     { id: 'ISAH', name: 'ERP ISAH', tag: 'Data Governance & Work Orders', spec: '150+ Monthly Logging', status: 'Traceable' },
-    { id: 'NEWAYS', name: 'Neways', tag: 'Cleanroom PCBA Electronics', spec: 'ESD Grounding Shield', status: 'Active' },
+    { id: 'NEWAYS', name: 'Neways', tag: 'PCBA Electronics Sub-Assembly', spec: 'ESD Grounding Shield', status: 'Active' },
     { id: 'FRENCKEN', name: 'Frencken', tag: 'High-Precision Mechatronics', spec: 'Sub-micron Tolerance', status: 'Validated' },
-    { id: 'VDL', name: 'VDL', tag: 'Automated Carrier Frames', spec: 'Cleanroom Grade Aluminum', status: 'Active' },
+    { id: 'VDL', name: 'VDL', tag: 'Automated Carrier Frames', spec: 'High-Grade Precision Aluminum', status: 'Active' },
   ];
 
   const hotspots = [
@@ -41,13 +41,13 @@ export default function HQPackSemiconductorWidget({ currentLocale }: HQPackSemic
       id: 'optics',
       name: '01. EUV / DUV Lithography Optics Seal',
       partner: 'ASML & Zeiss Optic Modules',
-      spec: 'ISO Class 5 Cleanroom & Zero Outgassing',
+      spec: 'Hermetic Packaging & Zero Outgassing',
       telemetry: 'Nitrogen purging chamber pass with laser particle counter inspection <0.1µm.',
     },
     {
       id: 'purge',
       name: '02. Hermetic Pressure & Nitrogen Chamber',
-      partner: 'ISO 14644 & TÜV Rheinland Standards',
+      partner: 'TÜV Rheinland & Quality Standards',
       spec: 'Leak Rate < 1x10^-9 mbar*l/s',
       telemetry: 'Hermetic barrier verification under vacuum and shock damping protocol.',
     },
@@ -90,10 +90,10 @@ export default function HQPackSemiconductorWidget({ currentLocale }: HQPackSemic
           </div>
           <div className="min-w-0">
             <div className="text-xs font-mono font-bold text-cyan-400 dark:text-cyan-400 light:text-cyan-700 tracking-wider truncate">
-              SEMICONDUCTOR CLEANROOM PACKAGING TELEMETRY // ASML ECOSYSTEM
+              SEMICONDUCTOR PACKAGING PREPARATION // ASML ECOSYSTEM
             </div>
             <div className="text-[11px] text-slate-500 dark:text-slate-400 light:text-slate-600 truncate">
-              Brainport Eindhoven &bull; HQ Pack ISO Class 5 Specification
+              Brainport Eindhoven &bull; HQ Pack Tier 2/3 Supplier Specification
             </div>
           </div>
         </div>

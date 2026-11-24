@@ -140,18 +140,18 @@ export default async function ExperienceDetailPage({
                   <CheckCircle2 className="w-3 h-3 text-emerald-400 light:text-emerald-700 shrink-0" />
                   <span>
                     {isEs
-                      ? '$800,000 USD Gestión Anual de Compras'
+                      ? 'Sourcing Directo Transcontinental (-75% BOM)'
                       : isPt
-                      ? '$800,000 USD Aquisições Anuais Geridas'
-                      : '$800,000 USD Annual Spend Sourced'}
+                      ? 'Sourcing Direto Transcontinental (-75% BOM)'
+                      : 'Transcontinental Direct Sourcing (-75% BOM)'}
                   </span>
                 </span>
                 <span className="px-2.5 py-1 rounded-lg bg-cyan-950 dark:bg-cyan-950 light:bg-cyan-100 border border-cyan-500/60 light:border-cyan-400 text-[11px] font-mono font-bold text-cyan-300 light:text-cyan-950 shadow-sm flex items-center gap-1.5">
                   <CheckCircle2 className="w-3 h-3 text-cyan-400 light:text-cyan-700 shrink-0" />
                   <span>
                     {isEs || isPt
-                      ? "20 Cont/Trimestre (40' High Cube FCL)"
-                      : "20 Cont/Quarter (40' High Cube FCL)"}
+                      ? "Logística Marítima FCL (40' High Cube)"
+                      : "FCL Maritime Freight (40' High Cube)"}
                   </span>
                 </span>
                 <span className="px-2.5 py-1 rounded-lg bg-indigo-950 dark:bg-indigo-950 light:bg-indigo-100 border border-indigo-500/60 light:border-indigo-400 text-[11px] font-mono font-bold text-indigo-200 light:text-indigo-950 shadow-sm flex items-center gap-1.5">
@@ -235,10 +235,10 @@ export default async function ExperienceDetailPage({
                   <CheckCircle2 className="w-3 h-3 text-emerald-400 light:text-emerald-700 shrink-0" />
                   <span>
                     {isEs
-                      ? 'Especificación Sala Limpia ASML ISO 14644-1 Clase 5'
+                      ? 'Embalaje Técnico HQ Pack para Ecosistema ASML'
                       : isPt
-                      ? 'Norma Sala Limpa ASML ISO 14644-1 Classe 5'
-                      : 'ASML Cleanroom ISO 14644-1 Class 5 Spec'}
+                      ? 'Embalagem Técnica HQ Pack para Ecossistema ASML'
+                      : 'HQ Pack Technical Packaging (ASML Ecosystem)'}
                   </span>
                 </span>
                 <span className="px-2.5 py-1 rounded-lg bg-cyan-950 dark:bg-cyan-950 light:bg-cyan-100 border border-cyan-500/60 light:border-cyan-400 text-[11px] font-mono font-bold text-cyan-300 light:text-cyan-950 shadow-sm flex items-center gap-1.5">

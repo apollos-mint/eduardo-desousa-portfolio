@@ -62,7 +62,7 @@ const PORT_HUBS: PortHub[] = [
     lat: 51.92,
     lon: 4.48,
     type: 'transit',
-    volume: '20 Cont/Qtr',
+    volume: 'FCL Transcontinental',
     spec: 'Multimodal Hub & Brainport ASML Connection',
     auditScore: '100/100',
     saving: 'Zero Demurrage',
@@ -556,14 +556,14 @@ export default function ConsultantWidget({ title, lang = 'en' }: { title?: strin
       ? 'LOGÍSTICA MULTIMODAL GLOBAL E COMPRAS ESTRATÉGICAS'
       : 'GLOBAL MULTI-MODAL LOGISTICS & CAPITAL SOURCING',
     topSub: isEs
-      ? 'Corredores Directos Asia-Europa-LatAm • 20 Cont/Trimestre • $800,000 USD Gestión Anual'
+      ? 'Corredores Directos Asia-Europa-LatAm • Logística FCL • Desintermediación -75% BOM'
       : isPt
-      ? 'Corredores Diretos Ásia-Europa-LatAm • 20 Cont/Trimestre • $800,000 USD Gestão Anual'
-      : "Direct Asia-Europe-LatAm Corridors • 20 Cont/Qtr • $800,000 USD Annual Spend",
+      ? 'Corredores Diretos Ásia-Europa-LatAm • Logística FCL • Desintermediação -75% BOM'
+      : "Direct Asia-Europe-LatAm Corridors • FCL Logistics • -75% BOM Desintermediation",
     escrowBadge: isEs ? 'Escudo Escrow 4 Fases' : isPt ? 'Escudo Escrow 4 Fases' : '4-Gate Escrow Shield',
     savingBadge: isEs ? '-75% Costes Sourcing' : isPt ? '-75% Custos Sourcing' : '-75% Sourcing Costs',
-    managedSpend: isEs ? 'Gestión Anual Compras' : isPt ? 'Gestão Anual Aquisições' : 'Annual Managed Spend',
-    contQtr: isEs ? '20 Cont/Trimestre' : isPt ? '20 Cont/Trimestre' : '20 Cont/Quarter',
+    managedSpend: isEs ? 'Optimización BOM Directa' : isPt ? 'Otimização BOM Direta' : 'Direct BOM Optimization',
+    contQtr: isEs ? 'Logística FCL' : isPt ? 'Logística FCL' : 'FCL Logistics',
     landedCost: isEs ? 'Estructura Costes Destino' : isPt ? 'Estrutura Custos Destino' : 'Landed Cost Structure',
     netProfit: isEs ? '+28% Margen Neto' : isPt ? '+28% Margem Líquida' : '+28% Net Profit',
     bom: isEs ? 'Coste Directo Fábrica (BOM):' : isPt ? 'Custo Direto Fábrica (BOM):' : 'Direct Factory BOM:',
@@ -711,16 +711,16 @@ export default function ConsultantWidget({ title, lang = 'en' }: { title?: strin
           <div className="p-2.5 sm:p-3 rounded-xl bg-slate-950 border border-cyan-500/50 shadow-xl space-y-1.5 pointer-events-auto">
             <div className="flex items-center justify-between font-mono text-[10px] sm:text-[11px]">
               <span className="text-slate-400 uppercase tracking-wider font-bold">{t.managedSpend}</span>
-              <span className="text-cyan-400 font-black text-[11px] sm:text-xs">$800,000 USD</span>
+              <span className="text-cyan-400 font-black text-[11px] sm:text-xs">-75% BOM</span>
             </div>
 
             {/* Quarterly Allocation Bar Chart */}
             <div className="space-y-1 pt-0.5">
               <div className="flex justify-between text-[9px] font-mono text-slate-400">
-                <span>Q1 ($200K)</span>
-                <span>Q2 ($200K)</span>
-                <span>Q3 ($200K)</span>
-                <span>Q4 ($200K)</span>
+                <span>Q1 (PSI)</span>
+                <span>Q2 (CLI)</span>
+                <span>Q3 (FCL)</span>
+                <span>Q4 (SOP)</span>
               </div>
               <div className="h-1.5 w-full bg-slate-800 rounded-full overflow-hidden flex">
                 <div className="w-1/4 h-full bg-cyan-500 border-r border-slate-900" />

@@ -34,12 +34,12 @@ const ECOSYSTEM_PARTNERS: EcosystemPartner[] = [
   {
     id: 'asml',
     name: 'ASML Supply Chain',
-    category: 'EUV Lithography Systems',
-    module: 'EUV / DUV Optic Pod & Wafer Module',
-    description: 'Cleanroom packaging assembly conforming to ASML cleanroom specifications and ISO Class 5 standards.',
+    category: 'Lithography Sub-Assembly',
+    module: 'Optic Pod & Wafer Packaging Module',
+    description: 'Electromechanical packaging sub-assembly conforming to ASML Tier 2/3 supplier specifications.',
     tolerance: '< 0.1 µm Particulates',
-    compliance: 'ISO 14644-1 Class 5',
-    badge: 'Cleanroom Spec',
+    compliance: 'ASML Tier 2/3 Spec',
+    badge: 'Tier-2 Supplier',
   },
   {
     id: 'zeiss',
@@ -52,14 +52,14 @@ const ECOSYSTEM_PARTNERS: EcosystemPartner[] = [
     badge: 'Zero Outgassing',
   },
   {
-    id: 'iso14644',
-    name: 'ISO 14644-1 Spec',
-    category: 'Airborne Particulate Control',
-    module: 'Class 5/6 Environmental Chamber',
-    description: 'Stringent cleanroom atmospheric monitoring, continuous laminar airflow, and zero-particle handling protocol.',
-    tolerance: '< 3,520 particles/m³',
-    compliance: 'ISO 14644-1 Cl. 5',
-    badge: 'ISO Certified',
+    id: 'precleanroom',
+    name: 'Pre-Cleanroom Staging Spec',
+    category: 'Sub-Assembly & Packaging Prep',
+    module: 'Pre-Cleanroom Module Staging & Diagnostics',
+    description: 'Pre-cleanroom staging, wiring diagnostics, and ERP ISAH lot tracking prior to cleanroom entry.',
+    tolerance: 'Zero Staging Defects',
+    compliance: 'Pre-Cleanroom Gate',
+    badge: 'Pre-Staging OK',
   },
   {
     id: 'purge',
@@ -521,15 +521,15 @@ export default function HQPackWidget({ title, lang = 'en' }: HQPackWidgetProps) 
 
   const t = {
     topTitle: isEs
-      ? 'SALA LIMPIA ASML ISO 14644-1 CLASE 5 // CONTENEDOR FOUP DE OBLEAS'
+      ? 'EMBALAJE TÉCNICO Y SUB-ENSAMBLAJE // ECOSISTEMA LITOGRAFÍA ASML'
       : isPt
-      ? 'SALA LIMPA ASML ISO 14644-1 CLASSE 5 // TRANSPORTADOR FOUP DE WAFERS'
-      : 'ASML CLEANROOM ISO 14644-1 CLASS 5 // WAFER CARRIER FOUP',
+      ? 'EMBALAGEM TÉCNICA E SUB-MONTAGEM // ECOSSISTEMA LITOGRAFIA ASML'
+      : 'HIGH-TECH PACKAGING PREPARATION & ELECTROMECHANICAL SUB-ASSEMBLY // ASML ECOSYSTEM',
     topSub: isEs
-      ? 'HQ Pack (Brainport Eindhoven) • Obleas de Silicio 300mm Litografía • Precisión Submicrónica'
+      ? 'HQ Pack (Brainport Eindhoven) • Proveedor Tier 2/3 Ecosistema ASML • Preparación y Submontaje'
       : isPt
-      ? 'HQ Pack (Brainport Eindhoven) • Wafers de Silício 300mm Litografia • Precisão Submicrónica'
-      : 'HQ Pack (Brainport Eindhoven) • 300mm Lithography Silicon Wafers • Sub-Micron Precision',
+      ? 'HQ Pack (Brainport Eindhoven) • Fornecedor Tier 2/3 Ecossistema ASML • Preparação e Submontagem'
+      : 'HQ Pack (Brainport Eindhoven) • Tier 2/3 Supplier in ASML Lithography Ecosystem • Pre-Cleanroom Staging',
     particulateBadge: isEs ? 'Partículas: <0.1µm Superado' : isPt ? 'Partículas: <0.1µm Aprovado' : 'Particulate: <0.1µm Pass',
     outgassingBadge: isEs ? 'Cero Desgasificación VOC' : isPt ? 'Zero Desgaseificação VOC' : 'Zero Outgassing VOC',
     atmosTele: isEs ? 'Telemetría Atmosférica' : isPt ? 'Telemetria Atmosférica' : 'Atmospheric Telemetry',
@@ -545,27 +545,27 @@ export default function HQPackWidget({ title, lang = 'en' }: HQPackWidgetProps) 
     compliance: isEs ? 'Conformidad' : isPt ? 'Conformidade' : 'Compliance',
     activeSubsys: isEs ? 'Subsistema Activo:' : isPt ? 'Subsistema Ativo:' : 'Active Subsystem:',
     subsystems: isEs
-      ? ['Pila de Obleas EUV', 'Brazo End-Effector', 'Purga Hermética N2', 'Contador Láser Partículas']
+      ? ['Módulo Transporte Litografía', 'Brazo End-Effector', 'Purga Hermética N2', 'Contador Láser Partículas']
       : isPt
-      ? ['Pilha de Wafers EUV', 'Braço End-Effector', 'Purga Hermética N2', 'Contador Laser Partículas']
-      : ['EUV Wafer Stack', 'End-Effector Arm', 'N2 Hermetic Purge', 'Laser Particle Counter'],
+      ? ['Módulo Transporte Litografia', 'Braço End-Effector', 'Purga Hermética N2', 'Contador Laser Partículas']
+      : ['Lithography Transport Module', 'End-Effector Arm', 'N2 Hermetic Purge', 'Laser Particle Counter'],
   };
 
   const getPartnerDesc = (partner: EcosystemPartner) => {
     if (isEs) {
-      if (partner.id === 'asml') return 'Ensamblaje y mantenimiento de embalaje de precisión conforme a especificaciones ASML y normas ISO Clase 5.';
+      if (partner.id === 'asml') return 'Montaje y preparación técnica de embalaje de precisión para el ecosistema de litografía ASML.';
       if (partner.id === 'zeiss') return 'Protección de superficie óptica sub-nanométrica con cero desgasificación de hidrocarburos para espejos litográficos.';
-      if (partner.id === 'iso14644') return 'Monitorización ambiental continua de flujo laminar y control estricto de partículas <0.1µm en sala limpia.';
+      if (partner.id === 'precleanroom') return 'Inspección de pre-cleanroom staging, diagnóstico de cableado y trazabilidad en ERP ISAH antes de la entrada a sala blanca.';
       if (partner.id === 'purge') return 'Sellado a sobrepresión de nitrógeno N2 (+0.02 bar) y tasa de fuga de helio ultra-baja previniendo contaminación molecular.';
-      if (partner.id === 'tuv') return 'Preparación técnica y verificación de matrices de cumplimiento para la aprobación sin observaciones de auditorías TÜV.';
+      if (partner.id === 'tuv') return 'Preparación técnica y recertificación de cabrestantes de elevación para aprobación en auditorías TÜV.';
       if (partner.id === 'isah') return 'Gestión de gobernanza de datos en ERP ISAH con registro de más de 150 intervenciones técnicas mensuales y trazabilidad total.';
     }
     if (isPt) {
-      if (partner.id === 'asml') return 'Montagem e manutenção de embalagem de precisão conforme especificações ASML e normas ISO Classe 5.';
+      if (partner.id === 'asml') return 'Montagem e preparação técnica de embalagem de precisão para o ecossistema de litografia ASML.';
       if (partner.id === 'zeiss') return 'Proteção de superfície ótica subnanométrica com zero desgaseificação de hidrocarbonetos para espelhos litográficos.';
-      if (partner.id === 'iso14644') return 'Monitorização ambiental contínua de fluxo laminar e controlo rigoroso de partículas <0.1µm em sala limpa.';
+      if (partner.id === 'precleanroom') return 'Inspeção de pre-cleanroom staging, diagnóstico de cablagem e rastreabilidade no ERP ISAH antes da entrada em sala limpa.';
       if (partner.id === 'purge') return 'Vedação a sobrepressão de nitrogénio N2 (+0.02 bar) e taxa de fuga de hélio ultrabaixa prevenindo contaminação molecular.';
-      if (partner.id === 'tuv') return 'Preparação técnica e verificação de matrizes de conformidade para aprovação exemplar em auditorias TÜV.';
+      if (partner.id === 'tuv') return 'Preparação técnica e recertificação de guinchos mecânicos para aprovação exemplar em auditorias TÜV.';
       if (partner.id === 'isah') return 'Gestão de governança de dados no ERP ISAH com registo de mais de 150 intervenções técnicas mensais e rastreabilidade total.';
     }
     return partner.description;
@@ -628,7 +628,7 @@ export default function HQPackWidget({ title, lang = 'en' }: HQPackWidgetProps) 
         <div className="absolute inset-0 pointer-events-none overflow-hidden opacity-25 font-mono text-[9px] select-none z-0">
           <div className="absolute inset-0 bg-[radial-gradient(#10b981_1px,transparent_1px)] [background-size:24px_24px]" />
           <div className="absolute top-2 left-1/2 -translate-x-1/2 text-emerald-400/50 tracking-widest uppercase">
-            ISO 14644-1 CLASS 5 ENVIRONMENT // LAMINAR AIRFLOW &lt;0.1µm // BRAINPORT EINDHOVEN
+            HIGH-TECH PACKAGING PREPARATION // TÜV WINCH RECERTIFICATION // BRAINPORT EINDHOVEN
           </div>
         </div>
 
@@ -638,7 +638,7 @@ export default function HQPackWidget({ title, lang = 'en' }: HQPackWidgetProps) 
           <div className="p-3.5 rounded-2xl bg-slate-950/85 backdrop-blur-md border border-cyan-500/40 shadow-xl space-y-2 pointer-events-auto">
             <div className="flex items-center justify-between font-mono text-[11px]">
               <span className="text-slate-400 uppercase tracking-wider font-bold">{t.atmosTele}</span>
-              <span className="text-emerald-400 font-black text-xs">ISO CLASS 5 OK</span>
+              <span className="text-emerald-400 font-black text-xs">PRE-STAGING OK</span>
             </div>
 
             {/* Particle Counter Telemetry Bar */}

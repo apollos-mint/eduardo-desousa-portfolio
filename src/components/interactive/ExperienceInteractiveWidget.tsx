@@ -34,7 +34,7 @@ export default function ExperienceInteractiveWidget({
   // Multilingual UI strings for widgets
   const labels = {
     es: {
-      cleanroomHeader: 'ECOSISTEMA DE SALAS LIMPIAS ASML // CLASE ISO 5',
+      cleanroomHeader: 'ECOSISTEMA LITOGRAFÍA ASML // PREPARACIÓN Y SUBMONTAJE',
       erpSync: 'ISAH ERP: 150+ MENSUALES',
       cycleTimeRed: 'TIEMPO DE CICLO: -30%',
       inspectPartner: 'Haz clic en cualquier líder de la industria para inspeccionar especificaciones:',
@@ -57,7 +57,7 @@ export default function ExperienceInteractiveWidget({
         { id: 'ASML', name: 'ASML', tag: 'Litografía EUV/DUV' },
         { id: 'ZEISS', name: 'Zeiss', tag: 'Óptica High-NA' },
         { id: 'TUV', name: 'TÜV Rheinland', tag: 'Auditoría y Certificación QMS' },
-        { id: 'ISO14644', name: 'ISO 14644', tag: 'Estándar de Sala Limpia Cl. 5' },
+        { id: 'PRECLEANROOM', name: 'Pre-Staging', tag: 'Preparación Pre-Cleanroom' },
         { id: 'ISAH', name: 'ERP ISAH', tag: 'Gobernanza y Trazabilidad' },
         { id: 'NEWAYS', name: 'Neways', tag: 'Electrónica de Sala Limpia' },
         { id: 'FRENCKEN', name: 'Frencken', tag: 'Mecánica de Precisión' },
@@ -80,7 +80,7 @@ export default function ExperienceInteractiveWidget({
       hubs: [
         { country: 'China (Shenzhen/Shanghai)', role: 'Auditorías de Capacidad de Producción y Maquinaria', score: '98/100' },
         { country: 'India (Pune/Bengaluru)', role: 'Inspecciones de Ingeniería y Metrología in situ', score: '95/100' },
-        { country: 'Países Bajos (Eindhoven)', role: 'Revisión de Suministro de Alta Tecnología y Salas Limpias', score: '99/100' },
+        { country: 'Países Bajos (Eindhoven)', role: 'Embalaje de Alta Tecnología y Preparación Técnica', score: '99/100' },
         { country: 'España (Valencia)', role: 'Logística de Importación y Protección de Capital', score: '100/100' },
       ],
       arkcohogarStats: [
@@ -90,7 +90,7 @@ export default function ExperienceInteractiveWidget({
       ]
     },
     en: {
-      cleanroomHeader: 'ASML CLEANROOM ECOSYSTEM // ISO CLASS 5',
+      cleanroomHeader: 'ASML LITHOGRAPHY ECOSYSTEM // PRE-CLEANROOM STAGING',
       erpSync: 'ISAH ERP: 150+ MONTHLY',
       cycleTimeRed: 'CYCLE TIME: -30%',
       inspectPartner: 'Click any industry leader node to inspect cleanroom interface specifications:',
@@ -113,7 +113,7 @@ export default function ExperienceInteractiveWidget({
         { id: 'ASML', name: 'ASML', tag: 'Lithography EUV/DUV' },
         { id: 'ZEISS', name: 'Zeiss', tag: 'High-NA Optics' },
         { id: 'TUV', name: 'TÜV Rheinland', tag: 'Audit & QMS Certification' },
-        { id: 'ISO14644', name: 'ISO 14644', tag: 'Cleanroom Particulate Standard' },
+        { id: 'PRECLEANROOM', name: 'Pre-Staging', tag: 'Pre-Cleanroom Staging Spec' },
         { id: 'ISAH', name: 'ERP ISAH', tag: 'Governance & Work Orders' },
         { id: 'NEWAYS', name: 'Neways', tag: 'Cleanroom Electronics' },
         { id: 'FRENCKEN', name: 'Frencken', tag: 'Precision Mechanics' },
@@ -136,7 +136,7 @@ export default function ExperienceInteractiveWidget({
       hubs: [
         { country: 'China (Shenzhen/Shanghai)', role: 'Machinery Tooling & Production Capacity Audits', score: '98/100' },
         { country: 'India (Pune/Bengaluru)', role: 'On-Ground Engineering & Metrology Inspections', score: '95/100' },
-        { country: 'Netherlands (Eindhoven)', role: 'Cleanroom Packaging & High-Tech Supply Review', score: '99/100' },
+        { country: 'Netherlands (Eindhoven)', role: 'High-Tech Packaging Preparation & Sub-Assembly', score: '99/100' },
         { country: 'Spain (Valencia)', role: 'Import Logistics & Client Capital Protection', score: '100/100' },
       ],
       arkcohogarStats: [
@@ -146,7 +146,7 @@ export default function ExperienceInteractiveWidget({
       ]
     },
     pt: {
-      cleanroomHeader: 'ECOSSISTEMA DE SALA LIMPA ASML // CLASSE ISO 5',
+      cleanroomHeader: 'ECOSSISTEMA LITOGRAFIA ASML // PREPARAÇÃO E SUBMONTAGEM',
       erpSync: 'ISAH ERP: 150+ MENSAIS',
       cycleTimeRed: 'TEMPO DE CICLO: -30%',
       inspectPartner: 'Clique em qualquer líder industrial para inspecionar especificações:',
@@ -169,7 +169,7 @@ export default function ExperienceInteractiveWidget({
         { id: 'ASML', name: 'ASML', tag: 'Litografia EUV/DUV' },
         { id: 'ZEISS', name: 'Zeiss', tag: 'Óptica High-NA' },
         { id: 'TUV', name: 'TÜV Rheinland', tag: 'Auditoria & Certificação QMS' },
-        { id: 'ISO14644', name: 'ISO 14644', tag: 'Norma de Sala Limpa Cl. 5' },
+        { id: 'PRECLEANROOM', name: 'Pre-Staging', tag: 'Preparação Pre-Cleanroom' },
         { id: 'ISAH', name: 'ERP ISAH', tag: 'Governança & Rastreabilidade' },
         { id: 'NEWAYS', name: 'Neways', tag: 'Eletrónica de Sala Limpa' },
         { id: 'FRENCKEN', name: 'Frencken', tag: 'Mecânica de Precisão' },
@@ -192,7 +192,7 @@ export default function ExperienceInteractiveWidget({
       hubs: [
         { country: 'China (Shenzhen/Shanghai)', role: 'Auditorias de Capacidade de Produção e Maquinaria', score: '98/100' },
         { country: 'Índia (Pune/Bengaluru)', role: 'Inspeções de Engenharia e Metrologia no local', score: '95/100' },
-        { country: 'Holanda (Eindhoven)', role: 'Revisão de Fornecimento de Alta Tecnologia e Salas Limpas', score: '99/100' },
+        { country: 'Holanda (Eindhoven)', role: 'Embalagem de Alta Tecnologia e Preparação Técnica', score: '99/100' },
         { country: 'Espanha (Valência)', role: 'Logística de Importação e Proteção de Capital', score: '100/100' },
       ],
       arkcohogarStats: [
@@ -202,7 +202,7 @@ export default function ExperienceInteractiveWidget({
       ]
     },
     nl: {
-      cleanroomHeader: 'ASML CLEANROOM ECOSYSTEEM // ISO KLASSE 5',
+      cleanroomHeader: 'ASML LITHOGRAFIE ECOSYSTEEM // PRE-CLEANROOM STAGING',
       erpSync: 'ISAH ERP: 150+ MAANDELIJKS',
       cycleTimeRed: 'DOORLOOPTIJD: -30%',
       inspectPartner: 'Klik op een industriële partner om interfacespecificaties te bekijken:',
@@ -225,7 +225,7 @@ export default function ExperienceInteractiveWidget({
         { id: 'ASML', name: 'ASML', tag: 'Lithografie EUV/DUV' },
         { id: 'ZEISS', name: 'Zeiss', tag: 'High-NA Optica' },
         { id: 'TUV', name: 'TÜV Rheinland', tag: 'Audit & QMS Certificering' },
-        { id: 'ISO14644', name: 'ISO 14644', tag: 'Cleanroom Standaard Kl. 5' },
+        { id: 'PRECLEANROOM', name: 'Pre-Staging', tag: 'Pre-Cleanroom Staging Spec' },
         { id: 'ISAH', name: 'ERP ISAH', tag: 'Governance & Traceerbaarheid' },
         { id: 'NEWAYS', name: 'Neways', tag: 'Cleanroom Elektronica' },
         { id: 'FRENCKEN', name: 'Frencken', tag: 'Fijnmechanica' },
@@ -248,7 +248,7 @@ export default function ExperienceInteractiveWidget({
       hubs: [
         { country: 'China (Shenzhen/Shanghai)', role: 'Productiecapaciteit & Machine Audits', score: '98/100' },
         { country: 'India (Pune/Bengaluru)', role: 'On-site Engineering & Metrologie Inspecties', score: '95/100' },
-        { country: 'Nederland (Eindhoven)', role: 'High-Tech & Cleanroom Supply Review', score: '99/100' },
+        { country: 'Nederland (Eindhoven)', role: 'High-Tech Verpakkingsvoorbereiding & Subassemblage', score: '99/100' },
         { country: 'Spanje (Valencia)', role: 'Import Logistiek & Klantkapitaal Bescherming', score: '100/100' },
       ],
       arkcohogarStats: [
@@ -258,7 +258,7 @@ export default function ExperienceInteractiveWidget({
       ]
     },
     de: {
-      cleanroomHeader: 'ASML REINRAUM-ÖKOSYSTEM // ISO KLASSE 5',
+      cleanroomHeader: 'ASML LITHOGRAFIE-ÖKOSYSTEM // PRE-CLEANROOM STAGING',
       erpSync: 'ISAH ERP: 150+ MONATLICH',
       cycleTimeRed: 'DURCHLAUFZEIT: -30%',
       inspectPartner: 'Klicken Sie auf einen Industriepartner zur Anzeige von Spezifikationen:',
@@ -281,7 +281,7 @@ export default function ExperienceInteractiveWidget({
         { id: 'ASML', name: 'ASML', tag: 'Lithographie EUV/DUV' },
         { id: 'ZEISS', name: 'Zeiss', tag: 'High-NA Optik' },
         { id: 'TUV', name: 'TÜV Rheinland', tag: 'Audit & QMS Zertifizierung' },
-        { id: 'ISO14644', name: 'ISO 14644', tag: 'Reinraum-Standard Kl. 5' },
+        { id: 'PRECLEANROOM', name: 'Pre-Staging', tag: 'Pre-Cleanroom Staging Spez.' },
         { id: 'ISAH', name: 'ERP ISAH', tag: 'Governance & Rückverfolgbarkeit' },
         { id: 'NEWAYS', name: 'Neways', tag: 'Reinraum-Elektronik' },
         { id: 'FRENCKEN', name: 'Frencken', tag: 'Feinmechanik' },
@@ -304,7 +304,7 @@ export default function ExperienceInteractiveWidget({
       hubs: [
         { country: 'China (Shenzhen/Shanghai)', role: 'Maschinen- & Produktionskapazitätsprüfungen', score: '98/100' },
         { country: 'Indien (Pune/Bengaluru)', role: 'Vor-Ort-Engineering & Messtechnik-Inspektionen', score: '95/100' },
-        { country: 'Niederlande (Eindhoven)', role: 'Reinraum- & High-Tech-Lieferkettenbewertung', score: '99/100' },
+        { country: 'Niederlande (Eindhoven)', role: 'High-Tech-Verpackung & technische Vorbereitung', score: '99/100' },
         { country: 'Spanien (Valencia)', role: 'Importlogistik & Kapitalschutz des Kunden', score: '100/100' },
       ],
       arkcohogarStats: [
@@ -314,7 +314,7 @@ export default function ExperienceInteractiveWidget({
       ]
     },
     fr: {
-      cleanroomHeader: 'ÉCOSYSTÈME SALLE BLANCHE ASML // CLASSE ISO 5',
+      cleanroomHeader: 'ÉCOSYSTÈME LITHOGRAPHIE ASML // PRE-CLEANROOM STAGING',
       erpSync: 'ISAH ERP: 150+ MENSUELS',
       cycleTimeRed: 'TEMPS DE CYCLE: -30%',
       inspectPartner: 'Cliquez sur un partenaire industriel pour afficher les spécifications:',
@@ -337,7 +337,7 @@ export default function ExperienceInteractiveWidget({
         { id: 'ASML', name: 'ASML', tag: 'Lithographie EUV/DUV' },
         { id: 'ZEISS', name: 'Zeiss', tag: 'Optique High-NA' },
         { id: 'TUV', name: 'TÜV Rheinland', tag: 'Audit & Certification QMS' },
-        { id: 'ISO14644', name: 'ISO 14644', tag: 'Norme Salle Blanche Cl. 5' },
+        { id: 'PRECLEANROOM', name: 'Pre-Staging', tag: 'Préparation Pre-Cleanroom' },
         { id: 'ISAH', name: 'ERP ISAH', tag: 'Gouvernance & Traçabilité' },
         { id: 'NEWAYS', name: 'Neways', tag: 'Électronique Salle Blanche' },
         { id: 'FRENCKEN', name: 'Frencken', tag: 'Mécanique de Précision' },
@@ -360,7 +360,7 @@ export default function ExperienceInteractiveWidget({
       hubs: [
         { country: 'Chine (Shenzhen/Shanghai)', role: 'Audits de Capacité de Production et Machines', score: '98/100' },
         { country: 'Inde (Pune/Bengaluru)', role: 'Inspections d\'Ingénierie et de Métrologie sur site', score: '95/100' },
-        { country: 'Pays-Bas (Eindhoven)', role: 'Examen de Fourniture High-Tech & Salle Blanche', score: '99/100' },
+        { country: 'Pays-Bas (Eindhoven)', role: 'Emballage High-Tech & Préparation Technique', score: '99/100' },
         { country: 'Espagne (Valence)', role: 'Logistique d\'Importation et Protection du Capital Client', score: '100/100' },
       ],
       arkcohogarStats: [

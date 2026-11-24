@@ -333,15 +333,15 @@ export default function BrandLogo({ name, className = 'w-6 h-6' }: BrandLogoProp
     );
   }
 
-  // CLEANROOM CLASS 5 / ISO 14644
-  if (norm.includes('CLEANROOM') || norm.includes('CLASS 5') || norm.includes('14644')) {
+  // PRE-CLEANROOM STAGING
+  if (norm.includes('PRE-STAGING') || norm.includes('PRECLEANROOM') || norm.includes('STAGING')) {
     return (
       <svg role="img" aria-label={name} viewBox="0 0 130 40" className={className}>
         <rect width="130" height="40" rx="8" fill="#0f172a" stroke="#10b981" strokeWidth="1.5" />
         <circle cx="20" cy="20" r="10" fill="#065f46" stroke="#34d399" strokeWidth="1.5" />
         <circle cx="20" cy="20" r="4" fill="#6ee7b7" />
         <text x="78" y="25" fontSize="12" fontWeight="900" fontFamily="sans-serif" textAnchor="middle" fill="#a7f3d0">
-          ISO Class 5
+          Pre-Staging
         </text>
       </svg>
     );

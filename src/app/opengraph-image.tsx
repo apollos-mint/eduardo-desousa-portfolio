@@ -186,7 +186,7 @@ export default async function Image() {
         >
           <div style={{ display: 'flex', gap: '12px' }}>
             {[
-              'Direct Sourcing ($800K/yr)',
+              'Direct Factory Sourcing (-75% BOM)',
               'Modular Systems & SCM',
               'High-Tech Assembly Discipline',
               'Lean Six Sigma Black Belt',
